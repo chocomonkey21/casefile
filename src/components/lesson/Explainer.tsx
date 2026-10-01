@@ -53,7 +53,7 @@ export function Explainer({ scene, steps }: ExplainerProps) {
         </svg>
       </div>
 
-      <p className="mt-3 min-h-14 rounded-lg bg-paper p-3 text-lg" aria-live="polite">
+      <p className="mt-4 min-h-14 rounded-[3px] bg-paper p-4 text-lg" aria-live="polite">
         <span className="label mr-2 text-ink-soft">
           {copy.lesson.stepOf(step + 1, steps.length)}
         </span>
@@ -72,7 +72,7 @@ export function Explainer({ scene, steps }: ExplainerProps) {
         </Button>
       </div>
 
-      <details className="mt-3">
+      <details className="mt-4">
         <summary className="cursor-pointer py-2 font-semibold text-coffee">{copy.lesson.transcript}</summary>
         <ol className="list-decimal space-y-1 pl-6 text-ink-soft">
           {steps.map((s) => (
@@ -115,10 +115,10 @@ function PuddleScene({ step, off }: { step: number; off: boolean }) {
           return (
             <line
               key={i}
-              x1={Math.cos(a) * 34}
-              y1={Math.sin(a) * 34}
-              x2={Math.cos(a) * 46}
-              y2={Math.sin(a) * 46}
+              x1={Math.round(Math.cos(a) * 3400) / 100}
+              y1={Math.round(Math.sin(a) * 3400) / 100}
+              x2={Math.round(Math.cos(a) * 4600) / 100}
+              y2={Math.round(Math.sin(a) * 4600) / 100}
               className="stroke-ill-sun-ray"
               strokeWidth={3.5}
               strokeLinecap="round"

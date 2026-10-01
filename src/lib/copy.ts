@@ -136,6 +136,7 @@ export const copy = {
     lead: {
       label: "Up next",
       clueHeading: (n: number, title: string) => `Clue ${n}: ${title}`,
+      stepOf: (n: number, total: number) => `Clue ${n} of ${total}`,
       verdictHeading: "You have completed every lesson",
       verdictText: (title: string) => `You can now take the Verdict, the final test for ${title}.`,
       startVerdict: "Start the Verdict",
@@ -149,6 +150,7 @@ export const copy = {
       detail: (done: number, total: number) => `You had completed ${done} of ${plural(total, "lesson")}.`,
       start: "Start review",
       openCase: "Open case",
+      empty: "Nothing to revise yet. A case you have not opened for 7 days will show up here.",
     },
     inProgress: {
       heading: "Cases in progress",
@@ -178,6 +180,14 @@ export const copy = {
     cta: { open: "Start", active: "Continue", cold: "Review", closed: "View results" },
     lessonsDone: (done: number, total: number) => `${done} of ${plural(total, "lesson")} completed`,
     progressLabel: (title: string) => `${title}, progress`,
+    // The papers that slide out of a folder on hover
+    peekBrief: "Case brief",
+    peekNext: "Next lesson",
+    peekFinal: "Final test",
+    peekFinalText: "All lessons done. The final test is next.",
+    peekClosed: "Case closed",
+    peekNote: (done: number, total: number) => (done === 0 ? "No lessons done yet" : done === total ? "Every lesson done" : `${done} of ${total} lessons done`),
+    tapAgain: "Tap again to open",
   },
 
   caseFile: {
@@ -727,7 +737,7 @@ export const copy = {
       },
     ],
     peekHeading: "Some of the cases",
-    peekText: "Science, maths, history and English.",
+    peekText: "Science, maths, history and geography.",
     lessons: (n: number) => plural(n, "lesson"),
     finalHeading: "Ready to start learning?",
     finalText: "Set up your profile and begin with a short practice case.",

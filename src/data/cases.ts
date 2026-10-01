@@ -2,7 +2,7 @@ import type { CaseDef, EvidenceDef, EvidenceKind } from "@/lib/types";
 
 /*
   Mock course data. Swap this file (or fetch from an API later) without touching the UI.
-  Full lesson text for the Vanishing Puddle lives in data/lessons. Here we only need the
+  Full lesson text for every case lives in data/lessons. Here we only need the
   structure: clues (lessons), evidence lists and the brief.
 
   Wording rule: titles say what the lesson is about ("How clouds form"), so no theme word
@@ -107,12 +107,11 @@ const fractions: CaseDef = {
     "Decide which of two fractions is larger",
     "Add fractions with the same bottom number",
   ],
-  stub: true,
   clues: [
-    { id: "what-is", title: "What a fraction is", teaser: "Parts of a whole, and what the top and bottom numbers mean.", minutes: 6, evidence: [ev("reading", "intro", "What a fraction means", 3, "Read a fraction and say what each number tells you."), ev("practice", "slice-it", "Colour in fractions", 3, "Practise shading the right amount.")] },
+    { id: "what-is", title: "What a fraction is", teaser: "Parts of a whole, and what the top and bottom numbers mean.", minutes: 6, evidence: [ev("reading", "intro", "What a fraction means", 3, "Read a fraction and say what each number tells you."), ev("practice", "slice-it", "Read the fraction", 3, "Two quick questions on reading fractions.")] },
     { id: "equivalent", title: "Equivalent fractions", teaser: "Different fractions can show the same amount, like 2/4 and 1/2.", minutes: 6, evidence: [ev("reading", "same-size", "Fractions that are equal", 3, "Why 2/4 is the same as 1/2."), ev("practice", "match-up", "Match equal fractions", 3, "Pair up fractions that are the same size.")] },
-    { id: "compare", title: "Comparing fractions", teaser: "Decide which of two fractions is larger.", minutes: 6, evidence: [ev("reading", "compare-intro", "Ways to compare fractions", 3, "Quick methods for deciding which is larger."), ev("practice", "bigger-smaller", "Order the fractions", 3, "Sort fractions from smallest to largest.")] },
-    { id: "add", title: "Adding fractions", teaser: "Add fractions that have the same bottom number.", minutes: 6, evidence: [ev("reading", "add-intro", "Adding fractions step by step", 3, "Add the top numbers and keep the bottom number."), ev("practice", "add-practice", "Fraction sums", 3, "Ten quick sums to try.")] },
+    { id: "compare", title: "Comparing fractions", teaser: "Decide which of two fractions is larger.", minutes: 6, evidence: [ev("reading", "compare-intro", "Ways to compare fractions", 3, "Quick methods for deciding which is larger."), ev("practice", "bigger-smaller", "Order the fractions", 3, "Sort four fractions from smallest to largest.")] },
+    { id: "add", title: "Adding fractions", teaser: "Add fractions that have the same bottom number.", minutes: 6, evidence: [ev("reading", "add-intro", "Adding fractions step by step", 3, "Add the top numbers and keep the bottom number."), ev("practice", "add-practice", "Fraction sums", 3, "Two quick sums to try.")] },
   ],
 };
 
@@ -131,7 +130,6 @@ const solar: CaseDef = {
     "Describe the giant planets",
     "Say what moons, asteroids and comets are",
   ],
-  stub: true,
   clues: [
     { id: "sun", title: "The Sun", teaser: "Everything in the solar system moves around one star.", minutes: 6, evidence: [ev("reading", "sun-intro", "About the Sun", 3, "Why the Sun matters so much."), ev("practice", "sun-quiz", "Check what you know about the Sun", 3, "A few quick questions.")] },
     { id: "rocky", title: "The rocky planets", teaser: "Mercury, Venus, Earth and Mars are closest to the Sun.", minutes: 6, evidence: [ev("reading", "rocky-intro", "Four rocky planets", 3, "What makes each one different."), ev("practice", "rocky-match", "Match the planet", 3, "Use clues to name the planet.")] },
@@ -155,36 +153,34 @@ const egypt: CaseDef = {
     "Read a few hieroglyphs",
     "Describe how the pyramids were built",
   ],
-  stub: true,
   clues: [
-    { id: "nile", title: "The River Nile", teaser: "Most people in ancient Egypt lived beside one river.", minutes: 6, evidence: [ev("reading", "nile-intro", "Life on the Nile", 3, "Floods, farms and boats."), ev("practice", "nile-map", "Map the Nile", 3, "Find the key places.")] },
+    { id: "nile", title: "The River Nile", teaser: "Most people in ancient Egypt lived beside one river.", minutes: 6, evidence: [ev("reading", "nile-intro", "Life on the Nile", 3, "Floods, farms and boats."), ev("practice", "nile-map", "The Nile farming year", 3, "Put the flood, planting and harvest in order.")] },
     { id: "pharaohs", title: "Pharaohs and rulers", teaser: "Pharaohs ruled Egypt, and people believed they were special.", minutes: 6, evidence: [ev("reading", "pharaoh-intro", "Who the pharaohs were", 3, "Power, jobs and famous names."), ev("practice", "pharaoh-quiz", "Pharaoh quiz", 3, "Who did what?")] },
     { id: "writing", title: "Hieroglyphs", teaser: "Hieroglyphs use pictures to stand for sounds and ideas.", minutes: 6, evidence: [ev("reading", "glyph-intro", "Reading hieroglyphs", 3, "How the symbols work."), ev("practice", "glyph-decode", "Decode a message", 3, "Work out a short message.")] },
     { id: "pyramids", title: "How the pyramids were built", teaser: "Find out how huge stones were moved and lifted.", minutes: 6, evidence: [ev("reading", "pyramid-intro", "Building a pyramid", 3, "Workers, ramps and plans."), ev("practice", "pyramid-order", "Put the building steps in order", 3, "Order the steps.")] },
   ],
 };
 
-const grammar: CaseDef = {
-  id: "grammar",
-  number: "055",
-  title: "The Case of the Mixed-Up Sentences",
-  topic: "Grammar",
-  subject: "english",
-  tagline: "Learn the main parts of a sentence and how to use them clearly.",
-  hook: "A note has all the right words, but the sentences do not make sense. In this case you will learn about nouns, verbs, adjectives and punctuation, and use them to fix it.",
-  goal: "Know the main parts of a sentence and use them to write clearly.",
+const earth: CaseDef = {
+  id: "shaking-ground",
+  number: "064",
+  title: "The Case of the Shaking Ground",
+  topic: "Earthquakes and volcanoes",
+  subject: "geography",
+  tagline: "Find out what is inside the Earth, and why the ground shakes and mountains erupt.",
+  hook: "Cups rattle on a shelf and the floor trembles for a few seconds. Far away, a mountain sends up a cloud of ash. In this case you will find out what is happening deep under your feet.",
+  goal: "Explain how the Earth's layers and moving plates cause earthquakes and volcanoes.",
   learn: [
-    "Find the nouns in a sentence",
-    "Pick out the verbs",
-    "Use adjectives to add detail",
-    "Place commas and full stops where they belong",
+    "Name the layers of the Earth",
+    "Explain why tectonic plates move",
+    "Say what causes an earthquake",
+    "Follow magma from deep underground to an eruption",
   ],
-  stub: true,
   clues: [
-    { id: "nouns", title: "Nouns", teaser: "People, places and things all have names.", minutes: 6, evidence: [ev("reading", "noun-intro", "What nouns are", 3, "Common and proper nouns."), ev("practice", "noun-hunt", "Find the nouns", 3, "Spot them in a sentence.")] },
-    { id: "verbs", title: "Verbs", teaser: "Verbs tell you what is happening.", minutes: 6, evidence: [ev("reading", "verb-intro", "What verbs are", 3, "Doing, being and having."), ev("practice", "verb-hunt", "Find the verbs", 3, "Spot the verb in a sentence.")] },
-    { id: "adjectives", title: "Adjectives", teaser: "Adjectives add detail, like turning 'a dog' into 'a scruffy, sleepy dog'.", minutes: 6, evidence: [ev("reading", "adj-intro", "Describing words", 3, "Make your writing clearer."), ev("practice", "adj-rewrite", "Add detail to sentences", 3, "Improve plain sentences.")] },
-    { id: "punctuation", title: "Commas and full stops", teaser: "Small marks that change the meaning of a sentence.", minutes: 6, evidence: [ev("reading", "punct-intro", "When to stop and when to pause", 3, "How full stops and commas work."), ev("practice", "punct-fix", "Fix the note", 3, "Add the missing marks.")] },
+    { id: "layers", title: "Inside the Earth", teaser: "Crust, mantle and core: the layers under your feet.", minutes: 6, evidence: [ev("reading", "layers-intro", "Inside the Earth", 3, "The four layers, from the surface to the centre."), ev("practice", "layers-order", "Put the layers in order", 2, "From the crust to the inner core.")] },
+    { id: "plates", title: "Moving plates", teaser: "The ground is a jigsaw of plates that never stop moving.", minutes: 6, evidence: [ev("reading", "plates-intro", "The moving puzzle", 3, "Tectonic plates and what happens where they meet."), ev("practice", "plates-match", "Match the plate boundary", 3, "Mountains, oceans and faults.")] },
+    { id: "quakes", title: "Why the ground shakes", teaser: "Stuck plates, built-up strain and a sudden slip.", minutes: 7, evidence: [ev("reading", "quake-intro", "Why the ground shakes", 4, "Focus, epicentre and how to stay safe."), ev("practice", "quake-safe", "Earthquake check", 3, "Two quick questions.")] },
+    { id: "volcanoes", title: "Inside a volcano", teaser: "Follow melted rock from deep underground to an eruption.", minutes: 7, evidence: [ev("reading", "volcano-intro", "Inside a volcano", 4, "Magma, lava and the parts of a volcano."), ev("practice", "volcano-parts", "Follow the magma", 3, "Put the journey of melted rock in order.")] },
   ],
 };
 
@@ -220,7 +216,7 @@ const sock: CaseDef = {
 };
 
 /** Display order: practice first, then by case number */
-export const CASES: CaseDef[] = [sock, puddle, fractions, solar, egypt, grammar];
+export const CASES: CaseDef[] = [sock, puddle, fractions, solar, egypt, earth];
 
 export const FEATURED_CASE_ID = "puddle";
 

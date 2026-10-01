@@ -22,8 +22,8 @@ export function ReadingBlocks({ blocks }: { blocks: Block[] }) {
             return (
               <ul key={i} className="space-y-2">
                 {block.items.map((item) => (
-                  <li key={item} className="flex gap-3 text-lg leading-relaxed">
-                    <span aria-hidden="true" className="mt-3 h-2 w-2 shrink-0 rounded-full bg-evidence" />
+                  <li key={item} className="flex gap-4 text-lg leading-relaxed">
+                    <span aria-hidden="true" className="mt-4 h-2 w-2 shrink-0 rounded-full bg-evidence" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -31,7 +31,7 @@ export function ReadingBlocks({ blocks }: { blocks: Block[] }) {
             );
           case "tip":
             return (
-              <div key={i} role="note" className="rounded-md border-l-8 border-postit-dark bg-postit-light/70 p-4">
+              <div key={i} role="note" className="rounded-[3px] bg-postit-light/70 p-4">
                 <p className="label text-ink">{block.title}</p>
                 <p className="mt-1 text-lg font-medium">{block.text}</p>
               </div>

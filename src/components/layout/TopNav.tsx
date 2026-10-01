@@ -20,11 +20,11 @@ export function TopNav() {
   const days = currentStreak(state.streak);
 
   return (
-    <header className="sticky top-0 z-40 on-dark border-b-4 border-brass bg-espresso">
+    <header className="sticky top-0 z-40 on-dark bg-espresso">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-2 px-4 sm:gap-4 sm:px-6">
         <div className="flex items-center gap-8">
           <Link href="/desk" className="flex min-h-11 items-center gap-2" aria-label={copy.brand.logoLabel}>
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-postit text-ink">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[3px] bg-postit text-ink">
               <MagnifierIcon width={22} height={22} />
             </span>
             <span className="font-display text-xl tracking-wide sm:text-2xl">{copy.brand.name}</span>
@@ -39,7 +39,7 @@ export function TopNav() {
                     <Link
                       href={href}
                       aria-current={active ? "page" : undefined}
-                      className={`relative flex min-h-11 items-center rounded-md px-3.5 text-base font-medium transition-colors hover:bg-coffee ${
+                      className={`relative flex min-h-11 items-center rounded-[3px] px-4 text-base font-medium transition-colors hover:bg-coffee ${
                         active ? "text-paper" : "text-beige"
                       }`}
                     >
@@ -59,7 +59,7 @@ export function TopNav() {
           </nav>
         </div>
 
-        <div className="flex items-center gap-3 sm:gap-4">
+        <div className="flex items-center gap-4 sm:gap-4">
           <p className="hidden text-right text-xs leading-snug text-beige sm:block">
             <span className="block">{copy.level.label(rank.name)}</span>
             <span className="block">{copy.level.streak(days)}</span>

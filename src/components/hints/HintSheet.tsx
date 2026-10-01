@@ -41,7 +41,7 @@ export function HintSheet({ levels, revealed, onReveal, explanation, explained, 
   }, [revealed]);
 
   return (
-    <div className="relative z-0 -mt-3 px-3 pt-3" aria-live="polite">
+    <div className="relative z-0 -mt-4 px-4 pt-4" aria-live="polite">
       <ol className="space-y-2">
         <AnimatePresence initial={false}>
           {levels.slice(0, revealed).map((level, i) => (
@@ -67,14 +67,14 @@ export function HintSheet({ levels, revealed, onReveal, explanation, explained, 
         <motion.div
           initial={{ y: -24, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className="tex-paper mt-3 rounded-md border-2 border-coffee p-4 text-ink"
+          className="tex-paper mt-4 rounded-[3px] p-4 text-ink"
         >
           <p className="label text-coffee">{copy.hints.fullExplanation}</p>
           <div className="mt-1 space-y-2">{explanation}</div>
         </motion.div>
       )}
 
-      <div className="mt-3 flex flex-wrap items-center gap-3">
+      <div className="mt-4 flex flex-wrap items-center gap-4">
         {revealed < 3 ? (
           <Button variant="highlight" onClick={() => onReveal(nextLevel)}>
             {revealed === 0 ? copy.hints.get : copy.hints.getNumbered(nextLevel)}

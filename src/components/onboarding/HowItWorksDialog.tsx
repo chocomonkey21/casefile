@@ -11,7 +11,7 @@ export function HowItWorksDialog({ open, onClose }: { open: boolean; onClose: ()
   const titleId = useId();
   return (
     <Dialog open={open} onClose={onClose} labelledBy={titleId} className="max-w-2xl">
-      <div className="p-5 sm:p-7">
+      <div className="p-6 sm:p-8">
         <div className="mb-4 flex items-start justify-between gap-4">
           <h2 id={titleId} className="text-3xl">
             {copy.explainer.title}

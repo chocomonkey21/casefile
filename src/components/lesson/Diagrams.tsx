@@ -61,6 +61,9 @@ function Cloud({ cx, cy, scale = 1, className = "fill-ill-cloud stroke-ill-cloud
   );
 }
 
+/** Rounded to 2 decimals so the server and the browser draw identical numbers */
+const r2 = (n: number) => Math.round(n * 100) / 100;
+
 function Sun({ cx, cy, r = 26 }: { cx: number; cy: number; r?: number }) {
   return (
     <g>
@@ -70,10 +73,10 @@ function Sun({ cx, cy, r = 26 }: { cx: number; cy: number; r?: number }) {
         return (
           <line
             key={i}
-            x1={cx + Math.cos(a) * (r + 7)}
-            y1={cy + Math.sin(a) * (r + 7)}
-            x2={cx + Math.cos(a) * (r + (long ? 20 : 14))}
-            y2={cy + Math.sin(a) * (r + (long ? 20 : 14))}
+            x1={r2(cx + Math.cos(a) * (r + 7))}
+            y1={r2(cy + Math.sin(a) * (r + 7))}
+            x2={r2(cx + Math.cos(a) * (r + (long ? 20 : 14)))}
+            y2={r2(cy + Math.sin(a) * (r + (long ? 20 : 14)))}
             className="stroke-ill-sun-ray"
             strokeWidth={3.5}
             strokeLinecap="round"
@@ -387,11 +390,16 @@ const DIAGRAMS: Record<DiagramId, () => ReactNode> = {
   "cycle-map": CycleMap,
 };
 
-/** The SVG itself. `alt` is read out by screen readers. */
+/** The SVG itself. `alt` is read out by screen readers. Pass an empty alt for a purely decorative copy. */
 export function Diagram({ id, alt }: { id: DiagramId; alt: string }) {
   const Scene = DIAGRAMS[id];
   return (
-    <svg viewBox="0 0 600 340" role="img" aria-label={alt} className="block h-auto w-full">
+    <svg
+      viewBox="0 0 600 340"
+      // An empty alt means the diagram is decoration (the landing page), so hide it from screen readers
+      {...(alt ? { role: "img", "aria-label": alt } : { "aria-hidden": true })}
+      className="block h-auto w-full"
+    >
       <Scene />
     </svg>
   );

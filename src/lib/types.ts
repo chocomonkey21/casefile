@@ -20,7 +20,7 @@ export type Rank = {
 
 /* ---------- Course content (mock data lives in src/data) ---------- */
 
-export type SubjectId = "science" | "maths" | "history" | "english" | "practice";
+export type SubjectId = "science" | "maths" | "history" | "geography" | "practice";
 
 export type EvidenceKind = "reading" | "video" | "diagram" | "practice";
 

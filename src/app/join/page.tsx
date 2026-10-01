@@ -17,7 +17,7 @@ export default function JoinPage() {
         </Link>
       </SimpleHeader>
       <main id="main-content" className="flex-1">
-        <div className="sheet mx-2 mb-2 mt-3 sm:mx-8 sm:mb-8 sm:mt-6 xl:mx-auto xl:max-w-[80rem]">
+        <div className="sheet mx-2 mb-2 mt-4 sm:mx-8 sm:mb-8 sm:mt-6 xl:mx-auto xl:max-w-[80rem]">
           <JoinFlow />
         </div>
       </main>

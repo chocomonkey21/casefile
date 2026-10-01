@@ -53,9 +53,9 @@ export function ClueView({ caseDef, clueIndex, lesson }: ClueViewProps) {
   if (!hydrated) {
     return (
       <div className="mx-auto max-w-3xl space-y-6 px-4 py-10 sm:px-6" aria-busy="true" aria-label={t.loading}>
-        <div className="h-10 w-1/2 animate-pulse rounded bg-manila/70" />
-        <div className="h-32 animate-pulse rounded bg-postit/60" />
-        <div className="h-64 animate-pulse rounded-2xl bg-manila/50" />
+        <div className="h-10 w-1/2 animate-pulse rounded-[2px] bg-manila/70" />
+        <div className="h-32 animate-pulse rounded-[2px] bg-postit/60" />
+        <div className="h-64 animate-pulse rounded-[3px] bg-manila/50" />
       </div>
     );
   }
@@ -75,12 +75,12 @@ export function ClueView({ caseDef, clueIndex, lesson }: ClueViewProps) {
     return (
       <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6 sm:py-12">
         {backLink}
-        <div className="rounded-2xl border-2 border-dashed border-manila-600/60 bg-manila-100 p-6 sm:p-8">
+        <div className="rounded-[3px] bg-manila-100 p-6 sm:p-8">
           <LockIcon width={32} height={32} className="text-ink-soft" />
-          <h1 className="mt-3 text-3xl">{t.lockedTitle}</h1>
+          <h1 className="mt-4 text-3xl">{t.lockedTitle}</h1>
           <p className="mt-2 text-lg text-ink-soft">{t.lockedText(clueIndex)}</p>
           {open && (
-            <div className="mt-5">
+            <div className="mt-6">
               <Button href={`/cases/${caseDef.id}/clues/${open.clue.id}`}>{t.goToClue(open.index + 1)}</Button>
             </div>
           )}
@@ -104,7 +104,7 @@ export function ClueView({ caseDef, clueIndex, lesson }: ClueViewProps) {
 
       <header>
         <p className="label text-ink-soft">{t.position(caseDef.title, clueIndex + 1, caseDef.clues.length)}</p>
-        <div className="mt-1 flex flex-wrap items-start justify-between gap-3">
+        <div className="mt-1 flex flex-wrap items-start justify-between gap-4">
           <h1 className="text-3xl leading-tight sm:text-4xl">{clue.title}</h1>
           {solved && (
             <Stamp tone="desk" size="md" rotate={-6}>
@@ -114,7 +114,7 @@ export function ClueView({ caseDef, clueIndex, lesson }: ClueViewProps) {
         </div>
         <p className="mt-2 text-lg text-ink-soft">{clue.teaser}</p>
         <p className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-ink-soft">
-          <span className="flex items-center gap-1.5">
+          <span className="flex items-center gap-2">
             <ClockIcon width={16} height={16} />
             {copy.common.aboutMin(clue.minutes)}
           </span>
@@ -128,7 +128,7 @@ export function ClueView({ caseDef, clueIndex, lesson }: ClueViewProps) {
         <>
           {/* The question for this clue, with the hint button. Hints slide out from under this note. */}
           <section aria-labelledby="question-heading" className="mt-6" id="hint-area">
-            <div className="tex-postit relative z-10 rounded-[2px] p-5 shadow-card">
+            <div className="tex-postit relative z-10 rounded-[2px] p-6 shadow-card">
               <h2 id="question-heading" className="label text-ink">
                 {t.questionLabel}
               </h2>
@@ -170,7 +170,7 @@ export function ClueView({ caseDef, clueIndex, lesson }: ClueViewProps) {
                   <li key={e.id}>
                     <a
                       href={`#${e.id}`}
-                      className="inline-flex min-h-11 items-center rounded-full border-2 border-manila-600/50 bg-manila px-4 text-sm font-semibold hover:bg-manila-400"
+                      className="inline-flex min-h-11 items-center rounded-[4px] bg-manila px-4 text-sm font-semibold hover:bg-manila-400"
                     >
                       {e.title}
                     </a>
@@ -178,7 +178,7 @@ export function ClueView({ caseDef, clueIndex, lesson }: ClueViewProps) {
                 ))}
               </ul>
             </nav>
-            <div className="mt-5 space-y-6">
+            <div className="mt-6 space-y-6">
               {clue.evidence.map((e, i) => (
                 <EvidenceSection
                   key={e.id}
@@ -203,7 +203,7 @@ export function ClueView({ caseDef, clueIndex, lesson }: ClueViewProps) {
               <NoteForm caseDef={caseDef} fixedClueId={clue.id} />
             </div>
             {clueNotes.length > 0 && (
-              <div className="mt-5">
+              <div className="mt-6">
                 <NoteCards notes={clueNotes} caseDef={caseDef} />
               </div>
             )}
@@ -211,14 +211,14 @@ export function ClueView({ caseDef, clueIndex, lesson }: ClueViewProps) {
 
           <section
             aria-labelledby="check-heading"
-            className="mt-10 rounded-2xl bg-espresso p-6 text-paper shadow-folder sm:p-8"
+            className="mt-10 rounded-[3px] bg-espresso p-6 text-paper shadow-folder sm:p-8"
           >
             <p className="label text-postit">{t.checkLabel}</p>
             <h2 id="check-heading" className="mt-1 text-2xl sm:text-3xl">
               {solved ? t.checkHeadingDone : t.checkHeading}
             </h2>
             <p className="mt-2 max-w-prose text-beige">{t.checkText(lesson.quiz.length)}</p>
-            <div className="mt-5 flex flex-wrap items-center gap-4">
+            <div className="mt-6 flex flex-wrap items-center gap-4">
               <Button href={`/cases/${caseDef.id}/interrogation/${clue.id}`} variant="highlight" size="lg">
                 {solved ? t.reviewQuestions : t.startQuestions}
               </Button>
@@ -262,19 +262,19 @@ function EvidenceBody({
 function PreviewNotice({ caseDef, evidence }: { caseDef: CaseDef; evidence: EvidenceDef[] }) {
   return (
     <section className="mt-6" aria-labelledby="preview-heading">
-      <div className="rounded-xl border-2 border-dashed border-coffee/50 bg-paper-dark p-5">
+      <div className="rounded-[3px] bg-paper-dark p-6">
         <h2 id="preview-heading" className="text-2xl">
           {t.previewTitle}
         </h2>
         <p className="mt-1 max-w-prose text-ink-soft">{t.previewText}</p>
-        <div className="mt-4 flex flex-wrap gap-3">
+        <div className="mt-4 flex flex-wrap gap-4">
           <Button href="/cases/puddle">{t.previewOpenPuddle}</Button>
           <Button href={`/cases/${caseDef.id}?tab=clues`} variant="secondary">
             {t.backToCase}
           </Button>
         </div>
       </div>
-      <ul className="mt-5 space-y-2">
+      <ul className="mt-6 space-y-2">
         {evidence.map((e) => (
           <li key={e.id}>
             <EvidenceCard evidence={e} locked lockedNote={t.comingSoon} />

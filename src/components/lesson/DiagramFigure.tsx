@@ -17,12 +17,12 @@ export function DiagramFigure({ diagramId, caption, alt, notice }: DiagramFigure
         <Diagram id={diagramId} alt={alt} />
       </div>
       <figcaption className="mt-2 text-ink-soft">{caption}</figcaption>
-      <div className="mt-4 rounded-lg bg-manila-100 p-4">
+      <div className="mt-4 rounded-[3px] bg-manila-100 p-4">
         <p className="label text-ink-soft">{copy.lesson.noticeHeading}</p>
-        <ul className="mt-2 space-y-1.5">
+        <ul className="mt-2 space-y-2">
           {notice.map((n) => (
-            <li key={n} className="flex gap-3">
-              <span aria-hidden="true" className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-evidence" />
+            <li key={n} className="flex gap-4">
+              <span aria-hidden="true" className="mt-2 h-2 w-2 shrink-0 rounded-full bg-evidence" />
               {n}
             </li>
           ))}

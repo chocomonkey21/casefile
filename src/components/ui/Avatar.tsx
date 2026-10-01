@@ -34,7 +34,7 @@ export function Avatar({ avatarId, size = 40, className = "" }: AvatarProps) {
   return (
     <span
       aria-hidden="true"
-      className={`inline-flex shrink-0 items-center justify-center rounded-full border-2 border-paper/80 ${colours} ${className}`}
+      className={`inline-flex shrink-0 items-center justify-center rounded-full   ${colours} ${className}`}
       style={{ width: size, height: size }}
     >
       {Glyph ? (

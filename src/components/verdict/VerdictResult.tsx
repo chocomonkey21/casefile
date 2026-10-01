@@ -40,13 +40,13 @@ export function VerdictResult({ caseDef, outcome, onRetry }: { caseDef: CaseDef;
       <h2 id="breakdown-heading" className="text-2xl">
         {t.breakdown}
       </h2>
-      <ul className="mt-3 space-y-2">
+      <ul className="mt-4 space-y-2">
         {caseDef.clues.map((clue, i) => {
           const r = byClue[clue.id];
           if (!r) return null;
           const perfect = r.correct === r.total;
           return (
-            <li key={clue.id} className="rounded-xl border-2 border-manila-600/40 bg-paper p-3 sm:p-4">
+            <li key={clue.id} className="rounded-[3px] bg-paper p-4 sm:p-4">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <p className="font-semibold">
                   <span className="label mr-2 text-ink-soft">{t.clueLabel(i + 1)}</span>
@@ -81,12 +81,12 @@ export function VerdictResult({ caseDef, outcome, onRetry }: { caseDef: CaseDef;
   if (!passed) {
     return (
       <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-12">
-        <div className="rounded-2xl border-2 border-manila-600/50 bg-manila p-6 shadow-folder sm:p-8" role="status">
+        <div className="rounded-[3px] bg-manila p-6 shadow-folder sm:p-8" role="status">
           <p className="label text-ink-soft">{t.label}</p>
           <h1 className="mt-1 text-4xl">{t.notPassed.title}</h1>
           <p className="mt-2 text-xl">{t.notPassed.score(correct, total, needed)}</p>
           <p className="mt-2 max-w-prose text-lg text-ink-soft">{t.notPassed.text(alreadyClosed)}</p>
-          <div className="mt-5 flex flex-wrap gap-3">
+          <div className="mt-6 flex flex-wrap gap-4">
             <Button size="lg" onClick={onRetry}>
               {t.notPassed.retry}
             </Button>
@@ -105,7 +105,7 @@ export function VerdictResult({ caseDef, outcome, onRetry }: { caseDef: CaseDef;
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-12">
       {/* The panel gives a small shake just after the stamp lands */}
       <motion.div
-        className="relative overflow-hidden rounded-2xl border-2 border-manila-600/50 bg-manila p-6 text-center shadow-folder sm:p-10"
+        className="relative overflow-hidden rounded-[3px] bg-manila p-6 text-center shadow-folder sm:p-10"
         animate={{ x: [0, -5, 5, -3, 0], y: [0, 3, -2, 1, 0] }}
         transition={{ delay: 0.32, duration: 0.35 }}
         role="status"
@@ -133,9 +133,9 @@ export function VerdictResult({ caseDef, outcome, onRetry }: { caseDef: CaseDef;
         {next ? (
           <div className="mt-4 grid items-start gap-6 sm:grid-cols-2">
             <FolderCard caseDef={next} status={caseStatus(next, state)} solved={solvedCount(next, state)} />
-            <div className="space-y-3">
+            <div className="space-y-4">
               <p className="text-lg text-ink-soft">{next.stub ? t.next.textPreview : t.next.textFull}</p>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-4">
                 <Button href={`/cases/${next.id}`} size="lg">
                   {t.next.open}
                 </Button>
@@ -146,7 +146,7 @@ export function VerdictResult({ caseDef, outcome, onRetry }: { caseDef: CaseDef;
             </div>
           </div>
         ) : (
-          <div className="mt-3 flex flex-wrap gap-3">
+          <div className="mt-4 flex flex-wrap gap-4">
             <p className="w-full max-w-prose text-lg text-ink-soft">{t.next.none}</p>
             <Button href="/desk">{t.next.toDesk}</Button>
           </div>

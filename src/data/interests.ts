@@ -8,9 +8,9 @@ export const INTERESTS: { id: string; label: string; subject: SubjectId }[] = [
   { id: "tech", label: "Technology", subject: "science" },
   { id: "puzzles", label: "Maths puzzles", subject: "maths" },
   { id: "history", label: "History", subject: "history" },
-  { id: "stories", label: "Books and stories", subject: "english" },
-  { id: "writing", label: "Writing", subject: "english" },
-  { id: "art", label: "Art and music", subject: "english" },
+  { id: "myths", label: "Myths and legends", subject: "history" },
+  { id: "maps", label: "Maps and travel", subject: "geography" },
+  { id: "planet", label: "Volcanoes and earthquakes", subject: "geography" },
   { id: "sport", label: "Sport", subject: "maths" },
 ];
 

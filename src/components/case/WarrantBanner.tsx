@@ -25,9 +25,9 @@ export function WarrantBanner({ caseId, state, solved, total }: WarrantBannerPro
     return (
       <section
         aria-labelledby="final-test-heading"
-        className="rounded-xl border-2 border-dashed border-coffee/50 bg-paper-dark p-5"
+        className="rounded-[3px] bg-paper-dark p-6"
       >
-        <div className="flex items-start gap-3">
+        <div className="flex items-start gap-4">
           <span aria-hidden="true" className="mt-1 text-coffee">
             <LockIcon width={24} height={24} />
           </span>
@@ -36,7 +36,7 @@ export function WarrantBanner({ caseId, state, solved, total }: WarrantBannerPro
               {t.lockedTitle}
             </h3>
             <p className="mt-1 text-ink-soft">{t.lockedText(remaining)}</p>
-            <div className="mt-3 max-w-md">
+            <div className="mt-4 max-w-md">
               <ProgressBar value={solved} max={total} label={t.lockedProgress} tone="coffee" />
             </div>
           </div>
@@ -49,7 +49,7 @@ export function WarrantBanner({ caseId, state, solved, total }: WarrantBannerPro
     return (
       <section
         aria-labelledby="final-test-heading"
-        className="rounded-xl border-2 border-coffee bg-espresso p-5 text-paper shadow-folder"
+        className="rounded-[3px] bg-espresso p-6 text-paper shadow-folder"
       >
         <div className="flex flex-wrap items-center gap-4">
           <div className="min-w-0 flex-1">
@@ -67,7 +67,7 @@ export function WarrantBanner({ caseId, state, solved, total }: WarrantBannerPro
   }
 
   return (
-    <section aria-labelledby="final-test-heading" className="rounded-xl border-2 border-desk/60 bg-desk-light p-5">
+    <section aria-labelledby="final-test-heading" className="rounded-[3px] bg-desk-light p-6">
       <div className="flex flex-wrap items-center gap-4">
         <div className="min-w-0 flex-1">
           <h3 id="final-test-heading" className="text-xl">

@@ -35,7 +35,7 @@ export default function StyleguidePage() {
       <header>
         <p className="label text-evidence-dark">Internal</p>
         <h1 className="mt-2 text-4xl sm:text-5xl">Style guide</h1>
-        <p className="mt-3 max-w-prose text-lg text-ink-soft">
+        <p className="mt-4 max-w-prose text-lg text-ink-soft">
           A quick place to check colours, fonts, buttons and the saved progress. Not part of the student
           experience.
         </p>
@@ -45,11 +45,11 @@ export default function StyleguidePage() {
         <h2 id="colours" className="text-3xl">
           Colours
         </h2>
-        <ul className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {SWATCHES.map((s) => (
-            <li key={s.name} className="overflow-hidden rounded-xl border-2 border-manila-600/40 bg-paper">
+            <li key={s.name} className="overflow-hidden rounded-[3px] bg-paper">
               <div className="h-20" style={{ background: PALETTE[s.token] }} aria-hidden="true" />
-              <div className="p-3">
+              <div className="p-4">
                 <p className="font-display text-lg">{s.name}</p>
                 <p className="text-sm text-ink-soft">
                   {PALETTE[s.token]} &middot; {s.use}
@@ -68,7 +68,7 @@ export default function StyleguidePage() {
           Normal text needs 4.5 or more to pass WCAG AA. Large text and interface parts need 3. Run{" "}
           <code>npm run contrast</code> to check every pair from the terminal.
         </p>
-        <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+        <ul className="mt-6 grid gap-4 sm:grid-cols-2">
           {PAIRS.map((p) => {
             const bg = resolveBackdrop(p.bg);
             const ratio = contrastRatio(PALETTE[p.fg], bg);
@@ -78,10 +78,10 @@ export default function StyleguidePage() {
             return (
               <li
                 key={p.label}
-                className="flex items-center justify-between gap-3 rounded-[3px] bg-paper-dark px-4 py-3 text-ink"
+                className="flex items-center justify-between gap-4 rounded-[3px] bg-paper-dark px-4 py-4 text-ink"
                 style={isText ? { background: bg, color: PALETTE[p.fg] } : undefined}
               >
-                <span className="flex items-center gap-3 font-medium">
+                <span className="flex items-center gap-4 font-medium">
                   {!isText && (
                     <span
                       aria-hidden="true"
@@ -104,19 +104,19 @@ export default function StyleguidePage() {
         <h2 id="type" className="text-3xl">
           Typography
         </h2>
-        <div className="mt-5 grid gap-6 md:grid-cols-2">
-          <div className="rounded-xl bg-manila p-5">
+        <div className="mt-6 grid gap-6 md:grid-cols-2">
+          <div className="rounded-[3px] bg-manila p-6">
             <p className="label text-evidence-dark">Special Elite: labels and headings</p>
             <p className="mt-2 font-display text-4xl">The Case of the Vanishing Puddle</p>
             <p className="mt-2 font-display text-xl">Case no. 017 &middot; CLUE 3 OF 5</p>
           </div>
-          <div className="rounded-xl bg-paper-dark p-5">
+          <div className="rounded-[3px] bg-paper-dark p-6">
             <p className="label text-evidence-dark">DM Sans: everything you read</p>
             <p className="mt-2 text-lg">
               The puddle did not just disappear. The sun warmed it up, and the water slipped into the air as
               a gas you cannot see. That is called evaporation.
             </p>
-            <p className="mt-3 text-sm text-ink-soft">Small text, captions and hints use this too.</p>
+            <p className="mt-4 text-sm text-ink-soft">Small text, captions and hints use this too.</p>
           </div>
         </div>
       </section>
@@ -130,17 +130,17 @@ export default function StyleguidePage() {
           printed. Swap in scanned paper there.
         </p>
         <ul className="mt-6 grid gap-6 sm:grid-cols-3">
-          <li className="tex-paper tex-worn p-5 shadow-card">
+          <li className="tex-paper tex-worn p-6 shadow-card">
             <p className="label text-ink-soft">tex-paper tex-worn</p>
             <p className="mt-2 font-display text-2xl">Loose paper</p>
             <p className="mt-2 text-ink-soft">Fine fibres and a faint handled tone.</p>
           </li>
-          <li className="tex-manila tex-worn tex-crease p-5 shadow-folder">
+          <li className="tex-manila tex-worn tex-crease p-6 shadow-folder">
             <p className="label text-ink-soft">tex-manila tex-crease</p>
             <p className="mt-2 font-display text-2xl">Folder card</p>
             <p className="mt-2 text-ink-soft">Rougher grain and short fibres.</p>
           </li>
-          <li className="tex-postit -rotate-1 p-5 shadow-card">
+          <li className="tex-postit -rotate-1 p-6 shadow-card">
             <p className="label text-ink-soft">tex-postit</p>
             <p className="mt-2 font-display text-2xl">Sticky note</p>
             <p className="mt-2 text-ink-soft">Smooth, with a glue strip at the top.</p>
@@ -166,7 +166,7 @@ export default function StyleguidePage() {
           Real-world colours for lesson diagrams only, so water reads as water. The interface never uses them, and{" "}
           <code>npm run contrast</code> fails if one leaks out.
         </p>
-        <ul className="mt-5 flex flex-wrap gap-3">
+        <ul className="mt-6 flex flex-wrap gap-4">
           {(Object.keys(PALETTE) as ColorName[])
             .filter((n) => n.startsWith("ill-"))
             .map((n) => (
@@ -183,9 +183,9 @@ export default function StyleguidePage() {
         <h2 id="diagrams" className="text-3xl">
           Lesson diagrams
         </h2>
-        <ul className="mt-5 grid gap-5 md:grid-cols-2">
+        <ul className="mt-6 grid gap-6 md:grid-cols-2">
           {DIAGRAM_IDS.map((id) => (
-            <li key={id} className="overflow-hidden rounded-xl border-2 border-manila-600/40 bg-paper">
+            <li key={id} className="overflow-hidden rounded-[3px] bg-paper">
               <Diagram id={id} alt={`Diagram: ${id}`} />
               <p className="p-2 text-sm text-ink-soft">{id}</p>
             </li>

@@ -23,22 +23,22 @@ export function ClueCard({ caseDef, clue, index, state, progress, preview = fals
   const href = `/cases/${caseDef.id}/clues/${clue.id}`;
 
   const shell = {
-    solved: "border-desk/50 bg-paper",
-    open: "border-postit-dark bg-postit-light/50 shadow-card",
-    locked: "border-dashed border-manila-600/50 bg-manila-100/60",
+    solved: " bg-paper",
+    open: " bg-postit-light/50 shadow-card",
+    locked: "  bg-manila-100/60",
   }[state];
 
   return (
-    <li className={`flex flex-col gap-3 rounded-xl border-2 p-4 sm:flex-row sm:items-center sm:gap-5 sm:p-5 ${shell}`}>
+    <li className={`flex flex-col gap-4 rounded-[3px]  p-4 sm:flex-row sm:items-center sm:gap-6 sm:p-6 ${shell}`}>
       {/* Status marker */}
       <div
         aria-hidden="true"
-        className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 ${
+        className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full  ${
           state === "solved"
-            ? "border-desk bg-desk text-paper"
+            ? " bg-desk text-paper"
             : state === "open"
-              ? "border-ink bg-postit text-ink"
-              : "border-manila-600/60 bg-manila-100 text-ink-soft"
+              ? " bg-postit text-ink"
+              : " bg-manila-100 text-ink-soft"
         }`}
       >
         {state === "solved" ? (
@@ -60,7 +60,7 @@ export function ClueCard({ caseDef, clue, index, state, progress, preview = fals
         <h3 className={`mt-0.5 text-xl ${state === "locked" ? "text-ink-soft" : ""}`}>{clue.title}</h3>
         <p className="mt-1 text-ink-soft">{clue.teaser}</p>
         <p className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-ink-soft">
-          <span className="flex items-center gap-1.5">
+          <span className="flex items-center gap-2">
             <ClockIcon width={16} height={16} />
             {copy.common.min(clue.minutes)}
           </span>
@@ -69,7 +69,7 @@ export function ClueCard({ caseDef, clue, index, state, progress, preview = fals
         </p>
       </div>
 
-      <div className="flex shrink-0 items-center gap-3 sm:flex-col sm:items-end">
+      <div className="flex shrink-0 items-center gap-4 sm:flex-col sm:items-end">
         {state === "solved" && (
           <>
             <Stamp tone="desk" size="sm" rotate={-5} slam={isRecent(progress?.solvedAt)}>

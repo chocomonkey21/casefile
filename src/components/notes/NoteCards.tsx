@@ -19,7 +19,7 @@ export function NoteCards({ notes, caseDef }: { notes: Note[]; caseDef: CaseDef 
               type="button"
               onClick={() => actions.deleteNote(n.id)}
               aria-label={copy.notes.deleteLabel(n.text.slice(0, 30))}
-              className="mt-3 flex min-h-11 items-center gap-1.5 self-end px-2 text-sm font-semibold text-evidence-dark hover:underline"
+              className="mt-4 flex min-h-11 items-center gap-2 self-end px-2 text-sm font-semibold text-evidence-dark hover:underline"
             >
               <TrashIcon width={16} height={16} />
               {copy.common.delete}

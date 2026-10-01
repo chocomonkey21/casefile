@@ -35,7 +35,7 @@ export function VerdictView({ caseDef, questions }: VerdictViewProps) {
   const [outcome, setOutcome] = useState<VerdictOutcome | null>(null);
 
   if (!hydrated) {
-    return <div className="mx-auto mt-10 h-72 max-w-3xl animate-pulse rounded-3xl bg-espresso/80" aria-busy="true" aria-label={copy.room.loading} />;
+    return <div className="mx-auto mt-10 h-72 max-w-3xl animate-pulse rounded-[3px] bg-espresso/80" aria-busy="true" aria-label={copy.room.loading} />;
   }
 
   const finalTest = warrantState(caseDef, state);
@@ -60,12 +60,12 @@ export function VerdictView({ caseDef, questions }: VerdictViewProps) {
     return (
       <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6 sm:py-12">
         {backLink}
-        <div className="rounded-2xl border-2 border-dashed border-coffee/50 bg-paper-dark p-6 sm:p-8">
+        <div className="rounded-[3px] bg-paper-dark p-6 sm:p-8">
           <LockIcon width={32} height={32} className="text-coffee" />
-          <h1 className="mt-3 text-3xl">{t.lockedTitle}</h1>
+          <h1 className="mt-4 text-3xl">{t.lockedTitle}</h1>
           <p className="mt-2 max-w-prose text-lg text-ink-soft">{t.lockedText(left)}</p>
           {open && clueState(caseDef, state, open.index) === "open" && (
-            <div className="mt-5">
+            <div className="mt-6">
               <Button href={`/cases/${caseDef.id}/clues/${open.clue.id}`}>{copy.lesson.goToClue(open.index + 1)}</Button>
             </div>
           )}
@@ -115,11 +115,11 @@ export function VerdictView({ caseDef, questions }: VerdictViewProps) {
       <div
         className="on-dark relative overflow-hidden rounded-[3px] bg-coffee p-4 shadow-folder sm:p-8"
       >
-        <header className="mb-5">
+        <header className="mb-6">
           <p className="label text-postit">{t.label}</p>
           <h1 className="mt-1 text-2xl sm:text-3xl">{caseDef.title}</h1>
           {phase === "test" && (
-            <div className="mt-3 flex items-center gap-2" aria-hidden="true">
+            <div className="mt-4 flex items-center gap-2" aria-hidden="true">
               {questions.map((q, i) => (
                 <span
                   key={q.id}
@@ -131,19 +131,19 @@ export function VerdictView({ caseDef, questions }: VerdictViewProps) {
         </header>
 
         {phase === "intro" ? (
-          <div className="rounded-2xl bg-paper p-6 text-ink sm:p-8">
+          <div className="rounded-[3px] bg-paper p-6 text-ink sm:p-8">
             <p className="label text-ink-soft">{t.finalTest}</p>
             <h2 className="mt-1 text-3xl">{t.introTitle}</h2>
             <p className="mt-2 max-w-prose text-lg">{t.introText}</p>
             <ul className="mt-4 space-y-2 text-lg">
               {[t.rules.questions(total), t.rules.noHints, t.rules.needed(needed), t.rules.retry].map((rule) => (
-                <li key={rule} className="flex gap-3">
-                  <span aria-hidden="true" className="mt-3 h-2 w-2 shrink-0 rounded-full bg-evidence" />
+                <li key={rule} className="flex gap-4">
+                  <span aria-hidden="true" className="mt-4 h-2 w-2 shrink-0 rounded-full bg-evidence" />
                   {rule}
                 </li>
               ))}
             </ul>
-            {closed && <p className="mt-4 rounded-lg bg-desk-light p-3">{t.alreadyClosed(closed.score)}</p>}
+            {closed && <p className="mt-4 rounded-[3px] bg-desk-light p-4">{t.alreadyClosed(closed.score)}</p>}
             <div className="mt-6">
               <Button size="lg" onClick={begin}>
                 {closed ? t.again : t.start}

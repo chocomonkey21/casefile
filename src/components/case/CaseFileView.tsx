@@ -74,11 +74,11 @@ export function CaseFileView({ caseDef, initialTab }: { caseDef: CaseDef; initia
           animate={{ rotateX: 0, opacity: 1, y: 0 }}
           transition={{ duration: 0.4, ease: [0.2, 0.7, 0.2, 1] }}
           style={{ transformOrigin: "top center" }}
-          className="tex-manila tex-worn rounded-2xl border-2 border-manila-600/50 p-3 shadow-folder sm:p-6"
+          className="tex-manila tex-worn rounded-[3px] p-4 shadow-folder sm:p-6"
         >
-          <header className="flex flex-wrap items-start justify-between gap-4 px-1 pb-5 sm:px-2">
+          <header className="flex flex-wrap items-start justify-between gap-4 px-1 pb-6 sm:px-2">
             <div className="min-w-0 flex-1">
-              <p className="label flex flex-wrap items-center gap-x-3 gap-y-1 text-ink-soft">
+              <p className="label flex flex-wrap items-center gap-x-4 gap-y-1 text-ink-soft">
                 <span>{t.caseNo(caseDef.number)}</span>
                 <span className="flex items-center gap-2">
                   <span aria-hidden="true" className={`h-2.5 w-2.5 rounded-full ${subject.dot}`} />
@@ -87,7 +87,7 @@ export function CaseFileView({ caseDef, initialTab }: { caseDef: CaseDef; initia
               </p>
               <h1 className="mt-1 text-3xl leading-tight sm:text-4xl">{caseDef.title}</h1>
               <div className="mt-4 max-w-md">
-                <div className="mb-1.5 flex justify-between text-sm font-medium">
+                <div className="mb-2 flex justify-between text-sm font-medium">
                   <span>{t.lessonsDone(solved, total)}</span>
                   <span className="flex items-center gap-1 text-ink-soft">
                     <ClockIcon width={14} height={14} />
@@ -104,7 +104,7 @@ export function CaseFileView({ caseDef, initialTab }: { caseDef: CaseDef; initia
 
           <Tabs tabs={tabs} value={tab} onChange={changeTab} idBase={idBase} label={t.tabsLabel} />
 
-          <div className="tex-paper relative rounded-b-xl rounded-tr-xl border-2 border-manila-600/60 p-4 sm:p-7">
+          <div className="tex-paper relative rounded-b-[3px] rounded-tr-[3px] p-4 sm:p-8">
             <Panel id={`${idBase}-panel-brief`} labelledBy={`${idBase}-tab-brief`} active={tab === "brief"}>
               <BriefTab caseDef={caseDef} onSeeClues={() => changeTab("clues")} />
             </Panel>
@@ -158,9 +158,9 @@ function BriefTab({ caseDef, onSeeClues }: { caseDef: CaseDef; onSeeClues: () =>
   const b = t.brief;
 
   return (
-    <div className="space-y-7">
+    <div className="space-y-8">
       {caseDef.stub && (
-        <p className="rounded-lg border-2 border-dashed border-coffee/40 bg-paper-dark p-3 text-ink-soft">
+        <p className="rounded-[3px] bg-paper-dark p-4 text-ink-soft">
           <strong className="text-ink">{b.previewTitle}</strong> {b.previewText}
         </p>
       )}
@@ -173,7 +173,7 @@ function BriefTab({ caseDef, onSeeClues }: { caseDef: CaseDef; onSeeClues: () =>
       </section>
 
       {/* Sticky note with the goal */}
-      <section aria-labelledby="goal-heading" className="tex-postit max-w-xl rounded-[2px] p-5 shadow-card">
+      <section aria-labelledby="goal-heading" className="tex-postit max-w-xl rounded-[2px] p-6 shadow-card">
         <h2 id="goal-heading" className="label text-ink">
           {b.goal}
         </h2>
@@ -184,10 +184,10 @@ function BriefTab({ caseDef, onSeeClues }: { caseDef: CaseDef; onSeeClues: () =>
         <h2 id="learn-heading" className="text-2xl">
           {b.learn}
         </h2>
-        <ul className="mt-3 max-w-prose space-y-2">
+        <ul className="mt-4 max-w-prose space-y-2">
           {caseDef.learn.map((item) => (
-            <li key={item} className="flex gap-3">
-              <span aria-hidden="true" className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-evidence" />
+            <li key={item} className="flex gap-4">
+              <span aria-hidden="true" className="mt-2 h-2 w-2 shrink-0 rounded-full bg-evidence" />
               <span className="text-lg">{item}</span>
             </li>
           ))}
@@ -201,7 +201,7 @@ function BriefTab({ caseDef, onSeeClues }: { caseDef: CaseDef; onSeeClues: () =>
         <p className="mt-2 max-w-prose text-lg text-ink-soft">{b.howText(caseDef.clues.length)}</p>
       </section>
 
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-wrap gap-4">
         {closed ? (
           <Button href={`/cases/${caseDef.id}/verdict`}>{b.viewResults}</Button>
         ) : next ? (
@@ -231,7 +231,7 @@ function CluesTab({ caseDef }: { caseDef: CaseDef }) {
         {t.clues.heading}
       </h2>
       <p className="mt-1 text-ink-soft">{t.clues.intro}</p>
-      <ol className="mt-4 space-y-3">
+      <ol className="mt-4 space-y-4">
         {caseDef.clues.map((clue, i) => (
           <ClueCard
             key={clue.id}
@@ -261,16 +261,16 @@ function EvidenceTab({ caseDef }: { caseDef: CaseDef }) {
         {t.evidence.heading}
       </h2>
       <p className="mt-1 text-ink-soft">{t.evidence.intro}</p>
-      <div className="mt-4 space-y-3">
+      <div className="mt-4 space-y-4">
         {caseDef.clues.map((clue, i) => {
           const locked = clueState(caseDef, state, i) === "locked";
           return (
             <details
               key={clue.id}
               open={i === current || (current === -1 && i === 0)}
-              className="group rounded-xl border-2 border-manila-600/40 bg-manila-100/60"
+              className="group rounded-[3px] bg-manila-100/60"
             >
-              <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-3 rounded-xl px-4 py-2 marker:hidden">
+              <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 rounded-[3px] px-4 py-2 marker:hidden">
                 <span>
                   <span className="label block text-ink-soft">
                     {t.clueCard.label(i + 1)}
@@ -281,7 +281,7 @@ function EvidenceTab({ caseDef }: { caseDef: CaseDef }) {
                 <span className="text-sm text-ink-soft group-open:hidden">{t.evidence.itemsShow(clue.evidence.length)}</span>
                 <span className="hidden text-sm text-ink-soft group-open:inline">{copy.common.hide}</span>
               </summary>
-              <ul className="space-y-2 px-3 pb-3">
+              <ul className="space-y-2 px-4 pb-4">
                 {clue.evidence.map((e) => (
                   <li key={e.id}>
                     <EvidenceCard

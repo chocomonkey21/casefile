@@ -36,12 +36,12 @@ export function EvidenceSection({ caseId, clueId, evidence, number, total, child
     <article
       id={evidence.id}
       aria-labelledby={`${evidence.id}-title`}
-      className="tex-paper scroll-mt-24 rounded-2xl border-2 border-manila-600/40 p-4 shadow-card sm:p-6"
+      className="tex-paper scroll-mt-24 rounded-[3px] p-4 shadow-card sm:p-6"
     >
-      <header className="flex items-start gap-3">
+      <header className="flex items-start gap-4">
         <span
           aria-hidden="true"
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border-2 border-manila-600/60 bg-manila"
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[3px] bg-manila"
         >
           <Icon width={22} height={22} />
         </span>
@@ -59,17 +59,17 @@ export function EvidenceSection({ caseId, clueId, evidence, number, total, child
         </p>
       </header>
 
-      <div className="mt-5">{children}</div>
+      <div className="mt-6">{children}</div>
 
-      <footer className="mt-6 flex flex-wrap items-center gap-3 border-t-2 border-dashed border-manila-600/40 pt-4">
+      <footer className="mt-6 flex flex-wrap items-center gap-4 pt-4">
         <button
           type="button"
           aria-pressed={isCollected}
           onClick={() => actions.toggleEvidence(key)}
-          className={`inline-flex min-h-11 items-center gap-2 rounded-lg border-2 px-4 font-semibold transition-colors ${
+          className={`inline-flex min-h-11 items-center gap-2 rounded-[3px]  px-4 font-semibold transition-colors ${
             isCollected
-              ? "border-desk bg-desk-light text-ink"
-              : "border-ink bg-postit text-ink hover:bg-postit-dark"
+              ? " bg-desk-light text-ink"
+              : " bg-postit text-ink hover:bg-postit-dark"
           }`}
         >
           {/* The pin pops when it is collected */}

@@ -35,7 +35,7 @@ export function Dialog({ open, onClose, labelledBy, children, className = "max-w
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
-      className={`tex-paper fixed m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] overflow-y-auto rounded-2xl border-2 border-manila-600/60 p-0 text-ink shadow-folder backdrop:bg-espresso/75 ${className}`}
+      className={`tex-paper fixed m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] overflow-y-auto rounded-[3px]   p-0 text-ink shadow-folder backdrop:bg-espresso/75 ${className}`}
     >
       {open && children}
     </dialog>

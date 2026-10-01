@@ -8,6 +8,7 @@ import { copy } from "@/lib/copy";
 import { caseStatus, solvedCount } from "@/lib/progress";
 import { useCaseFile, useHydrated } from "@/lib/store";
 import type { CaseStatus, SubjectId } from "@/lib/types";
+import { RedThread } from "@/components/ui/RedThread";
 
 const STATUSES: { id: CaseStatus; label: string }[] = (["open", "active", "cold", "closed"] as const).map((id) => ({
   id,
@@ -30,12 +31,13 @@ export function CasesLibrary() {
       <header>
         <p className="label text-evidence-dark">{copy.library.label}</p>
         <h1 className="mt-1 text-4xl sm:text-5xl">{copy.library.title}</h1>
+<RedThread className="mt-4" />
         <p className="mt-2 max-w-prose text-lg text-ink-soft">
           {copy.library.intro}
         </p>
       </header>
 
-      <div className="mt-6 space-y-4 rounded-xl border-2 border-manila-600/30 bg-manila-100/60 p-4">
+      <div className="mt-6 space-y-4 rounded-[3px] bg-manila-100/60 p-4">
         <FilterGroup
           label={copy.library.subject}
           value={subject}
@@ -51,7 +53,7 @@ export function CasesLibrary() {
       </div>
 
       {/* Polite live region so screen reader users hear the result count change */}
-      <p className="mt-5 text-ink-soft" role="status">
+      <p className="mt-6 text-ink-soft" role="status">
         {hydrated ? copy.library.showing(rows.length) : copy.library.loading}
       </p>
 
@@ -67,12 +69,12 @@ export function CasesLibrary() {
         </ul>
         </>
       ) : (
-        <div className="mt-6 rounded-xl border-2 border-dashed border-manila-600/50 p-8 text-center">
+        <div className="mt-6 rounded-[3px] p-8 text-center">
           <p className="font-display text-2xl">{copy.library.emptyTitle}</p>
           <p className="mt-1 text-ink-soft">{copy.library.emptyText}</p>
           <button
             type="button"
-            className="mt-4 min-h-11 rounded-lg bg-espresso px-5 font-semibold text-paper hover:bg-coffee"
+            className="mt-4 min-h-11 rounded-[3px] bg-espresso px-6 font-semibold text-paper hover:bg-coffee"
             onClick={() => {
               setSubject("all");
               setStatus("all");
@@ -106,10 +108,10 @@ function FilterGroup<T extends string>({ label, value, onChange, options }: Filt
             type="button"
             aria-pressed={on}
             onClick={() => onChange(o.id)}
-            className={`min-h-11 rounded-full border-2 px-4 text-sm font-semibold transition-colors ${
+            className={`min-h-11 rounded-[4px] px-4 text-sm font-semibold transition-colors ${
               on
-                ? "border-coffee bg-espresso text-paper"
-                : "border-manila-600/50 bg-paper text-ink hover:bg-postit-light/60"
+                ? " bg-espresso text-paper"
+                : " bg-paper text-ink hover:bg-postit-light/60"
             }`}
           >
             {o.label}

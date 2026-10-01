@@ -77,20 +77,20 @@ export function QuestionCard({ question, position, evidence, onDone, doneLabel, 
   return (
     <div>
       {/* text-ink is set here because the Interrogation Room passes light text down from its dark panel */}
-      <div className="tex-paper relative z-10 rounded-2xl border-2 border-manila-600/50 p-5 text-ink shadow-folder sm:p-7">
+      <div className="tex-paper relative z-10 rounded-[3px] p-6 text-ink shadow-folder sm:p-8">
         {position && (
           <p className="label text-ink-soft">
             {copy.question.position(position.index + 1, position.total)}
             {lineup && (
-              <span className="ml-2 rounded-full bg-evidence-light px-2 py-0.5 text-evidence-dark">{copy.question.lineupTag}</span>
+              <span className="ml-2 rounded-[4px] bg-evidence-light px-2 py-0.5 text-evidence-dark">{copy.question.lineupTag}</span>
             )}
           </p>
         )}
         <h2 className="mt-2 text-2xl leading-snug sm:text-3xl">{question.prompt}</h2>
 
-        <fieldset ref={fieldsetRef} className="mt-5" disabled={locked}>
+        <fieldset ref={fieldsetRef} className="mt-6" disabled={locked}>
           <legend className="sr-only">{lineup ? copy.question.legendLineup : copy.question.legendChoice}</legend>
-          <div className={lineup ? "grid gap-4 sm:grid-cols-2" : "space-y-3"}>
+          <div className={lineup ? "grid gap-4 sm:grid-cols-2" : "space-y-4"}>
             {question.options.map((option, i) => {
               const isTried = tried.includes(option.id);
               const isRight = locked && option.id === question.correctId;
@@ -99,16 +99,16 @@ export function QuestionCard({ question, position, evidence, onDone, doneLabel, 
               return (
                 <label
                   key={option.id}
-                  className={`relative block rounded-xl border-2 transition-colors has-[:focus-visible]:[box-shadow:0_4px_0_-1px_var(--focus),0_6px_16px_0_color-mix(in_srgb,var(--focus)_40%,transparent)] ${
-                    lineup ? "min-h-40 p-4 pt-3" : "flex items-start gap-3 p-3.5"
+                  className={`relative block rounded-[3px]  transition-colors has-[:focus-visible]:[box-shadow:0_4px_0_-1px_var(--focus),0_6px_16px_0_color-mix(in_srgb,var(--focus)_40%,transparent)] ${
+                    lineup ? "min-h-40 p-4 pt-4" : "flex items-start gap-4 p-4"
                   } ${
                     isRight
-                      ? "border-desk bg-desk-light"
+                      ? " bg-desk-light"
                       : isTried
-                        ? "border-evidence-dark/60 bg-evidence-light/60"
+                        ? " bg-evidence-light/60"
                         : isSelected
-                          ? "border-coffee bg-postit-light"
-                          : "border-manila-600/50 bg-manila-50 hover:border-coffee hover:bg-postit-light/50"
+                          ? " bg-postit-light"
+                          : " bg-manila-50  hover:bg-postit-light/50"
                   } ${disabled && !isRight ? "cursor-default" : "cursor-pointer"}`}
                   style={
                     lineup
@@ -151,14 +151,14 @@ export function QuestionCard({ question, position, evidence, onDone, doneLabel, 
                     <>
                       <span
                         aria-hidden="true"
-                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 font-display text-sm ${
+                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full  font-display text-sm ${
                           isRight
-                            ? "border-desk bg-desk text-paper"
+                            ? " bg-desk text-paper"
                             : isTried
-                              ? "border-evidence-dark bg-evidence-dark text-paper"
+                              ? " bg-evidence-dark text-paper"
                               : isSelected
-                                ? "border-coffee bg-espresso text-paper"
-                                : "border-manila-600 bg-paper"
+                                ? " bg-espresso text-paper"
+                                : " bg-paper"
                         }`}
                       >
                         {isRight ? <CheckIcon width={16} height={16} /> : isTried ? <CrossIcon width={14} height={14} /> : LETTERS[i]}
@@ -180,7 +180,7 @@ export function QuestionCard({ question, position, evidence, onDone, doneLabel, 
             <motion.div
               initial={{ opacity: 0, y: 6 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mt-5 flex gap-3 rounded-xl border-2 border-evidence-dark/60 bg-evidence-light p-4"
+              className="mt-6 flex gap-4 rounded-[3px] bg-evidence-light p-4"
             >
               <CrossIcon width={22} height={22} className="mt-0.5 shrink-0 text-evidence-dark" />
               <div>
@@ -198,7 +198,7 @@ export function QuestionCard({ question, position, evidence, onDone, doneLabel, 
             <motion.div
               initial={{ opacity: 0, y: 6 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mt-5 flex gap-3 rounded-xl border-2 border-desk bg-desk-light p-4"
+              className="mt-6 flex gap-4 rounded-[3px] bg-desk-light p-4"
             >
               <CheckIcon width={22} height={22} className="mt-0.5 shrink-0 text-desk-dark" />
               <div>
@@ -209,7 +209,7 @@ export function QuestionCard({ question, position, evidence, onDone, doneLabel, 
           )}
         </div>
 
-        <div className="mt-5">
+        <div className="mt-6">
           <Button size="lg" onClick={onPrimary} disabled={status === "idle" && !selected}>
             {primaryLabel}
           </Button>

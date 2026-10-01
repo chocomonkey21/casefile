@@ -219,7 +219,7 @@ export function BoardCanvas({ cards, board, highlight, onConnect }: BoardCanvasP
         ref={boardRef}
         role="region"
         aria-label={copy.board.region}
-        className="relative overflow-hidden rounded-xl border-[10px] border-manila-700 bg-manila-500/60 shadow-folder"
+        className="relative overflow-hidden rounded-[3px] bg-manila-500/60 shadow-folder"
         style={{
           height,
           // Cork board speckle
@@ -236,7 +236,7 @@ export function BoardCanvas({ cards, board, highlight, onConnect }: BoardCanvasP
         {/* Connecting banner. Fixed to the bottom of the window so it never moves the board or covers the pins. */}
         <div role="status" aria-live="polite" className="pointer-events-none fixed inset-x-3 bottom-20 z-50 mx-auto max-w-2xl lg:bottom-4">
           {connectFrom && (
-            <div className="pointer-events-auto flex flex-wrap items-center gap-3 rounded-lg bg-espresso p-3 text-paper shadow-folder">
+            <div className="pointer-events-auto flex flex-wrap items-center gap-4 rounded-[3px] bg-espresso p-4 text-paper shadow-folder">
               <p className="min-w-0 flex-1">
                 {copy.board.connecting(titleOf(connectFrom))}
               </p>
@@ -311,7 +311,7 @@ export function BoardCanvas({ cards, board, highlight, onConnect }: BoardCanvasP
             {selected && (
               <button
                 type="button"
-                className="absolute z-30 flex min-h-11 -translate-x-1/2 -translate-y-1/2 items-center gap-1.5 rounded-full border-2 border-evidence-dark bg-paper px-3 text-sm font-semibold text-evidence-dark shadow-card"
+                className="absolute z-30 flex min-h-11 -translate-x-1/2 -translate-y-1/2 items-center gap-2 rounded-[4px] bg-paper px-4 text-sm font-semibold text-evidence-dark shadow-card"
                 style={{ left: stringPath(selected.from, selected.to).mid.x, top: stringPath(selected.from, selected.to).mid.y }}
                 onClick={() => {
                   actions.removeString(selected.a, selected.b);

@@ -35,8 +35,8 @@ export function EvidenceCard({
     <>
       <span
         aria-hidden="true"
-        className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border-2 ${
-          locked ? "border-manila-600/40 bg-manila-100 text-ink-soft" : "border-manila-600/60 bg-manila text-ink"
+        className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-[3px]  ${
+          locked ? " bg-manila-100 text-ink-soft" : " bg-manila text-ink"
         }`}
       >
         {locked ? <LockIcon width={20} height={20} /> : <Icon width={22} height={22} />}
@@ -52,7 +52,7 @@ export function EvidenceCard({
           {copy.common.min(evidence.minutes)}
         </span>
         {collected && (
-          <span className="rounded-full bg-postit px-2 py-0.5 text-xs font-semibold text-ink">
+          <span className="rounded-[4px] bg-postit px-2 py-0.5 text-xs font-semibold text-ink">
             {copy.caseFile.evidence.onBoard}
           </span>
         )}
@@ -60,11 +60,11 @@ export function EvidenceCard({
     </>
   );
 
-  const shell = "flex items-center gap-3 rounded-lg border-2 p-3";
+  const shell = "flex items-center gap-4 rounded-[3px]  p-4";
 
   if (locked || !href) {
     return (
-      <div className={`${shell} border-dashed border-manila-600/40 bg-manila-100/50 text-ink-soft`}>
+      <div className={`${shell}   bg-manila-100/50 text-ink-soft`}>
         {body}
         <span className="sr-only">{lockedNote}</span>
       </div>
@@ -74,7 +74,7 @@ export function EvidenceCard({
   return (
     <Link
       href={href}
-      className={`${shell} border-manila-600/40 bg-paper transition-colors hover:border-coffee hover:bg-postit-light/40`}
+      className={`${shell}  bg-paper transition-colors  hover:bg-postit-light/40`}
     >
       {body}
     </Link>

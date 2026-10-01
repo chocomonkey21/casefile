@@ -46,7 +46,7 @@ export function ProfileMenu() {
     };
   }, [open]);
 
-  const itemClass = "block w-full rounded-md px-3 py-2.5 text-left text-base text-ink hover:bg-manila-100";
+  const itemClass = "block w-full rounded-[3px] px-4 py-2 text-left text-base text-ink hover:bg-manila-100";
 
   const logOut = () => {
     // Clear everything saved on this device, then go back to the landing page as a brand new visitor
@@ -73,9 +73,9 @@ export function ProfileMenu() {
         {open && (
           <div
             id={menuId}
-            className="tex-paper absolute right-0 top-full z-50 mt-2 w-72 rounded-xl border-2 border-manila-600/60 p-2 text-ink shadow-folder"
+            className="tex-paper absolute right-0 top-full z-50 mt-2 w-72 rounded-[3px] p-2 text-ink shadow-folder"
           >
-            <div className="border-b border-manila-600/30 px-3 pb-2 pt-1">
+            <div className="px-4 pb-2 pt-1">
               <p className="font-display text-lg">{profile ? profile.name : copy.profile.guest}</p>
               <p className="text-sm text-ink-soft">{copy.level.label(rank.name)}</p>
               <p className="text-sm text-ink-soft">{copy.level.streak(days)}</p>
@@ -108,20 +108,20 @@ export function ProfileMenu() {
                 type="button"
                 role="switch"
                 aria-checked={reduceMotion}
-                className={`${itemClass} flex items-center justify-between gap-3`}
+                className={`${itemClass} flex items-center justify-between gap-4`}
                 onClick={() => actions.setReduceMotion(!reduceMotion)}
               >
                 {copy.profile.reduceMotion}
                 <span
                   aria-hidden="true"
-                  className={`rounded-full border-2 px-2.5 text-sm font-semibold ${reduceMotion ? "border-desk bg-desk-light" : "border-manila-600/50 bg-paper"}`}
+                  className={`rounded-[4px] px-2 text-sm font-semibold ${reduceMotion ? " bg-desk-light" : " bg-paper"}`}
                 >
                   {reduceMotion ? copy.profile.on : copy.profile.off}
                 </span>
               </button>
               {profile && (
                 <>
-                  <hr className="my-1.5 border-manila-600/30" />
+                  <hr className="my-2" />
                   <button
                     type="button"
                     className={`${itemClass} font-semibold text-evidence-dark`}

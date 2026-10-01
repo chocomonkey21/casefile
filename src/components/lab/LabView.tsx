@@ -10,6 +10,7 @@ import { coldCases, coolingCases, overallStats, splitTopics, topicStats, type To
 import { copy } from "@/lib/copy";
 import { COLD_AFTER_DAYS, currentStreak, levelFor, solvedCount } from "@/lib/progress";
 import { actions, useCaseFile, useHydrated } from "@/lib/store";
+import { RedThread } from "@/components/ui/RedThread";
 
 const t = copy.lab;
 
@@ -21,8 +22,8 @@ export function LabView() {
   if (!hydrated) {
     return (
       <div className="mx-auto max-w-6xl space-y-6 px-4 py-10 sm:px-6" aria-busy="true" aria-label={t.loading}>
-        <div className="h-12 w-1/3 animate-pulse rounded bg-manila/70" />
-        <div className="h-48 animate-pulse rounded-2xl bg-espresso/80" />
+        <div className="h-12 w-1/3 animate-pulse rounded-[2px] bg-manila/70" />
+        <div className="h-48 animate-pulse rounded-[3px] bg-espresso/80" />
       </div>
     );
   }
@@ -43,26 +44,27 @@ export function LabView() {
       <header>
         <p className="label text-evidence-dark">{t.label}</p>
         <h1 className="mt-1 text-4xl sm:text-5xl">{t.title}</h1>
+<RedThread className="mt-4" />
         <p className="mt-2 max-w-prose text-lg text-ink-soft">{t.intro}</p>
       </header>
 
       {/* Level */}
-      <section aria-labelledby="level-heading" className="rounded-2xl bg-espresso p-5 text-paper shadow-folder sm:p-7">
+      <section aria-labelledby="level-heading" className="tex-paper tex-worn p-6 shadow-card sm:p-8">
         <h2 id="level-heading" className="text-2xl">
           {copy.level.label(level.rank.name)}
         </h2>
-        <p className="mt-1 text-beige">{copy.level.howItWorks}</p>
+        <p className="mt-1 text-ink-soft">{copy.level.howItWorks}</p>
         <div
-          className="mt-4 h-3 overflow-hidden rounded-full bg-coffee"
+          className="mt-4 h-2 overflow-hidden bg-manila-600/25"
           role="progressbar"
           aria-label={level.next ? level.next.name : level.rank.name}
           aria-valuemin={0}
           aria-valuemax={100}
           aria-valuenow={Math.round(level.fraction * 100)}
         >
-          <div className="h-full rounded-full bg-postit transition-[width] duration-500" style={{ width: `${Math.round(level.fraction * 100)}%` }} />
+          <div className="h-full bg-evidence transition-[width] duration-500" style={{ width: `${Math.round(level.fraction * 100)}%` }} />
         </div>
-        <p className="mt-2 text-beige">
+        <p className="mt-2 text-ink-soft">
           {level.next ? copy.level.nextLevel(level.remaining, level.next.name) : copy.level.topLevel}
         </p>
 
@@ -73,16 +75,16 @@ export function LabView() {
               <li
                 key={r.id}
                 aria-current={i === level.rankIndex ? "step" : undefined}
-                className={`rounded-lg border-2 p-3 ${
+                className={`rounded-[2px] p-4 ${
                   i === level.rankIndex
-                    ? "border-postit bg-coffee"
+                    ? " tex-postit -rotate-1 shadow-card"
                     : reached
-                      ? "border-manila-500 bg-coffee/50"
-                      : "border-dashed border-manila-500/60"
+                      ? " bg-paper-dark"
+                      : " "
                 }`}
               >
                 <p className="font-semibold">{r.name}</p>
-                <p className="text-sm text-beige">
+                <p className="text-sm text-ink-soft">
                   {i === level.rankIndex ? t.levelStatus.here : reached ? t.levelStatus.reached : t.levelStatus.ahead}
                 </p>
               </li>
@@ -96,7 +98,7 @@ export function LabView() {
         <h2 id="numbers-heading" className="text-2xl sm:text-3xl">
           {t.numbers}
         </h2>
-        <dl className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
+        <dl className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
           <Stat label={t.stats.streak} value={copy.desk.progress.streakValue(currentStreak(state.streak))} />
           <Stat label={t.stats.lessons} value={String(stats.cluesSolved)} />
           <Stat label={t.stats.closed} value={String(stats.casesClosed)} />
@@ -112,7 +114,7 @@ export function LabView() {
           {t.topics.heading}
         </h2>
         {strong.length + weak.length === 0 ? (
-          <div className="mt-4 rounded-xl border-2 border-dashed border-manila-600/50 p-6">
+          <div className="mt-4 rounded-[3px] p-6">
             <p className="font-display text-2xl">{t.topics.emptyTitle}</p>
             <p className="mt-1 max-w-prose text-ink-soft">{t.topics.emptyText}</p>
             <div className="mt-4">
@@ -140,13 +142,13 @@ export function LabView() {
         ) : (
           <ul className="mt-4 grid gap-4 md:grid-cols-2">
             {cold.map(({ caseDef, days }) => (
-              <li key={caseDef.id} className="dusty relative rounded-xl border-2 border-dashed border-coffee/60 bg-manila-100 p-5">
-                <div className="flex items-start justify-between gap-3">
+              <li key={caseDef.id} className="dusty relative rounded-[3px] bg-manila-100 p-6">
+                <div className="flex items-start justify-between gap-4">
                   <h3 className="text-xl leading-snug">{copy.desk.revise.line(caseDef.topic, days)}</h3>
                   <StatusStamp status="cold" />
                 </div>
                 <p className="mt-2 text-ink-soft">{copy.desk.revise.detail(solvedCount(caseDef, state), caseDef.clues.length)}</p>
-                <div className="mt-3 flex flex-wrap gap-3">
+                <div className="mt-4 flex flex-wrap gap-4">
                   <Button href={`/cases/${caseDef.id}/interrogation/refresh`}>{copy.desk.revise.start}</Button>
                   <Button href={`/cases/${caseDef.id}`} variant="ghost">
                     {copy.desk.revise.openCase}
@@ -155,9 +157,9 @@ export function LabView() {
               </li>
             ))}
             {cooling.map(({ caseDef, days, daysLeft }) => (
-              <li key={caseDef.id} className="rounded-xl border-2 border-manila-600/40 bg-paper p-5">
+              <li key={caseDef.id} className="rounded-[3px] bg-paper p-6">
                 <h3 className="text-xl leading-snug">{t.revise.cooling(caseDef.topic, days, daysLeft)}</h3>
-                <div className="mt-3">
+                <div className="mt-4">
                   <Button href={`/cases/${caseDef.id}`} variant="secondary">
                     {copy.desk.revise.openCase}
                   </Button>
@@ -169,15 +171,15 @@ export function LabView() {
       </section>
 
       {/* Demo controls: this is how you check the review flow without waiting a week */}
-      <details className="rounded-xl border-2 border-dashed border-coffee/40 p-4">
+      <details className="rounded-[3px] p-4">
         <summary className="min-h-11 cursor-pointer py-2 font-semibold text-coffee">{t.demo.summary}</summary>
         <p className="mt-2 max-w-prose text-sm text-ink-soft">{t.demo.text}</p>
         {started.length === 0 ? (
-          <p className="mt-3">{t.demo.none}</p>
+          <p className="mt-4">{t.demo.none}</p>
         ) : (
-          <ul className="mt-3 space-y-2">
+          <ul className="mt-4 space-y-2">
             {started.map((c) => (
-              <li key={c.id} className="flex flex-col items-start gap-2 rounded-lg bg-manila-100/70 p-3">
+              <li key={c.id} className="flex flex-col items-start gap-2 rounded-[3px] bg-manila-100/70 p-4">
                 <span className="font-medium">{c.title}</span>
                 <span className="flex flex-wrap gap-2">
                   <Button variant="secondary" onClick={() => actions.setCaseActivity(c.id, new Date(Date.now() - 9 * 86400000).toISOString())}>
@@ -201,7 +203,7 @@ export function LabView() {
 
 function Stat({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-xl border-2 border-manila-600/40 bg-paper p-4">
+    <div className="rounded-[3px] bg-paper p-4">
       <dd className="font-display text-2xl sm:text-3xl">{value}</dd>
       <dt className="text-sm text-ink-soft">{label}</dt>
     </div>
@@ -220,14 +222,14 @@ function TopicColumn({
   tone: "desk" | "postit";
 }) {
   return (
-    <div className="rounded-2xl border-2 border-manila-600/40 bg-manila-100/60 p-4 sm:p-5">
+    <div className="rounded-[3px] bg-manila-100/60 p-4 sm:p-6">
       <h3 className="text-xl">{title}</h3>
       {topics.length === 0 ? (
         <p className="mt-2 text-ink-soft">{empty}</p>
       ) : (
-        <ul className="mt-3 space-y-3">
+        <ul className="mt-4 space-y-4">
           {topics.map((tp) => (
-            <li key={`${tp.caseId}:${tp.clueId}`} className="rounded-lg bg-paper p-3">
+            <li key={`${tp.caseId}:${tp.clueId}`} className="rounded-[3px] bg-paper p-4">
               <p className="font-semibold">{tp.clueTitle}</p>
               <p className="text-sm text-ink-soft">
                 {tp.caseTopic} · {t.topics.result(tp.correct, tp.total, Math.round(tp.fraction * 100))}

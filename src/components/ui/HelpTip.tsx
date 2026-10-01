@@ -60,7 +60,7 @@ export function HelpTip({ label, text }: HelpTipProps) {
       >
         <span
           aria-hidden="true"
-          className="flex h-7 w-7 items-center justify-center rounded-full border-2 border-current font-display text-base leading-none"
+          className="flex h-7 w-7 items-center justify-center rounded-full font-display text-base leading-none"
         >
           ?
         </span>
@@ -69,7 +69,7 @@ export function HelpTip({ label, text }: HelpTipProps) {
       <span
         id={id}
         role="tooltip"
-        className={`${visible ? "block" : "hidden"} absolute left-0 top-full z-50 mt-1 w-72 max-w-[calc(100vw-2rem)] rounded-lg border-2 border-manila-600 bg-paper p-3 text-left font-sans text-sm font-normal normal-case leading-snug tracking-normal text-ink shadow-folder`}
+        className={`${visible ? "block" : "hidden"} absolute left-0 top-full z-50 mt-1 w-72 max-w-[calc(100vw-2rem)] rounded-[3px]   bg-paper p-4 text-left font-sans text-sm font-normal normal-case leading-snug tracking-normal text-ink shadow-folder`}
       >
         {text}
       </span>

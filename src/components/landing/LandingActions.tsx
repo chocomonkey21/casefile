@@ -13,13 +13,13 @@ const t = copy.landing;
 export function HeroActions() {
   const { profile } = useCaseFile();
   return (
-    <div className="flex flex-wrap gap-3">
+    <div className="flex flex-wrap gap-4">
       {profile ? (
-        <Button href="/desk" size="lg" variant="highlight">
+        <Button href="/desk" size="lg">
           {t.ctaDesk}
         </Button>
       ) : (
-        <Button href="/join" size="lg" variant="highlight">
+        <Button href="/join" size="lg">
           {t.cta}
         </Button>
       )}
@@ -46,11 +46,11 @@ export function HeaderAction() {
 export function FinalAction() {
   const { profile } = useCaseFile();
   return profile ? (
-    <Button href="/desk" size="lg" variant="highlight">
+    <Button href="/desk" size="lg">
       {t.finalCtaDesk}
     </Button>
   ) : (
-    <Button href="/join" size="lg" variant="highlight">
+    <Button href="/join" size="lg">
       {t.finalCta}
     </Button>
   );

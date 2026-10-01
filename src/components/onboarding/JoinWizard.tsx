@@ -17,6 +17,8 @@ import { caseStatus, solvedCount } from "@/lib/progress";
 import { actions, useCaseFile } from "@/lib/store";
 import type { AvatarId, Grade } from "@/lib/types";
 import { HowItWorks } from "./HowItWorks";
+import { RedThread } from "@/components/ui/RedThread";
+import { StepStamp } from "@/components/ui/StepStamp";
 
 const PRACTICE_CASE_ID = "sock";
 const t = copy.onboarding;
@@ -95,22 +97,17 @@ export function JoinWizard() {
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-12">
       <p className="label text-evidence-dark">{t.eyebrow}</p>
       <h1 className="mt-1 text-4xl sm:text-5xl">{t.title}</h1>
+<RedThread className="mt-4" />
 
       {/* Progress */}
-      <ol className="mt-6 flex items-center gap-2" aria-label={t.stepsLabel}>
+      <ol className="mt-8 flex items-center gap-2" aria-label={t.stepsLabel}>
         {t.steps.map((label, i) => {
           const done = i < step;
           const current = i === step;
           return (
             <li key={label} aria-current={current ? "step" : undefined} className="flex flex-1 items-center gap-2 last:flex-none">
-              <span
-                className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-2 font-display ${
-                  done ? "border-desk bg-desk text-paper" : current ? "border-coffee bg-espresso text-paper" : "border-manila-600/50 bg-paper text-ink-soft"
-                }`}
-              >
-                {done ? <CheckIcon width={18} height={18} /> : i + 1}
-                <span className="sr-only">{done ? ` ${t.done}` : ""}</span>
-              </span>
+              <StepStamp index={i} state={done ? "done" : current ? "current" : "todo"} />
+              {done && <span className="sr-only">{t.done}</span>}
               <span className={`hidden text-sm font-semibold lg:block ${current ? "text-ink" : "text-ink-soft"}`}>{label}</span>
               {i < t.steps.length - 1 && <span aria-hidden="true" className="h-0.5 min-w-3 flex-1 bg-manila-600/30" />}
             </li>
@@ -118,7 +115,7 @@ export function JoinWizard() {
         })}
       </ol>
 
-      <div className="mt-6 overflow-hidden rounded-2xl border-2 border-manila-600/50 bg-manila-50 p-5 shadow-folder sm:p-8">
+      <div className="mt-6 overflow-hidden rounded-[3px] bg-manila-50 p-6 shadow-folder sm:p-8">
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={step}
@@ -134,7 +131,7 @@ export function JoinWizard() {
                   {t.about.heading}
                 </h2>
 
-                <div className="mt-5">
+                <div className="mt-6">
                   <label htmlFor={nameId} className="text-lg font-semibold">
                     {t.about.nameLabel}
                   </label>
@@ -151,7 +148,7 @@ export function JoinWizard() {
                     onKeyDown={(e) => e.key === "Enter" && goNext()}
                     aria-describedby={`${nameId}-help`}
                     aria-invalid={error ? true : undefined}
-                    className="mt-1 block min-h-12 w-full max-w-sm rounded-lg border-2 border-manila-600/60 bg-paper px-4 text-lg"
+                    className="field mt-1 block min-h-12 w-full max-w-sm px-4 text-lg"
                     placeholder={t.about.namePlaceholder}
                   />
                   <p id={`${nameId}-help`} className="mt-1 text-sm text-ink-soft">
@@ -166,14 +163,14 @@ export function JoinWizard() {
 
                 <fieldset className="mt-6">
                   <legend className="text-lg font-semibold">{t.about.avatarLegend}</legend>
-                  <div className="mt-2 grid grid-cols-3 gap-3 sm:grid-cols-6">
+                  <div className="mt-2 grid grid-cols-3 gap-4 sm:grid-cols-6">
                     {AVATARS.map((a) => {
                       const on = a.id === avatarId;
                       return (
                         <label
                           key={a.id}
-                          className={`flex cursor-pointer flex-col items-center gap-1.5 rounded-xl border-2 p-2 text-center text-sm has-[:focus-visible]:outline has-[:focus-visible]:outline-[3px] has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-coffee ${
-                            on ? "border-coffee bg-postit-light" : "border-manila-600/40 bg-paper hover:border-coffee"
+                          className={`flex cursor-pointer flex-col items-center gap-2 rounded-[3px]  p-2 text-center text-sm -[3px] -coffee ${
+                            on ? " bg-postit-light" : " bg-paper "
                           }`}
                         >
                           <input
@@ -193,7 +190,7 @@ export function JoinWizard() {
                 </fieldset>
 
                 {/* Live preview of the profile */}
-                <div className="mt-6 flex items-center gap-4 rounded-xl border-2 border-dashed border-manila-600/60 bg-paper p-4">
+                <div className="mt-6 flex items-center gap-4 rounded-[3px] bg-paper p-4">
                   <Avatar avatarId={avatarId} size={56} />
                   <div>
                     <p className="label text-ink-soft">{t.about.previewLabel}</p>
@@ -210,16 +207,16 @@ export function JoinWizard() {
                   {t.interests.heading}
                 </h2>
                 <p className="mt-2 text-lg text-ink-soft">{t.interests.text}</p>
-                <fieldset className="mt-5">
+                <fieldset className="mt-6">
                   <legend className="sr-only">{t.interests.legend}</legend>
-                  <div className="flex flex-wrap gap-2.5">
+                  <div className="flex flex-wrap gap-2">
                     {INTERESTS.map((i) => {
                       const on = interests.includes(i.id);
                       return (
                         <label
                           key={i.id}
-                          className={`flex min-h-11 cursor-pointer items-center gap-2 rounded-full border-2 px-4 font-semibold has-[:focus-visible]:outline has-[:focus-visible]:outline-[3px] has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-coffee ${
-                            on ? "border-coffee bg-espresso text-paper" : "border-manila-600/50 bg-paper hover:border-coffee"
+                          className={`flex min-h-11 cursor-pointer items-center gap-2 rounded-[4px] px-4 font-semibold -[3px] -coffee ${
+                            on ? " bg-espresso text-paper" : " bg-paper "
                           }`}
                         >
                           <input type="checkbox" checked={on} onChange={() => toggleInterest(i.id)} className="sr-only" />
@@ -242,16 +239,16 @@ export function JoinWizard() {
                   {t.grade.heading}
                 </h2>
                 <p className="mt-2 text-lg text-ink-soft">{t.grade.text}</p>
-                <fieldset className="mt-5">
+                <fieldset className="mt-6">
                   <legend className="sr-only">{t.grade.legend}</legend>
-                  <div className="grid grid-cols-5 gap-2 sm:gap-3">
+                  <div className="grid grid-cols-5 gap-2 sm:gap-4">
                     {GRADES.map((g) => {
                       const on = grade === g;
                       return (
                         <label
                           key={g}
-                          className={`flex min-h-20 cursor-pointer flex-col items-center justify-center rounded-xl border-2 text-center has-[:focus-visible]:outline has-[:focus-visible]:outline-[3px] has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-coffee ${
-                            on ? "border-coffee bg-postit" : "border-manila-600/50 bg-paper hover:border-coffee"
+                          className={`flex min-h-20 cursor-pointer flex-col items-center justify-center rounded-[3px]  text-center -[3px] -coffee ${
+                            on ? " bg-postit" : " bg-paper "
                           }`}
                         >
                           <input
@@ -273,7 +270,7 @@ export function JoinWizard() {
                   </div>
                 </fieldset>
                 {error && (
-                  <p role="alert" className="mt-3 font-semibold text-evidence-dark">
+                  <p role="alert" className="mt-4 font-semibold text-evidence-dark">
                     {error}
                   </p>
                 )}
@@ -297,9 +294,9 @@ export function JoinWizard() {
                 <div className="mt-8">
                   <h3 className="text-2xl">{t.first.caseHeading}</h3>
                   <p className="mt-1 max-w-prose text-lg text-ink-soft">{t.first.caseText}</p>
-                  <div className="mt-5 grid items-start gap-6 sm:grid-cols-2">
+                  <div className="mt-6 grid items-start gap-6 sm:grid-cols-2">
                     <FolderCard caseDef={practice} status={caseStatus(practice, state)} solved={solvedCount(practice, state)} />
-                    <div className="space-y-3">
+                    <div className="space-y-4">
                       <Button href={`/cases/${practice.id}`} size="lg" variant="highlight">
                         {t.first.start}
                       </Button>
@@ -317,7 +314,7 @@ export function JoinWizard() {
         </AnimatePresence>
 
         {step < 3 && (
-          <div className="mt-8 flex flex-wrap items-center justify-between gap-3 border-t-2 border-dashed border-manila-600/40 pt-5">
+          <div className="mt-8 flex flex-wrap items-center justify-between gap-4 pt-6">
             {step === 0 ? (
               <Button href="/" variant="ghost">
                 {t.backHome}

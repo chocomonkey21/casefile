@@ -50,15 +50,15 @@ export function Tabs({ tabs, value, onChange, idBase, label }: TabsProps) {
             tabIndex={selected ? 0 : -1}
             onClick={() => onChange(tab.id)}
             onKeyDown={(e) => onKeyDown(e, i)}
-            className={`relative min-h-11 shrink-0 rounded-t-xl border-2 border-b-0 px-2.5 font-display text-sm uppercase tracking-wide transition-colors sm:px-6 sm:text-base sm:tracking-wider ${
+            className={`relative min-h-11 shrink-0 rounded-t-[3px]   px-2 font-display text-sm uppercase tracking-wide transition-colors sm:px-6 sm:text-base sm:tracking-wider ${
               selected
-                ? "z-10 border-manila-600/60 bg-manila-50 text-ink"
-                : "border-manila-600/30 bg-manila-400 text-ink hover:bg-manila-500/60"
+                ? "z-10  bg-manila-50 text-ink"
+                : " bg-manila-400 text-ink hover:bg-manila-500/60"
             }`}
           >
             {tab.label}
             {tab.count !== undefined && (
-              <span className="ml-1.5 hidden rounded-full bg-ink/10 px-2 py-0.5 font-sans text-xs font-semibold tracking-normal sm:inline">
+              <span className="ml-2 hidden rounded-[4px] bg-ink/10 px-2 py-0.5 font-sans text-xs font-semibold tracking-normal sm:inline">
                 {tab.count}
               </span>
             )}

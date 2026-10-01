@@ -22,7 +22,7 @@ export function StyleguideDemo() {
         <h2 id="buttons" className="text-3xl">
           Buttons
         </h2>
-        <div className="mt-5 flex flex-wrap gap-3">
+        <div className="mt-6 flex flex-wrap gap-4">
           <Button>Start</Button>
           <Button variant="secondary">Continue</Button>
           <Button variant="highlight">Collect evidence</Button>
@@ -37,12 +37,12 @@ export function StyleguideDemo() {
         <h2 id="badges" className="text-3xl">
           Levels and avatars
         </h2>
-        <ul className="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-ink-soft">
+        <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-1 text-ink-soft">
           {RANKS.map((r) => (
             <li key={r.id}>{copy.level.label(r.name)}</li>
           ))}
         </ul>
-        <ul className="mt-5 flex flex-wrap gap-3">
+        <ul className="mt-6 flex flex-wrap gap-4">
           {AVATARS.map((a) => (
             <li key={a.id} className="flex flex-col items-center gap-1 text-sm text-ink-soft">
               <Avatar avatarId={a.id} size={56} />
@@ -52,7 +52,7 @@ export function StyleguideDemo() {
         </ul>
       </section>
 
-      <section aria-labelledby="state" className="rounded-2xl bg-espresso p-6 text-paper">
+      <section aria-labelledby="state" className="rounded-[3px] bg-espresso p-6 text-paper">
         <h2 id="state" className="text-3xl">
           Saved progress (demo controls)
         </h2>
@@ -76,7 +76,7 @@ export function StyleguideDemo() {
             <dd>{copy.level.streak(currentStreak(state.streak))}</dd>
           </div>
         </dl>
-        <div className="mt-5 flex flex-wrap gap-3">
+        <div className="mt-6 flex flex-wrap gap-4">
           <Button
             variant="highlight"
             onClick={() =>
@@ -99,18 +99,18 @@ export function StyleguideDemo() {
         </div>
       </section>
 
-      <section aria-labelledby="case-demo" className="rounded-2xl border-2 border-dashed border-coffee/50 p-6">
+      <section aria-labelledby="case-demo" className="rounded-[3px] p-6">
         <h2 id="case-demo" className="text-3xl">
           Case demo tools
         </h2>
         <p className="mt-2 max-w-prose text-ink-soft">
           Move the Vanishing Puddle through its states so you can check the Desk, the library and the case file.
         </p>
-        <p className="mt-3 font-medium">
+        <p className="mt-4 font-medium">
           Puddle status now: <span className="font-display">{copy.status[caseStatus(puddle, state)]}</span>,{" "}
           {copy.folder.lessonsDone(solvedCount(puddle, state), puddle.clues.length)}
         </p>
-        <div className="mt-4 flex flex-wrap gap-3">
+        <div className="mt-4 flex flex-wrap gap-4">
           <Button
             variant="primary"
             disabled={!next}

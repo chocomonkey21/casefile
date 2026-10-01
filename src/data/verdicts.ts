@@ -1,4 +1,5 @@
 import type { VerdictQuestion } from "@/lib/types";
+import { EARTH_VERDICT, EGYPT_VERDICT, FRACTIONS_VERDICT, SOLAR_VERDICT } from "./verdicts-subjects";
 
 /*
   Verdict (final test) questions. No hints here. Each question belongs to a clue, so the
@@ -173,7 +174,14 @@ const SOCK: VerdictQuestion[] = [
   },
 ];
 
-const VERDICTS: Record<string, VerdictQuestion[]> = { puddle: PUDDLE, sock: SOCK };
+const VERDICTS: Record<string, VerdictQuestion[]> = {
+  puddle: PUDDLE,
+  sock: SOCK,
+  fractions: FRACTIONS_VERDICT,
+  "solar-system": SOLAR_VERDICT,
+  "ancient-egypt": EGYPT_VERDICT,
+  "shaking-ground": EARTH_VERDICT,
+};
 
 export function getVerdict(caseId: string): VerdictQuestion[] | undefined {
   return VERDICTS[caseId];

@@ -8,6 +8,7 @@ import { TrashIcon } from "@/components/ui/Icons";
 import { CASES, getCase } from "@/data/cases";
 import { copy } from "@/lib/copy";
 import { actions, useCaseFile, useHydrated } from "@/lib/store";
+import { RedThread } from "@/components/ui/RedThread";
 
 const t = copy.notebook;
 
@@ -19,7 +20,7 @@ export function NotebookView() {
   const [formCaseId, setFormCaseId] = useState<string>("puddle");
 
   if (!hydrated) {
-    return <div className="mx-auto mt-10 h-72 max-w-4xl animate-pulse rounded-2xl bg-manila/60" aria-busy="true" aria-label={t.loading} />;
+    return <div className="mx-auto mt-10 h-72 max-w-4xl animate-pulse rounded-[3px] bg-manila/60" aria-busy="true" aria-label={t.loading} />;
   }
 
   const sorted = [...notes].sort((a, b) => b.createdAt.localeCompare(a.createdAt));
@@ -32,6 +33,7 @@ export function NotebookView() {
       <header>
         <p className="label text-evidence-dark">{t.label}</p>
         <h1 className="mt-1 text-4xl sm:text-5xl">{t.title}</h1>
+<RedThread className="mt-4" />
         <p className="mt-2 max-w-prose text-lg text-ink-soft">{t.intro}</p>
       </header>
 
@@ -49,15 +51,15 @@ export function NotebookView() {
       </div>
 
       {/* The notebook page */}
-      <div className="relative mt-5 overflow-hidden rounded-xl border-2 border-manila-600/50 bg-manila-50 shadow-folder">
+      <div className="relative mt-6 overflow-hidden rounded-[3px] bg-manila-50 shadow-folder">
         {/* Spiral binding */}
         <div
           aria-hidden="true"
-          className="absolute inset-y-0 left-0 w-8 border-r-2 border-evidence/40 bg-manila-100"
+          className="absolute inset-y-0 left-0 w-8 bg-manila-100"
           style={{ backgroundImage: "radial-gradient(circle at 50% 50%, var(--color-manila-600) 0 5px, transparent 6px)", backgroundSize: "100% 44px" }}
         />
         <div
-          className="py-5 pl-12 pr-4 sm:pl-14 sm:pr-8"
+          className="py-6 pl-12 pr-4 sm:pl-14 sm:pr-8"
           style={{ backgroundImage: "repeating-linear-gradient(transparent 0 31px, rgb(122 98 56 / 0.18) 31px 32px)" }}
         >
           {visible.length === 0 ? (
@@ -75,7 +77,7 @@ export function NotebookView() {
                   <li key={n.id}>
                     <p className="label text-ink-soft">{t.entryLabel(caseDef?.topic ?? "", clueIndex >= 0 ? clueIndex + 1 : null, when)}</p>
                     <p className="mt-1 whitespace-pre-wrap text-lg leading-8">{n.text}</p>
-                    <p className="mt-1 flex flex-wrap items-center gap-x-5">
+                    <p className="mt-1 flex flex-wrap items-center gap-x-6">
                       {caseDef && (
                         <Link
                           href={clueIndex >= 0 ? `/cases/${caseDef.id}/clues/${caseDef.clues[clueIndex].id}` : `/cases/${caseDef.id}`}
@@ -88,7 +90,7 @@ export function NotebookView() {
                         type="button"
                         onClick={() => actions.deleteNote(n.id)}
                         aria-label={copy.notes.deleteLabel(n.text.slice(0, 30))}
-                        className="inline-flex min-h-11 items-center gap-1.5 font-semibold text-evidence-dark hover:underline"
+                        className="inline-flex min-h-11 items-center gap-2 font-semibold text-evidence-dark hover:underline"
                       >
                         <TrashIcon width={16} height={16} />
                         {copy.common.delete}
@@ -103,11 +105,11 @@ export function NotebookView() {
       </div>
 
       {/* Add a note */}
-      <section aria-labelledby="add-note-heading" className="mt-10 rounded-2xl bg-manila-100/70 p-5">
+      <section aria-labelledby="add-note-heading" className="mt-10 rounded-[3px] bg-manila-100/70 p-6">
         <h2 id="add-note-heading" className="text-2xl">
           {t.addHeading}
         </h2>
-        <div className="mt-3 max-w-xl">
+        <div className="mt-4 max-w-xl">
           <label htmlFor="note-case" className="font-semibold">
             {t.whichCase}
           </label>
@@ -115,7 +117,7 @@ export function NotebookView() {
             id="note-case"
             value={formCaseId}
             onChange={(e) => setFormCaseId(e.target.value)}
-            className="mb-4 mt-1 block min-h-11 w-full rounded-lg border-2 border-manila-600/60 bg-paper px-3 text-base"
+            className="field mb-4 mt-1 block min-h-11 w-full px-4 text-base"
           >
             {CASES.map((c) => (
               <option key={c.id} value={c.id}>
@@ -145,8 +147,8 @@ function FilterChip({ label, on, onClick }: { label: string; on: boolean; onClic
       type="button"
       aria-pressed={on}
       onClick={onClick}
-      className={`min-h-11 rounded-full border-2 px-4 text-sm font-semibold transition-colors ${
-        on ? "border-coffee bg-espresso text-paper" : "border-manila-600/50 bg-paper text-ink hover:bg-postit-light/60"
+      className={`min-h-11 rounded-[4px] px-4 text-sm font-semibold transition-colors ${
+        on ? " bg-espresso text-paper" : " bg-paper text-ink hover:bg-postit-light/60"
       }`}
     >
       {label}

@@ -26,7 +26,7 @@ export function NoteForm({ caseDef, fixedClueId }: NoteFormProps) {
   };
 
   return (
-    <form onSubmit={onSubmit} className="max-w-xl space-y-3">
+    <form onSubmit={onSubmit} className="max-w-xl space-y-4">
       <div>
         <label htmlFor={`${fieldId}-text`} className="font-semibold">
           {copy.notes.newNote}
@@ -36,7 +36,7 @@ export function NoteForm({ caseDef, fixedClueId }: NoteFormProps) {
           value={text}
           onChange={(e) => setText(e.target.value)}
           rows={3}
-          className="mt-1 w-full rounded-lg border-2 border-manila-600/60 bg-paper p-3 text-base"
+          className="field mt-1 w-full p-4 text-base"
           placeholder={copy.notes.placeholder}
         />
       </div>
@@ -49,7 +49,7 @@ export function NoteForm({ caseDef, fixedClueId }: NoteFormProps) {
             id={`${fieldId}-clue`}
             value={clueId}
             onChange={(e) => setClueId(e.target.value)}
-            className="mt-1 block min-h-11 w-full rounded-lg border-2 border-manila-600/60 bg-paper px-3 text-base"
+            className="field mt-1 block min-h-11 w-full px-4 text-base"
           >
             <option value="">{copy.notes.wholeCase}</option>
             {caseDef.clues.map((c, i) => (

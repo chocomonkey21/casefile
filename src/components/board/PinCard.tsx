@@ -59,16 +59,16 @@ export function PinCard({ info, center, width, tilt, zIndex, dragging, highlight
       role="group"
       tabIndex={0}
       aria-label={copy.board.cardLabel(info.evidence.title, label, info.clueIndex + 1)}
-      className={`tex-paper tex-worn-alt absolute touch-none select-none rounded-md border-2 p-3 pt-4 text-left outline-offset-4 ${
+      className={`tex-paper tex-worn-alt absolute touch-none select-none rounded-[3px]  p-4 pt-4 text-left  ${
         dragging ? "cursor-grabbing shadow-folder" : "cursor-grab shadow-card"
       } ${
         isTarget
-          ? "border-evidence ring-4 ring-evidence/50"
+          ? "  "
           : highlighted
-            ? "border-ink ring-4 ring-postit"
+            ? "  "
             : isSource
-              ? "border-coffee ring-4 ring-coffee/40"
-              : "border-manila-600/50"
+              ? "  "
+              : ""
       }`}
       style={{ left: center.x - width / 2, top: center.y - CARD_H / 2, width, height: CARD_H, rotate: tilt, zIndex }}
       // Pin drop: the card lands on the board
@@ -85,19 +85,19 @@ export function PinCard({ info, center, width, tilt, zIndex, dragging, highlight
         className="absolute left-1/2 top-0 z-10 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 cursor-crosshair touch-none items-center justify-center rounded-full"
         {...pin}
       >
-        <span className="h-4 w-4 rounded-full border-2 border-evidence-dark bg-evidence shadow-[0_2px_0_rgb(36_25_19/0.4)]" />
+        <span className="h-4 w-4 rounded-full bg-evidence shadow-[0_2px_0_rgb(36_25_19/0.4)]" />
       </button>
 
       <div className="flex items-center gap-2">
         <span
           aria-hidden="true"
-          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border-2 border-manila-600/60 bg-manila"
+          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[3px] bg-manila"
         >
           <Icon width={18} height={18} />
         </span>
         <span className="label text-ink-soft">{label}</span>
       </div>
-      <p className="mt-1.5 line-clamp-3 text-sm font-semibold leading-snug">{info.evidence.title}</p>
+      <p className="mt-2 line-clamp-3 text-sm font-semibold leading-snug">{info.evidence.title}</p>
       <p className="absolute inset-x-3 bottom-2 flex items-center justify-between gap-2 text-xs text-ink-soft">
         <span className="truncate">
           {copy.board.cardMeta(info.clueIndex + 1, info.caseDef.number)}

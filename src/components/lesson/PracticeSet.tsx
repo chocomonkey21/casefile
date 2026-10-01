@@ -35,12 +35,12 @@ function PracticeQuestions({ questions, evidenceFor }: { questions: Question[]; 
 
   if (done) {
     return (
-      <div className="rounded-xl border-2 border-desk bg-desk-light p-5" role="status">
+      <div className="rounded-[3px] bg-desk-light p-6" role="status">
         <p className="font-display text-2xl">{copy.practice.doneTitle}</p>
         <p className="mt-1">
           {copy.practice.doneText(firstTry, questions.length)}
         </p>
-        <div className="mt-3">
+        <div className="mt-4">
           <Button
             variant="secondary"
             onClick={() => {
@@ -58,7 +58,7 @@ function PracticeQuestions({ questions, evidenceFor }: { questions: Question[]; 
 
   const q = questions[index];
   return (
-    <div className="rounded-2xl bg-manila-100/70 p-3 sm:p-4">
+    <div className="rounded-[3px] bg-manila-100/70 p-4 sm:p-4">
       <p className="label mb-2 text-ink-soft">
         {copy.practice.label(index + 1, questions.length)}
       </p>
@@ -100,17 +100,17 @@ function OrderTask({ prompt, items }: { prompt: string; items: string[] }) {
   const allRight = rightCount === items.length;
 
   return (
-    <div className="rounded-2xl bg-manila-100/70 p-4">
+    <div className="rounded-[3px] bg-manila-100/70 p-4">
       <p className="text-xl font-semibold">{prompt}</p>
-      <ol className="mt-3 space-y-2">
+      <ol className="mt-4 space-y-2">
         {list.map((item, i) => {
           const right = checked && item === items[i];
           const wrong = checked && item !== items[i];
           return (
             <li
               key={item}
-              className={`flex items-center gap-3 rounded-lg border-2 p-3 ${
-                right ? "border-desk bg-desk-light" : wrong ? "border-evidence-dark/60 bg-evidence-light/60" : "border-manila-600/40 bg-paper"
+              className={`flex items-center gap-4 rounded-[3px]  p-4 ${
+                right ? " bg-desk-light" : wrong ? " bg-evidence-light/60" : " bg-paper"
               }`}
             >
               <span aria-hidden="true" className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-espresso font-display text-paper">
@@ -125,7 +125,7 @@ function OrderTask({ prompt, items }: { prompt: string; items: string[] }) {
                   onClick={() => move(i, i - 1)}
                   disabled={i === 0}
                   aria-label={copy.practice.moveUp(item.split(":")[0])}
-                  className="flex h-11 w-11 items-center justify-center rounded-md border-2 border-manila-600/50 bg-manila hover:bg-manila-400 disabled:opacity-40"
+                  className="flex h-11 w-11 items-center justify-center rounded-[3px] bg-manila hover:bg-manila-400 disabled:opacity-40"
                 >
                   <ArrowUpIcon width={18} height={18} />
                 </button>
@@ -134,7 +134,7 @@ function OrderTask({ prompt, items }: { prompt: string; items: string[] }) {
                   onClick={() => move(i, i + 1)}
                   disabled={i === list.length - 1}
                   aria-label={copy.practice.moveDown(item.split(":")[0])}
-                  className="flex h-11 w-11 items-center justify-center rounded-md border-2 border-manila-600/50 bg-manila hover:bg-manila-400 disabled:opacity-40"
+                  className="flex h-11 w-11 items-center justify-center rounded-[3px] bg-manila hover:bg-manila-400 disabled:opacity-40"
                 >
                   <ArrowDownIcon width={18} height={18} />
                 </button>
@@ -146,7 +146,7 @@ function OrderTask({ prompt, items }: { prompt: string; items: string[] }) {
       <p className="sr-only" role="status" aria-live="polite">
         {announce}
       </p>
-      <div className="mt-4 flex flex-wrap items-center gap-3">
+      <div className="mt-4 flex flex-wrap items-center gap-4">
         <Button onClick={() => setChecked(true)}>{copy.practice.checkOrder}</Button>
         {checked && (
           <p role="status" className="font-semibold">

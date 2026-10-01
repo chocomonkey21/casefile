@@ -7,7 +7,7 @@ import { useCaseFile, useHydrated } from "@/lib/store";
 import { JoinWizard } from "./JoinWizard";
 
 function Skeleton() {
-  return <div className="mx-auto mt-10 h-96 max-w-3xl animate-pulse rounded-2xl bg-manila/60" aria-busy="true" aria-label={copy.onboarding.loading} />;
+  return <div className="mx-auto mt-10 h-96 max-w-3xl animate-pulse rounded-[3px] bg-manila/60" aria-busy="true" aria-label={copy.onboarding.loading} />;
 }
 
 /**

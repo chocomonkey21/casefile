@@ -46,7 +46,8 @@ There are no points. A student's level (Rookie to Chief) comes from lessons comp
 
 - **Interface text:** `src/lib/copy.ts`. Every button, heading, label, tooltip and message is there. Tone rules are at the top of the file.
 - **Course content:** `src/data/cases.ts` (case and lesson titles, evidence lists), `src/data/lessons/*` (readings, hints, questions),
-  `src/data/verdicts.ts` (final tests).
+  `src/data/verdicts.ts` and `src/data/verdicts-subjects.ts` (final tests). Cases: water cycle (science), fractions (maths),
+  the solar system (science), ancient Egypt (history), earthquakes and volcanoes (geography), plus the practice case.
 
 ## Project layout
 
@@ -68,6 +69,11 @@ src/
 - **Paper and ink:** textures are procedural SVG noise in `src/lib/textures.ts` (the place to swap in scanned paper).
   They are laid over the content with multiply, so type looks printed. Special Elite gets a typewriter ink filter and
   stamps get rough, patchy ink (`src/components/ui/InkFilters.tsx`). High contrast mode turns all of it off.
+- **Folders:** each case is a 3D manila folder (`FolderCard`). It tilts toward the cursor, the cover swings open and the papers
+  inside fan out to show the brief, the next lesson and a progress note. Tap once on touch screens, twice to open. Tilt, tab
+  position and brass hardware are seeded by the case id, so no two folders match.
+- **No outlines:** edges come from tone and shadow, corners are 2 to 4px, spacing is on an 8px scale, primary buttons are
+  evidence red.
 - **Contrast:** `npm run contrast` checks every colour pair flat, under the texture overlay with ink at its faintest,
   and as stamp ink. It also fails if a learning colour leaks into the interface.
 

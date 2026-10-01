@@ -36,6 +36,11 @@ export const PALETTE = {
   desk: "#3F5A47",
   "desk-dark": "#2F4837",
   "desk-light": "#D9E0CF",
+  // Old stamp-pad inks (subjects, onboarding steps)
+  "stamp-oxblood": "#7A2E26",
+  "stamp-violet": "#574474",
+  "stamp-olive": "#4D5A2B",
+  "stamp-sepia": "#6A4729",
   // Brass
   brass: "#A98652",
   "brass-dark": "#7A5C2E",
@@ -106,6 +111,12 @@ export const PAIRS: ContrastPair[] = [
   { label: "Dark red text on red tint", fg: "evidence-dark", bg: "evidence-light", min: 4.5 },
   { label: "Paper on evidence red", fg: "paper", bg: "evidence", min: 4.5 },
   { label: "Paper on dark red", fg: "paper", bg: "evidence-dark", min: 4.5 },
+  // Old stamp inks, as text on paper and manila
+  ...(["stamp-oxblood", "stamp-violet", "stamp-olive", "stamp-sepia"] as const).flatMap((ink): ContrastPair[] => [
+    { label: `${ink} on paper`, fg: ink, bg: "paper", min: 4.5 },
+    // On manila folders these inks are only used for dots and stamp rings, never small text
+    { label: `${ink} dot on manila`, fg: ink, bg: "manila", min: 3 },
+  ]),
   // Desk green (right answers, solved)
   { label: "Desk green check marks on paper", fg: "desk", bg: "paper", min: 3 },
   { label: "Dark desk green on manila", fg: "desk-dark", bg: "manila", min: 4.5 },

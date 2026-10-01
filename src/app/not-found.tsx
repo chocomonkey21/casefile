@@ -13,8 +13,8 @@ export default function NotFound() {
         {t.stamp}
       </Stamp>
       <h1 className="mt-6 text-4xl sm:text-5xl">{t.title}</h1>
-      <p className="mx-auto mt-3 max-w-prose text-lg text-ink-soft">{t.text}</p>
-      <div className="mt-6 flex flex-wrap justify-center gap-3">
+      <p className="mx-auto mt-4 max-w-prose text-lg text-ink-soft">{t.text}</p>
+      <div className="mt-6 flex flex-wrap justify-center gap-4">
         <Button href="/desk" size="lg">
           {t.toDesk}
         </Button>

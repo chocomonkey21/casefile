@@ -38,7 +38,7 @@ export function InterrogationRoom(props: InterrogationRoomProps) {
   // The review only revisits clues the student has completed. That is saved progress, so wait for it.
   if (mode === "refresh") {
     if (!hydrated) {
-      return <div className="mx-auto h-64 max-w-3xl animate-pulse rounded-3xl bg-espresso/80" aria-busy="true" aria-label={t.loading} />;
+      return <div className="mx-auto h-64 max-w-3xl animate-pulse rounded-[3px] bg-espresso/80" aria-busy="true" aria-label={t.loading} />;
     }
     const solvedIds = caseDef.clues.filter((c) => isClueSolved(state, caseDef.id, c.id)).map((c) => c.id);
     const picked = props.questions.filter((q) => solvedIds.includes(q.clueId)).slice(0, 4);
@@ -52,11 +52,11 @@ export function InterrogationRoom(props: InterrogationRoomProps) {
     const open = nextClue(caseDef, state);
     return (
       <div className="mx-auto max-w-2xl px-4 py-10 sm:px-6">
-        <div className="rounded-2xl border-2 border-dashed border-manila-600/60 bg-manila-100 p-6">
+        <div className="rounded-[3px] bg-manila-100 p-6">
           <h1 className="text-3xl">{t.lockedTitle}</h1>
           <p className="mt-2 text-lg text-ink-soft">{t.lockedText(clueIdx)}</p>
           {open && (
-            <div className="mt-5">
+            <div className="mt-6">
               <Button href={`/cases/${caseDef.id}/clues/${open.clue.id}`}>{copy.lesson.goToClue(open.index + 1)}</Button>
             </div>
           )}
@@ -112,7 +112,7 @@ function Room({ caseDef, mode, questions, clueId }: InterrogationRoomProps) {
       <div
         className="on-dark relative overflow-hidden rounded-[3px] bg-coffee p-4 shadow-folder sm:p-8"
       >
-        <header className="mb-5">
+        <header className="mb-6">
           <p className="label flex items-center text-postit">
             {t.label}
             <HelpTip label={t.helpLabel} text={t.help} />
@@ -121,7 +121,7 @@ function Room({ caseDef, mode, questions, clueId }: InterrogationRoomProps) {
             {mode === "clue" && clue ? t.clueTitle(clueIndex + 1, clue.title) : t.reviewTitle(caseDef.topic)}
           </h1>
           {!finished && (
-            <div className="mt-3 flex items-center gap-2" aria-hidden="true">
+            <div className="mt-4 flex items-center gap-2" aria-hidden="true">
               {questions.map((q, i) => (
                 <span
                   key={q.question.id}
@@ -171,8 +171,8 @@ function Results({
   const r = t.result;
 
   return (
-    <div className="tex-paper rounded-2xl p-6 text-ink sm:p-8" role="status">
-      <div className="flex flex-wrap items-center gap-5">
+    <div className="tex-paper rounded-[3px] p-6 text-ink sm:p-8" role="status">
+      <div className="flex flex-wrap items-center gap-6">
         {mode === "clue" ? (
           <Stamp tone="desk" size="lg" rotate={-7} slam>
             {copy.caseFile.clueCard.stamp}
@@ -186,7 +186,7 @@ function Results({
         </div>
       </div>
 
-      <dl className="mt-6 grid gap-3 sm:grid-cols-3">
+      <dl className="mt-6 grid gap-4 sm:grid-cols-3">
         {mode === "clue" ? (
           <>
             <Fact label={r.factQuestions} value={`${firstTry} of ${total}`} note="" />
@@ -201,7 +201,7 @@ function Results({
         )}
       </dl>
 
-      <div className="mt-7 flex flex-wrap gap-3">
+      <div className="mt-8 flex flex-wrap gap-4">
         {mode === "clue" && finalTest === "ready" ? (
           <Button href={`/cases/${caseDef.id}/verdict`} size="lg" variant="highlight">
             {r.allDoneVerdict}
@@ -224,7 +224,7 @@ function Results({
 
 function Fact({ label, value, note }: { label: string; value: string; note: string }) {
   return (
-    <div className="rounded-xl border-2 border-manila-600/40 bg-manila-50 p-4">
+    <div className="rounded-[3px] bg-manila-50 p-4">
       <dt className="label text-ink-soft">{label}</dt>
       <dd className="mt-1 font-display text-2xl">{value}</dd>
       {note && <dd className="text-sm text-ink-soft">{note}</dd>}

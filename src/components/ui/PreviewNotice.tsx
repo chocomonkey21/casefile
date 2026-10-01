@@ -11,7 +11,7 @@ export function PreviewNotice({ title, blurb, backHref }: { title: string; blurb
       <p className="label text-evidence-dark">{copy.preview.label}</p>
       <h1 className="mt-2 text-4xl sm:text-5xl">{title}</h1>
       <p className="mt-4 max-w-prose text-lg text-ink-soft">{blurb}</p>
-      <div className="mt-6 flex flex-wrap gap-3">
+      <div className="mt-6 flex flex-wrap gap-4">
         <Button href={backHref}>{copy.preview.backToCase}</Button>
         <Button href="/cases/puddle" variant="secondary">
           {copy.preview.tryPuddle}

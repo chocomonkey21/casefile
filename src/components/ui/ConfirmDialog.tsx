@@ -24,7 +24,7 @@ export function ConfirmDialog({ open, title, text, confirmLabel, cancelLabel, on
           {title}
         </h2>
         <p className="mt-2 text-lg text-ink-soft">{text}</p>
-        <div className="mt-6 flex flex-wrap justify-end gap-3">
+        <div className="mt-6 flex flex-wrap justify-end gap-4">
           <Button variant="secondary" onClick={onCancel}>
             {cancelLabel}
           </Button>
