@@ -1,0 +1,36 @@
+"use client";
+
+import { usePathname } from "next/navigation";
+import type { ReactNode } from "react";
+import { copy } from "@/lib/copy";
+import { MobileNav } from "./MobileNav";
+import { TopNav } from "./TopNav";
+
+/** Pages that carry their own header, main and footer instead of the app navigation */
+const BARE_ROUTES = ["/", "/join"];
+
+export function AppShell({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
+  const bare = BARE_ROUTES.includes(pathname);
+
+  return (
+    <>
+      <a href="#main-content" className="skip-link">
+        {copy.common.skipLink}
+      </a>
+      {bare ? (
+        // Bare pages render their own <header>, <main id="main-content"> and <footer>
+        children
+      ) : (
+        <>
+          <TopNav />
+          {/* pb-20 leaves room for the fixed bottom bar on small screens */}
+          <main id="main-content" className="flex-1 pb-20 lg:pb-0">
+            {children}
+          </main>
+          <MobileNav />
+        </>
+      )}
+    </>
+  );
+}

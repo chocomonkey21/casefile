@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+/*
+  CaseFile design tokens.
+  Everything in @theme becomes both a CSS variable (var(--color-manila)) and a
+  Tailwind utility (bg-manila, text-ink, border-navy ...).
+*/
+@theme {
+  /* Manila: folders, cards */
+  --color-manila-50: #f7f0df;
+  --color-manila-100: #f1e7cc;
+  --color-manila: #e8d9b5;
+  --color-manila-400: #d8c390;
+  --color-manila-500: #c2a86c;
+  --color-manila-600: #8f7739; /* folder edges, dividers */
+  --color-manila-700: #6a5726;
+
+  /* Paper cream: page background */
+  --color-paper: #faf5e9;
+  --color-paper-dark: #f0e8d2;
+
+  /* Ink: text */
+  --color-ink: #1f1b16;
+  --color-ink-soft: #453e33; /* secondary text */
+  --color-ink-mute: #6a6050; /* captions, still passes AA on paper */
+
+  /* Evidence red: string, stamps, alerts */
+  --color-evidence: #c8372d;
+  --color-evidence-dark: #a32b22; /* red text on manila */
+  --color-evidence-light: #f5d9d4;
+
+  /* Highlighter yellow: hints, active states. Use as a fill behind ink, not as text. */
+  --color-highlighter: #f6d743;
+  --color-highlighter-light: #fbeb9c;
+  --color-highlighter-dark: #d9b91f;
+
+  /* Desk navy: nav bar, contrast sections */
+  --color-navy-50: #e6ebf2;
+  --color-navy-100: #cdd6e3;
+  --color-navy-300: #7f93b0;
+  --color-navy-light: #34496a;
+  --color-navy: #22324a;
+  --color-navy-dark: #16223a;
+
+  /* Sage: right answers and solved states, so success is not only red or yellow */
+  --color-sage: #2f6b4a;
+  --color-sage-light: #d8eadb;
+
+  /* Fonts. Only these two families are ever used. */
+  --font-display: var(--font-special-elite), serif;
+  --font-sans: var(--font-dm-sans), sans-serif;
+  --font-mono: var(--font-dm-sans), sans-serif;
+
+  --shadow-folder: 0 2px 0 rgb(31 27 22 / 0.08), 0 8px 18px -8px rgb(31 27 22 / 0.35);
+  --shadow-card: 0 1px 0 rgb(31 27 22 / 0.1), 0 4px 10px -4px rgb(31 27 22 / 0.3);
+}
+
+@layer base {
+  html {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    scroll-behavior: smooth;
+  }
+
+  /*
+    Paper texture: a faint fractal noise tile as an inline SVG.
+    Sits on top of the cream so the page feels like desk paper, not a flat screen.
+  */
+  body {
+    background-color: var(--color-paper);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.36 0 0 0 0 0.2 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Special Elite is for headings and labels only. Paragraphs stay in DM Sans. */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+  }
+
+  /*
+    Focus ring with two tones (yellow inside, navy outside) so it stays visible
+    on cream, manila and navy backgrounds.
+  */
+  :focus-visible {
+    outline: 3px solid var(--color-navy);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px var(--color-highlighter);
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: var(--color-highlighter);
+    color: var(--color-ink);
+  }
+}
+
+@layer components {
+  /* Hidden until keyboard focus, then jumps into view */
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -4rem;
+    z-index: 100;
+    padding: 0.6rem 1rem;
+    background: var(--color-highlighter);
+    color: var(--color-ink);
+    font-weight: 600;
+    border-radius: 0.5rem;
+    transition: top 0.15s;
+  }
+  .skip-link:focus {
+    top: 0.75rem;
+  }
+
+  /*
+    Cold case look: washed out and a bit dusty. Filter only changes colour, so text contrast
+    stays readable. The speckle layer is decorative and ignores the pointer.
+  */
+  .dusty {
+    filter: saturate(0.55) sepia(0.12);
+  }
+  .dusty::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* The filter above makes .dusty its own stacking context, so -1 puts this behind the text, above the background */
+    z-index: -1;
+    border-radius: inherit;
+    pointer-events: none;
+    background-image:
+      radial-gradient(circle at 18% 22%, rgb(250 245 233 / 0.55) 0 1.5px, transparent 2px),
+      radial-gradient(circle at 72% 64%, rgb(250 245 233 / 0.5) 0 1.2px, transparent 2px),
+      radial-gradient(circle at 44% 82%, rgb(250 245 233 / 0.5) 0 1px, transparent 2px),
+      linear-gradient(180deg, rgb(250 245 233 / 0.25), rgb(250 245 233 / 0.45));
+    background-size: 46px 46px, 61px 61px, 37px 37px, 100% 100%;
+  }
+
+  /* Small label in the typewriter face, like a tab on a folder */
+  .label {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+}
+
+/* The in-app "Reduce motion" switch puts this class on <html>. Same rules as the device setting below. */
+.reduce-motion,
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Respect people who ask for less motion. Motion library handles its own via MotionConfig. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
