@@ -52,7 +52,7 @@ export function DeskView() {
       </header>
 
       {/* Progress: plain facts, no scores */}
-      <section aria-labelledby="progress-heading" className="rounded-2xl bg-navy p-5 text-paper shadow-folder sm:p-6">
+      <section aria-labelledby="progress-heading" className="rounded-2xl bg-espresso p-5 text-paper shadow-folder sm:p-6">
         <h2 id="progress-heading" className="sr-only">
           {t.progress.heading}
         </h2>
@@ -60,16 +60,16 @@ export function DeskView() {
           <div>
             <p className="text-lg font-semibold">{copy.level.label(level.rank.name)}</p>
             <div
-              className="mt-3 h-3 overflow-hidden rounded-full bg-navy-light"
+              className="mt-3 h-3 overflow-hidden rounded-full bg-coffee"
               role="progressbar"
               aria-label={level.next ? level.next.name : level.rank.name}
               aria-valuemin={0}
               aria-valuemax={100}
               aria-valuenow={Math.round(level.fraction * 100)}
             >
-              <div className="h-full rounded-full bg-highlighter transition-[width] duration-500" style={{ width: `${Math.round(level.fraction * 100)}%` }} />
+              <div className="h-full rounded-full bg-postit transition-[width] duration-500" style={{ width: `${Math.round(level.fraction * 100)}%` }} />
             </div>
-            <p className="mt-2 text-navy-100">
+            <p className="mt-2 text-beige">
               {level.next ? copy.level.nextLevel(level.remaining, level.next.name) : copy.level.topLevel}
             </p>
           </div>
@@ -87,11 +87,11 @@ export function DeskView() {
           {t.lead.label}
         </h2>
         {lead ? (
-          <div className="relative rounded-md bg-highlighter p-6 shadow-card sm:p-8">
+          <div className="relative rounded-md bg-postit p-6 shadow-card sm:p-8">
             {/* Folded corner, like a sticky note */}
             <span
               aria-hidden="true"
-              className="absolute bottom-0 right-0 h-8 w-8 bg-gradient-to-tl from-highlighter-dark/70 to-highlighter"
+              className="absolute bottom-0 right-0 h-8 w-8 bg-gradient-to-tl from-postit-dark/70 to-postit"
               style={{ clipPath: "polygon(100% 0, 0 100%, 100% 100%)" }}
             />
             <p className="label text-ink">{t.lead.label}</p>
@@ -123,7 +123,7 @@ export function DeskView() {
             )}
           </div>
         ) : (
-          <div className="rounded-xl border-2 border-sage/50 bg-sage-light p-6">
+          <div className="rounded-xl border-2 border-desk/50 bg-desk-light p-6">
             <h3 className="text-2xl">{t.lead.allClosedHeading}</h3>
             <p className="mt-1 text-ink-soft">{t.lead.allClosedText}</p>
           </div>
@@ -143,7 +143,7 @@ export function DeskView() {
               return (
                 <li
                   key={c.id}
-                  className="dusty relative flex flex-col gap-3 rounded-xl border-2 border-dashed border-navy-light/60 bg-manila-100 p-5"
+                  className="dusty relative flex flex-col gap-3 rounded-xl border-2 border-dashed border-coffee/60 bg-manila-100 p-5"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <h3 className="text-xl leading-snug">{t.revise.line(c.topic, days)}</h3>
@@ -190,7 +190,7 @@ export function DeskView() {
             <h2 id="fresh-heading" className="text-2xl sm:text-3xl">
               {t.notStarted.heading}
             </h2>
-            <Link href="/cases" className="inline-flex min-h-11 items-center font-semibold text-navy underline underline-offset-4">
+            <Link href="/cases" className="inline-flex min-h-11 items-center font-semibold text-coffee underline underline-offset-4">
               {t.notStarted.seeAll}
             </Link>
           </div>
@@ -211,7 +211,7 @@ function Stat({ label, value }: { label: string; value: string }) {
   return (
     <div>
       <dd className="font-display text-2xl sm:text-3xl">{value}</dd>
-      <dt className="text-sm text-navy-100">{label}</dt>
+      <dt className="text-sm text-beige">{label}</dt>
     </div>
   );
 }
@@ -220,8 +220,8 @@ function DeskSkeleton() {
   return (
     <div className="mx-auto max-w-6xl space-y-8 px-4 py-10 sm:px-6" aria-busy="true" aria-label={copy.desk.loading}>
       <div className="h-12 w-2/3 animate-pulse rounded-lg bg-manila/70" />
-      <div className="h-36 animate-pulse rounded-2xl bg-navy/80" />
-      <div className="h-48 animate-pulse rounded-md bg-highlighter/60" />
+      <div className="h-36 animate-pulse rounded-2xl bg-espresso/80" />
+      <div className="h-48 animate-pulse rounded-md bg-postit/60" />
     </div>
   );
 }

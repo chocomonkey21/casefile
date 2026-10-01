@@ -65,9 +65,9 @@ export function PinCard({ info, center, width, tilt, zIndex, dragging, highlight
         isTarget
           ? "border-evidence ring-4 ring-evidence/50"
           : highlighted
-            ? "border-ink ring-4 ring-highlighter"
+            ? "border-ink ring-4 ring-postit"
             : isSource
-              ? "border-navy ring-4 ring-navy/40"
+              ? "border-coffee ring-4 ring-coffee/40"
               : "border-manila-600/50"
       }`}
       style={{ left: center.x - width / 2, top: center.y - CARD_H / 2, width, height: CARD_H, rotate: tilt, zIndex }}
@@ -85,7 +85,7 @@ export function PinCard({ info, center, width, tilt, zIndex, dragging, highlight
         className="absolute left-1/2 top-0 z-10 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 cursor-crosshair touch-none items-center justify-center rounded-full"
         {...pin}
       >
-        <span className="h-4 w-4 rounded-full border-2 border-evidence-dark bg-evidence shadow-[0_2px_0_rgb(0_0_0/0.25)]" />
+        <span className="h-4 w-4 rounded-full border-2 border-evidence-dark bg-evidence shadow-[0_2px_0_rgb(36_25_19/0.4)]" />
       </button>
 
       <div className="flex items-center gap-2">
@@ -105,7 +105,7 @@ export function PinCard({ info, center, width, tilt, zIndex, dragging, highlight
         <Link
           data-nodrag
           href={`/cases/${info.caseDef.id}/clues/${info.clue.id}#${info.evidence.id}`}
-          className="relative shrink-0 text-sm font-semibold text-navy underline underline-offset-2 after:absolute after:-inset-x-3 after:-inset-y-2 after:content-['']"
+          className="relative shrink-0 text-sm font-semibold text-coffee underline underline-offset-2 after:absolute after:-inset-x-3 after:-inset-y-2 after:content-['']"
         >
           {copy.common.open}<span className="sr-only"> {info.evidence.title}</span>
         </Link>

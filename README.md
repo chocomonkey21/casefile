@@ -13,6 +13,7 @@ npm install
 npm run dev      # http://localhost:3000
 npm run build    # production build
 npm run lint
+npm run contrast # checks every text and background colour pair in the theme against WCAG AA
 ```
 
 Start at `/` (landing), press **Get started**, and set up a profile. Onboarding ends with a short "How CaseFile works"

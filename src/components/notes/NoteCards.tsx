@@ -12,7 +12,7 @@ export function NoteCards({ notes, caseDef }: { notes: Note[]; caseDef: CaseDef 
       {notes.map((n) => {
         const clueIndex = caseDef.clues.findIndex((c) => c.id === n.clueId);
         return (
-          <li key={n.id} className="flex flex-col rounded-sm bg-highlighter-light p-4 shadow-card">
+          <li key={n.id} className="flex flex-col rounded-sm bg-postit-light p-4 shadow-card">
             <p className="label text-ink-soft">{clueIndex >= 0 ? copy.caseFile.clueCard.label(clueIndex + 1) : copy.notes.wholeCase}</p>
             <p className="mt-1 flex-1 whitespace-pre-wrap">{n.text}</p>
             <button

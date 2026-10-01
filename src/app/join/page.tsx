@@ -11,13 +11,15 @@ export default function JoinPage() {
       <SimpleHeader>
         <Link
           href="/"
-          className="inline-flex min-h-11 items-center font-semibold text-navy-100 underline underline-offset-4 hover:text-paper"
+          className="inline-flex min-h-11 items-center font-semibold text-beige underline underline-offset-4 hover:text-paper"
         >
           {copy.landing.home}
         </Link>
       </SimpleHeader>
       <main id="main-content" className="flex-1">
-        <JoinFlow />
+        <div className="sheet mx-2 mb-2 mt-3 sm:mx-8 sm:mb-8 sm:mt-6 xl:mx-auto xl:max-w-[80rem]">
+          <JoinFlow />
+        </div>
       </main>
     </>
   );

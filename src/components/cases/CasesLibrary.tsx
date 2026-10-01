@@ -72,7 +72,7 @@ export function CasesLibrary() {
           <p className="mt-1 text-ink-soft">{copy.library.emptyText}</p>
           <button
             type="button"
-            className="mt-4 min-h-11 rounded-lg bg-navy px-5 font-semibold text-paper hover:bg-navy-light"
+            className="mt-4 min-h-11 rounded-lg bg-espresso px-5 font-semibold text-paper hover:bg-coffee"
             onClick={() => {
               setSubject("all");
               setStatus("all");
@@ -108,8 +108,8 @@ function FilterGroup<T extends string>({ label, value, onChange, options }: Filt
             onClick={() => onChange(o.id)}
             className={`min-h-11 rounded-full border-2 px-4 text-sm font-semibold transition-colors ${
               on
-                ? "border-navy bg-navy text-paper"
-                : "border-manila-600/50 bg-paper text-ink hover:bg-highlighter-light/60"
+                ? "border-coffee bg-espresso text-paper"
+                : "border-manila-600/50 bg-paper text-ink hover:bg-postit-light/60"
             }`}
           >
             {o.label}

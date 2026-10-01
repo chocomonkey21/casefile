@@ -47,15 +47,15 @@ function WelcomeArt() {
       <div className="absolute inset-x-0 bottom-0 top-8 rounded-b-lg rounded-tr-lg border-2 border-manila-600/60 bg-manila" />
       <div className="absolute left-4 top-14 h-2 w-24 rounded bg-manila-600/30" />
       <div className="absolute left-4 top-[4.6rem] h-2 w-16 rounded bg-manila-600/30" />
-      <MagnifierIcon width={64} height={64} className="absolute -right-4 bottom-0 text-navy" strokeWidth={2.5} />
+      <MagnifierIcon width={64} height={64} className="absolute -right-4 bottom-0 text-coffee" strokeWidth={2.5} />
     </div>
   );
 }
 
 function CasesArt() {
   const rows = [
-    { name: M.clueNames[0], state: M.clueDone, icon: <CheckIcon width={16} height={16} />, tone: "bg-sage text-paper" },
-    { name: M.clueNames[1], state: M.clueOpen, icon: <span className="font-display text-sm">2</span>, tone: "bg-highlighter text-ink" },
+    { name: M.clueNames[0], state: M.clueDone, icon: <CheckIcon width={16} height={16} />, tone: "bg-desk text-paper" },
+    { name: M.clueNames[1], state: M.clueOpen, icon: <span className="font-display text-sm">2</span>, tone: "bg-postit text-ink" },
     { name: M.clueNames[2], state: M.clueLocked, icon: <LockIcon width={14} height={14} />, tone: "bg-manila-100 text-ink-soft" },
   ];
   return (
@@ -99,7 +99,7 @@ function EvidenceArt() {
       </div>
       <div className="flex items-center justify-center gap-3">
         {[1, 2, 3].map((n) => (
-          <span key={n} className="flex h-9 w-9 items-center justify-center rounded-sm bg-highlighter font-display shadow-card">
+          <span key={n} className="flex h-9 w-9 items-center justify-center rounded-sm bg-postit font-display shadow-card">
             {n}
           </span>
         ))}
@@ -136,13 +136,13 @@ function QuizArt() {
         <p className="text-xs font-semibold text-ink-soft">{M.quizLabel}</p>
         {[1, 2].map((n) => (
           <div key={n} className="mt-2 flex items-center gap-2">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-sage text-paper">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-desk text-paper">
               <CheckIcon width={12} height={12} />
             </span>
             <span className="h-2 flex-1 rounded bg-manila-600/30" />
           </div>
         ))}
-        <p className="mt-3 rounded bg-navy px-2 py-1 text-center text-xs font-semibold text-paper">{M.verdictLabel}</p>
+        <p className="mt-3 rounded bg-espresso px-2 py-1 text-center text-xs font-semibold text-paper">{M.verdictLabel}</p>
       </div>
       <Tile label={M.reviewLabel}>
         <ClockIcon width={26} height={26} />
@@ -199,7 +199,7 @@ export function HowItWorks({ variant, onFinish, onSkip }: HowItWorksProps) {
         </div>
 
         {last && (
-          <div className="mt-5 rounded-xl bg-highlighter-light/70 p-4">
+          <div className="mt-5 rounded-xl bg-postit-light/70 p-4">
             <p className="label text-ink">{copy.explainer.glossaryHeading}</p>
             <dl className="mt-2 flex flex-wrap gap-x-4 gap-y-1.5">
               {copy.explainer.glossary.map((g) => (
@@ -222,7 +222,7 @@ export function HowItWorks({ variant, onFinish, onSkip }: HowItWorksProps) {
           <li
             key={s.id}
             aria-current={i === index ? "step" : undefined}
-            className={`h-3 rounded-full transition-all ${i === index ? "w-8 bg-navy" : i < index ? "w-3 bg-navy/50" : "w-3 bg-manila-600/40"}`}
+            className={`h-3 rounded-full transition-all ${i === index ? "w-8 bg-espresso" : i < index ? "w-3 bg-espresso/50" : "w-3 bg-manila-600/40"}`}
           >
             <span className="sr-only">{copy.explainer.screen(i + 1, screens.length)}</span>
           </li>

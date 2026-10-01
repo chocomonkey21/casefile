@@ -35,7 +35,7 @@ export function VerdictView({ caseDef, questions }: VerdictViewProps) {
   const [outcome, setOutcome] = useState<VerdictOutcome | null>(null);
 
   if (!hydrated) {
-    return <div className="mx-auto mt-10 h-72 max-w-3xl animate-pulse rounded-3xl bg-navy/80" aria-busy="true" aria-label={copy.room.loading} />;
+    return <div className="mx-auto mt-10 h-72 max-w-3xl animate-pulse rounded-3xl bg-espresso/80" aria-busy="true" aria-label={copy.room.loading} />;
   }
 
   const finalTest = warrantState(caseDef, state);
@@ -46,7 +46,7 @@ export function VerdictView({ caseDef, questions }: VerdictViewProps) {
   const backLink = (
     <Link
       href={`/cases/${caseDef.id}?tab=clues`}
-      className="mb-4 inline-flex min-h-11 items-center gap-2 font-semibold text-navy underline-offset-4 hover:underline"
+      className="mb-4 inline-flex min-h-11 items-center gap-2 font-semibold text-coffee underline-offset-4 hover:underline"
     >
       <ArrowLeftIcon width={18} height={18} />
       {t.back}
@@ -60,8 +60,8 @@ export function VerdictView({ caseDef, questions }: VerdictViewProps) {
     return (
       <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6 sm:py-12">
         {backLink}
-        <div className="rounded-2xl border-2 border-dashed border-navy/50 bg-navy-50 p-6 sm:p-8">
-          <LockIcon width={32} height={32} className="text-navy" />
+        <div className="rounded-2xl border-2 border-dashed border-coffee/50 bg-paper-dark p-6 sm:p-8">
+          <LockIcon width={32} height={32} className="text-coffee" />
           <h1 className="mt-3 text-3xl">{t.lockedTitle}</h1>
           <p className="mt-2 max-w-prose text-lg text-ink-soft">{t.lockedText(left)}</p>
           {open && clueState(caseDef, state, open.index) === "open" && (
@@ -113,18 +113,17 @@ export function VerdictView({ caseDef, questions }: VerdictViewProps) {
       {backLink}
 
       <div
-        className="relative overflow-hidden rounded-3xl bg-navy p-4 text-paper shadow-folder sm:p-8"
-        style={{ backgroundImage: "radial-gradient(ellipse 70% 45% at 50% -8%, rgb(246 215 67 / 0.3), transparent 70%)" }}
+        className="on-dark relative overflow-hidden rounded-[3px] bg-coffee p-4 shadow-folder sm:p-8"
       >
         <header className="mb-5">
-          <p className="label text-highlighter">{t.label}</p>
+          <p className="label text-postit">{t.label}</p>
           <h1 className="mt-1 text-2xl sm:text-3xl">{caseDef.title}</h1>
           {phase === "test" && (
             <div className="mt-3 flex items-center gap-2" aria-hidden="true">
               {questions.map((q, i) => (
                 <span
                   key={q.id}
-                  className={`h-2 flex-1 rounded-full ${i < index ? "bg-highlighter" : i === index ? "bg-paper" : "bg-navy-light"}`}
+                  className={`h-2 flex-1 rounded-full ${i < index ? "bg-postit" : i === index ? "bg-paper" : "bg-coffee"}`}
                 />
               ))}
             </div>
@@ -144,7 +143,7 @@ export function VerdictView({ caseDef, questions }: VerdictViewProps) {
                 </li>
               ))}
             </ul>
-            {closed && <p className="mt-4 rounded-lg bg-sage-light p-3">{t.alreadyClosed(closed.score)}</p>}
+            {closed && <p className="mt-4 rounded-lg bg-desk-light p-3">{t.alreadyClosed(closed.score)}</p>}
             <div className="mt-6">
               <Button size="lg" onClick={begin}>
                 {closed ? t.again : t.start}

@@ -19,7 +19,7 @@ type HintSheetProps = {
   onExplain: () => void;
   /** Small supporting line. Defaults to the standard "hints are here to help" text. */
   footnote?: string;
-  /** Set when the sheet sits on a navy background, so the footnote stays readable */
+  /** Set when the sheet sits on a dark background, so the footnote stays readable */
   onDark?: boolean;
 };
 
@@ -51,7 +51,7 @@ export function HintSheet({ levels, revealed, onReveal, explanation, explained, 
               initial={{ y: -36, opacity: 0, rotate: 0 }}
               animate={{ y: 0, opacity: 1, rotate: NOTE_TILT[i] }}
               transition={{ type: "spring", stiffness: 380, damping: 28 }}
-              className="rounded-sm bg-highlighter p-4 shadow-card"
+              className="rounded-sm bg-postit p-4 shadow-card"
               style={{ transformOrigin: "top center" }}
             >
               <p className="label text-ink">
@@ -67,9 +67,9 @@ export function HintSheet({ levels, revealed, onReveal, explanation, explained, 
         <motion.div
           initial={{ y: -24, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className="mt-3 rounded-md border-2 border-navy bg-paper p-4 text-ink"
+          className="mt-3 rounded-md border-2 border-coffee bg-paper p-4 text-ink"
         >
-          <p className="label text-navy">{copy.hints.fullExplanation}</p>
+          <p className="label text-coffee">{copy.hints.fullExplanation}</p>
           <div className="mt-1 space-y-2">{explanation}</div>
         </motion.div>
       )}
@@ -84,7 +84,7 @@ export function HintSheet({ levels, revealed, onReveal, explanation, explained, 
             {copy.hints.showExplanation}
           </Button>
         ) : null}
-        <p className={`text-sm ${onDark ? "text-navy-100" : "text-ink-soft"}`}>{footnote ?? copy.hints.footnote}</p>
+        <p className={`text-sm ${onDark ? "text-beige" : "text-ink-soft"}`}>{footnote ?? copy.hints.footnote}</p>
       </div>
     </div>
   );

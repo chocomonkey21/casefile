@@ -27,7 +27,7 @@ export function DeskIllustration() {
       viewBox="0 0 600 460"
       role="img"
       aria-label={copy.landing.illustrationLabel}
-      className="h-auto w-full drop-shadow-[0_18px_24px_rgb(31_27_22_/_0.25)]"
+      className="h-auto w-full drop-shadow-[0_18px_24px_rgb(36_25_19_/_0.4)]"
     >
       {/* desk top with wood grain */}
       <rect width={600} height={460} rx={28} className="fill-manila-500" />
@@ -56,8 +56,8 @@ export function DeskIllustration() {
       {/* mug of hot chocolate */}
       <Drop delay={0.15}>
         <g>
-          <rect x={126} y={86} width={26} height={22} rx={11} className="fill-none stroke-navy" strokeWidth={6} />
-          <circle cx={86} cy={96} r={46} className="fill-paper stroke-navy" strokeWidth={5} />
+          <rect x={126} y={86} width={26} height={22} rx={11} className="fill-none stroke-coffee" strokeWidth={6} />
+          <circle cx={86} cy={96} r={46} className="fill-paper stroke-coffee" strokeWidth={5} />
           <circle cx={86} cy={96} r={35} className="fill-manila-700" />
           <circle cx={74} cy={86} r={9} className="fill-paper" fillOpacity={0.25} />
         </g>
@@ -66,9 +66,9 @@ export function DeskIllustration() {
       {/* notebook */}
       <Drop delay={0.25}>
         <g transform="rotate(-8 125 345)">
-          <rect x={40} y={252} width={170} height={190} rx={8} className="fill-navy" />
+          <rect x={40} y={252} width={170} height={190} rx={8} className="fill-coffee" />
           {Array.from({ length: 7 }, (_, i) => (
-            <circle key={i} cx={46} cy={274 + i * 26} r={5} className="fill-highlighter" />
+            <circle key={i} cx={46} cy={274 + i * 26} r={5} className="fill-postit" />
           ))}
           <rect x={72} y={288} width={116} height={64} rx={4} className="fill-paper" />
           <text x={130} y={314} textAnchor="middle" className="fill-ink font-display text-[15px]">
@@ -110,7 +110,7 @@ export function DeskIllustration() {
       {/* sticky note */}
       <Drop delay={0.45}>
         <g transform="rotate(8 505 90)">
-          <rect x={456} y={40} width={104} height={104} className="fill-highlighter" />
+          <rect x={456} y={40} width={104} height={104} className="fill-postit" />
           <text x={466} y={66} className="fill-ink font-display text-[12px]">
             WHERE DID
           </text>
@@ -127,13 +127,13 @@ export function DeskIllustration() {
         <g>
           <g transform="rotate(-5 335 380)">
             <rect x={296} y={346} width={78} height={86} rx={3} className="fill-paper stroke-manila-600" strokeWidth={2} />
-            <rect x={304} y={354} width={62} height={44} className="fill-navy-100" />
+            <rect x={304} y={354} width={62} height={44} className="fill-beige" />
             <line x1={304} y1={410} x2={362} y2={410} className="stroke-manila-600" strokeWidth={3} />
             <line x1={304} y1={420} x2={346} y2={420} className="stroke-manila-600" strokeWidth={3} />
           </g>
           <g transform="rotate(6 455 395)">
             <rect x={414} y={362} width={78} height={86} rx={3} className="fill-paper stroke-manila-600" strokeWidth={2} />
-            <rect x={422} y={370} width={62} height={44} className="fill-sage-light" />
+            <rect x={422} y={370} width={62} height={44} className="fill-desk-light" />
             <line x1={422} y1={426} x2={480} y2={426} className="stroke-manila-600" strokeWidth={3} />
             <line x1={422} y1={436} x2={464} y2={436} className="stroke-manila-600" strokeWidth={3} />
           </g>
@@ -146,7 +146,7 @@ export function DeskIllustration() {
       {/* pencil */}
       <Drop delay={0.65}>
         <g transform="rotate(-28 90 220)">
-          <rect x={14} y={212} width={150} height={16} className="fill-highlighter-dark" />
+          <rect x={14} y={212} width={150} height={16} className="fill-postit-dark" />
           <rect x={14} y={212} width={20} height={16} className="fill-evidence-light" />
           <rect x={34} y={212} width={8} height={16} className="fill-manila-400" />
           <path d="M164 212 L196 220 L164 228 Z" className="fill-manila" />
@@ -158,9 +158,9 @@ export function DeskIllustration() {
       <Drop delay={0.75}>
         <g>
           <line x1={504} y1={262} x2={566} y2={326} className="stroke-ink" strokeWidth={16} strokeLinecap="round" />
-          <line x1={504} y1={262} x2={520} y2={278} className="stroke-navy" strokeWidth={16} strokeLinecap="round" />
-          <circle cx={462} cy={216} r={56} className="fill-highlighter-light" fillOpacity={0.45} />
-          <circle cx={462} cy={216} r={56} className="fill-none stroke-navy" strokeWidth={10} />
+          <line x1={504} y1={262} x2={520} y2={278} className="stroke-coffee" strokeWidth={16} strokeLinecap="round" />
+          <circle cx={462} cy={216} r={56} className="fill-postit-light" fillOpacity={0.45} />
+          <circle cx={462} cy={216} r={56} className="fill-none stroke-coffee" strokeWidth={10} />
           <path d="M430 200 A36 36 0 0 1 456 176" className="fill-none stroke-paper" strokeWidth={6} strokeLinecap="round" strokeOpacity={0.85} />
         </g>
       </Drop>

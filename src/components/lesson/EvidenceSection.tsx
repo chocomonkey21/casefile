@@ -68,8 +68,8 @@ export function EvidenceSection({ caseId, clueId, evidence, number, total, child
           onClick={() => actions.toggleEvidence(key)}
           className={`inline-flex min-h-11 items-center gap-2 rounded-lg border-2 px-4 font-semibold transition-colors ${
             isCollected
-              ? "border-sage bg-sage-light text-ink"
-              : "border-ink bg-highlighter text-ink hover:bg-highlighter-dark"
+              ? "border-desk bg-desk-light text-ink"
+              : "border-ink bg-postit text-ink hover:bg-postit-dark"
           }`}
         >
           {/* The pin pops when it is collected */}

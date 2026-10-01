@@ -10,7 +10,7 @@ import { NAV_ITEMS, isActive } from "./nav-items";
 import { ProfileMenu } from "./ProfileMenu";
 
 /**
- * Top bar in Desk navy. On screens under 1024px the five links move to MobileNav
+ * Top bar in espresso. On screens under 1024px the five links move to MobileNav
  * (a bottom bar). Level and study streak are two quiet lines of text. On phones they live in the profile menu.
  */
 export function TopNav() {
@@ -20,11 +20,11 @@ export function TopNav() {
   const days = currentStreak(state.streak);
 
   return (
-    <header className="sticky top-0 z-40 border-b-4 border-highlighter bg-navy text-paper">
+    <header className="sticky top-0 z-40 on-dark border-b-4 border-brass bg-espresso">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-2 px-4 sm:gap-4 sm:px-6">
         <div className="flex items-center gap-8">
           <Link href="/desk" className="flex min-h-11 items-center gap-2" aria-label={copy.brand.logoLabel}>
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-highlighter text-ink">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-postit text-ink">
               <MagnifierIcon width={22} height={22} />
             </span>
             <span className="font-display text-xl tracking-wide sm:text-2xl">{copy.brand.name}</span>
@@ -39,15 +39,15 @@ export function TopNav() {
                     <Link
                       href={href}
                       aria-current={active ? "page" : undefined}
-                      className={`relative flex min-h-11 items-center rounded-md px-3.5 text-base font-medium transition-colors hover:bg-navy-light ${
-                        active ? "text-paper" : "text-navy-100"
+                      className={`relative flex min-h-11 items-center rounded-md px-3.5 text-base font-medium transition-colors hover:bg-coffee ${
+                        active ? "text-paper" : "text-beige"
                       }`}
                     >
                       {label}
                       {/* Highlighter swipe under the current page */}
                       <span
                         aria-hidden="true"
-                        className={`absolute inset-x-3 bottom-1.5 h-1 rounded-full bg-highlighter transition-opacity ${
+                        className={`absolute inset-x-3 bottom-1.5 h-1 rounded-full bg-postit transition-opacity ${
                           active ? "opacity-100" : "opacity-0"
                         }`}
                       />
@@ -60,7 +60,7 @@ export function TopNav() {
         </div>
 
         <div className="flex items-center gap-3 sm:gap-4">
-          <p className="hidden text-right text-xs leading-snug text-navy-100 sm:block">
+          <p className="hidden text-right text-xs leading-snug text-beige sm:block">
             <span className="block">{copy.level.label(rank.name)}</span>
             <span className="block">{copy.level.streak(days)}</span>
           </p>

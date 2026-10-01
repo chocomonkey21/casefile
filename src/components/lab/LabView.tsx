@@ -22,7 +22,7 @@ export function LabView() {
     return (
       <div className="mx-auto max-w-6xl space-y-6 px-4 py-10 sm:px-6" aria-busy="true" aria-label={t.loading}>
         <div className="h-12 w-1/3 animate-pulse rounded bg-manila/70" />
-        <div className="h-48 animate-pulse rounded-2xl bg-navy/80" />
+        <div className="h-48 animate-pulse rounded-2xl bg-espresso/80" />
       </div>
     );
   }
@@ -47,22 +47,22 @@ export function LabView() {
       </header>
 
       {/* Level */}
-      <section aria-labelledby="level-heading" className="rounded-2xl bg-navy p-5 text-paper shadow-folder sm:p-7">
+      <section aria-labelledby="level-heading" className="rounded-2xl bg-espresso p-5 text-paper shadow-folder sm:p-7">
         <h2 id="level-heading" className="text-2xl">
           {copy.level.label(level.rank.name)}
         </h2>
-        <p className="mt-1 text-navy-100">{copy.level.howItWorks}</p>
+        <p className="mt-1 text-beige">{copy.level.howItWorks}</p>
         <div
-          className="mt-4 h-3 overflow-hidden rounded-full bg-navy-light"
+          className="mt-4 h-3 overflow-hidden rounded-full bg-coffee"
           role="progressbar"
           aria-label={level.next ? level.next.name : level.rank.name}
           aria-valuemin={0}
           aria-valuemax={100}
           aria-valuenow={Math.round(level.fraction * 100)}
         >
-          <div className="h-full rounded-full bg-highlighter transition-[width] duration-500" style={{ width: `${Math.round(level.fraction * 100)}%` }} />
+          <div className="h-full rounded-full bg-postit transition-[width] duration-500" style={{ width: `${Math.round(level.fraction * 100)}%` }} />
         </div>
-        <p className="mt-2 text-navy-100">
+        <p className="mt-2 text-beige">
           {level.next ? copy.level.nextLevel(level.remaining, level.next.name) : copy.level.topLevel}
         </p>
 
@@ -75,14 +75,14 @@ export function LabView() {
                 aria-current={i === level.rankIndex ? "step" : undefined}
                 className={`rounded-lg border-2 p-3 ${
                   i === level.rankIndex
-                    ? "border-highlighter bg-navy-light"
+                    ? "border-postit bg-coffee"
                     : reached
-                      ? "border-navy-300 bg-navy-light/50"
-                      : "border-dashed border-navy-300/60"
+                      ? "border-manila-500 bg-coffee/50"
+                      : "border-dashed border-manila-500/60"
                 }`}
               >
                 <p className="font-semibold">{r.name}</p>
-                <p className="text-sm text-navy-100">
+                <p className="text-sm text-beige">
                   {i === level.rankIndex ? t.levelStatus.here : reached ? t.levelStatus.reached : t.levelStatus.ahead}
                 </p>
               </li>
@@ -123,8 +123,8 @@ export function LabView() {
           <>
             <p className="mt-2 max-w-prose text-lg">{t.topics.summary(strongNames, weakNames)}</p>
             <div className="mt-4 grid gap-6 lg:grid-cols-2">
-              <TopicColumn title={t.topics.strongTitle} empty={t.topics.strongEmpty} topics={strong} tone="sage" />
-              <TopicColumn title={t.topics.weakTitle} empty={t.topics.weakEmpty} topics={weak} tone="highlighter" />
+              <TopicColumn title={t.topics.strongTitle} empty={t.topics.strongEmpty} topics={strong} tone="desk" />
+              <TopicColumn title={t.topics.weakTitle} empty={t.topics.weakEmpty} topics={weak} tone="postit" />
             </div>
           </>
         )}
@@ -140,7 +140,7 @@ export function LabView() {
         ) : (
           <ul className="mt-4 grid gap-4 md:grid-cols-2">
             {cold.map(({ caseDef, days }) => (
-              <li key={caseDef.id} className="dusty relative rounded-xl border-2 border-dashed border-navy-light/60 bg-manila-100 p-5">
+              <li key={caseDef.id} className="dusty relative rounded-xl border-2 border-dashed border-coffee/60 bg-manila-100 p-5">
                 <div className="flex items-start justify-between gap-3">
                   <h3 className="text-xl leading-snug">{copy.desk.revise.line(caseDef.topic, days)}</h3>
                   <StatusStamp status="cold" />
@@ -169,8 +169,8 @@ export function LabView() {
       </section>
 
       {/* Demo controls: this is how you check the review flow without waiting a week */}
-      <details className="rounded-xl border-2 border-dashed border-navy/40 p-4">
-        <summary className="min-h-11 cursor-pointer py-2 font-semibold text-navy">{t.demo.summary}</summary>
+      <details className="rounded-xl border-2 border-dashed border-coffee/40 p-4">
+        <summary className="min-h-11 cursor-pointer py-2 font-semibold text-coffee">{t.demo.summary}</summary>
         <p className="mt-2 max-w-prose text-sm text-ink-soft">{t.demo.text}</p>
         {started.length === 0 ? (
           <p className="mt-3">{t.demo.none}</p>
@@ -217,7 +217,7 @@ function TopicColumn({
   title: string;
   topics: TopicStat[];
   empty: string;
-  tone: "sage" | "highlighter";
+  tone: "desk" | "postit";
 }) {
   return (
     <div className="rounded-2xl border-2 border-manila-600/40 bg-manila-100/60 p-4 sm:p-5">
@@ -235,11 +235,11 @@ function TopicColumn({
               <div className="mt-2">
                 <ProgressBar value={tp.correct} max={tp.total} label={t.topics.accuracyLabel(tp.clueTitle)} tone={tone} />
               </div>
-              {tone === "highlighter" && (
+              {tone === "postit" && (
                 <p className="mt-2 text-sm">
                   <Link
                     href={`/cases/${tp.caseId}/clues/${tp.clueId}`}
-                    className="inline-flex min-h-11 items-center font-semibold text-navy underline underline-offset-4"
+                    className="inline-flex min-h-11 items-center font-semibold text-coffee underline underline-offset-4"
                   >
                     {t.topics.review}
                   </Link>

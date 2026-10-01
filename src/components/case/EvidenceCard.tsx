@@ -52,7 +52,7 @@ export function EvidenceCard({
           {copy.common.min(evidence.minutes)}
         </span>
         {collected && (
-          <span className="rounded-full bg-highlighter px-2 py-0.5 text-xs font-semibold text-ink">
+          <span className="rounded-full bg-postit px-2 py-0.5 text-xs font-semibold text-ink">
             {copy.caseFile.evidence.onBoard}
           </span>
         )}
@@ -74,7 +74,7 @@ export function EvidenceCard({
   return (
     <Link
       href={href}
-      className={`${shell} border-manila-600/40 bg-paper transition-colors hover:border-navy hover:bg-highlighter-light/40`}
+      className={`${shell} border-manila-600/40 bg-paper transition-colors hover:border-coffee hover:bg-postit-light/40`}
     >
       {body}
     </Link>

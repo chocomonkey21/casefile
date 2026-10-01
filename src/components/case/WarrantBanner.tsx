@@ -25,10 +25,10 @@ export function WarrantBanner({ caseId, state, solved, total }: WarrantBannerPro
     return (
       <section
         aria-labelledby="final-test-heading"
-        className="rounded-xl border-2 border-dashed border-navy/50 bg-navy-50 p-5"
+        className="rounded-xl border-2 border-dashed border-coffee/50 bg-paper-dark p-5"
       >
         <div className="flex items-start gap-3">
-          <span aria-hidden="true" className="mt-1 text-navy">
+          <span aria-hidden="true" className="mt-1 text-coffee">
             <LockIcon width={24} height={24} />
           </span>
           <div className="flex-1">
@@ -37,7 +37,7 @@ export function WarrantBanner({ caseId, state, solved, total }: WarrantBannerPro
             </h3>
             <p className="mt-1 text-ink-soft">{t.lockedText(remaining)}</p>
             <div className="mt-3 max-w-md">
-              <ProgressBar value={solved} max={total} label={t.lockedProgress} tone="navy" />
+              <ProgressBar value={solved} max={total} label={t.lockedProgress} tone="coffee" />
             </div>
           </div>
         </div>
@@ -49,14 +49,14 @@ export function WarrantBanner({ caseId, state, solved, total }: WarrantBannerPro
     return (
       <section
         aria-labelledby="final-test-heading"
-        className="rounded-xl border-2 border-navy bg-navy p-5 text-paper shadow-folder"
+        className="rounded-xl border-2 border-coffee bg-espresso p-5 text-paper shadow-folder"
       >
         <div className="flex flex-wrap items-center gap-4">
           <div className="min-w-0 flex-1">
             <h3 id="final-test-heading" className="text-xl">
               {t.readyTitle}
             </h3>
-            <p className="mt-1 text-navy-100">{t.readyText}</p>
+            <p className="mt-1 text-beige">{t.readyText}</p>
           </div>
           <Button href={`/cases/${caseId}/verdict`} variant="highlight" size="lg">
             {t.start}
@@ -67,7 +67,7 @@ export function WarrantBanner({ caseId, state, solved, total }: WarrantBannerPro
   }
 
   return (
-    <section aria-labelledby="final-test-heading" className="rounded-xl border-2 border-sage/60 bg-sage-light p-5">
+    <section aria-labelledby="final-test-heading" className="rounded-xl border-2 border-desk/60 bg-desk-light p-5">
       <div className="flex flex-wrap items-center gap-4">
         <div className="min-w-0 flex-1">
           <h3 id="final-test-heading" className="text-xl">

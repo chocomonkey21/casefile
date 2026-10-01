@@ -1,7 +1,8 @@
 import { StyleguideDemo } from "./StyleguideDemo";
 import { Diagram } from "@/components/lesson/Diagrams";
-import { contrastRatio } from "@/lib/contrast";
+import { blend, contrastRatio } from "@/lib/contrast";
 import { copy } from "@/lib/copy";
+import { PAIRS, PALETTE, type Backdrop, type ColorName } from "@/lib/theme";
 import type { DiagramId } from "@/lib/types";
 
 const DIAGRAM_IDS: DiagramId[] = ["evap-close", "cold-glass", "four-types", "where-rain-goes", "cycle-map"];
@@ -9,36 +10,28 @@ const DIAGRAM_IDS: DiagramId[] = ["evap-close", "cold-glass", "four-types", "whe
 // Internal reference page, not part of the student experience
 export const metadata = { title: copy.meta.styleguide, robots: { index: false, follow: false } };
 
-const SWATCHES = [
-  { name: "Manila", hex: "#E8D9B5", use: "Folders, cards" },
-  { name: "Paper cream", hex: "#FAF5E9", use: "Page background" },
-  { name: "Ink", hex: "#1F1B16", use: "Text" },
-  { name: "Evidence red", hex: "#C8372D", use: "String, stamps, alerts" },
-  { name: "Highlighter yellow", hex: "#F6D743", use: "Hints, active states" },
-  { name: "Desk navy", hex: "#22324A", use: "Nav bar, contrast sections" },
-  { name: "Sage", hex: "#2F6B4A", use: "Right answers, solved" },
+const SWATCHES: { name: string; token: ColorName; use: string }[] = [
+  { name: "Walnut", token: "walnut", use: "Page backdrop only" },
+  { name: "Espresso", token: "espresso", use: "Top nav, deepest areas" },
+  { name: "Coffee", token: "coffee", use: "Raised dark surfaces" },
+  { name: "Paper cream", token: "paper", use: "Folders, lesson pages, cards" },
+  { name: "Light beige", token: "beige", use: "Accents, text on dark" },
+  { name: "Manila", token: "manila", use: "Folder body" },
+  { name: "Post-it yellow", token: "postit", use: "Hints, sticky notes, highlights" },
+  { name: "Evidence red", token: "evidence", use: "String, stamps, alerts" },
+  { name: "Ink", token: "ink", use: "Text on paper" },
+  { name: "Desk green", token: "desk", use: "Right answers, solved" },
+  { name: "Brass", token: "brass", use: "Pins and clip hardware" },
 ];
 
-// Text/background pairs we actually use, checked against WCAG AA (4.5 for normal text)
-const PAIRS = [
-  { label: "Ink on paper", fg: "#1F1B16", bg: "#FAF5E9" },
-  { label: "Ink on manila", fg: "#1F1B16", bg: "#E8D9B5" },
-  { label: "Soft ink on paper", fg: "#453E33", bg: "#FAF5E9" },
-  { label: "Muted ink on paper", fg: "#6A6050", bg: "#FAF5E9" },
-  { label: "Paper on navy", fg: "#FAF5E9", bg: "#22324A" },
-  { label: "Light navy text on navy", fg: "#CDD6E3", bg: "#22324A" },
-  { label: "Ink on highlighter", fg: "#1F1B16", bg: "#F6D743" },
-  { label: "Evidence red on paper", fg: "#C8372D", bg: "#FAF5E9" },
-  { label: "Dark red on manila", fg: "#A32B22", bg: "#E8D9B5" },
-  { label: "Paper on sage", fg: "#FAF5E9", bg: "#2F6B4A" },
-  { label: "Highlighter on navy", fg: "#F6D743", bg: "#22324A" },
-];
+const resolveBackdrop = (bg: Backdrop) =>
+  typeof bg === "string" ? PALETTE[bg] : blend(PALETTE[bg.color], bg.alpha, PALETTE[bg.over]);
 
 export default function StyleguidePage() {
   return (
     <div className="mx-auto max-w-5xl space-y-14 px-4 py-10 sm:px-6">
       <header>
-        <p className="label text-evidence-dark">Internal, phase a</p>
+        <p className="label text-evidence-dark">Internal</p>
         <h1 className="mt-2 text-4xl sm:text-5xl">Style guide</h1>
         <p className="mt-3 max-w-prose text-lg text-ink-soft">
           A quick place to check colours, fonts, buttons and the saved progress. Not part of the student
@@ -53,11 +46,11 @@ export default function StyleguidePage() {
         <ul className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {SWATCHES.map((s) => (
             <li key={s.name} className="overflow-hidden rounded-xl border-2 border-manila-600/40 bg-paper">
-              <div className="h-20" style={{ background: s.hex }} aria-hidden="true" />
+              <div className="h-20" style={{ background: PALETTE[s.token] }} aria-hidden="true" />
               <div className="p-3">
                 <p className="font-display text-lg">{s.name}</p>
                 <p className="text-sm text-ink-soft">
-                  {s.hex} &middot; {s.use}
+                  {PALETTE[s.token]} &middot; {s.use}
                 </p>
               </div>
             </li>
@@ -69,20 +62,35 @@ export default function StyleguidePage() {
         <h2 id="contrast" className="text-3xl">
           Contrast checks
         </h2>
-        <p className="mt-2 text-ink-soft">Normal text needs 4.5 or more to pass WCAG AA. Large text needs 3.</p>
+        <p className="mt-2 text-ink-soft">
+          Normal text needs 4.5 or more to pass WCAG AA. Large text and interface parts need 3. Run{" "}
+          <code>npm run contrast</code> to check every pair from the terminal.
+        </p>
         <ul className="mt-5 grid gap-3 sm:grid-cols-2">
           {PAIRS.map((p) => {
-            const ratio = contrastRatio(p.fg, p.bg);
-            const pass = ratio >= 4.5;
+            const bg = resolveBackdrop(p.bg);
+            const ratio = contrastRatio(PALETTE[p.fg], bg);
+            const pass = ratio >= p.min;
+            // Text pairs are shown as text. Pairs that are parts of the interface (3:1) are shown as a colour chip.
+            const isText = p.min === 4.5;
             return (
               <li
                 key={p.label}
-                className="flex items-center justify-between gap-3 rounded-lg border-2 border-manila-600/30 px-4 py-3"
-                style={{ background: p.bg, color: p.fg }}
+                className="flex items-center justify-between gap-3 rounded-[3px] bg-paper-dark px-4 py-3 text-ink"
+                style={isText ? { background: bg, color: PALETTE[p.fg] } : undefined}
               >
-                <span className="font-medium">{p.label}</span>
+                <span className="flex items-center gap-3 font-medium">
+                  {!isText && (
+                    <span
+                      aria-hidden="true"
+                      className="inline-block h-6 w-10 shrink-0"
+                      style={{ background: bg, boxShadow: `inset 0 -6px 0 ${PALETTE[p.fg]}` }}
+                    />
+                  )}
+                  {p.label}
+                </span>
                 <span className="text-sm font-semibold">
-                  {ratio.toFixed(1)} : 1, {pass ? "AA pass" : "large text only"}
+                  {ratio.toFixed(1)} : 1, {pass ? "AA pass" : "fails"} (needs {p.min})
                 </span>
               </li>
             );

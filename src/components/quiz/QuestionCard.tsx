@@ -19,7 +19,7 @@ type QuestionCardProps = {
   /** Called when the student moves on after a right answer. `firstTry` is true if they never missed. */
   onDone: (firstTry: boolean) => void;
   doneLabel: string;
-  /** True when the card sits on the navy Interrogation Room, so text outside the paper needs to be light */
+  /** True when the card sits on the dark Interrogation Room, so text outside the paper needs to be light */
   onDark?: boolean;
   /** Test mode: one answer per question, then on to the next. Used by the Verdict. */
   singleTry?: boolean;
@@ -76,7 +76,7 @@ export function QuestionCard({ question, position, evidence, onDone, doneLabel, 
 
   return (
     <div>
-      {/* text-ink is set here because the Interrogation Room passes light text down from its navy panel */}
+      {/* text-ink is set here because the Interrogation Room passes light text down from its dark panel */}
       <div className="relative z-10 rounded-2xl border-2 border-manila-600/50 bg-paper p-5 text-ink shadow-folder sm:p-7">
         {position && (
           <p className="label text-ink-soft">
@@ -99,23 +99,23 @@ export function QuestionCard({ question, position, evidence, onDone, doneLabel, 
               return (
                 <label
                   key={option.id}
-                  className={`relative block rounded-xl border-2 transition-colors has-[:focus-visible]:outline has-[:focus-visible]:outline-[3px] has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-navy has-[:focus-visible]:[box-shadow:0_0_0_2px_var(--color-highlighter)] ${
+                  className={`relative block rounded-xl border-2 transition-colors has-[:focus-visible]:[box-shadow:0_4px_0_-1px_var(--focus),0_6px_16px_0_color-mix(in_srgb,var(--focus)_40%,transparent)] ${
                     lineup ? "min-h-40 p-4 pt-3" : "flex items-start gap-3 p-3.5"
                   } ${
                     isRight
-                      ? "border-sage bg-sage-light"
+                      ? "border-desk bg-desk-light"
                       : isTried
                         ? "border-evidence-dark/60 bg-evidence-light/60"
                         : isSelected
-                          ? "border-navy bg-highlighter-light"
-                          : "border-manila-600/50 bg-manila-50 hover:border-navy hover:bg-highlighter-light/50"
+                          ? "border-coffee bg-postit-light"
+                          : "border-manila-600/50 bg-manila-50 hover:border-coffee hover:bg-postit-light/50"
                   } ${disabled && !isRight ? "cursor-default" : "cursor-pointer"}`}
                   style={
                     lineup
                       ? {
                           // Height-chart lines behind each suspect, like a lineup wall
                           backgroundImage:
-                            "repeating-linear-gradient(transparent 0 23px, rgb(143 119 57 / 0.18) 23px 24px)",
+                            "repeating-linear-gradient(transparent 0 23px, rgb(122 98 56 / 0.18) 23px 24px)",
                         }
                       : undefined
                   }
@@ -136,7 +136,7 @@ export function QuestionCard({ question, position, evidence, onDone, doneLabel, 
                       {(isTried || isRight) && (
                         <span className="absolute bottom-3 right-3">
                           {isRight ? (
-                            <Stamp tone="sage" size="sm" rotate={-6} slam>
+                            <Stamp tone="desk" size="sm" rotate={-6} slam>
                               {copy.question.stampRight}
                             </Stamp>
                           ) : (
@@ -153,11 +153,11 @@ export function QuestionCard({ question, position, evidence, onDone, doneLabel, 
                         aria-hidden="true"
                         className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 font-display text-sm ${
                           isRight
-                            ? "border-sage bg-sage text-paper"
+                            ? "border-desk bg-desk text-paper"
                             : isTried
                               ? "border-evidence-dark bg-evidence-dark text-paper"
                               : isSelected
-                                ? "border-navy bg-navy text-paper"
+                                ? "border-coffee bg-espresso text-paper"
                                 : "border-manila-600 bg-paper"
                         }`}
                       >
@@ -198,9 +198,9 @@ export function QuestionCard({ question, position, evidence, onDone, doneLabel, 
             <motion.div
               initial={{ opacity: 0, y: 6 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mt-5 flex gap-3 rounded-xl border-2 border-sage bg-sage-light p-4"
+              className="mt-5 flex gap-3 rounded-xl border-2 border-desk bg-desk-light p-4"
             >
-              <CheckIcon width={22} height={22} className="mt-0.5 shrink-0 text-sage" />
+              <CheckIcon width={22} height={22} className="mt-0.5 shrink-0 text-desk-dark" />
               <div>
                 <p className="font-semibold">{tried.length === 0 ? copy.question.rightFirst : copy.question.rightLater}</p>
                 <p>{question.explanation}</p>

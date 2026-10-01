@@ -224,7 +224,7 @@ export function BoardCanvas({ cards, board, highlight, onConnect }: BoardCanvasP
           height,
           // Cork board speckle
           backgroundImage:
-            "radial-gradient(rgb(106 87 38 / 0.25) 1px, transparent 1.5px), radial-gradient(rgb(250 245 233 / 0.25) 1px, transparent 1.5px)",
+            "radial-gradient(rgb(90 71 39 / 0.25) 1px, transparent 1.5px), radial-gradient(rgb(243 234 214 / 0.25) 1px, transparent 1.5px)",
           backgroundSize: "18px 18px, 27px 27px",
           backgroundPosition: "0 0, 9px 11px",
         }}
@@ -236,7 +236,7 @@ export function BoardCanvas({ cards, board, highlight, onConnect }: BoardCanvasP
         {/* Connecting banner. Fixed to the bottom of the window so it never moves the board or covers the pins. */}
         <div role="status" aria-live="polite" className="pointer-events-none fixed inset-x-3 bottom-20 z-50 mx-auto max-w-2xl lg:bottom-4">
           {connectFrom && (
-            <div className="pointer-events-auto flex flex-wrap items-center gap-3 rounded-lg bg-navy p-3 text-paper shadow-folder">
+            <div className="pointer-events-auto flex flex-wrap items-center gap-3 rounded-lg bg-espresso p-3 text-paper shadow-folder">
               <p className="min-w-0 flex-1">
                 {copy.board.connecting(titleOf(connectFrom))}
               </p>

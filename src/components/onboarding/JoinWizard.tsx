@@ -105,7 +105,7 @@ export function JoinWizard() {
             <li key={label} aria-current={current ? "step" : undefined} className="flex flex-1 items-center gap-2 last:flex-none">
               <span
                 className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-2 font-display ${
-                  done ? "border-sage bg-sage text-paper" : current ? "border-navy bg-navy text-paper" : "border-manila-600/50 bg-paper text-ink-soft"
+                  done ? "border-desk bg-desk text-paper" : current ? "border-coffee bg-espresso text-paper" : "border-manila-600/50 bg-paper text-ink-soft"
                 }`}
               >
                 {done ? <CheckIcon width={18} height={18} /> : i + 1}
@@ -172,8 +172,8 @@ export function JoinWizard() {
                       return (
                         <label
                           key={a.id}
-                          className={`flex cursor-pointer flex-col items-center gap-1.5 rounded-xl border-2 p-2 text-center text-sm has-[:focus-visible]:outline has-[:focus-visible]:outline-[3px] has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-navy ${
-                            on ? "border-navy bg-highlighter-light" : "border-manila-600/40 bg-paper hover:border-navy"
+                          className={`flex cursor-pointer flex-col items-center gap-1.5 rounded-xl border-2 p-2 text-center text-sm has-[:focus-visible]:outline has-[:focus-visible]:outline-[3px] has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-coffee ${
+                            on ? "border-coffee bg-postit-light" : "border-manila-600/40 bg-paper hover:border-coffee"
                           }`}
                         >
                           <input
@@ -218,8 +218,8 @@ export function JoinWizard() {
                       return (
                         <label
                           key={i.id}
-                          className={`flex min-h-11 cursor-pointer items-center gap-2 rounded-full border-2 px-4 font-semibold has-[:focus-visible]:outline has-[:focus-visible]:outline-[3px] has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-navy ${
-                            on ? "border-navy bg-navy text-paper" : "border-manila-600/50 bg-paper hover:border-navy"
+                          className={`flex min-h-11 cursor-pointer items-center gap-2 rounded-full border-2 px-4 font-semibold has-[:focus-visible]:outline has-[:focus-visible]:outline-[3px] has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-coffee ${
+                            on ? "border-coffee bg-espresso text-paper" : "border-manila-600/50 bg-paper hover:border-coffee"
                           }`}
                         >
                           <input type="checkbox" checked={on} onChange={() => toggleInterest(i.id)} className="sr-only" />
@@ -250,8 +250,8 @@ export function JoinWizard() {
                       return (
                         <label
                           key={g}
-                          className={`flex min-h-20 cursor-pointer flex-col items-center justify-center rounded-xl border-2 text-center has-[:focus-visible]:outline has-[:focus-visible]:outline-[3px] has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-navy ${
-                            on ? "border-navy bg-highlighter" : "border-manila-600/50 bg-paper hover:border-navy"
+                          className={`flex min-h-20 cursor-pointer flex-col items-center justify-center rounded-xl border-2 text-center has-[:focus-visible]:outline has-[:focus-visible]:outline-[3px] has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-coffee ${
+                            on ? "border-coffee bg-postit" : "border-manila-600/50 bg-paper hover:border-coffee"
                           }`}
                         >
                           <input
@@ -304,7 +304,7 @@ export function JoinWizard() {
                         {t.first.start}
                       </Button>
                       <p>
-                        <Link href="/desk" className="inline-flex min-h-11 items-center font-semibold text-navy underline underline-offset-4">
+                        <Link href="/desk" className="inline-flex min-h-11 items-center font-semibold text-coffee underline underline-offset-4">
                           {t.first.toDesk}
                         </Link>
                       </p>

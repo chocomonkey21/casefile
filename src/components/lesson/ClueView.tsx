@@ -54,7 +54,7 @@ export function ClueView({ caseDef, clueIndex, lesson }: ClueViewProps) {
     return (
       <div className="mx-auto max-w-3xl space-y-6 px-4 py-10 sm:px-6" aria-busy="true" aria-label={t.loading}>
         <div className="h-10 w-1/2 animate-pulse rounded bg-manila/70" />
-        <div className="h-32 animate-pulse rounded bg-highlighter/60" />
+        <div className="h-32 animate-pulse rounded bg-postit/60" />
         <div className="h-64 animate-pulse rounded-2xl bg-manila/50" />
       </div>
     );
@@ -63,7 +63,7 @@ export function ClueView({ caseDef, clueIndex, lesson }: ClueViewProps) {
   const backLink = (
     <Link
       href={`/cases/${caseDef.id}?tab=clues`}
-      className="mb-4 inline-flex min-h-11 items-center gap-2 font-semibold text-navy underline-offset-4 hover:underline"
+      className="mb-4 inline-flex min-h-11 items-center gap-2 font-semibold text-coffee underline-offset-4 hover:underline"
     >
       <ArrowLeftIcon width={18} height={18} />
       {t.backToCase}
@@ -107,7 +107,7 @@ export function ClueView({ caseDef, clueIndex, lesson }: ClueViewProps) {
         <div className="mt-1 flex flex-wrap items-start justify-between gap-3">
           <h1 className="text-3xl leading-tight sm:text-4xl">{clue.title}</h1>
           {solved && (
-            <Stamp tone="sage" size="md" rotate={-6}>
+            <Stamp tone="desk" size="md" rotate={-6}>
               {t.completed}
             </Stamp>
           )}
@@ -128,7 +128,7 @@ export function ClueView({ caseDef, clueIndex, lesson }: ClueViewProps) {
         <>
           {/* The question for this clue, with the hint button. Hints slide out from under this note. */}
           <section aria-labelledby="question-heading" className="mt-6" id="hint-area">
-            <div className="relative z-10 rounded-sm bg-highlighter p-5 shadow-card">
+            <div className="relative z-10 rounded-sm bg-postit p-5 shadow-card">
               <h2 id="question-heading" className="label text-ink">
                 {t.questionLabel}
               </h2>
@@ -211,13 +211,13 @@ export function ClueView({ caseDef, clueIndex, lesson }: ClueViewProps) {
 
           <section
             aria-labelledby="check-heading"
-            className="mt-10 rounded-2xl bg-navy p-6 text-paper shadow-folder sm:p-8"
+            className="mt-10 rounded-2xl bg-espresso p-6 text-paper shadow-folder sm:p-8"
           >
-            <p className="label text-highlighter">{t.checkLabel}</p>
+            <p className="label text-postit">{t.checkLabel}</p>
             <h2 id="check-heading" className="mt-1 text-2xl sm:text-3xl">
               {solved ? t.checkHeadingDone : t.checkHeading}
             </h2>
-            <p className="mt-2 max-w-prose text-navy-100">{t.checkText(lesson.quiz.length)}</p>
+            <p className="mt-2 max-w-prose text-beige">{t.checkText(lesson.quiz.length)}</p>
             <div className="mt-5 flex flex-wrap items-center gap-4">
               <Button href={`/cases/${caseDef.id}/interrogation/${clue.id}`} variant="highlight" size="lg">
                 {solved ? t.reviewQuestions : t.startQuestions}
@@ -262,7 +262,7 @@ function EvidenceBody({
 function PreviewNotice({ caseDef, evidence }: { caseDef: CaseDef; evidence: EvidenceDef[] }) {
   return (
     <section className="mt-6" aria-labelledby="preview-heading">
-      <div className="rounded-xl border-2 border-dashed border-navy/50 bg-navy-50 p-5">
+      <div className="rounded-xl border-2 border-dashed border-coffee/50 bg-paper-dark p-5">
         <h2 id="preview-heading" className="text-2xl">
           {t.previewTitle}
         </h2>

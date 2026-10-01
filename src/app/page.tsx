@@ -18,6 +18,7 @@ export default function Home() {
       </SimpleHeader>
 
       <main id="main-content" className="flex-1">
+        <div className="sheet mx-2 mb-2 mt-3 sm:mx-8 sm:mb-8 sm:mt-6 xl:mx-auto xl:max-w-[80rem] overflow-hidden">
         {/* Hero */}
         <section className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1fr_1.05fr] lg:py-20">
           <div>
@@ -87,20 +88,21 @@ export default function Home() {
         </section>
 
         {/* Final call */}
-        <section aria-labelledby="join-heading" className="bg-navy text-paper">
+        <section aria-labelledby="join-heading" className="on-dark bg-coffee">
           <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-6 px-4 py-14 sm:px-6">
             <div className="max-w-xl">
               <h2 id="join-heading" className="text-3xl sm:text-4xl">
                 {t.finalHeading}
               </h2>
-              <p className="mt-2 text-lg text-navy-100">{t.finalText}</p>
+              <p className="mt-2 text-lg text-beige">{t.finalText}</p>
             </div>
             <FinalAction />
           </div>
         </section>
+        </div>
       </main>
 
-      <footer className="border-t-4 border-highlighter bg-navy-dark py-6 text-center text-sm text-navy-100">
+      <footer className="on-dark border-t-4 border-brass bg-espresso py-6 text-center text-sm text-beige">
         <p>{t.footer}</p>
       </footer>
     </>

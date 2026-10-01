@@ -5,11 +5,11 @@ type Variant = "primary" | "secondary" | "highlight" | "ghost" | "danger";
 type Size = "md" | "lg";
 
 const VARIANTS: Record<Variant, string> = {
-  primary: "bg-navy text-paper hover:bg-navy-light",
+  primary: "bg-espresso text-paper hover:bg-coffee",
   secondary: "bg-manila text-ink hover:bg-manila-400 border-2 border-manila-600/60",
-  highlight: "bg-highlighter text-ink hover:bg-highlighter-dark",
-  ghost: "bg-transparent text-navy hover:bg-navy-50 underline-offset-4",
-  danger: "bg-evidence-dark text-paper hover:bg-[#8c231c]",
+  highlight: "bg-postit text-ink hover:bg-postit-dark",
+  ghost: "bg-transparent text-coffee hover:bg-paper-dark underline-offset-4",
+  danger: "bg-evidence-dark text-paper hover:bg-[#5E1E19]",
 };
 
 const SIZES: Record<Size, string> = {

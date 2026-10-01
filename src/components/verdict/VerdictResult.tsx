@@ -53,18 +53,18 @@ export function VerdictResult({ caseDef, outcome, onRetry }: { caseDef: CaseDef;
                   {clue.title}
                 </p>
                 <p className="flex items-center gap-2 text-sm font-semibold">
-                  {perfect && <CheckIcon width={16} height={16} className="text-sage" aria-label={t.allRight} role="img" />}
+                  {perfect && <CheckIcon width={16} height={16} className="text-desk-dark" aria-label={t.allRight} role="img" />}
                   {t.rightOf(r.correct, r.total)}
                 </p>
               </div>
               <div className="mt-2">
-                <ProgressBar value={r.correct} max={r.total} label={t.scoreLabel(i + 1)} tone={perfect ? "sage" : "highlighter"} />
+                <ProgressBar value={r.correct} max={r.total} label={t.scoreLabel(i + 1)} tone={perfect ? "desk" : "postit"} />
               </div>
               {!perfect && (
                 <p className="mt-2 text-sm">
                   <Link
                     href={`/cases/${caseDef.id}/clues/${clue.id}`}
-                    className="inline-flex min-h-11 items-center font-semibold text-navy underline underline-offset-4"
+                    className="inline-flex min-h-11 items-center font-semibold text-coffee underline underline-offset-4"
                   >
                     {t.reviewClue}
                   </Link>
@@ -152,7 +152,7 @@ export function VerdictResult({ caseDef, outcome, onRetry }: { caseDef: CaseDef;
           </div>
         )}
         <p className="mt-6">
-          <Link href="/lab" className="inline-flex min-h-11 items-center font-semibold text-navy underline underline-offset-4">
+          <Link href="/lab" className="inline-flex min-h-11 items-center font-semibold text-coffee underline underline-offset-4">
             {t.next.lab}
           </Link>
         </p>

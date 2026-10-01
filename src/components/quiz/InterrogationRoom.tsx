@@ -38,7 +38,7 @@ export function InterrogationRoom(props: InterrogationRoomProps) {
   // The review only revisits clues the student has completed. That is saved progress, so wait for it.
   if (mode === "refresh") {
     if (!hydrated) {
-      return <div className="mx-auto h-64 max-w-3xl animate-pulse rounded-3xl bg-navy/80" aria-busy="true" aria-label={t.loading} />;
+      return <div className="mx-auto h-64 max-w-3xl animate-pulse rounded-3xl bg-espresso/80" aria-busy="true" aria-label={t.loading} />;
     }
     const solvedIds = caseDef.clues.filter((c) => isClueSolved(state, caseDef.id, c.id)).map((c) => c.id);
     const picked = props.questions.filter((q) => solvedIds.includes(q.clueId)).slice(0, 4);
@@ -103,21 +103,17 @@ function Room({ caseDef, mode, questions, clueId }: InterrogationRoomProps) {
     <div className="mx-auto max-w-3xl px-4 py-6 sm:px-6 sm:py-10">
       <Link
         href={backHref}
-        className="mb-4 inline-flex min-h-11 items-center gap-2 font-semibold text-navy underline-offset-4 hover:underline"
+        className="mb-4 inline-flex min-h-11 items-center gap-2 font-semibold text-coffee underline-offset-4 hover:underline"
       >
         <ArrowLeftIcon width={18} height={18} />
         {mode === "clue" ? t.backToClue : t.backToCase}
       </Link>
 
       <div
-        className="relative overflow-hidden rounded-3xl bg-navy p-4 text-paper shadow-folder sm:p-8"
-        style={{
-          // A warm lamp shining down on the table
-          backgroundImage: "radial-gradient(ellipse 70% 45% at 50% -8%, rgb(246 215 67 / 0.3), transparent 70%)",
-        }}
+        className="on-dark relative overflow-hidden rounded-[3px] bg-coffee p-4 shadow-folder sm:p-8"
       >
         <header className="mb-5">
-          <p className="label flex items-center text-highlighter">
+          <p className="label flex items-center text-postit">
             {t.label}
             <HelpTip label={t.helpLabel} text={t.help} />
           </p>
@@ -129,7 +125,7 @@ function Room({ caseDef, mode, questions, clueId }: InterrogationRoomProps) {
               {questions.map((q, i) => (
                 <span
                   key={q.question.id}
-                  className={`h-2 flex-1 rounded-full ${i < index ? "bg-highlighter" : i === index ? "bg-paper" : "bg-navy-light"}`}
+                  className={`h-2 flex-1 rounded-full ${i < index ? "bg-postit" : i === index ? "bg-paper" : "bg-coffee"}`}
                 />
               ))}
             </div>
@@ -178,7 +174,7 @@ function Results({
     <div className="rounded-2xl bg-paper p-6 text-ink sm:p-8" role="status">
       <div className="flex flex-wrap items-center gap-5">
         {mode === "clue" ? (
-          <Stamp tone="sage" size="lg" rotate={-7} slam>
+          <Stamp tone="desk" size="lg" rotate={-7} slam>
             {copy.caseFile.clueCard.stamp}
           </Stamp>
         ) : (

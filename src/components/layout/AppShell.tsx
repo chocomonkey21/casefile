@@ -25,8 +25,9 @@ export function AppShell({ children }: { children: ReactNode }) {
         <>
           <TopNav />
           {/* pb-20 leaves room for the fixed bottom bar on small screens */}
+          {/* Everything a student reads lies on a sheet of paper, never straight on the walnut desk */}
           <main id="main-content" className="flex-1 pb-20 lg:pb-0">
-            {children}
+            <div className="sheet mx-2 mb-2 mt-3 sm:mx-8 sm:mb-8 sm:mt-6 xl:mx-auto xl:max-w-[80rem]">{children}</div>
           </main>
           <MobileNav />
         </>

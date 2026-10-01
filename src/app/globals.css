@@ -3,75 +3,100 @@
 /*
   CaseFile design tokens.
   Everything in @theme becomes both a CSS variable (var(--color-manila)) and a
-  Tailwind utility (bg-manila, text-ink, border-navy ...).
+  Tailwind utility (bg-manila, text-ink, bg-walnut ...).
+  The same palette is mirrored in src/lib/theme.ts, and `npm run contrast` checks every text pairing.
 */
 @theme {
-  /* Manila: folders, cards */
-  --color-manila-50: #f7f0df;
-  --color-manila-100: #f1e7cc;
-  --color-manila: #e8d9b5;
-  --color-manila-400: #d8c390;
-  --color-manila-500: #c2a86c;
-  --color-manila-600: #8f7739; /* folder edges, dividers */
-  --color-manila-700: #6a5726;
+  /* Desk surfaces. Only ever a backdrop: reading content sits on paper. */
+  --color-walnut: #3A2A20; /* page backdrop */
+  --color-espresso: #241913; /* top nav, deepest areas */
+  --color-coffee: #4B382B; /* raised dark surfaces */
 
-  /* Paper cream: page background */
-  --color-paper: #faf5e9;
-  --color-paper-dark: #f0e8d2;
+  /* Paper */
+  --color-paper: #F3EAD6; /* paper cream: folders, lesson pages, cards */
+  --color-paper-dark: #E9DEC4;
+  --color-beige: #E3D4B8; /* accents, dividers on dark, secondary text on dark */
 
-  /* Ink: text */
-  --color-ink: #1f1b16;
-  --color-ink-soft: #453e33; /* secondary text */
-  --color-ink-mute: #6a6050; /* captions, still passes AA on paper */
+  /* Manila: folder body */
+  --color-manila-50: #EFE3C8;
+  --color-manila-100: #E8D9B8;
+  --color-manila: #D8C29A;
+  --color-manila-400: #C7AE82;
+  --color-manila-500: #A98F63;
+  --color-manila-600: #7A6238; /* folder edges, dividers */
+  --color-manila-700: #5A4727;
 
-  /* Evidence red: string, stamps, alerts */
-  --color-evidence: #c8372d;
-  --color-evidence-dark: #a32b22; /* red text on manila */
-  --color-evidence-light: #f5d9d4;
+  /* Post-it yellow: hints, sticky notes, highlights. Soft and pale, never saturated. */
+  --color-postit: #F2E7A8;
+  --color-postit-light: #F8F1C9;
+  --color-postit-dark: #D6C77A;
 
-  /* Highlighter yellow: hints, active states. Use as a fill behind ink, not as text. */
-  --color-highlighter: #f6d743;
-  --color-highlighter-light: #fbeb9c;
-  --color-highlighter-dark: #d9b91f;
+  /* Ink: text on paper */
+  --color-ink: #231B15;
+  --color-ink-soft: #4A3E32; /* secondary text */
+  --color-ink-mute: #5A4C3D; /* captions, still passes AA on paper and manila */
 
-  /* Desk navy: nav bar, contrast sections */
-  --color-navy-50: #e6ebf2;
-  --color-navy-100: #cdd6e3;
-  --color-navy-300: #7f93b0;
-  --color-navy-light: #34496a;
-  --color-navy: #22324a;
-  --color-navy-dark: #16223a;
+  /* Evidence red: string, stamps, alerts. Muted like ink or thread. */
+  --color-evidence: #A63A2E;
+  --color-evidence-dark: #762620; /* red text on manila */
+  --color-evidence-light: #EBD3C9;
 
-  /* Sage: right answers and solved states, so success is not only red or yellow */
-  --color-sage: #2f6b4a;
-  --color-sage-light: #d8eadb;
+  /* Desk green: small secondary accent, like a blotter. Right answers and solved states. */
+  --color-desk: #3F5A47;
+  --color-desk-dark: #2F4837;
+  --color-desk-light: #D9E0CF;
+
+  /* Brass: pins and clip hardware, tiny details */
+  --color-brass: #A98652;
+  --color-brass-dark: #7A5C2E; /* focus mark on paper */
 
   /* Fonts. Only these two families are ever used. */
   --font-display: var(--font-special-elite), serif;
   --font-sans: var(--font-dm-sans), sans-serif;
   --font-mono: var(--font-dm-sans), sans-serif;
 
-  --shadow-folder: 0 2px 0 rgb(31 27 22 / 0.08), 0 8px 18px -8px rgb(31 27 22 / 0.35);
-  --shadow-card: 0 1px 0 rgb(31 27 22 / 0.1), 0 4px 10px -4px rgb(31 27 22 / 0.3);
+  /* Shadows are warm dark brown, never black or grey. Phase 3 adds taller, softer ones for lifted folders. */
+  --shadow-folder: 0 1px 1px rgb(36 25 19 / 0.35), 0 4px 8px -2px rgb(36 25 19 / 0.3), 0 14px 28px -10px rgb(36 25 19 / 0.4);
+  --shadow-card: 0 1px 1px rgb(36 25 19 / 0.3), 0 3px 6px -2px rgb(36 25 19 / 0.25), 0 8px 16px -8px rgb(36 25 19 / 0.3);
+  --shadow-sheet: 0 1px 2px rgb(20 12 8 / 0.5), 0 8px 16px -4px rgb(20 12 8 / 0.45), 0 28px 60px -12px rgb(20 12 8 / 0.55);
+}
+
+:root {
+  /* The colour of the keyboard focus mark. Dark brass on paper, post-it yellow on the dark desk. */
+  --focus: var(--color-brass-dark);
 }
 
 @layer base {
   html {
-    background: var(--color-paper);
+    background: var(--color-walnut);
     color: var(--color-ink);
     scroll-behavior: smooth;
   }
 
   /*
-    Paper texture: a faint fractal noise tile as an inline SVG.
-    Sits on top of the cream so the page feels like desk paper, not a flat screen.
+    The desk. Faint horizontal wood grain (stretched fractal noise) with a vignette over it.
+    Both live on one fixed layer behind everything, so they never move with the content and never
+    take clicks. Keep the grain low in contrast: it must never compete with the paper on top.
+    Phase 2 moves the grain into the shared texture file.
   */
   body {
-    background-color: var(--color-paper);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.36 0 0 0 0 0.2 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    position: relative;
+    isolation: isolate;
+    background-color: var(--color-walnut);
     font-family: var(--font-sans);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      radial-gradient(ellipse 85% 75% at 50% 42%, transparent 40%, rgb(20 12 8 / 0.5) 100%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='600'%3E%3Cfilter id='g' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.004 0.19' numOctaves='3' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.09 0 0 0 0 0.05 0 0 0 0 0.03 0 0 0 1.9 -0.78'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.55'/%3E%3C/svg%3E");
+    background-size: 100% 100%, 900px 600px;
   }
 
   /* Special Elite is for headings and labels only. Paragraphs stay in DM Sans. */
@@ -88,18 +113,20 @@
   }
 
   /*
-    Focus ring with two tones (yellow inside, navy outside) so it stays visible
-    on cream, manila and navy backgrounds.
+    Keyboard focus: a solid mark under the element plus a soft warm glow, not a ring.
+    The mark is dark brass on paper and post-it yellow on the dark desk, so it keeps 3:1 on both.
+    The transparent outline only shows in forced-colours mode, where custom shadows are removed.
   */
   :focus-visible {
-    outline: 3px solid var(--color-navy);
+    outline: 2px solid transparent;
     outline-offset: 2px;
-    box-shadow: 0 0 0 2px var(--color-highlighter);
-    border-radius: 4px;
+    box-shadow:
+      0 4px 0 -1px var(--focus),
+      0 6px 16px 0 color-mix(in srgb, var(--focus) 40%, transparent) !important;
   }
 
   ::selection {
-    background: var(--color-highlighter);
+    background: var(--color-postit);
     color: var(--color-ink);
   }
 }
@@ -111,15 +138,36 @@
     left: 1rem;
     top: -4rem;
     z-index: 100;
-    padding: 0.6rem 1rem;
-    background: var(--color-highlighter);
+    padding: 0.5rem 1rem;
+    background: var(--color-postit);
     color: var(--color-ink);
     font-weight: 600;
-    border-radius: 0.5rem;
+    border-radius: 2px;
     transition: top 0.15s;
   }
   .skip-link:focus {
     top: 0.75rem;
+  }
+
+  /*
+    Anything printed on the dark desk (nav bars, footer, dark call-to-action bands).
+    Light text and the post-it focus mark.
+  */
+  .on-dark {
+    --focus: var(--color-postit);
+    color: var(--color-paper);
+  }
+
+  /*
+    A loose sheet of paper lying on the desk. All reading content sits on one of these.
+    Phase 2 replaces the placeholder grain below with the shared paper textures.
+  */
+  .sheet {
+    background-color: var(--color-paper);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.36 0 0 0 0 0.2 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    color: var(--color-ink);
+    border-radius: 3px;
+    box-shadow: var(--shadow-sheet);
   }
 
   /*
@@ -138,10 +186,10 @@
     border-radius: inherit;
     pointer-events: none;
     background-image:
-      radial-gradient(circle at 18% 22%, rgb(250 245 233 / 0.55) 0 1.5px, transparent 2px),
-      radial-gradient(circle at 72% 64%, rgb(250 245 233 / 0.5) 0 1.2px, transparent 2px),
-      radial-gradient(circle at 44% 82%, rgb(250 245 233 / 0.5) 0 1px, transparent 2px),
-      linear-gradient(180deg, rgb(250 245 233 / 0.25), rgb(250 245 233 / 0.45));
+      radial-gradient(circle at 18% 22%, rgb(243 234 214 / 0.55) 0 1.5px, transparent 2px),
+      radial-gradient(circle at 72% 64%, rgb(243 234 214 / 0.5) 0 1.2px, transparent 2px),
+      radial-gradient(circle at 44% 82%, rgb(243 234 214 / 0.5) 0 1px, transparent 2px),
+      linear-gradient(180deg, rgb(243 234 214 / 0.25), rgb(243 234 214 / 0.45));
     background-size: 46px 46px, 61px 61px, 37px 37px, 100% 100%;
   }
 

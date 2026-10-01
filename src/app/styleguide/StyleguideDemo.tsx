@@ -52,27 +52,27 @@ export function StyleguideDemo() {
         </ul>
       </section>
 
-      <section aria-labelledby="state" className="rounded-2xl bg-navy p-6 text-paper">
+      <section aria-labelledby="state" className="rounded-2xl bg-espresso p-6 text-paper">
         <h2 id="state" className="text-3xl">
           Saved progress (demo controls)
         </h2>
-        <p className="mt-2 text-navy-100">
+        <p className="mt-2 text-beige">
           Watch the level and study streak in the top bar change. Refresh the page and they should stay put.
         </p>
         <dl className="mt-4 grid gap-2 text-lg sm:grid-cols-3">
           <div>
-            <dt className="label text-navy-100">Name</dt>
+            <dt className="label text-beige">Name</dt>
             <dd>{state.profile?.name ?? "No profile yet"}</dd>
           </div>
           <div>
-            <dt className="label text-navy-100">Level</dt>
+            <dt className="label text-beige">Level</dt>
             <dd>
               {level.rank.name}
               {level.next ? ` (${copy.level.nextLevel(level.remaining, level.next.name)})` : ""}
             </dd>
           </div>
           <div>
-            <dt className="label text-navy-100">Study streak</dt>
+            <dt className="label text-beige">Study streak</dt>
             <dd>{copy.level.streak(currentStreak(state.streak))}</dd>
           </div>
         </dl>
@@ -99,7 +99,7 @@ export function StyleguideDemo() {
         </div>
       </section>
 
-      <section aria-labelledby="case-demo" className="rounded-2xl border-2 border-dashed border-navy/50 p-6">
+      <section aria-labelledby="case-demo" className="rounded-2xl border-2 border-dashed border-coffee/50 p-6">
         <h2 id="case-demo" className="text-3xl">
           Case demo tools
         </h2>

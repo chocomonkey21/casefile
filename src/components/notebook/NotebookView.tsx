@@ -58,7 +58,7 @@ export function NotebookView() {
         />
         <div
           className="py-5 pl-12 pr-4 sm:pl-14 sm:pr-8"
-          style={{ backgroundImage: "repeating-linear-gradient(transparent 0 31px, rgb(143 119 57 / 0.18) 31px 32px)" }}
+          style={{ backgroundImage: "repeating-linear-gradient(transparent 0 31px, rgb(122 98 56 / 0.18) 31px 32px)" }}
         >
           {visible.length === 0 ? (
             <div className="py-6">
@@ -79,7 +79,7 @@ export function NotebookView() {
                       {caseDef && (
                         <Link
                           href={clueIndex >= 0 ? `/cases/${caseDef.id}/clues/${caseDef.clues[clueIndex].id}` : `/cases/${caseDef.id}`}
-                          className="inline-flex min-h-11 items-center font-semibold text-navy underline underline-offset-4"
+                          className="inline-flex min-h-11 items-center font-semibold text-coffee underline underline-offset-4"
                         >
                           {clueIndex >= 0 ? t.openClue : t.openCase}
                         </Link>
@@ -146,7 +146,7 @@ function FilterChip({ label, on, onClick }: { label: string; on: boolean; onClic
       aria-pressed={on}
       onClick={onClick}
       className={`min-h-11 rounded-full border-2 px-4 text-sm font-semibold transition-colors ${
-        on ? "border-navy bg-navy text-paper" : "border-manila-600/50 bg-paper text-ink hover:bg-highlighter-light/60"
+        on ? "border-coffee bg-espresso text-paper" : "border-manila-600/50 bg-paper text-ink hover:bg-postit-light/60"
       }`}
     >
       {label}

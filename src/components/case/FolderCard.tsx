@@ -72,7 +72,7 @@ export function FolderCard({ caseDef, status, solved }: FolderCardProps) {
           className="absolute inset-0 rounded-b-xl rounded-tr-xl border-2 border-manila-600/40 bg-paper"
           style={{
             backgroundImage:
-              "repeating-linear-gradient(transparent 0 27px, rgb(143 119 57 / 0.25) 27px 28px)",
+              "repeating-linear-gradient(transparent 0 27px, rgb(122 98 56 / 0.25) 27px 28px)",
             backgroundPositionY: "12px",
           }}
         />
@@ -114,7 +114,7 @@ export function FolderCard({ caseDef, status, solved }: FolderCardProps) {
               <span className="text-ink-soft">{copy.common.aboutMin(caseMinutes(caseDef))}</span>
             </div>
             <ProgressBar value={solved} max={total} label={copy.folder.progressLabel(caseDef.title)} />
-            <p className="flex items-center gap-1.5 pt-1 text-sm font-semibold text-navy">
+            <p className="flex items-center gap-1.5 pt-1 text-sm font-semibold text-coffee">
               {copy.folder.cta[status]}
               <ArrowRightIcon width={16} height={16} />
             </p>

@@ -114,7 +114,7 @@ export function ProfileMenu() {
                 {copy.profile.reduceMotion}
                 <span
                   aria-hidden="true"
-                  className={`rounded-full border-2 px-2.5 text-sm font-semibold ${reduceMotion ? "border-sage bg-sage-light" : "border-manila-600/50 bg-paper"}`}
+                  className={`rounded-full border-2 px-2.5 text-sm font-semibold ${reduceMotion ? "border-desk bg-desk-light" : "border-manila-600/50 bg-paper"}`}
                 >
                   {reduceMotion ? copy.profile.on : copy.profile.off}
                 </span>

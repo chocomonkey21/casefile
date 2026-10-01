@@ -2,17 +2,17 @@
 
 import { motion } from "motion/react";
 
-type Tone = "red" | "navy" | "sage" | "cold" | "gold";
+type Tone = "red" | "coffee" | "desk" | "cold" | "gold";
 type Size = "sm" | "md" | "lg" | "xl";
 
 const TONES: Record<Tone, string> = {
   red: "border-evidence-dark text-evidence-dark",
-  navy: "border-navy text-navy",
-  sage: "border-sage text-sage",
-  // For navy backgrounds, where the red stamp would be too dark to read
-  gold: "border-highlighter text-highlighter",
+  coffee: "border-coffee text-coffee",
+  desk: "border-desk text-desk-dark",
+  // For dark backgrounds, where the red stamp would be too dark to read
+  gold: "border-postit text-postit",
   // Cold uses a dashed border so it is not colour alone that says "faded"
-  cold: "border-dashed border-navy-light text-navy-light",
+  cold: "border-dashed border-coffee text-coffee",
 };
 
 const SIZES: Record<Size, string> = {

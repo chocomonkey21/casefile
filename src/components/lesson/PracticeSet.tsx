@@ -35,7 +35,7 @@ function PracticeQuestions({ questions, evidenceFor }: { questions: Question[]; 
 
   if (done) {
     return (
-      <div className="rounded-xl border-2 border-sage bg-sage-light p-5" role="status">
+      <div className="rounded-xl border-2 border-desk bg-desk-light p-5" role="status">
         <p className="font-display text-2xl">{copy.practice.doneTitle}</p>
         <p className="mt-1">
           {copy.practice.doneText(firstTry, questions.length)}
@@ -110,14 +110,14 @@ function OrderTask({ prompt, items }: { prompt: string; items: string[] }) {
             <li
               key={item}
               className={`flex items-center gap-3 rounded-lg border-2 p-3 ${
-                right ? "border-sage bg-sage-light" : wrong ? "border-evidence-dark/60 bg-evidence-light/60" : "border-manila-600/40 bg-paper"
+                right ? "border-desk bg-desk-light" : wrong ? "border-evidence-dark/60 bg-evidence-light/60" : "border-manila-600/40 bg-paper"
               }`}
             >
-              <span aria-hidden="true" className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-navy font-display text-paper">
+              <span aria-hidden="true" className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-espresso font-display text-paper">
                 {i + 1}
               </span>
               <span className="min-w-0 flex-1 text-lg leading-snug">{item}</span>
-              {right && <CheckIcon width={20} height={20} className="shrink-0 text-sage" aria-label={copy.practice.rightPlace} role="img" />}
+              {right && <CheckIcon width={20} height={20} className="shrink-0 text-desk-dark" aria-label={copy.practice.rightPlace} role="img" />}
               {wrong && <CrossIcon width={20} height={20} className="shrink-0 text-evidence-dark" aria-label={copy.practice.wrongPlace} role="img" />}
               <span className="flex shrink-0 gap-1">
                 <button

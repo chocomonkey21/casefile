@@ -61,7 +61,7 @@ export function CaseFileView({ caseDef, initialTab }: { caseDef: CaseDef; initia
     <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6 sm:py-10">
       <Link
         href="/cases"
-        className="mb-4 inline-flex min-h-11 items-center gap-2 font-semibold text-navy underline-offset-4 hover:underline"
+        className="mb-4 inline-flex min-h-11 items-center gap-2 font-semibold text-coffee underline-offset-4 hover:underline"
       >
         <ArrowLeftIcon width={18} height={18} />
         {t.allCases}
@@ -160,7 +160,7 @@ function BriefTab({ caseDef, onSeeClues }: { caseDef: CaseDef; onSeeClues: () =>
   return (
     <div className="space-y-7">
       {caseDef.stub && (
-        <p className="rounded-lg border-2 border-dashed border-navy/40 bg-navy-50 p-3 text-ink-soft">
+        <p className="rounded-lg border-2 border-dashed border-coffee/40 bg-paper-dark p-3 text-ink-soft">
           <strong className="text-ink">{b.previewTitle}</strong> {b.previewText}
         </p>
       )}
@@ -173,7 +173,7 @@ function BriefTab({ caseDef, onSeeClues }: { caseDef: CaseDef; onSeeClues: () =>
       </section>
 
       {/* Sticky note with the goal */}
-      <section aria-labelledby="goal-heading" className="max-w-xl rounded-sm bg-highlighter p-5 shadow-card">
+      <section aria-labelledby="goal-heading" className="max-w-xl rounded-sm bg-postit p-5 shadow-card">
         <h2 id="goal-heading" className="label text-ink">
           {b.goal}
         </h2>

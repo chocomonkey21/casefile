@@ -48,7 +48,7 @@ export function Explainer({ scene, steps }: ExplainerProps) {
   return (
     <div role="group" aria-label={copy.lesson.explainerLabel}>
       <div className="overflow-hidden rounded-xl border-2 border-manila-600/50">
-        <svg viewBox="0 0 600 320" role="img" aria-label={steps[step]} className="block h-auto w-full bg-navy-50">
+        <svg viewBox="0 0 600 320" role="img" aria-label={steps[step]} className="block h-auto w-full bg-paper-dark">
           {scene === "puddle" ? <PuddleScene step={step} off={motionOff} /> : <DropScene step={step} off={motionOff} />}
         </svg>
       </div>
@@ -73,7 +73,7 @@ export function Explainer({ scene, steps }: ExplainerProps) {
       </div>
 
       <details className="mt-3">
-        <summary className="cursor-pointer py-2 font-semibold text-navy">{copy.lesson.transcript}</summary>
+        <summary className="cursor-pointer py-2 font-semibold text-coffee">{copy.lesson.transcript}</summary>
         <ol className="list-decimal space-y-1 pl-6 text-ink-soft">
           {steps.map((s) => (
             <li key={s}>{s}</li>
@@ -119,13 +119,13 @@ function PuddleScene({ step, off }: { step: number; off: boolean }) {
               y1={Math.sin(a) * 34}
               x2={Math.cos(a) * 46}
               y2={Math.sin(a) * 46}
-              className="stroke-highlighter-dark"
+              className="stroke-postit-dark"
               strokeWidth={4}
               strokeLinecap="round"
             />
           );
         })}
-        <circle r={26} className="fill-highlighter stroke-ink" strokeWidth={2} />
+        <circle r={26} className="fill-postit stroke-ink" strokeWidth={2} />
       </motion.g>
 
       {/* ground and puddle */}
@@ -136,7 +136,7 @@ function PuddleScene({ step, off }: { step: number; off: boolean }) {
         initial={false}
         animate={{ rx: PUDDLE.rx[step], ry: PUDDLE.ry[step] }}
         transition={move}
-        className="fill-navy-300 stroke-navy"
+        className="fill-manila-500 stroke-coffee"
         strokeWidth={2}
       />
 
@@ -178,7 +178,7 @@ function DropScene({ step, off }: { step: number; off: boolean }) {
     <>
       <rect x={0} y={286} width={600} height={34} className="fill-manila-400" />
       {/* cloud */}
-      <g className="fill-navy-100 stroke-ink" strokeWidth={2}>
+      <g className="fill-beige stroke-ink" strokeWidth={2}>
         <ellipse cx={230} cy={100} rx={62} ry={40} />
         <ellipse cx={300} cy={84} rx={74} ry={50} />
         <ellipse cx={376} cy={104} rx={60} ry={38} />
@@ -190,7 +190,7 @@ function DropScene({ step, off }: { step: number; off: boolean }) {
         <motion.circle
           key={i}
           r={6}
-          className="fill-navy-300"
+          className="fill-manila-500"
           initial={false}
           animate={{
             cx: step === 0 ? x : x + (300 - x) * (step === 1 ? 0.55 : 1),
@@ -204,7 +204,7 @@ function DropScene({ step, off }: { step: number; off: boolean }) {
       {/* the big drop forms, then falls */}
       <motion.circle
         cx={300}
-        className="fill-navy stroke-navy-dark"
+        className="fill-coffee stroke-espresso"
         strokeWidth={2}
         initial={false}
         animate={{ r: step === 0 || step === 1 ? 0 : step === 2 ? 20 : 14, cy: step === 3 ? 262 : 104, opacity: step >= 2 ? 1 : 0 }}
@@ -213,7 +213,7 @@ function DropScene({ step, off }: { step: number; off: boolean }) {
       {step === 3 && (
         <>
           {[-16, 0, 16].map((dx) => (
-            <line key={dx} x1={300 + dx} y1={196} x2={300 + dx} y2={226} className="stroke-navy-300" strokeWidth={3} strokeLinecap="round" />
+            <line key={dx} x1={300 + dx} y1={196} x2={300 + dx} y2={226} className="stroke-manila-500" strokeWidth={3} strokeLinecap="round" />
           ))}
           <text x={336} y={250} className="fill-ink font-sans text-[15px] font-semibold">
             A raindrop

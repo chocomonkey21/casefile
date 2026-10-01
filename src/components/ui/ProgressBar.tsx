@@ -3,16 +3,16 @@ type ProgressBarProps = {
   max: number;
   /** Describes what is being measured, for screen readers */
   label: string;
-  tone?: "sage" | "highlighter" | "navy";
+  tone?: "desk" | "postit" | "coffee";
 };
 
 const FILLS = {
-  sage: "bg-sage",
-  highlighter: "bg-highlighter-dark",
-  navy: "bg-navy",
+  desk: "bg-desk",
+  postit: "bg-postit-dark",
+  coffee: "bg-espresso",
 };
 
-export function ProgressBar({ value, max, label, tone = "sage" }: ProgressBarProps) {
+export function ProgressBar({ value, max, label, tone = "desk" }: ProgressBarProps) {
   const pct = max === 0 ? 0 : Math.min(100, Math.round((value / max) * 100));
   return (
     <div

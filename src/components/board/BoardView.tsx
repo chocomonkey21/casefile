@@ -97,12 +97,12 @@ export function BoardView() {
           {/* The suggestion sits right above the board. The instructions fold away to keep the board high on phones. */}
           <section aria-label={t.suggestionLabel} aria-live="polite" className="mt-6 lg:min-h-36">
             {linkNote ? (
-              <div className="rounded-xl border-2 border-sage bg-sage-light p-4">
-                <p className="label text-sage">{t.connectedLabel}</p>
+              <div className="rounded-xl border-2 border-desk bg-desk-light p-4">
+                <p className="label text-desk-dark">{t.connectedLabel}</p>
                 <p className="mt-1">{linkNote}</p>
               </div>
             ) : suggestion ? (
-              <div className="rounded-sm bg-highlighter p-4 shadow-card">
+              <div className="rounded-sm bg-postit p-4 shadow-card">
                 <p className="label text-ink">{t.suggestionLabel}</p>
                 <p className="mt-1 text-lg font-medium">{t.suggestion(titleOf(suggestion.a), titleOf(suggestion.b))}</p>
                 <p className="mt-1">{suggestion.why}</p>
@@ -121,8 +121,8 @@ export function BoardView() {
                 <p className="mt-1">{t.needMore}</p>
               </div>
             ) : (
-              <div className="rounded-xl border-2 border-sage bg-sage-light p-4">
-                <p className="label text-sage">{t.allConnectedLabel}</p>
+              <div className="rounded-xl border-2 border-desk bg-desk-light p-4">
+                <p className="label text-desk-dark">{t.allConnectedLabel}</p>
                 <p className="mt-1">{t.allConnected}</p>
               </div>
             )}

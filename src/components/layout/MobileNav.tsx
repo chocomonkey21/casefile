@@ -12,7 +12,7 @@ export function MobileNav() {
   return (
     <nav
       aria-label={copy.nav.main}
-      className="fixed inset-x-0 bottom-0 z-40 border-t-4 border-highlighter bg-navy pb-[env(safe-area-inset-bottom)] text-paper lg:hidden"
+      className="fixed inset-x-0 bottom-0 z-40 on-dark border-t-4 border-brass bg-espresso pb-[env(safe-area-inset-bottom)] lg:hidden"
     >
       <ul className="mx-auto flex max-w-xl">
         {NAV_ITEMS.map(({ href, short, Icon }) => {
@@ -23,7 +23,7 @@ export function MobileNav() {
                 href={href}
                 aria-current={active ? "page" : undefined}
                 className={`flex min-h-14 flex-col items-center justify-center gap-0.5 px-1 py-1.5 text-xs font-medium ${
-                  active ? "bg-navy-light text-highlighter" : "text-navy-100"
+                  active ? "bg-coffee text-postit" : "text-beige"
                 }`}
               >
                 <Icon width={22} height={22} />

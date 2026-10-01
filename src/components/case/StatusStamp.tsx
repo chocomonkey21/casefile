@@ -2,9 +2,9 @@ import { Stamp } from "@/components/ui/Stamp";
 import { copy } from "@/lib/copy";
 import type { CaseStatus } from "@/lib/types";
 
-const CONFIG: Record<CaseStatus, { tone: "red" | "navy" | "sage" | "cold"; rotate: number }> = {
-  open: { tone: "navy", rotate: -5 },
-  active: { tone: "sage", rotate: -4 },
+const CONFIG: Record<CaseStatus, { tone: "red" | "coffee" | "desk" | "cold"; rotate: number }> = {
+  open: { tone: "coffee", rotate: -5 },
+  active: { tone: "desk", rotate: -4 },
   cold: { tone: "cold", rotate: -6 },
   closed: { tone: "red", rotate: -8 },
 };

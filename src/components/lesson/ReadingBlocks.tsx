@@ -31,7 +31,7 @@ export function ReadingBlocks({ blocks }: { blocks: Block[] }) {
             );
           case "tip":
             return (
-              <div key={i} role="note" className="rounded-md border-l-8 border-highlighter-dark bg-highlighter-light/70 p-4">
+              <div key={i} role="note" className="rounded-md border-l-8 border-postit-dark bg-postit-light/70 p-4">
                 <p className="label text-ink">{block.title}</p>
                 <p className="mt-1 text-lg font-medium">{block.text}</p>
               </div>
