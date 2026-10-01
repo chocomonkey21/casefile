@@ -59,7 +59,7 @@ export function PinCard({ info, center, width, tilt, zIndex, dragging, highlight
       role="group"
       tabIndex={0}
       aria-label={copy.board.cardLabel(info.evidence.title, label, info.clueIndex + 1)}
-      className={`absolute touch-none select-none rounded-md border-2 bg-paper p-3 pt-4 text-left outline-offset-4 ${
+      className={`tex-paper tex-worn-alt absolute touch-none select-none rounded-md border-2 p-3 pt-4 text-left outline-offset-4 ${
         dragging ? "cursor-grabbing shadow-folder" : "cursor-grab shadow-card"
       } ${
         isTarget

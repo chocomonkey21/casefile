@@ -60,7 +60,7 @@ export function FolderCard({ caseDef, status, solved }: FolderCardProps) {
       {/* Index tab with the case number */}
       <div
         aria-hidden="true"
-        className="absolute left-0 top-0 flex h-10 items-center rounded-t-lg border-2 border-b-0 border-manila-600/50 bg-manila-400 px-4 font-display text-sm tracking-[0.2em] text-ink"
+        className="tex-manila absolute left-0 top-0 flex h-10 items-center rounded-t-lg border-2 border-b-0 border-manila-600/50 bg-manila-400 px-4 font-display text-sm tracking-[0.2em] text-ink"
       >
         {copy.folder.caseNo(caseDef.number)}
       </div>
@@ -69,7 +69,7 @@ export function FolderCard({ caseDef, status, solved }: FolderCardProps) {
         {/* The inside of the folder, which you see when the cover swings open */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 rounded-b-xl rounded-tr-xl border-2 border-manila-600/40 bg-paper"
+          className="tex-paper tex-worn-alt absolute inset-0 rounded-b-xl rounded-tr-xl border-2 border-manila-600/40"
           style={{
             backgroundImage:
               "repeating-linear-gradient(transparent 0 27px, rgb(122 98 56 / 0.25) 27px 28px)",
@@ -78,7 +78,7 @@ export function FolderCard({ caseDef, status, solved }: FolderCardProps) {
         />
 
         <motion.div
-          className={`relative flex h-full flex-col gap-3 rounded-b-xl rounded-tr-xl border-2 border-manila-600/50 bg-manila p-5 shadow-folder ${
+          className={`tex-manila tex-worn tex-crease relative flex h-full flex-col gap-3 rounded-b-xl rounded-tr-xl border-2 border-manila-600/50 p-5 shadow-folder ${
             status === "cold" ? "dusty" : ""
           }`}
           style={{ transformOrigin: "left center", backfaceVisibility: "hidden" }}

@@ -36,7 +36,7 @@ export function EvidenceCard({
       <span
         aria-hidden="true"
         className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border-2 ${
-          locked ? "border-manila-600/40 bg-manila-100 text-ink-mute" : "border-manila-600/60 bg-manila text-ink"
+          locked ? "border-manila-600/40 bg-manila-100 text-ink-soft" : "border-manila-600/60 bg-manila text-ink"
         }`}
       >
         {locked ? <LockIcon width={20} height={20} /> : <Icon width={22} height={22} />}

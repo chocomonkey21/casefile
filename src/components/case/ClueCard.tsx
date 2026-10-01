@@ -38,7 +38,7 @@ export function ClueCard({ caseDef, clue, index, state, progress, preview = fals
             ? "border-desk bg-desk text-paper"
             : state === "open"
               ? "border-ink bg-postit text-ink"
-              : "border-manila-600/60 bg-manila-100 text-ink-mute"
+              : "border-manila-600/60 bg-manila-100 text-ink-soft"
         }`}
       >
         {state === "solved" ? (

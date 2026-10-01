@@ -61,6 +61,16 @@ src/
 
 ## Design notes
 
+- **Colour:** a walnut desk (walnut, espresso, coffee) with everything you read on paper cream, manila or post-it yellow.
+  Tokens live in `src/app/globals.css` and are mirrored in `src/lib/theme.ts`.
+- **Learning colours:** lesson diagrams use real-world colours (blue water, green grass, a yellow sun) from the `ill-*`
+  tokens, so the pictures teach. The interface never uses them.
+- **Paper and ink:** textures are procedural SVG noise in `src/lib/textures.ts` (the place to swap in scanned paper).
+  They are laid over the content with multiply, so type looks printed. Special Elite gets a typewriter ink filter and
+  stamps get rough, patchy ink (`src/components/ui/InkFilters.tsx`). High contrast mode turns all of it off.
+- **Contrast:** `npm run contrast` checks every colour pair flat, under the texture overlay with ink at its faintest,
+  and as stamp ink. It also fails if a learning colour leaks into the interface.
+
 - **Type:** Special Elite only for headings, labels, stamps and folder tabs. DM Sans for everything a student reads or taps.
 - **Plain actions:** buttons stay plain (Start, Continue, Save, Next, Submit, Review).
 - **Onboarding:** profile, interests, grade, a five-screen "How CaseFile works" walkthrough, then the practice case. The walkthrough

@@ -13,7 +13,7 @@ type DiagramFigureProps = {
 export function DiagramFigure({ diagramId, caption, alt, notice }: DiagramFigureProps) {
   return (
     <figure>
-      <div className="overflow-hidden rounded-xl border-2 border-manila-600/50 bg-paper">
+      <div className="overflow-hidden rounded-[2px] shadow-[0_1px_2px_rgb(36_25_19/0.3)]">
         <Diagram id={diagramId} alt={alt} />
       </div>
       <figcaption className="mt-2 text-ink-soft">{caption}</figcaption>

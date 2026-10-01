@@ -128,7 +128,7 @@ export function ClueView({ caseDef, clueIndex, lesson }: ClueViewProps) {
         <>
           {/* The question for this clue, with the hint button. Hints slide out from under this note. */}
           <section aria-labelledby="question-heading" className="mt-6" id="hint-area">
-            <div className="relative z-10 rounded-sm bg-postit p-5 shadow-card">
+            <div className="tex-postit relative z-10 rounded-[2px] p-5 shadow-card">
               <h2 id="question-heading" className="label text-ink">
                 {t.questionLabel}
               </h2>

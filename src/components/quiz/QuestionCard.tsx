@@ -77,7 +77,7 @@ export function QuestionCard({ question, position, evidence, onDone, doneLabel, 
   return (
     <div>
       {/* text-ink is set here because the Interrogation Room passes light text down from its dark panel */}
-      <div className="relative z-10 rounded-2xl border-2 border-manila-600/50 bg-paper p-5 text-ink shadow-folder sm:p-7">
+      <div className="tex-paper relative z-10 rounded-2xl border-2 border-manila-600/50 p-5 text-ink shadow-folder sm:p-7">
         {position && (
           <p className="label text-ink-soft">
             {copy.question.position(position.index + 1, position.total)}

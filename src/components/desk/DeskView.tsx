@@ -87,7 +87,7 @@ export function DeskView() {
           {t.lead.label}
         </h2>
         {lead ? (
-          <div className="relative rounded-md bg-postit p-6 shadow-card sm:p-8">
+          <div className="tex-postit relative rounded-[2px] p-6 shadow-card sm:p-8">
             {/* Folded corner, like a sticky note */}
             <span
               aria-hidden="true"

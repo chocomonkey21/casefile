@@ -36,7 +36,7 @@ export function EvidenceSection({ caseId, clueId, evidence, number, total, child
     <article
       id={evidence.id}
       aria-labelledby={`${evidence.id}-title`}
-      className="scroll-mt-24 rounded-2xl border-2 border-manila-600/40 bg-paper p-4 shadow-card sm:p-6"
+      className="tex-paper scroll-mt-24 rounded-2xl border-2 border-manila-600/40 p-4 shadow-card sm:p-6"
     >
       <header className="flex items-start gap-3">
         <span

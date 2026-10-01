@@ -171,7 +171,7 @@ function Results({
   const r = t.result;
 
   return (
-    <div className="rounded-2xl bg-paper p-6 text-ink sm:p-8" role="status">
+    <div className="tex-paper rounded-2xl p-6 text-ink sm:p-8" role="status">
       <div className="flex flex-wrap items-center gap-5">
         {mode === "clue" ? (
           <Stamp tone="desk" size="lg" rotate={-7} slam>

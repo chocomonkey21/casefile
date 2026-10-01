@@ -33,8 +33,7 @@
 
   /* Ink: text on paper */
   --color-ink: #231B15;
-  --color-ink-soft: #4A3E32; /* secondary text */
-  --color-ink-mute: #5A4C3D; /* captions, still passes AA on paper and manila */
+  --color-ink-soft: #43382D; /* secondary text */
 
   /* Evidence red: string, stamps, alerts. Muted like ink or thread. */
   --color-evidence: #A63A2E;
@@ -49,6 +48,30 @@
   /* Brass: pins and clip hardware, tiny details */
   --color-brass: #A98652;
   --color-brass-dark: #7A5C2E; /* focus mark on paper */
+
+  /*
+    Learning imagery. Real-world colours for lesson diagrams and explainers only (water is blue,
+    grass is green), so the pictures teach. Never use these for interface chrome: the contrast
+    script fails if an ill-* colour appears outside the lesson illustration files.
+  */
+  --color-ill-sky: #D5E7F1; /* clear daytime sky */
+  --color-ill-sky-grey: #C3D0DA; /* overcast, rainy sky */
+  --color-ill-storm: #6F8293; /* storm cloud */
+  --color-ill-cloud: #FBFCFC; /* white cloud, snow, highlights */
+  --color-ill-cloud-shade: #D9E0E6; /* the shaded underside of a cloud */
+  --color-ill-water: #2A6BA1; /* lakes, puddles, the sea, raindrops */
+  --color-ill-water-deep: #1C4F7C; /* water molecules, outlines on water */
+  --color-ill-water-light: #A9D2EC; /* water in a glass, water vapour */
+  --color-ill-ice: #E6F3FA; /* ice, hail, sleet */
+  --color-ill-sun: #F4B740; /* the sun */
+  --color-ill-sun-ray: #E08A1E; /* sun rays */
+  --color-ill-grass: #7EA95A; /* grass and hills */
+  --color-ill-grass-dark: #4C7A35; /* outlines on grass */
+  --color-ill-soil: #7F5D3D; /* soil */
+  --color-ill-rock: #5E4D3F; /* underground rock */
+  --color-ill-earth: #C8AE85; /* a dry path or bare ground */
+  --color-ill-wood: #A27852; /* a wooden table */
+  --color-ill-wall: #DDE3E6; /* an indoor wall */
 
   /* Fonts. Only these two families are ever used. */
   --font-display: var(--font-special-elite), serif;
@@ -77,7 +100,7 @@
     The desk. Faint horizontal wood grain (stretched fractal noise) with a vignette over it.
     Both live on one fixed layer behind everything, so they never move with the content and never
     take clicks. Keep the grain low in contrast: it must never compete with the paper on top.
-    Phase 2 moves the grain into the shared texture file.
+    The grain itself is defined in src/lib/textures.ts.
   */
   body {
     position: relative;
@@ -95,7 +118,7 @@
     pointer-events: none;
     background-image:
       radial-gradient(ellipse 85% 75% at 50% 42%, transparent 40%, rgb(20 12 8 / 0.5) 100%),
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='600'%3E%3Cfilter id='g' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.004 0.19' numOctaves='3' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.09 0 0 0 0 0.05 0 0 0 0 0.03 0 0 0 1.9 -0.78'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.55'/%3E%3C/svg%3E");
+      var(--tex-wood-grain);
     background-size: 100% 100%, 900px 600px;
   }
 
@@ -159,15 +182,133 @@
   }
 
   /*
-    A loose sheet of paper lying on the desk. All reading content sits on one of these.
-    Phase 2 replaces the placeholder grain below with the shared paper textures.
+    ── Paper surfaces ──────────────────────────────────────────────────────────────────────────
+
+    Each surface is a stack, back to front:
+      1. the paper colour, plus an optional crease drawn under the content
+      2. the content (text, images, buttons)
+      3. the texture overlay (::after), blended with multiply
+
+    The overlay sits ON TOP of the text, so ink and paper share one grain and the type reads as
+    printed, not floating. It never takes clicks. A surface placed on another surface (a card on a
+    sheet) is lifted above its parent's overlay, so it is never grained twice.
+
+    Textures come from src/lib/textures.ts. How dark each overlay can get is part of the contrast
+    check (OVERLAYS in src/lib/theme.ts), so lower --overlay if a scan makes text too faint.
+
+      .tex-paper    paper cream: fine fibre grain and faint handled blotches
+      .tex-manila   folder card: rougher grain and horizontal fibres
+      .tex-postit   sticky note: smoother grain, darker glue strip at the top
+      .tex-worn     darker, uneven edges (cards and folders, not whole pages)
+      .tex-crease   a soft fold across the surface (folder covers)
+      .sheet        a whole page of paper lying on the desk
   */
+  :is(.tex-paper, .tex-manila, .tex-postit, .sheet) {
+    position: relative;
+    isolation: isolate;
+    color: var(--color-ink);
+    /* Body text: the faintest bleed, as if the ink soaked in. Headings get the stronger ink-type filter. */
+    text-shadow: 0 0 0.6px color-mix(in srgb, currentColor 30%, transparent);
+  }
+  :is(.tex-paper, .tex-manila, .tex-postit, .sheet)::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    border-radius: inherit;
+    mix-blend-mode: multiply;
+    opacity: var(--overlay, 1);
+    background-image: var(--wear, none), var(--grain-a, none), var(--grain-b, none);
+    background-size: 100% 100%, var(--grain-a-size, 240px), var(--grain-b-size, 900px);
+    background-repeat: no-repeat, repeat, repeat;
+    box-shadow: var(--edge-shade, none);
+  }
+  /* A surface on a surface rises above the parent's grain and brings its own */
+  :is(.tex-paper, .tex-manila, .tex-postit, .sheet) :is(.tex-paper, .tex-manila, .tex-postit) {
+    z-index: 2;
+  }
+
+  .tex-paper,
   .sheet {
     background-color: var(--color-paper);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.36 0 0 0 0 0.2 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    color: var(--color-ink);
-    border-radius: 3px;
+    --grain-a: var(--tex-paper-grain);
+    --grain-b: var(--tex-paper-blotch);
+    /* Soft darkening that gathers at the edges of any sheet */
+    --edge-shade: inset 0 0 28px -8px rgb(107 83 48 / 0.32), inset 0 0 2px rgb(107 83 48 / 0.22);
+  }
+  .tex-manila {
+    background-color: var(--color-manila);
+    --grain-a: var(--tex-manila-grain);
+    --grain-a-size: 260px;
+    --grain-b: var(--tex-manila-fibres);
+    --grain-b-size: 520px 260px;
+    --edge-shade: inset 0 0 22px -6px rgb(92 66 34 / 0.38), inset 0 0 2px rgb(92 66 34 / 0.3);
+  }
+  .tex-postit {
+    background-color: var(--color-postit);
+    /* The glue strip: a touch darker and smoother along the top edge */
+    background-image: linear-gradient(to bottom, rgb(196 178 96 / 0.22), rgb(196 178 96 / 0) 18%);
+    --grain-a: var(--tex-postit-grain);
+    --grain-a-size: 200px;
+    --edge-shade: inset 0 -10px 18px -12px rgb(140 120 40 / 0.35);
+  }
+  .tex-worn {
+    --wear: var(--tex-edge-wear-a);
+  }
+  .tex-worn-alt {
+    --wear: var(--tex-edge-wear-b);
+  }
+  /* A soft fold: a thin highlight beside a thin shadow, drawn under the content. Set --crease-at to move it. */
+  .tex-crease {
+    background-image: linear-gradient(
+      var(--crease-angle, 178deg),
+      transparent calc(var(--crease-at, 78%) - 1.6%),
+      rgb(255 248 228 / 0.45) calc(var(--crease-at, 78%) - 0.5%),
+      rgb(92 66 34 / 0.16) calc(var(--crease-at, 78%) + 0.3%),
+      transparent calc(var(--crease-at, 78%) + 2.2%)
+    );
+  }
+
+  /* A whole page of paper lying on the desk */
+  .sheet {
+    border-radius: 2px;
     box-shadow: var(--shadow-sheet);
+  }
+
+  /* Anything printed light on dark keeps its own crisp edge */
+  .on-dark {
+    text-shadow: none;
+  }
+
+  /*
+    ── Ink ─────────────────────────────────────────────────────────────────────────────────────
+    Special Elite type is struck by a typewriter: a small bleed, uneven ribbon density and a few
+    missing speckles (filters in components/ui/InkFilters.tsx). Elements that hold controls are
+    left alone, because a filter would also clip their pop-ups and blur their focus mark.
+  */
+  :is(h1, h2, h3, h4, .label, .font-display):not(.stamp, svg *, :has(a, button, input, select, textarea, [tabindex])) {
+    filter: url(#ink-type);
+  }
+  /* Rubber stamps: rough edges and patchy ink. Small ones are gentler so 12px text stays readable. */
+  .stamp {
+    filter: url(#ink-stamp);
+  }
+  .stamp-sm {
+    filter: url(#ink-stamp-small);
+  }
+
+  /* High contrast and forced colours: plain, crisp type and flat surfaces */
+  @media (prefers-contrast: more), (forced-colors: active) {
+    :is(.tex-paper, .tex-manila, .tex-postit, .sheet)::after {
+      display: none;
+    }
+    :is(h1, h2, h3, h4, .label, .font-display, .stamp, .stamp-sm) {
+      filter: none !important;
+    }
+    :is(.tex-paper, .tex-manila, .tex-postit, .sheet) {
+      text-shadow: none;
+    }
   }
 
   /*

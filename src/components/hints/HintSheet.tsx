@@ -51,7 +51,7 @@ export function HintSheet({ levels, revealed, onReveal, explanation, explained, 
               initial={{ y: -36, opacity: 0, rotate: 0 }}
               animate={{ y: 0, opacity: 1, rotate: NOTE_TILT[i] }}
               transition={{ type: "spring", stiffness: 380, damping: 28 }}
-              className="rounded-sm bg-postit p-4 shadow-card"
+              className="tex-postit rounded-[2px] p-4 shadow-card"
               style={{ transformOrigin: "top center" }}
             >
               <p className="label text-ink">
@@ -67,7 +67,7 @@ export function HintSheet({ levels, revealed, onReveal, explanation, explained, 
         <motion.div
           initial={{ y: -24, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className="mt-3 rounded-md border-2 border-coffee bg-paper p-4 text-ink"
+          className="tex-paper mt-3 rounded-md border-2 border-coffee p-4 text-ink"
         >
           <p className="label text-coffee">{copy.hints.fullExplanation}</p>
           <div className="mt-1 space-y-2">{explanation}</div>

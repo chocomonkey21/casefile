@@ -53,7 +53,7 @@ export function Tabs({ tabs, value, onChange, idBase, label }: TabsProps) {
             className={`relative min-h-11 shrink-0 rounded-t-xl border-2 border-b-0 px-2.5 font-display text-sm uppercase tracking-wide transition-colors sm:px-6 sm:text-base sm:tracking-wider ${
               selected
                 ? "z-10 border-manila-600/60 bg-manila-50 text-ink"
-                : "border-manila-600/30 bg-manila-400 text-ink-soft hover:bg-manila-500/60"
+                : "border-manila-600/30 bg-manila-400 text-ink hover:bg-manila-500/60"
             }`}
           >
             {tab.label}

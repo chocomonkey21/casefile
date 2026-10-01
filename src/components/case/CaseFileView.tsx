@@ -74,7 +74,7 @@ export function CaseFileView({ caseDef, initialTab }: { caseDef: CaseDef; initia
           animate={{ rotateX: 0, opacity: 1, y: 0 }}
           transition={{ duration: 0.4, ease: [0.2, 0.7, 0.2, 1] }}
           style={{ transformOrigin: "top center" }}
-          className="rounded-2xl border-2 border-manila-600/50 bg-manila p-3 shadow-folder sm:p-6"
+          className="tex-manila tex-worn rounded-2xl border-2 border-manila-600/50 p-3 shadow-folder sm:p-6"
         >
           <header className="flex flex-wrap items-start justify-between gap-4 px-1 pb-5 sm:px-2">
             <div className="min-w-0 flex-1">
@@ -104,7 +104,7 @@ export function CaseFileView({ caseDef, initialTab }: { caseDef: CaseDef; initia
 
           <Tabs tabs={tabs} value={tab} onChange={changeTab} idBase={idBase} label={t.tabsLabel} />
 
-          <div className="relative rounded-b-xl rounded-tr-xl border-2 border-manila-600/60 bg-manila-50 p-4 sm:p-7">
+          <div className="tex-paper relative rounded-b-xl rounded-tr-xl border-2 border-manila-600/60 p-4 sm:p-7">
             <Panel id={`${idBase}-panel-brief`} labelledBy={`${idBase}-tab-brief`} active={tab === "brief"}>
               <BriefTab caseDef={caseDef} onSeeClues={() => changeTab("clues")} />
             </Panel>
@@ -173,7 +173,7 @@ function BriefTab({ caseDef, onSeeClues }: { caseDef: CaseDef; onSeeClues: () =>
       </section>
 
       {/* Sticky note with the goal */}
-      <section aria-labelledby="goal-heading" className="max-w-xl rounded-sm bg-postit p-5 shadow-card">
+      <section aria-labelledby="goal-heading" className="tex-postit max-w-xl rounded-[2px] p-5 shadow-card">
         <h2 id="goal-heading" className="label text-ink">
           {b.goal}
         </h2>

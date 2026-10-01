@@ -1,4 +1,6 @@
 import { StyleguideDemo } from "./StyleguideDemo";
+import { StatusStamp } from "@/components/case/StatusStamp";
+import { Stamp } from "@/components/ui/Stamp";
 import { Diagram } from "@/components/lesson/Diagrams";
 import { blend, contrastRatio } from "@/lib/contrast";
 import { copy } from "@/lib/copy";
@@ -117,6 +119,64 @@ export default function StyleguidePage() {
             <p className="mt-3 text-sm text-ink-soft">Small text, captions and hints use this too.</p>
           </div>
         </div>
+      </section>
+
+      <section aria-labelledby="textures">
+        <h2 id="textures" className="text-3xl">
+          Paper and ink
+        </h2>
+        <p className="mt-2 max-w-prose text-ink-soft">
+          Procedural textures from <code>src/lib/textures.ts</code>, laid over the content with multiply so the type looks
+          printed. Swap in scanned paper there.
+        </p>
+        <ul className="mt-6 grid gap-6 sm:grid-cols-3">
+          <li className="tex-paper tex-worn p-5 shadow-card">
+            <p className="label text-ink-soft">tex-paper tex-worn</p>
+            <p className="mt-2 font-display text-2xl">Loose paper</p>
+            <p className="mt-2 text-ink-soft">Fine fibres and a faint handled tone.</p>
+          </li>
+          <li className="tex-manila tex-worn tex-crease p-5 shadow-folder">
+            <p className="label text-ink-soft">tex-manila tex-crease</p>
+            <p className="mt-2 font-display text-2xl">Folder card</p>
+            <p className="mt-2 text-ink-soft">Rougher grain and short fibres.</p>
+          </li>
+          <li className="tex-postit -rotate-1 p-5 shadow-card">
+            <p className="label text-ink-soft">tex-postit</p>
+            <p className="mt-2 font-display text-2xl">Sticky note</p>
+            <p className="mt-2 text-ink-soft">Smooth, with a glue strip at the top.</p>
+          </li>
+        </ul>
+        <div className="tex-paper mt-6 flex flex-wrap items-center gap-6 p-6 shadow-card">
+          <Stamp tone="red" size="lg" rotate={-6}>
+            Case closed
+          </Stamp>
+          <Stamp tone="desk" size="md" rotate={-4}>
+            Solved
+          </Stamp>
+          <StatusStamp status="open" />
+          <StatusStamp status="cold" />
+        </div>
+      </section>
+
+      <section aria-labelledby="learning-colours">
+        <h2 id="learning-colours" className="text-3xl">
+          Learning colours
+        </h2>
+        <p className="mt-2 max-w-prose text-ink-soft">
+          Real-world colours for lesson diagrams only, so water reads as water. The interface never uses them, and{" "}
+          <code>npm run contrast</code> fails if one leaks out.
+        </p>
+        <ul className="mt-5 flex flex-wrap gap-3">
+          {(Object.keys(PALETTE) as ColorName[])
+            .filter((n) => n.startsWith("ill-"))
+            .map((n) => (
+              <li key={n} className="w-28 text-sm">
+                <span aria-hidden="true" className="block h-12 shadow-card" style={{ background: PALETTE[n] }} />
+                <span className="mt-1 block font-semibold">{n.replace("ill-", "")}</span>
+                <span className="block text-ink-soft">{PALETTE[n]}</span>
+              </li>
+            ))}
+        </ul>
       </section>
 
       <section aria-labelledby="diagrams">

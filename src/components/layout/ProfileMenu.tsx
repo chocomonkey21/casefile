@@ -73,7 +73,7 @@ export function ProfileMenu() {
         {open && (
           <div
             id={menuId}
-            className="absolute right-0 top-full z-50 mt-2 w-72 rounded-xl border-2 border-manila-600/60 bg-paper p-2 text-ink shadow-folder"
+            className="tex-paper absolute right-0 top-full z-50 mt-2 w-72 rounded-xl border-2 border-manila-600/60 p-2 text-ink shadow-folder"
           >
             <div className="border-b border-manila-600/30 px-3 pb-2 pt-1">
               <p className="font-display text-lg">{profile ? profile.name : copy.profile.guest}</p>

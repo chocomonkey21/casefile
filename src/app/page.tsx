@@ -43,7 +43,7 @@ export default function Home() {
             </h2>
             <ol className="mt-8 grid gap-6 md:grid-cols-3">
               {t.steps.map((s, i) => (
-                <li key={s.title} className="relative rounded-2xl border-2 border-manila-600/40 bg-paper p-6 shadow-card">
+                <li key={s.title} className="tex-paper tex-worn relative rounded-2xl border-2 border-manila-600/40 p-6 shadow-card">
                   <span
                     aria-hidden="true"
                     className="flex h-12 w-12 items-center justify-center rounded-full border-[3px] border-evidence-dark font-display text-2xl text-evidence-dark"
@@ -69,11 +69,11 @@ export default function Home() {
               <li key={c.id} className="relative pt-8">
                 <div
                   aria-hidden="true"
-                  className="absolute left-0 top-0 flex h-10 items-center rounded-t-lg border-2 border-b-0 border-manila-600/50 bg-manila-400 px-4 font-display text-sm tracking-[0.2em]"
+                  className="tex-manila absolute left-0 top-0 flex h-10 items-center rounded-t-lg border-2 border-b-0 border-manila-600/50 bg-manila-400 px-4 font-display text-sm tracking-[0.2em]"
                 >
                   {copy.folder.caseNo(c.number)}
                 </div>
-                <div className="h-full rounded-b-xl rounded-tr-xl border-2 border-manila-600/50 bg-manila p-5 shadow-folder">
+                <div className="tex-manila tex-worn tex-crease h-full rounded-b-xl rounded-tr-xl border-2 border-manila-600/50 p-5 shadow-folder">
                   <p className="label flex items-center gap-2 text-ink-soft">
                     <span aria-hidden="true" className={`h-2.5 w-2.5 rounded-full ${SUBJECTS[c.subject].dot}`} />
                     {SUBJECTS[c.subject].label}

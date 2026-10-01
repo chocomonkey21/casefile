@@ -1,8 +1,11 @@
 import type { Metadata, Viewport } from "next";
+import type { CSSProperties } from "react";
 import { DM_Sans, Special_Elite } from "next/font/google";
 import { AppShell } from "@/components/layout/AppShell";
 import { Providers } from "@/components/Providers";
+import { InkFilters } from "@/components/ui/InkFilters";
 import { copy } from "@/lib/copy";
+import { textureVariables } from "@/lib/textures";
 import "./globals.css";
 
 // Special Elite: labels, headings, case numbers, stamps, folder tabs only
@@ -34,8 +37,14 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${specialElite.variable} ${dmSans.variable} h-full`}>
+    <html
+      lang="en"
+      className={`${specialElite.variable} ${dmSans.variable} h-full`}
+      // Procedural paper, manila and wood textures as CSS variables. Swap in scans in src/lib/textures.ts.
+      style={textureVariables() as CSSProperties}
+    >
       <body className="flex min-h-full flex-col">
+        <InkFilters />
         <Providers>
           <AppShell>{children}</AppShell>
         </Providers>
