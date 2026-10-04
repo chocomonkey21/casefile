@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/Button";
 import { Pushpin } from "@/components/ui/DeskObjects";
 import { ClockIcon } from "@/components/ui/Icons";
 import { RedThread } from "@/components/ui/RedThread";
-import { CASES } from "@/data/cases";
 import { copy } from "@/lib/copy";
 import {
   caseStatus,
@@ -18,6 +17,7 @@ import {
   solvedCount,
 } from "@/lib/progress";
 import { useCaseFile, useHydrated } from "@/lib/store";
+import { useAllowedCases } from "@/lib/use-access";
 
 /**
  * The Desk: where the student lands. Laid out like a real desk rather than a grid of equal cards:
@@ -27,6 +27,8 @@ import { useCaseFile, useHydrated } from "@/lib/store";
 export function DeskView() {
   const state = useCaseFile();
   const hydrated = useHydrated();
+  // Recommendations only come from chapters open to the student's grade
+  const CASES = useAllowedCases();
 
   // Saved progress is only known in the browser. Show a placeholder so the page does not flash "empty".
   if (!hydrated) return <DeskSkeleton />;

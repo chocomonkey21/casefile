@@ -29,6 +29,8 @@ export type VideoEntry = {
   channel?: string;
   /** A caveat for teachers and parents, such as advanced vocabulary or difficult subject matter */
   note?: string;
+  /** What captions YouTube offers (built-in lesson videos only), such as “English captions added by the creator” */
+  captionsInfo?: string;
   /** True for the lesson videos that ship with the project (src/data/videos-curated.ts). They cannot be edited in the editor desk. */
   builtin?: boolean;
 };

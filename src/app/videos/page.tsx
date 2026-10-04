@@ -4,7 +4,9 @@ import { Button } from "@/components/ui/Button";
 import { PlayIcon } from "@/components/ui/Icons";
 import { RedThread } from "@/components/ui/RedThread";
 import { VideoCard } from "@/components/videos/VideoCard";
+import { getStudentGrade } from "@/lib/access-server";
 import { listPublished } from "@/lib/cms/videos";
+import { videosForGrade } from "@/lib/video-access";
 import type { VideoEntry } from "@/lib/cms/types";
 import { copy } from "@/lib/copy";
 import { getSubject, getSubjects, isSubjectId } from "@/lib/structure";
@@ -34,14 +36,16 @@ export default async function VideosPage(props: PageProps<"/videos">) {
   const sp = await props.searchParams;
   const subjectParam = first(sp.subject);
   const subject = subjectParam && isSubjectId(subjectParam) ? subjectParam : undefined;
-  const entry = subject ? getSubject(subject) : undefined;
+  const grade = await getStudentGrade();
+  // Only chapters open to the student's grade appear as filters, so a higher chapter id in the address shows nothing
+  const entry = subject ? getSubject(subject, grade) : undefined;
   const chapterParam = first(sp.chapter);
   const chapter = entry?.chapters.find((c) => c.id === chapterParam)?.id;
 
   let videos: VideoEntry[] = [];
   let failed = false;
   try {
-    videos = await listPublished({ subject, caseId: chapter });
+    videos = videosForGrade(await listPublished({ subject, caseId: chapter }), grade);
   } catch {
     failed = true;
   }
@@ -62,7 +66,7 @@ export default async function VideosPage(props: PageProps<"/videos">) {
           <Link href={href()} aria-current={!subject ? "true" : undefined} className={chip(!subject)}>
             {t.all}
           </Link>
-          {getSubjects().map((s) => (
+          {getSubjects(grade).map((s) => (
             <Link key={s.id} href={href(s.id)} aria-current={subject === s.id ? "true" : undefined} className={chip(subject === s.id)}>
               {s.label}
             </Link>

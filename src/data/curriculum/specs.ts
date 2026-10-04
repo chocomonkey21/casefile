@@ -16,6 +16,11 @@ import { QUADRATICS_TRIG } from "./g10-quadratics-trig";
 import { WORLD_WARS } from "./g10-world-wars";
 import { CLIMATE_CHANGE } from "./g10-climate-change";
 import { TOP_UP_SPECS } from "./top-ups";
+import { EXTRA_G6 } from "./extra-g6";
+import { EXTRA_G7 } from "./extra-g7";
+import { EXTRA_G8 } from "./extra-g8";
+import { EXTRA_G9 } from "./extra-g9";
+import { EXTRA_G10 } from "./extra-g10";
 
 /*
   SERVER ONLY. This file imports every chapter's full lesson text, so do not import it from browser code.
@@ -23,9 +28,10 @@ import { TOP_UP_SPECS } from "./top-ups";
 
   Chapters added for Grades 6 to 10. Each one is written as a ChapterSpec (see build.ts) and built into the
   same structures the older chapters use, so the rest of the app treats them all alike.
+  extra-g6.ts to extra-g10.ts add two shorter chapters (one lesson each) per grade and subject, so each has three chapters.
   Add a chapter here, give it a grade, and it appears in /subjects, /cases, the lesson pages and the final test.
 */
-export const SPECS: ChapterSpec[] = [MAPS_GLOBES, RATIOS, ANCIENT_GREECE, MATTER_ATOMS, EQUATIONS_GRAPHS, ROMAN_EMPIRE, WEATHER_CLIMATE, FORCES_MOTION, GEOMETRY, INDUSTRIAL_REVOLUTION, POPULATION_CITIES, GENES_EVOLUTION, QUADRATICS_TRIG, WORLD_WARS, CLIMATE_CHANGE];
+export const SPECS: ChapterSpec[] = [MAPS_GLOBES, RATIOS, ANCIENT_GREECE, MATTER_ATOMS, EQUATIONS_GRAPHS, ROMAN_EMPIRE, WEATHER_CLIMATE, FORCES_MOTION, GEOMETRY, INDUSTRIAL_REVOLUTION, POPULATION_CITIES, GENES_EVOLUTION, QUADRATICS_TRIG, WORLD_WARS, CLIMATE_CHANGE, ...EXTRA_G6, ...EXTRA_G7, ...EXTRA_G8, ...EXTRA_G9, ...EXTRA_G10];
 
 const BUILT = SPECS.map(buildChapter);
 

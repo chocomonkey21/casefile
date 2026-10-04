@@ -3,11 +3,16 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { copy } from "@/lib/copy";
+import { useCaseFile, useHydrated } from "@/lib/store";
 import { NAV_ITEMS, isActive } from "./nav-items";
 
 /** Bottom tab bar for phones and tablets. Same five destinations as the top bar. */
 export function MobileNav() {
   const pathname = usePathname();
+  const { profile } = useCaseFile();
+  const hydrated = useHydrated();
+  // Visitors without a profile cannot open the library, so they get no library tabs (TopNav shows Get started)
+  if (hydrated && !profile) return null;
 
   return (
     <nav

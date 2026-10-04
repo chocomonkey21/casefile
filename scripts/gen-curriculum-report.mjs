@@ -43,6 +43,7 @@ for (const g of [6, 7, 8, 9, 10]) {
           md += `   - Video: [${v.sourceTitle}](https://www.youtube.com/watch?v=${v.youtubeId}) by ${v.channel} (ID \`${v.youtubeId}\`)\n`;
           md += `   - Why it fits: ${v.why}\n`;
           if (v.note) md += `   - Caveat: ${v.note}\n`;
+          if (v.captions) md += `   - Captions: ${v.captions}\n`;
         } else md += `   - **No video found**\n`;
       });
     }

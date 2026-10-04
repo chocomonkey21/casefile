@@ -29,6 +29,7 @@ const BUILTIN: VideoEntry[] = CURATED_VIDEOS.filter((v) => getCase(v.caseId)?.cl
   sourceTitle: v.sourceTitle,
   channel: v.channel,
   note: v.note || undefined,
+  captionsInfo: v.captions,
   builtin: true,
 }));
 

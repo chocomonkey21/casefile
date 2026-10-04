@@ -1,4 +1,5 @@
-export type AvatarId = "magnifier" | "fedora" | "key" | "compass" | "lantern" | "watch";
+/** Profile portraits (data/avatars.ts). Older saves may hold a retired icon id; findAvatar maps those to a portrait. */
+export type AvatarId = "amara" | "kenji" | "sofia" | "zayn" | "leila" | "malik" | "riley" | "priya";
 
 export type Grade = 6 | 7 | 8 | 9 | 10;
 

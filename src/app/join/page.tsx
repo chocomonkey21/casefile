@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import { SimpleHeader } from "@/components/layout/SimpleHeader";
 import { JoinFlow } from "@/components/onboarding/JoinFlow";
 import { copy } from "@/lib/copy";
@@ -18,7 +19,10 @@ export default function JoinPage() {
       </SimpleHeader>
       <main id="main-content" className="flex-1">
         <div className="sheet mx-2 mb-2 mt-4 sm:mx-8 sm:mb-8 sm:mt-6 xl:mx-auto xl:max-w-[80rem]">
-          <JoinFlow />
+          {/* JoinFlow reads ?next=, which needs a Suspense boundary on a static page */}
+          <Suspense>
+            <JoinFlow />
+          </Suspense>
         </div>
       </main>
     </>

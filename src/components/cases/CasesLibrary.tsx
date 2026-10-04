@@ -3,11 +3,11 @@
 import Link from "next/link";
 import { useState } from "react";
 import { FolderCard } from "@/components/case/FolderCard";
-import { CASES } from "@/data/cases";
 import { SUBJECTS, SUBJECT_IDS } from "@/data/subjects";
 import { copy } from "@/lib/copy";
 import { caseStatus, solvedCount } from "@/lib/progress";
 import { useCaseFile, useHydrated } from "@/lib/store";
+import { useAllowedCases, useStudentGrade } from "@/lib/use-access";
 import type { CaseStatus, SubjectId } from "@/lib/types";
 import { RedThread } from "@/components/ui/RedThread";
 
@@ -16,7 +16,6 @@ const STATUSES: { id: CaseStatus; label: string }[] = (["open", "active", "cold"
   label: copy.status[id],
 }));
 
-const GRADE_IDS = [...new Set(CASES.map((c) => c.grade).filter((g): g is NonNullable<typeof g> => !!g))].sort((a, b) => a - b).map(String);
 
 /** Browse every case as a folder. Filter by subject and by status. */
 export function CasesLibrary() {
@@ -25,8 +24,12 @@ export function CasesLibrary() {
   const [subject, setSubject] = useState<SubjectId | "all">("all");
   const [status, setStatus] = useState<CaseStatus | "all">("all");
   const [grade, setGrade] = useState<string>("all");
+  // Only the student's grade and the ones below it (lib/access.ts); higher grades are not listed at all
+  const cases = useAllowedCases();
+  const studentGrade = useStudentGrade();
+  const GRADE_IDS = [...new Set(cases.map((c) => c.grade).filter((g): g is NonNullable<typeof g> => !!g))].sort((a, b) => a - b).map(String);
 
-  const rows = CASES.map((c) => ({ c, status: caseStatus(c, state), solved: solvedCount(c, state) })).filter(
+  const rows = cases.map((c) => ({ c, status: caseStatus(c, state), solved: solvedCount(c, state) })).filter(
     (r) => (subject === "all" || r.c.subject === subject) && (status === "all" || r.status === status) && (grade === "all" || String(r.c.grade) === grade),
   );
 
@@ -39,6 +42,7 @@ export function CasesLibrary() {
         <p className="mt-2 max-w-prose text-lg text-ink-soft">
           {copy.library.intro}
         </p>
+        {studentGrade && <p className="mt-1 font-semibold text-ink-soft">{copy.grades.showing(studentGrade)}</p>}
         <p className="mt-1">
           <Link
             href="/subjects"

@@ -2,7 +2,7 @@
 
 import { Avatar } from "@/components/ui/Avatar";
 import { Button } from "@/components/ui/Button";
-import { AVATARS } from "@/data/avatars";
+import { findAvatar } from "@/data/avatars";
 import { INTERESTS } from "@/data/interests";
 import { copy } from "@/lib/copy";
 import { levelFor } from "@/lib/progress";
@@ -33,7 +33,7 @@ export function AboutView() {
   }
 
   const { rank } = levelFor(state);
-  const avatar = AVATARS.find((a) => a.id === profile.avatarId);
+  const avatar = findAvatar(profile.avatarId);
   const interests = INTERESTS.filter((i) => profile.interests.includes(i.id)).map((i) => i.label);
   const joined = joinedAt
     ? new Date(joinedAt).toLocaleDateString(undefined, { day: "numeric", month: "long", year: "numeric" })
@@ -58,7 +58,7 @@ export function AboutView() {
           <Avatar avatarId={profile.avatarId} size={72} />
           <div>
             <p className="label text-ink-soft">{copy.about.avatar}</p>
-            <p className="font-display text-2xl">{avatar?.label}</p>
+            <p className="font-display text-2xl">{avatar?.name}</p>
           </div>
         </div>
         <dl className="mt-6 space-y-4">

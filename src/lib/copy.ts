@@ -606,7 +606,8 @@ export const copy = {
       nameHelp: "Your first name or a nickname is fine. You do not need to use your full name.",
       nameError: "Add a name so we know what to call you.",
       namePlaceholder: "Sam",
-      avatarLegend: "Pick an avatar",
+      avatarLegend: "Pick your detective",
+      avatarHelp: "Choose the portrait that will stand for you on your profile and the Desk.",
       previewLabel: "Your profile",
       previewEmpty: "Your name here",
     },
@@ -803,6 +804,22 @@ export const copy = {
     yourGrade: "Your grade",
     note: "Suggested grade level",
     goalsHeading: "What you will learn",
+    /** Shown on chapter lists so students know why higher grades are missing */
+    showing: (grade: number) => (grade === 6 ? "Showing Grade 6 chapters, your grade." : `Showing Grades 6 to ${grade}: your grade and the ones below it.`),
+  },
+
+  /** A direct link to a chapter or video above the student's grade */
+  locked: {
+    meta: "Not open for your grade",
+    label: "Restricted file",
+    title: "This file is above your grade",
+    text: (contentGrade: number | null, studentGrade: number | null) =>
+      contentGrade && studentGrade
+        ? `This is Grade ${contentGrade} material. Your profile is set to Grade ${studentGrade}, so you can open Grade ${studentGrade === 6 ? "6" : `6 to ${studentGrade}`} chapters and videos.`
+        : "This material is not open for the grade on your profile.",
+    changeGrade: "Picked the wrong grade? Log out from the profile menu and set up your profile again.",
+    toCases: "Back to your cases",
+    toSubjects: "Browse subjects",
   },
 
   /** Breadcrumbs and "where am I" wording shared by subject, chapter, lesson and video pages */
@@ -868,6 +885,8 @@ export const copy = {
     directFailed: "This video file could not be played. Check your connection, or try again later.",
     credit: (title: string, channel: string) => `Video: “${title}” by ${channel}, on YouTube.`,
     noteLabel: "Note for teachers and parents:",
+    captionsLabel: "Captions:",
+    captionsHow: "Turn them on with the CC button in the player.",
     transcript: "Transcript",
     showTranscript: "Show the transcript",
     noTranscript: "No transcript has been added for this video yet.",

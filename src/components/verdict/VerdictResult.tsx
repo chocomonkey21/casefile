@@ -7,11 +7,11 @@ import { Button } from "@/components/ui/Button";
 import { CheckIcon } from "@/components/ui/Icons";
 import { ProgressBar } from "@/components/ui/ProgressBar";
 import { Stamp } from "@/components/ui/Stamp";
-import { CASES } from "@/data/cases";
 import { copy } from "@/lib/copy";
 import { caseStatus, recommendNextCase, solvedCount } from "@/lib/progress";
 import { neededToPass } from "@/lib/scoring";
 import { useCaseFile } from "@/lib/store";
+import { useAllowedCases } from "@/lib/use-access";
 import type { CaseDef } from "@/lib/types";
 
 export type VerdictOutcome = {
@@ -31,6 +31,8 @@ const t = copy.verdict;
  */
 export function VerdictResult({ caseDef, outcome, onRetry }: { caseDef: CaseDef; outcome: VerdictOutcome; onRetry: () => void }) {
   const state = useCaseFile();
+  // The next recommended case is always one the student can open
+  const CASES = useAllowedCases();
   const { correct, total, byClue, passed, alreadyClosed } = outcome;
   const needed = neededToPass(total);
   const next = passed ? recommendNextCase(CASES, state, caseDef.id) : null;

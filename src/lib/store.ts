@@ -1,6 +1,7 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
+import { writeGradeCookie } from "./access";
 import { clueKey, dayKey, yesterdayKey } from "./progress";
 import type { CaseFileState, Note, Profile, VerdictRecord } from "./types";
 
@@ -114,6 +115,8 @@ export const actions = {
   /** Saves the profile from onboarding. The join date is set once, the first time. */
   setProfile(profile: Profile, now: Date = new Date()) {
     update((s) => ({ ...s, profile, joinedAt: s.joinedAt ?? now.toISOString() }));
+    // The server and proxy read the grade from a cookie to decide which chapters and videos are open (see lib/access.ts)
+    writeGradeCookie(profile.grade);
   },
 
   /** The "How CaseFile works" walkthrough was finished or skipped */
@@ -243,5 +246,6 @@ export const actions = {
    */
   logOut() {
     update((s) => ({ ...DEFAULT_STATE, reduceMotion: s.reduceMotion }));
+    writeGradeCookie(null);
   },
 };

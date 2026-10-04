@@ -3,9 +3,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BrandMark } from "@/components/ui/BrandMark";
+import { Button } from "@/components/ui/Button";
 import { copy } from "@/lib/copy";
 import { currentStreak, levelFor } from "@/lib/progress";
-import { useCaseFile } from "@/lib/store";
+import { useCaseFile, useHydrated } from "@/lib/store";
 import { NAV_ITEMS, isActive } from "./nav-items";
 import { ProfileMenu } from "./ProfileMenu";
 
@@ -18,17 +19,19 @@ export function TopNav() {
   const state = useCaseFile();
   const { rank } = levelFor(state);
   const days = currentStreak(state.streak);
+  // The library opens after sign-up (proxy.ts). Visitors on open pages such as About see one "Get started" action instead.
+  const visitor = useHydrated() && !state.profile;
 
   return (
     <header className="sticky top-0 z-40 on-dark bg-espresso">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-2 px-4 sm:gap-4 sm:px-6">
         <div className="flex items-center gap-8">
-          <Link href="/desk" className="flex min-h-11 items-center gap-2" aria-label={copy.brand.logoLabel}>
+          <Link href={visitor ? "/" : "/desk"} className="flex min-h-11 items-center gap-2" aria-label={copy.brand.logoLabel}>
             <BrandMark />
             <span className="font-display text-xl tracking-wide sm:text-2xl">{copy.brand.name}</span>
           </Link>
 
-          <nav aria-label={copy.nav.main} className="hidden lg:block">
+          <nav aria-label={copy.nav.main} className={visitor ? "hidden" : "hidden lg:block"}>
             <ul className="flex items-center gap-1">
               {NAV_ITEMS.map(({ href, label }) => {
                 const active = isActive(pathname, href);
@@ -57,6 +60,11 @@ export function TopNav() {
           </nav>
         </div>
 
+        {visitor ? (
+          <Button href="/join" variant="highlight">
+            {copy.landing.cta}
+          </Button>
+        ) : (
         <div className="flex items-center gap-4 sm:gap-4">
           <p className="hidden text-right text-xs leading-snug text-beige sm:block">
             <span className="block">{copy.level.label(rank.name)}</span>
@@ -64,6 +72,7 @@ export function TopNav() {
           </p>
           <ProfileMenu />
         </div>
+        )}
       </div>
     </header>
   );

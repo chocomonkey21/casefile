@@ -82,6 +82,25 @@
   --color-ill-wood: #A27852; /* a wooden table */
   --color-ill-wall: #DDE3E6; /* an indoor wall */
 
+  /*
+    Profile portraits (components/ui/Avatar.tsx) only. A range of real skin tones and hair colours,
+    plus a few clothing colours the case-file palette lacks. Never use these for interface chrome.
+  */
+  --color-portrait-skin-1: #F4D5BF;
+  --color-portrait-skin-2: #E6B48F;
+  --color-portrait-skin-3: #C88A5C;
+  --color-portrait-skin-4: #A26840;
+  --color-portrait-skin-5: #7A4A2C;
+  --color-portrait-skin-6: #4E2E1C;
+  --color-portrait-hair-black: #1E1916;
+  --color-portrait-hair-brown: #5B3920;
+  --color-portrait-hair-auburn: #8E3F1E;
+  --color-portrait-hair-blond: #D2A85C;
+  --color-portrait-navy: #2C3E5C;
+  --color-portrait-teal: #2F6F6B;
+  --color-portrait-mustard: #C9962E;
+  --color-portrait-blush: #D9826B; /* cheeks and freckles */
+
   /* Fonts. Only these two families are ever used. */
   --font-display: var(--font-special-elite), serif;
   --font-sans: var(--font-dm-sans), sans-serif;

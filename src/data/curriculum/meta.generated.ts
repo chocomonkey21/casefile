@@ -2855,6 +2855,2086 @@ export const NEW_CASES: CaseDef[] = [
     ]
    }
   ]
+ },
+ {
+  "id": "food-chains",
+  "number": "201",
+  "title": "The Case of the Missing Rabbits",
+  "topic": "Food chains and food webs",
+  "subject": "science",
+  "grade": 6,
+  "tagline": "Follow the energy from the Sun, through plants, to the animals that eat them.",
+  "hook": "The rabbits in a meadow have almost vanished, and now the foxes are going hungry too. Nobody hunted them. To find out what happened, follow who eats what.",
+  "goal": "Read and build food chains and food webs, and explain what happens when one living thing disappears.",
+  "learn": [
+   "Say what producers, consumers and decomposers are",
+   "Read the arrows in a food chain",
+   "Predict what happens to a food web when one species changes"
+  ],
+  "clues": [
+   {
+    "id": "food-webs",
+    "title": "Food chains and food webs",
+    "goals": [
+     "Name producers, consumers and decomposers",
+     "Read the direction of the arrows in a food chain",
+     "Explain how a change to one living thing affects others in a food web"
+    ],
+    "teaser": "Every arrow shows where the energy goes.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "food-webs-read",
+      "kind": "reading",
+      "title": "Food chains and food webs",
+      "minutes": 4,
+      "blurb": "Name producers, consumers and decomposers"
+     },
+     {
+      "id": "food-webs-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "food-webs-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "circuits",
+  "number": "202",
+  "title": "The Case of the Dark Torch",
+  "topic": "Simple electric circuits",
+  "subject": "science",
+  "grade": 6,
+  "tagline": "Find out why a bulb lights, and why sometimes it does not.",
+  "hook": "A torch has a new battery and a working bulb, but it still will not light. Something in the circuit is broken. Your job is to find the gap.",
+  "goal": "Explain how a simple circuit works and use conductors, insulators and switches to make a bulb light or go out.",
+  "learn": [
+   "Say what a complete circuit needs",
+   "Sort materials into conductors and insulators",
+   "Explain what a switch does"
+  ],
+  "clues": [
+   {
+    "id": "simple-circuits",
+    "title": "Simple electric circuits",
+    "goals": [
+     "Say what a complete circuit is",
+     "Name some conductors and insulators",
+     "Explain how a switch turns a bulb on and off"
+    ],
+    "teaser": "Electricity only flows around a complete loop.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "simple-circuits-read",
+      "kind": "reading",
+      "title": "Simple electric circuits",
+      "minutes": 4,
+      "blurb": "Say what a complete circuit is"
+     },
+     {
+      "id": "simple-circuits-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "simple-circuits-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "decimals",
+  "number": "203",
+  "title": "The Case of the Wrong Change",
+  "topic": "Decimals and place value",
+  "subject": "maths",
+  "grade": 6,
+  "tagline": "Read, compare and order decimals by knowing what each digit is worth.",
+  "hook": "A shopkeeper insists that 0.5 is smaller than 0.45 because 5 is smaller than 45. A customer has been given the wrong change. Who is right?",
+  "goal": "Use place value to read, compare and order decimals.",
+  "learn": [
+   "Name the value of each digit after the decimal point",
+   "Compare decimals by place value",
+   "Write tenths and hundredths as decimals"
+  ],
+  "clues": [
+   {
+    "id": "decimal-place-value",
+    "title": "Decimals and place value",
+    "goals": [
+     "Name the tenths, hundredths and thousandths places",
+     "Compare and order decimals using place value",
+     "Write fractions with denominators of 10 and 100 as decimals"
+    ],
+    "teaser": "Each place after the point is ten times smaller.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "decimal-place-value-read",
+      "kind": "reading",
+      "title": "Decimals and place value",
+      "minutes": 4,
+      "blurb": "Name the tenths, hundredths and thousandths places"
+     },
+     {
+      "id": "decimal-place-value-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "decimal-place-value-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "angles",
+  "number": "204",
+  "title": "The Case of the Bent Signpost",
+  "topic": "Measuring and naming angles",
+  "subject": "maths",
+  "grade": 6,
+  "tagline": "Measure angles with a protractor and name them by size.",
+  "hook": "After a storm, a signpost points the wrong way. The map says the path turns through 120 degrees, but the sign shows something else. Measure it to find out.",
+  "goal": "Measure angles with a protractor, name them by size, and use the facts that angles on a line make 180° and around a point make 360°.",
+  "learn": [
+   "Name acute, right, obtuse and reflex angles",
+   "Measure an angle with a protractor",
+   "Use angles on a straight line and around a point"
+  ],
+  "clues": [
+   {
+    "id": "measure-angles",
+    "title": "Measuring and naming angles",
+    "goals": [
+     "Name angles as acute, right, obtuse or reflex",
+     "Read an angle on a protractor from the correct zero",
+     "Use the fact that angles on a straight line add up to 180°"
+    ],
+    "teaser": "An angle measures a turn, in degrees.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "measure-angles-read",
+      "kind": "reading",
+      "title": "Measuring and naming angles",
+      "minutes": 4,
+      "blurb": "Name angles as acute, right, obtuse or reflex"
+     },
+     {
+      "id": "measure-angles-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "measure-angles-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "mesopotamia",
+  "number": "205",
+  "title": "The Case of the Clay Tablet",
+  "topic": "Mesopotamia: the first cities",
+  "subject": "history",
+  "grade": 6,
+  "tagline": "Discover the land between two rivers, where some of the first cities and the first writing appeared.",
+  "hook": "Archaeologists dig up a small clay tablet covered in wedge-shaped marks. It turns out to be a receipt for barley, more than 4,000 years old. Who wrote it, and why?",
+  "goal": "Explain why some of the first cities grew in Mesopotamia and why writing was invented there.",
+  "learn": [
+   "Locate Mesopotamia between the Tigris and Euphrates",
+   "Explain how farming surpluses led to cities",
+   "Describe cuneiform and what it was used for"
+  ],
+  "clues": [
+   {
+    "id": "first-cities",
+    "title": "Mesopotamia: the first cities",
+    "goals": [
+     "Locate Mesopotamia and its two rivers",
+     "Explain how extra food allowed cities and jobs to grow",
+     "Describe cuneiform writing and why it was first used"
+    ],
+    "teaser": "Rivers, farming and the first writing.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "first-cities-read",
+      "kind": "reading",
+      "title": "Mesopotamia: the first cities",
+      "minutes": 4,
+      "blurb": "Locate Mesopotamia and its two rivers"
+     },
+     {
+      "id": "first-cities-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "first-cities-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "indus-valley",
+  "number": "206",
+  "title": "The Case of the Silent Seal",
+  "topic": "Cities of the Indus Valley",
+  "subject": "history",
+  "grade": 6,
+  "tagline": "Explore planned cities with drains and baths, and a script nobody can read yet.",
+  "hook": "A tiny stone seal shows an animal and a row of symbols. It is about 4,500 years old, and no one alive can read it. What can the cities themselves tell us?",
+  "goal": "Describe the cities of the Indus Valley Civilisation and explain how historians learn about a people whose writing cannot be read.",
+  "learn": [
+   "Locate the Indus Valley Civilisation",
+   "Describe the planning of cities such as Mohenjo-daro and Harappa",
+   "Explain how archaeologists use objects as evidence"
+  ],
+  "clues": [
+   {
+    "id": "indus-cities",
+    "title": "Cities of the Indus Valley",
+    "goals": [
+     "Locate the Indus Valley Civilisation on a map",
+     "Describe how cities like Mohenjo-daro were planned",
+     "Explain how objects such as seals and weights are used as evidence"
+    ],
+    "teaser": "Grid streets, covered drains and a mystery script.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "indus-cities-read",
+      "kind": "reading",
+      "title": "Cities of the Indus Valley",
+      "minutes": 4,
+      "blurb": "Locate the Indus Valley Civilisation on a map"
+     },
+     {
+      "id": "indus-cities-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "indus-cities-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "rivers",
+  "number": "207",
+  "title": "The Case of the Wandering River",
+  "topic": "A river's journey",
+  "subject": "geography",
+  "grade": 6,
+  "tagline": "Follow a river from its source to the sea and see how it shapes the land.",
+  "hook": "An old map shows a river running past a village church. Today the river is 200 metres away. Rivers move. How, and why?",
+  "goal": "Describe how a river and its valley change from source to mouth, and explain erosion, transport and deposition.",
+  "learn": [
+   "Name the parts of a river",
+   "Describe the upper, middle and lower course",
+   "Explain erosion, transportation and deposition"
+  ],
+  "clues": [
+   {
+    "id": "river-journey",
+    "title": "A river's journey",
+    "goals": [
+     "Name the source, tributary, confluence, meander and mouth",
+     "Describe how a river changes from its upper to lower course",
+     "Explain erosion, transportation and deposition"
+    ],
+    "teaser": "From a mountain stream to a wide estuary.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "river-journey-read",
+      "kind": "reading",
+      "title": "A river's journey",
+      "minutes": 4,
+      "blurb": "Name the source, tributary, confluence, meander and mouth"
+     },
+     {
+      "id": "river-journey-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "river-journey-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "settlements",
+  "number": "208",
+  "title": "The Case of the Hilltop Village",
+  "topic": "Why settlements grow where they do",
+  "subject": "geography",
+  "grade": 6,
+  "tagline": "Work out why people chose to build villages, towns and cities in particular places.",
+  "hook": "A village sits on a hill beside a river bend, with a ruined castle at the top. Hundreds of years ago, someone chose this spot. What were they thinking?",
+  "goal": "Explain how site factors and situation influence where settlements grow, and describe a settlement hierarchy.",
+  "learn": [
+   "Explain the difference between site and situation",
+   "Name common site factors",
+   "Order settlements from hamlet to city"
+  ],
+  "clues": [
+   {
+    "id": "site-situation",
+    "title": "Why settlements grow where they do",
+    "goals": [
+     "Say what a settlement is",
+     "Explain site factors such as water supply, defence and shelter",
+     "Describe how a settlement’s situation helps it grow"
+    ],
+    "teaser": "Water, shelter, defence and a good crossing point.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "site-situation-read",
+      "kind": "reading",
+      "title": "Why settlements grow where they do",
+      "minutes": 4,
+      "blurb": "Say what a settlement is"
+     },
+     {
+      "id": "site-situation-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "site-situation-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "cells",
+  "number": "211",
+  "title": "The Case of the Tiny Rooms",
+  "topic": "Plant and animal cells",
+  "subject": "science",
+  "grade": 7,
+  "tagline": "Look through a microscope and find the parts that keep every living thing alive.",
+  "hook": "In 1665, Robert Hooke looked at a thin slice of cork under a microscope and saw rows of tiny boxes. He called them cells, like the small rooms monks lived in. What was he really looking at?",
+  "goal": "Describe the parts of plant and animal cells and explain what each part does.",
+  "learn": [
+   "Say what a cell is",
+   "Name the parts of animal and plant cells",
+   "Explain how plant and animal cells differ"
+  ],
+  "clues": [
+   {
+    "id": "plant-animal-cells",
+    "title": "Plant and animal cells",
+    "goals": [
+     "Say that all living things are made of cells",
+     "Name the nucleus, cell membrane, cytoplasm and mitochondria",
+     "Name three parts found in plant cells but not animal cells"
+    ],
+    "teaser": "The building blocks of every living thing.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "plant-animal-cells-read",
+      "kind": "reading",
+      "title": "Plant and animal cells",
+      "minutes": 4,
+      "blurb": "Say that all living things are made of cells"
+     },
+     {
+      "id": "plant-animal-cells-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "plant-animal-cells-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "sound",
+  "number": "212",
+  "title": "The Case of the Silent Bell",
+  "topic": "How sound travels",
+  "subject": "science",
+  "grade": 7,
+  "tagline": "Discover why sound needs something to travel through, and what makes it loud or high.",
+  "hook": "In a famous experiment, a ringing bell is put inside a glass jar and the air is slowly pumped out. The hammer keeps hitting the bell, but the sound fades away. Where did it go?",
+  "goal": "Explain that sound is a vibration that needs a medium to travel, and describe loudness and pitch.",
+  "learn": [
+   "Explain that sound is made by vibrations",
+   "Explain why sound cannot travel through a vacuum",
+   "Link loudness to amplitude and pitch to frequency"
+  ],
+  "clues": [
+   {
+    "id": "sound-waves",
+    "title": "How sound travels",
+    "goals": [
+     "Explain that sound is made by vibrating objects",
+     "Explain why sound needs a medium and cannot travel through a vacuum",
+     "Describe how amplitude affects loudness and frequency affects pitch"
+    ],
+    "teaser": "Every sound starts with something shaking.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "sound-waves-read",
+      "kind": "reading",
+      "title": "How sound travels",
+      "minutes": 4,
+      "blurb": "Explain that sound is made by vibrating objects"
+     },
+     {
+      "id": "sound-waves-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "sound-waves-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "negative-numbers",
+  "number": "213",
+  "title": "The Case of the Frozen Thermometer",
+  "topic": "Negative numbers",
+  "subject": "maths",
+  "grade": 7,
+  "tagline": "Work with numbers below zero: temperatures, depths and bank balances.",
+  "hook": "At midnight the thermometer read −4 °C. By noon it was 7 °C. The weather report says it warmed by 3 degrees. Something does not add up.",
+  "goal": "Order, add, subtract, multiply and divide negative numbers.",
+  "learn": [
+   "Place negative numbers on a number line",
+   "Add and subtract with negative numbers",
+   "Multiply and divide with negative numbers"
+  ],
+  "clues": [
+   {
+    "id": "negatives",
+    "title": "Negative numbers",
+    "goals": [
+     "Order negative and positive numbers on a number line",
+     "Add and subtract with negative numbers",
+     "Use the sign rules to multiply and divide"
+    ],
+    "teaser": "Numbers below zero, on the number line.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "negatives-read",
+      "kind": "reading",
+      "title": "Negative numbers",
+      "minutes": 4,
+      "blurb": "Order negative and positive numbers on a number line"
+     },
+     {
+      "id": "negatives-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "negatives-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "averages",
+  "number": "214",
+  "title": "The Case of the Misleading Average",
+  "topic": "Mean, median, mode and range",
+  "subject": "maths",
+  "grade": 7,
+  "tagline": "Choose the right average, and spot when one is being used to mislead.",
+  "hook": "A company says the average pay of its workers is £60,000. Most of the workers earn £20,000. Is the company lying, or just choosing its average carefully?",
+  "goal": "Calculate the mean, median, mode and range, and choose the most suitable average for a set of data.",
+  "learn": [
+   "Calculate the mean, median and mode",
+   "Calculate the range",
+   "Explain how an extreme value affects the mean"
+  ],
+  "clues": [
+   {
+    "id": "mean-median-mode",
+    "title": "Mean, median, mode and range",
+    "goals": [
+     "Calculate the mean, median and mode of a data set",
+     "Calculate the range",
+     "Choose a suitable average, especially when there is an extreme value"
+    ],
+    "teaser": "Three kinds of average and one measure of spread.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "mean-median-mode-read",
+      "kind": "reading",
+      "title": "Mean, median, mode and range",
+      "minutes": 4,
+      "blurb": "Calculate the mean, median and mode of a data set"
+     },
+     {
+      "id": "mean-median-mode-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "mean-median-mode-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "silk-roads",
+  "number": "215",
+  "title": "The Case of the Silk Bale",
+  "topic": "Trade on the Silk Roads",
+  "subject": "history",
+  "grade": 7,
+  "tagline": "Follow goods, people and ideas along the trade routes that linked China to Europe.",
+  "hook": "A bale of Chinese silk turns up in a Roman market, thousands of kilometres from where it was woven. No single trader carried it all the way. How did it get there?",
+  "goal": "Explain how the Silk Roads worked and how they spread goods, ideas and diseases.",
+  "learn": [
+   "Describe the Silk Roads and where they ran",
+   "Explain how goods moved by relay trade",
+   "Describe the spread of ideas, religions and disease"
+  ],
+  "clues": [
+   {
+    "id": "silk-trade",
+    "title": "Trade on the Silk Roads",
+    "goals": [
+     "Describe the Silk Roads as a network of land and sea routes",
+     "Explain relay trade through many merchants and cities",
+     "Give examples of ideas, technologies and diseases that spread along the routes"
+    ],
+    "teaser": "A web of routes that carried silk, spices, paper and ideas.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "silk-trade-read",
+      "kind": "reading",
+      "title": "Trade on the Silk Roads",
+      "minutes": 4,
+      "blurb": "Describe the Silk Roads as a network of land and sea routes"
+     },
+     {
+      "id": "silk-trade-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "silk-trade-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "feudalism",
+  "number": "216",
+  "title": "The Case of the Castle Keep",
+  "topic": "The feudal system",
+  "subject": "history",
+  "grade": 7,
+  "tagline": "Find out who owed what to whom in medieval Europe.",
+  "hook": "A medieval peasant must work three days a week on the lord’s land, and give him some of the harvest. In return, what does the peasant get?",
+  "goal": "Explain how the feudal system worked in medieval Europe, especially in England after 1066.",
+  "learn": [
+   "Describe the levels of the feudal system",
+   "Explain the exchange of land for service and loyalty",
+   "Describe the life of a peasant"
+  ],
+  "clues": [
+   {
+    "id": "feudal-system",
+    "title": "The feudal system",
+    "goals": [
+     "Name the main levels of the feudal system",
+     "Explain the exchange of land, service and protection",
+     "Describe the duties and rights of peasants"
+    ],
+    "teaser": "Land in return for loyalty and service.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "feudal-system-read",
+      "kind": "reading",
+      "title": "The feudal system",
+      "minutes": 4,
+      "blurb": "Name the main levels of the feudal system"
+     },
+     {
+      "id": "feudal-system-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "feudal-system-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "rocks",
+  "number": "217",
+  "title": "The Case of the Layered Cliff",
+  "topic": "Rock types and the rock cycle",
+  "subject": "geography",
+  "grade": 7,
+  "tagline": "Read the story written in rocks, and follow how one rock becomes another.",
+  "hook": "A cliff shows neat stripes of rock, and halfway up there is a fossil seashell. The cliff is 200 metres above the sea. How did a seashell get up there?",
+  "goal": "Describe igneous, sedimentary and metamorphic rocks and explain how the rock cycle links them.",
+  "learn": [
+   "Describe how the three rock types form",
+   "Give an example of each rock type",
+   "Explain the rock cycle"
+  ],
+  "clues": [
+   {
+    "id": "rock-cycle",
+    "title": "Rock types and the rock cycle",
+    "goals": [
+     "Explain how igneous, sedimentary and metamorphic rocks form",
+     "Give an example of each type",
+     "Describe the main processes of the rock cycle"
+    ],
+    "teaser": "Igneous, sedimentary and metamorphic, and how one becomes another.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "rock-cycle-read",
+      "kind": "reading",
+      "title": "Rock types and the rock cycle",
+      "minutes": 4,
+      "blurb": "Explain how igneous, sedimentary and metamorphic rocks form"
+     },
+     {
+      "id": "rock-cycle-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "rock-cycle-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "coasts",
+  "number": "218",
+  "title": "The Case of the Vanishing Headland",
+  "topic": "Coastal erosion and landforms",
+  "subject": "geography",
+  "grade": 7,
+  "tagline": "Watch the sea carve caves, arches and stacks out of solid cliffs.",
+  "hook": "Imagine three pictures of the same headland. A very old drawing shows a cave. An old postcard shows a rock arch in the same place. A photo taken after a big storm shows the arch with part of its roof fallen in. What will be there next?",
+  "goal": "Explain how waves erode the coast and form caves, arches, stacks and stumps.",
+  "learn": [
+   "Name the processes of coastal erosion",
+   "Explain how headlands and bays form",
+   "Describe the sequence from crack to stump"
+  ],
+  "clues": [
+   {
+    "id": "coastal-erosion",
+    "title": "Coastal erosion and landforms",
+    "goals": [
+     "Name hydraulic action, abrasion and attrition",
+     "Explain how headlands and bays form",
+     "Describe how a crack becomes a cave, an arch, a stack and a stump"
+    ],
+    "teaser": "Crack, cave, arch, stack, stump.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "coastal-erosion-read",
+      "kind": "reading",
+      "title": "Coastal erosion and landforms",
+      "minutes": 4,
+      "blurb": "Name hydraulic action, abrasion and attrition"
+     },
+     {
+      "id": "coastal-erosion-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "coastal-erosion-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "heat-transfer",
+  "number": "221",
+  "title": "The Case of the Cooling Cup",
+  "topic": "Heat transfer",
+  "subject": "science",
+  "grade": 8,
+  "tagline": "Find out how heat moves by conduction, convection and radiation.",
+  "hook": "Two cups of hot chocolate are poured at the same time. One is in a thin metal mug, the other in a thick foam cup with a lid. Ten minutes later, one is barely warm. Which one, and why?",
+  "goal": "Explain conduction, convection and radiation, and use them to explain how to keep things hot or cold.",
+  "learn": [
+   "Explain conduction in terms of particles",
+   "Explain convection currents in liquids and gases",
+   "Explain radiation and how surfaces affect it"
+  ],
+  "clues": [
+   {
+    "id": "conduction-convection",
+    "title": "Heat transfer",
+    "goals": [
+     "Explain conduction and name good conductors and insulators",
+     "Explain how convection currents form",
+     "Explain radiation and how colour and shine affect it"
+    ],
+    "teaser": "Conduction, convection and radiation.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "conduction-convection-read",
+      "kind": "reading",
+      "title": "Heat transfer",
+      "minutes": 4,
+      "blurb": "Explain conduction and name good conductors and insulators"
+     },
+     {
+      "id": "conduction-convection-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "conduction-convection-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "digestion",
+  "number": "222",
+  "title": "The Case of the Vanishing Lunch",
+  "topic": "The digestive system",
+  "subject": "science",
+  "grade": 8,
+  "tagline": "Follow a sandwich on its nine-metre journey through your body.",
+  "hook": "At 12 o’clock you eat a cheese sandwich. By the evening, most of it has disappeared into your blood. Where did it go, and what broke it down?",
+  "goal": "Describe the organs of the digestive system and explain how food is broken down and absorbed.",
+  "learn": [
+   "Name the organs of the digestive system in order",
+   "Explain the role of enzymes",
+   "Explain how nutrients are absorbed in the small intestine"
+  ],
+  "clues": [
+   {
+    "id": "digestive-system",
+    "title": "The digestive system",
+    "goals": [
+     "Name the main organs of the digestive system in order",
+     "Explain how enzymes break large molecules into small ones",
+     "Explain why the small intestine is good at absorbing nutrients"
+    ],
+    "teaser": "From mouth to small intestine: breaking food down so it can be used.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "digestive-system-read",
+      "kind": "reading",
+      "title": "The digestive system",
+      "minutes": 4,
+      "blurb": "Name the main organs of the digestive system in order"
+     },
+     {
+      "id": "digestive-system-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "digestive-system-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "probability",
+  "number": "223",
+  "title": "The Case of the Suspicious Dice",
+  "topic": "Probability basics",
+  "subject": "maths",
+  "grade": 8,
+  "tagline": "Measure chance with numbers, and test whether a dice is fair.",
+  "hook": "At the school fair, a stall’s dice lands on 6 far more often than you would expect. Is it bad luck, or is the dice loaded? Probability can help you decide.",
+  "goal": "Calculate probabilities of single events, use the 0 to 1 scale, and compare theoretical and experimental probability.",
+  "learn": [
+   "Place events on the probability scale from 0 to 1",
+   "Calculate the probability of an event",
+   "Compare expected results with experimental results"
+  ],
+  "clues": [
+   {
+    "id": "probability-basics",
+    "title": "Probability basics",
+    "goals": [
+     "Use the probability scale from 0 to 1",
+     "Calculate probability as favourable outcomes divided by total outcomes",
+     "Compare expected frequency with experimental results"
+    ],
+    "teaser": "Chance measured from 0 (impossible) to 1 (certain).",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "probability-basics-read",
+      "kind": "reading",
+      "title": "Probability basics",
+      "minutes": 4,
+      "blurb": "Use the probability scale from 0 to 1"
+     },
+     {
+      "id": "probability-basics-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "probability-basics-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "area",
+  "number": "224",
+  "title": "The Case of the Oddly Shaped Field",
+  "topic": "Area of triangles, parallelograms and trapeziums",
+  "subject": "maths",
+  "grade": 8,
+  "tagline": "Find areas of shapes that are not rectangles by cutting and rearranging them.",
+  "hook": "A farmer is selling a field shaped like a trapezium, priced per square metre. The advert says 900 m². Its parallel sides are 30 m and 50 m, and they are 20 m apart. Is the advert right?",
+  "goal": "Calculate the area of triangles, parallelograms and trapeziums, and explain where the formulas come from.",
+  "learn": [
+   "Find the area of a parallelogram",
+   "Find the area of a triangle",
+   "Find the area of a trapezium"
+  ],
+  "clues": [
+   {
+    "id": "area-shapes",
+    "title": "Area of triangles, parallelograms and trapeziums",
+    "goals": [
+     "Use area = base × perpendicular height for a parallelogram",
+     "Use area = ½ × base × height for a triangle",
+     "Use area = ½ × (a + b) × h for a trapezium"
+    ],
+    "teaser": "Use the perpendicular height, not the slanted side.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "area-shapes-read",
+      "kind": "reading",
+      "title": "Area of triangles, parallelograms and trapeziums",
+      "minutes": 4,
+      "blurb": "Use area = base × perpendicular height for a parallelogram"
+     },
+     {
+      "id": "area-shapes-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "area-shapes-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "golden-age",
+  "number": "225",
+  "title": "The Case of the House of Wisdom",
+  "topic": "The Islamic Golden Age",
+  "subject": "history",
+  "grade": 8,
+  "tagline": "Visit Baghdad, where scholars translated, debated and made discoveries that still shape science.",
+  "hook": "The word “algebra” comes from an Arabic book title written in Baghdad over 1,100 years ago. How did a city in the Middle East become one of the world’s great centres of learning?",
+  "goal": "Describe the Islamic Golden Age and explain its contributions to science, mathematics and medicine.",
+  "learn": [
+   "Describe the House of Wisdom in Baghdad",
+   "Name scholars and their contributions",
+   "Explain how knowledge was preserved and passed on"
+  ],
+  "clues": [
+   {
+    "id": "house-of-wisdom",
+    "title": "The Islamic Golden Age",
+    "goals": [
+     "Describe the House of Wisdom and the translation movement",
+     "Name scholars such as al-Khwarizmi and Ibn Sina and what they did",
+     "Explain how this learning later reached Europe"
+    ],
+    "teaser": "Translation, mathematics, medicine and astronomy in Baghdad and beyond.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "house-of-wisdom-read",
+      "kind": "reading",
+      "title": "The Islamic Golden Age",
+      "minutes": 4,
+      "blurb": "Describe the House of Wisdom and the translation movement"
+     },
+     {
+      "id": "house-of-wisdom-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "house-of-wisdom-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "mali-empire",
+  "number": "226",
+  "title": "The Case of the Golden Caravan",
+  "topic": "The Mali Empire and Mansa Musa",
+  "subject": "history",
+  "grade": 8,
+  "tagline": "Discover a West African empire so rich in gold that its king appeared on European maps.",
+  "hook": "A Spanish map drawn in 1375 shows an African king holding a gold nugget. Merchants said his journey to Mecca had changed the price of gold in Cairo. Who was he?",
+  "goal": "Explain how the Mali Empire grew rich and powerful, and why Mansa Musa became famous.",
+  "learn": [
+   "Locate the Mali Empire",
+   "Explain how gold and salt trade made Mali rich",
+   "Describe Mansa Musa’s pilgrimage and Timbuktu as a centre of learning"
+  ],
+  "clues": [
+   {
+    "id": "mansa-musa",
+    "title": "The Mali Empire and Mansa Musa",
+    "goals": [
+     "Locate the Mali Empire in West Africa",
+     "Explain how trans-Saharan trade in gold and salt made Mali rich",
+     "Describe Mansa Musa’s hajj and the growth of Timbuktu"
+    ],
+    "teaser": "Gold, salt, trade routes and the scholars of Timbuktu.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "mansa-musa-read",
+      "kind": "reading",
+      "title": "The Mali Empire and Mansa Musa",
+      "minutes": 4,
+      "blurb": "Locate the Mali Empire in West Africa"
+     },
+     {
+      "id": "mansa-musa-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "mansa-musa-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "resources",
+  "number": "227",
+  "title": "The Case of the Running-Out Reserve",
+  "topic": "Renewable and non-renewable resources",
+  "subject": "geography",
+  "grade": 8,
+  "tagline": "Sort the world’s resources into those that run out and those that renew.",
+  "hook": "A town has relied on its coal mine for 150 years. Now the mine is closing because the coal is running out. What should the town use next, and what happens to the jobs?",
+  "goal": "Classify natural resources as renewable or non-renewable and evaluate how we use them.",
+  "learn": [
+   "Define natural resources",
+   "Classify resources as renewable or non-renewable",
+   "Explain why sustainable use matters"
+  ],
+  "clues": [
+   {
+    "id": "renewable-resources",
+    "title": "Renewable and non-renewable resources",
+    "goals": [
+     "Define a natural resource",
+     "Classify resources as renewable or non-renewable with reasons",
+     "Explain what sustainable use means"
+    ],
+    "teaser": "Some resources renew themselves; others run out.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "renewable-resources-read",
+      "kind": "reading",
+      "title": "Renewable and non-renewable resources",
+      "minutes": 4,
+      "blurb": "Define a natural resource"
+     },
+     {
+      "id": "renewable-resources-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "renewable-resources-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "rainforests",
+  "number": "228",
+  "title": "The Case of the Disappearing Forest",
+  "topic": "Rainforests and deforestation",
+  "subject": "geography",
+  "grade": 8,
+  "tagline": "Investigate why tropical rainforests are cut down, and what that costs the world.",
+  "hook": "Satellite photos taken years apart show a patch of green rainforest turning into a pattern of straight roads and brown fields, shaped a bit like a fishbone. What is happening, and who is doing it?",
+  "goal": "Explain the causes and effects of tropical deforestation and evaluate ways to manage rainforests sustainably.",
+  "learn": [
+   "Describe the tropical rainforest and why it matters",
+   "Explain the main causes of deforestation",
+   "Evaluate effects and sustainable solutions"
+  ],
+  "clues": [
+   {
+    "id": "deforestation",
+    "title": "Rainforests and deforestation",
+    "goals": [
+     "Describe why tropical rainforests are important",
+     "Explain the main causes of deforestation",
+     "Evaluate the effects of deforestation and some solutions"
+    ],
+    "teaser": "Cattle, crops, logging and roads, and what is lost.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "deforestation-read",
+      "kind": "reading",
+      "title": "Rainforests and deforestation",
+      "minutes": 4,
+      "blurb": "Describe why tropical rainforests are important"
+     },
+     {
+      "id": "deforestation-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "deforestation-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "electricity",
+  "number": "231",
+  "title": "The Case of the Flickering Bulb",
+  "topic": "Current, voltage and resistance",
+  "subject": "science",
+  "grade": 9,
+  "tagline": "Measure current and voltage, and use Ohm’s law to explain what resistance does.",
+  "hook": "A bulb glows brightly with a short wire, but grows dim when a long, thin wire is added to the circuit. The battery has not changed. What has?",
+  "goal": "Explain current, potential difference and resistance, and use V = I × R.",
+  "learn": [
+   "Define current, potential difference and resistance with their units",
+   "Use V = I × R",
+   "Explain what affects the resistance of a wire"
+  ],
+  "clues": [
+   {
+    "id": "ohms-law",
+    "title": "Current, voltage and resistance",
+    "goals": [
+     "Define current (A), potential difference (V) and resistance (Ω)",
+     "Use V = I × R to calculate one quantity from the other two",
+     "Explain why a long, thin wire has more resistance"
+    ],
+    "teaser": "V = I × R links the three.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "ohms-law-read",
+      "kind": "reading",
+      "title": "Current, voltage and resistance",
+      "minutes": 4,
+      "blurb": "Define current (A), potential difference (V) and resistance (Ω)"
+     },
+     {
+      "id": "ohms-law-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "ohms-law-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "circulation",
+  "number": "232",
+  "title": "The Case of the Racing Heart",
+  "topic": "The heart and circulation",
+  "subject": "science",
+  "grade": 9,
+  "tagline": "Trace blood through the heart, lungs and body, and find out why your heart races when you run.",
+  "hook": "After a sprint, a runner’s heart is pounding at over 150 beats a minute. Ten minutes later it is back to about 70. What was the heart doing, and why?",
+  "goal": "Describe the structure of the heart and the double circulation, and explain how the heart responds to exercise.",
+  "learn": [
+   "Name the chambers and main blood vessels of the heart",
+   "Trace the double circulation",
+   "Compare arteries, veins and capillaries"
+  ],
+  "clues": [
+   {
+    "id": "heart",
+    "title": "The heart and circulation",
+    "goals": [
+     "Name the four chambers of the heart and the main vessels",
+     "Trace the path of blood through the double circulation",
+     "Explain how heart rate changes with exercise"
+    ],
+    "teaser": "Two pumps side by side, and a double circuit.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "heart-read",
+      "kind": "reading",
+      "title": "The heart and circulation",
+      "minutes": 4,
+      "blurb": "Name the four chambers of the heart and the main vessels"
+     },
+     {
+      "id": "heart-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "heart-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "simultaneous",
+  "number": "233",
+  "title": "The Case of the Two Tickets",
+  "topic": "Simultaneous equations",
+  "subject": "maths",
+  "grade": 9,
+  "tagline": "Solve two equations at once to find two unknowns.",
+  "hook": "A school sold 200 tickets for a play and took £1,100. Adult tickets cost £7 and child tickets £4. The treasurer lost the record of how many of each were sold. Can you find out?",
+  "goal": "Form and solve pairs of linear simultaneous equations by elimination and by substitution.",
+  "learn": [
+   "Form two equations from a word problem",
+   "Solve by elimination",
+   "Solve by substitution and check the answer"
+  ],
+  "clues": [
+   {
+    "id": "simultaneous-equations",
+    "title": "Simultaneous equations",
+    "goals": [
+     "Write two equations from a word problem",
+     "Solve a pair of equations by elimination",
+     "Solve a pair of equations by substitution, and check the answer"
+    ],
+    "teaser": "Two unknowns need two equations.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "simultaneous-equations-read",
+      "kind": "reading",
+      "title": "Simultaneous equations",
+      "minutes": 4,
+      "blurb": "Write two equations from a word problem"
+     },
+     {
+      "id": "simultaneous-equations-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "simultaneous-equations-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "scatter-graphs",
+  "number": "234",
+  "title": "The Case of the Ice Cream Sales",
+  "topic": "Scatter graphs and correlation",
+  "subject": "maths",
+  "grade": 9,
+  "tagline": "Plot two sets of data and decide whether they are linked, and whether one causes the other.",
+  "hook": "A newspaper reports that on days when more ice cream is sold, more people get sunburnt. Does ice cream cause sunburn? A good detective looks for the hidden cause.",
+  "goal": "Plot and interpret scatter graphs, describe correlation, use a line of best fit, and explain why correlation does not prove causation.",
+  "learn": [
+   "Plot a scatter graph",
+   "Describe positive, negative and no correlation",
+   "Use a line of best fit and explain correlation versus causation"
+  ],
+  "clues": [
+   {
+    "id": "correlation",
+    "title": "Scatter graphs and correlation",
+    "goals": [
+     "Plot paired data on a scatter graph",
+     "Describe the type and strength of correlation",
+     "Use a line of best fit to estimate, and explain why correlation does not prove causation"
+    ],
+    "teaser": "Linked is not the same as caused.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "correlation-read",
+      "kind": "reading",
+      "title": "Scatter graphs and correlation",
+      "minutes": 4,
+      "blurb": "Plot paired data on a scatter graph"
+     },
+     {
+      "id": "correlation-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "correlation-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "french-revolution",
+  "number": "235",
+  "title": "The Case of the Stormed Fortress",
+  "topic": "The French Revolution",
+  "subject": "history",
+  "grade": 9,
+  "tagline": "Investigate why the people of France overthrew their king, and what followed.",
+  "hook": "On 14 July 1789, a crowd in Paris attacked the Bastille, a royal fortress holding only seven prisoners. Why did this attack become the symbol of a revolution?",
+  "goal": "Explain the causes, key events and consequences of the French Revolution.",
+  "learn": [
+   "Explain the long-term and short-term causes",
+   "Describe key events from 1789 to 1799",
+   "Assess the Revolution’s impact"
+  ],
+  "clues": [
+   {
+    "id": "revolution-1789",
+    "title": "The French Revolution",
+    "goals": [
+     "Explain the social, financial and political causes of the Revolution",
+     "Describe key events: the Estates-General, the Bastille, the Declaration of Rights, the Terror",
+     "Explain why the Revolution mattered beyond France"
+    ],
+    "teaser": "Debt, bread, new ideas and the fall of a king.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "revolution-1789-read",
+      "kind": "reading",
+      "title": "The French Revolution",
+      "minutes": 4,
+      "blurb": "Explain the social, financial and political causes of the Revolution"
+     },
+     {
+      "id": "revolution-1789-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "revolution-1789-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "slave-trade",
+  "number": "236",
+  "title": "The Case of the Broken Chains",
+  "topic": "The transatlantic slave trade and its abolition",
+  "subject": "history",
+  "grade": 9,
+  "tagline": "Understand how the transatlantic slave trade worked, and how enslaved people and campaigners fought to end it.",
+  "hook": "In 1789, a man named Olaudah Equiano published the story of his life: kidnapped as a child, enslaved, and finally free. His book became a bestseller. Why did one person’s story matter so much to the campaign against slavery?",
+  "goal": "Explain how the transatlantic slave trade operated, its human cost, and how it was abolished.",
+  "learn": [
+   "Describe the triangular trade",
+   "Explain the human cost of the trade",
+   "Explain the roles of resistance and campaigning in abolition"
+  ],
+  "clues": [
+   {
+    "id": "abolition",
+    "title": "The transatlantic slave trade and its abolition",
+    "goals": [
+     "Describe the triangular trade and the Middle Passage",
+     "Explain the scale and human cost of the trade",
+     "Explain how resistance by enslaved people and campaigns by abolitionists led to abolition"
+    ],
+    "teaser": "A trade in human beings, and the long struggle to end it.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "abolition-read",
+      "kind": "reading",
+      "title": "The transatlantic slave trade and its abolition",
+      "minutes": 4,
+      "blurb": "Describe the triangular trade and the Middle Passage"
+     },
+     {
+      "id": "abolition-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "abolition-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "development",
+  "number": "237",
+  "title": "The Case of the Uneven World",
+  "topic": "Measuring development",
+  "subject": "geography",
+  "grade": 9,
+  "tagline": "Find out how geographers compare countries, and why one number is never enough.",
+  "hook": "Two countries have almost the same income per person. In one, people live to 82 on average; in the other, to 66. If wealth is the same, what explains the difference?",
+  "goal": "Use economic and social indicators, including the Human Development Index, to compare development between countries.",
+  "learn": [
+   "Define development",
+   "Use economic and social indicators",
+   "Explain the Human Development Index and its limits"
+  ],
+  "clues": [
+   {
+    "id": "measuring-development",
+    "title": "Measuring development",
+    "goals": [
+     "Define development",
+     "Use indicators such as GNI per head, life expectancy and literacy",
+     "Explain how the Human Development Index combines indicators, and its limits"
+    ],
+    "teaser": "GNI per head, life expectancy, schooling and the HDI.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "measuring-development-read",
+      "kind": "reading",
+      "title": "Measuring development",
+      "minutes": 4,
+      "blurb": "Define development"
+     },
+     {
+      "id": "measuring-development-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "measuring-development-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "globalisation",
+  "number": "238",
+  "title": "The Case of the Well-Travelled T-shirt",
+  "topic": "Globalisation",
+  "subject": "geography",
+  "grade": 9,
+  "tagline": "Trace how a single T-shirt connects farmers, factories, ships and shops around the world.",
+  "hook": "The label on a T-shirt says “Made in Bangladesh”. But the cotton was grown in India, the design came from Sweden, and it was sold in Canada. How did one T-shirt travel so far?",
+  "goal": "Explain globalisation, the factors that drive it, and its advantages and disadvantages for different people.",
+  "learn": [
+   "Define globalisation",
+   "Explain what drives it",
+   "Weigh its benefits and costs"
+  ],
+  "clues": [
+   {
+    "id": "global-links",
+    "title": "Globalisation",
+    "goals": [
+     "Define globalisation",
+     "Explain how transport, communications and transnational corporations drive it",
+     "Evaluate its advantages and disadvantages for different groups"
+    ],
+    "teaser": "A more connected world, with winners and losers.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "global-links-read",
+      "kind": "reading",
+      "title": "Globalisation",
+      "minutes": 4,
+      "blurb": "Define globalisation"
+     },
+     {
+      "id": "global-links-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "global-links-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "bonding",
+  "number": "241",
+  "title": "The Case of the Stubborn Salt",
+  "topic": "Ionic and covalent bonding",
+  "subject": "science",
+  "grade": 10,
+  "tagline": "Explain why salt melts at over 800 °C while wax melts in your hand, using bonds between atoms.",
+  "hook": "Table salt melts at about 801 °C. Candle wax melts at around 60 °C. Both are white solids. Something very different must be holding their particles together.",
+  "goal": "Explain how ionic and covalent bonds form and link structure to properties such as melting point and conductivity.",
+  "learn": [
+   "Explain how ionic bonds form by electron transfer",
+   "Explain how covalent bonds form by sharing electrons",
+   "Link structure to melting point and conductivity"
+  ],
+  "clues": [
+   {
+    "id": "ionic-covalent",
+    "title": "Ionic and covalent bonding",
+    "goals": [
+     "Explain ionic bonding as the transfer of electrons from a metal to a non-metal",
+     "Explain covalent bonding as the sharing of pairs of electrons between non-metals",
+     "Explain how giant ionic lattices and simple molecules differ in melting point and conductivity"
+    ],
+    "teaser": "Transferring electrons versus sharing them.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "ionic-covalent-read",
+      "kind": "reading",
+      "title": "Ionic and covalent bonding",
+      "minutes": 4,
+      "blurb": "Explain ionic bonding as the transfer of electrons from a metal to a non-metal"
+     },
+     {
+      "id": "ionic-covalent-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "ionic-covalent-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "em-spectrum",
+  "number": "242",
+  "title": "The Case of the Invisible Light",
+  "topic": "The electromagnetic spectrum",
+  "subject": "science",
+  "grade": 10,
+  "tagline": "Discover the light you cannot see, from radio waves to gamma rays.",
+  "hook": "A security camera sees a burglar in total darkness. A phone talks to a tower kilometres away. A doctor sees inside a broken arm. All three use the same kind of wave. What is it?",
+  "goal": "Describe the electromagnetic spectrum, the properties shared by all electromagnetic waves, and the uses and dangers of each type.",
+  "learn": [
+   "Name the parts of the spectrum in order",
+   "Describe properties all EM waves share",
+   "Give uses and dangers of each type"
+  ],
+  "clues": [
+   {
+    "id": "em-waves",
+    "title": "The electromagnetic spectrum",
+    "goals": [
+     "List the electromagnetic spectrum in order of wavelength",
+     "State properties shared by all electromagnetic waves",
+     "Describe uses and hazards of different types of electromagnetic radiation"
+    ],
+    "teaser": "Radio, microwaves, infrared, visible, ultraviolet, X-rays, gamma.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "em-waves-read",
+      "kind": "reading",
+      "title": "The electromagnetic spectrum",
+      "minutes": 4,
+      "blurb": "List the electromagnetic spectrum in order of wavelength"
+     },
+     {
+      "id": "em-waves-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "em-waves-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "sequences",
+  "number": "243",
+  "title": "The Case of the Growing Pattern",
+  "topic": "Arithmetic and geometric sequences",
+  "subject": "maths",
+  "grade": 10,
+  "tagline": "Find the rule behind a sequence and predict any term without listing them all.",
+  "hook": "A rumour spreads: on day 1, three people know it. Each day, every person who knows tells two more people who did not, so the number who know triples. A second rumour also starts with three people, but just gains five new people a day. By day 10, which rumour is ahead?",
+  "goal": "Identify arithmetic and geometric sequences and find and use their nth-term formulas.",
+  "learn": [
+   "Recognise arithmetic and geometric sequences",
+   "Find the nth term of an arithmetic sequence",
+   "Find the nth term of a geometric sequence"
+  ],
+  "clues": [
+   {
+    "id": "arith-geo",
+    "title": "Arithmetic and geometric sequences",
+    "goals": [
+     "Recognise arithmetic sequences (common difference) and geometric sequences (common ratio)",
+     "Use the nth-term formula a + (n − 1)d",
+     "Use the nth-term formula a × r^(n − 1)"
+    ],
+    "teaser": "Adding the same amount, or multiplying by the same amount.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "arith-geo-read",
+      "kind": "reading",
+      "title": "Arithmetic and geometric sequences",
+      "minutes": 4,
+      "blurb": "Recognise arithmetic sequences (common difference) and geometric sequences (common ratio)"
+     },
+     {
+      "id": "arith-geo-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "arith-geo-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "tree-diagrams",
+  "number": "244",
+  "title": "The Case of the Double Draw",
+  "topic": "Probability tree diagrams",
+  "subject": "maths",
+  "grade": 10,
+  "tagline": "Use tree diagrams to work out the chances of two events happening together.",
+  "hook": "A bag has 4 red and 6 blue sweets. You take one, eat it, then take another. A friend says the chance of two reds is 4/10 × 4/10. Is your friend right?",
+  "goal": "Draw and use tree diagrams for combined events, including dependent events without replacement.",
+  "learn": [
+   "Draw a tree diagram for two events",
+   "Multiply along branches and add between outcomes",
+   "Handle events without replacement"
+  ],
+  "clues": [
+   {
+    "id": "combined-events",
+    "title": "Probability tree diagrams",
+    "goals": [
+     "Draw a tree diagram for two events",
+     "Multiply along branches for “and”, and add for “or”",
+     "Adjust the second-stage probabilities when there is no replacement"
+    ],
+    "teaser": "Multiply along the branches, add the outcomes.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "combined-events-read",
+      "kind": "reading",
+      "title": "Probability tree diagrams",
+      "minutes": 4,
+      "blurb": "Draw a tree diagram for two events"
+     },
+     {
+      "id": "combined-events-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "combined-events-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "cold-war",
+  "number": "245",
+  "title": "The Case of the Divided City",
+  "topic": "The Cold War",
+  "subject": "history",
+  "grade": 10,
+  "tagline": "Investigate a long rivalry between superpowers that came close to nuclear war without a direct battle.",
+  "hook": "In August 1961, people in Berlin woke up to find barbed wire across their streets. Families were cut off from each other overnight. Within days a wall was going up. Why would a city be split in two?",
+  "goal": "Explain the causes of the Cold War, its key crises and how it ended.",
+  "learn": [
+   "Explain why the wartime allies became rivals",
+   "Describe key crises such as Berlin and Cuba",
+   "Explain how the Cold War ended"
+  ],
+  "clues": [
+   {
+    "id": "superpowers",
+    "title": "The Cold War",
+    "goals": [
+     "Explain the ideological differences between the USA and the USSR",
+     "Describe key crises: the Berlin Blockade, the Berlin Wall and the Cuban Missile Crisis",
+     "Explain why it was “cold” and how it ended in 1989 to 1991"
+    ],
+    "teaser": "Two superpowers, two ideologies, and the threat of nuclear war.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "superpowers-read",
+      "kind": "reading",
+      "title": "The Cold War",
+      "minutes": 4,
+      "blurb": "Explain the ideological differences between the USA and the USSR"
+     },
+     {
+      "id": "superpowers-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "superpowers-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "indian-independence",
+  "number": "246",
+  "title": "The Case of the Midnight Freedom",
+  "topic": "Indian independence and partition",
+  "subject": "history",
+  "grade": 10,
+  "tagline": "Investigate how India won independence from Britain in 1947, and why it was divided.",
+  "hook": "At midnight on 14 to 15 August 1947, India became independent after nearly two centuries of British rule. On the same night, a new country, Pakistan, was created. Within months, millions were on the move. How did freedom and division arrive together?",
+  "goal": "Explain how the independence movement ended British rule in India, and the causes and consequences of partition.",
+  "learn": [
+   "Describe the independence movement and Gandhi’s methods",
+   "Explain why India was partitioned",
+   "Describe the human consequences of partition"
+  ],
+  "clues": [
+   {
+    "id": "independence-partition",
+    "title": "Indian independence and partition",
+    "goals": [
+     "Explain how the independence movement, including Gandhi’s non-violent protest, put pressure on Britain",
+     "Explain the political reasons for partition",
+     "Describe the violence and mass migration that followed partition"
+    ],
+    "teaser": "Non-violent protest, a hurried departure and a divided land.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "independence-partition-read",
+      "kind": "reading",
+      "title": "Indian independence and partition",
+      "minutes": 4,
+      "blurb": "Explain how the independence movement, including Gandhi’s non-violent protest, put pressure on Britain"
+     },
+     {
+      "id": "independence-partition-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "independence-partition-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "water-scarcity",
+  "number": "247",
+  "title": "The Case of the Dry Tap",
+  "topic": "Water scarcity",
+  "subject": "geography",
+  "grade": 10,
+  "tagline": "Find out why some places run short of water, and how they manage it.",
+  "hook": "In 2018, Cape Town in South Africa warned of “Day Zero”, when the city’s taps could be switched off. People were asked to use no more than 50 litres a day. How does a modern city come close to running out of water?",
+  "goal": "Explain the physical and human causes of water scarcity and evaluate ways to manage water supply and demand.",
+  "learn": [
+   "Distinguish physical and economic water scarcity",
+   "Explain causes of water stress",
+   "Evaluate water management strategies"
+  ],
+  "clues": [
+   {
+    "id": "water-stress",
+    "title": "Water scarcity",
+    "goals": [
+     "Explain physical and economic water scarcity",
+     "Explain how climate, population growth and demand cause water stress",
+     "Evaluate strategies to increase supply and reduce demand"
+    ],
+    "teaser": "Too little water, or too little money to reach it.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "water-stress-read",
+      "kind": "reading",
+      "title": "Water scarcity",
+      "minutes": 4,
+      "blurb": "Explain physical and economic water scarcity"
+     },
+     {
+      "id": "water-stress-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "water-stress-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "food-security",
+  "number": "248",
+  "title": "The Case of the Empty Plate",
+  "topic": "Food security",
+  "subject": "geography",
+  "grade": 10,
+  "tagline": "Investigate why some people go hungry in a world that grows enough food for everyone.",
+  "hook": "The world produces enough food to feed everyone, yet hundreds of millions of people regularly go hungry. Meanwhile, a large share of food is wasted. Where is the missing link?",
+  "goal": "Explain food security and insecurity, their causes, and strategies to improve food supply and access.",
+  "learn": [
+   "Define food security and its four parts",
+   "Explain physical and human causes of food insecurity",
+   "Evaluate strategies to improve food security"
+  ],
+  "clues": [
+   {
+    "id": "feeding-world",
+    "title": "Food security",
+    "goals": [
+     "Define food security, including availability, access, use and stability",
+     "Explain causes of food insecurity such as poverty, conflict, climate and waste",
+     "Evaluate large-scale and small-scale strategies to improve food security"
+    ],
+    "teaser": "Enough food, and the ability to get it, for everyone.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "feeding-world-read",
+      "kind": "reading",
+      "title": "Food security",
+      "minutes": 4,
+      "blurb": "Define food security, including availability, access, use and stability"
+     },
+     {
+      "id": "feeding-world-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "feeding-world-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
  }
 ];
 

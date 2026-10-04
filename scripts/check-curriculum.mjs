@@ -37,6 +37,7 @@ function checkQuestion(where, q, { needWhy }) {
 
 const MAIN = ["science", "maths", "history", "geography"];
 const matrix = {};
+const chapterMatrix = {};
 const seenQ = new Set();
 let lessons = 0;
 let questions = 0;
@@ -71,11 +72,18 @@ for (const c of CASES) {
   for (const v of verdict) { checkQuestion(`${c.id} final ${v.id}`, v, { needWhy: false }); if (!c.clues.some((k) => k.id === v.clueId)) bad(`${c.id}: final-test question ${v.id} points at missing lesson ${v.clueId}`); }
   if (!c.practice && (!c.grade || c.grade < 6 || c.grade > 10)) bad(`${c.id}: needs a grade from 6 to 10`);
   if (!c.practice && verdict.length < c.clues.length) bad(`${c.id}: final test has fewer questions than lessons`);
+  if (!c.practice && c.clues.length < 1) bad(`${c.id}: a chapter needs at least one lesson`);
+  if (c.grade && MAIN.includes(c.subject)) chapterMatrix[`${c.grade}|${c.subject}`] = (chapterMatrix[`${c.grade}|${c.subject}`] ?? 0) + 1;
 }
+const ids = CASES.map((c) => c.id);
+for (const id of ids.filter((x, i) => ids.indexOf(x) !== i)) bad(`duplicate chapter id ${id}`);
+const numbers = CASES.map((c) => c.number);
+for (const n of numbers.filter((x, i) => numbers.indexOf(x) !== i)) bad(`duplicate case number ${n}`);
 
-/* ---- New chapters: authoring rules */
+/* ---- New chapters: authoring rules. The first 15 have 5 lessons each; the extra chapters (extra-g*.ts) may have fewer,
+   as long as every grade and subject still has at least 3 chapters and 5 lessons (checked below). */
 for (const s of SPECS) {
-  if (s.lessons.length < 5) bad(`${s.id}: fewer than 5 lessons`);
+  if (s.lessons.length < 1) bad(`${s.id}: no lessons`);
   for (const l of s.lessons) {
     if (l.practice.length !== 2 || l.quiz.length !== 3 || l.check.length !== 2) bad(`${s.id}/${l.id}: needs 2 practice, 3 quiz and 2 final-test questions`);
     for (const q of [...l.practice, ...l.quiz, ...l.check]) {
@@ -99,10 +107,11 @@ for (const v of CURATED_VIDEOS) {
 }
 
 /* ---- The grade by subject matrix */
-console.log("\nLessons per grade and subject (each needs at least 5):\n");
+console.log("\nChapters / lessons per grade and subject (each needs at least 3 chapters and 5 lessons):\n");
 console.log("Grade".padEnd(8) + MAIN.map((s) => s.padEnd(11)).join(""));
 for (const g of [6, 7, 8, 9, 10]) {
-  console.log(String(g).padEnd(8) + MAIN.map((s) => String(matrix[`${g}|${s}`] ?? 0).padEnd(11)).join(""));
+  console.log(String(g).padEnd(8) + MAIN.map((s) => `${chapterMatrix[`${g}|${s}`] ?? 0} / ${matrix[`${g}|${s}`] ?? 0}`.padEnd(11)).join(""));
+  for (const s of MAIN) if ((chapterMatrix[`${g}|${s}`] ?? 0) < 3) bad(`Grade ${g} ${s}: only ${chapterMatrix[`${g}|${s}`] ?? 0} chapters`);
   for (const s of MAIN) if ((matrix[`${g}|${s}`] ?? 0) < 5) bad(`Grade ${g} ${s}: only ${matrix[`${g}|${s}`] ?? 0} lessons`);
 }
 if (emDash) bad(`${emDash} lessons contain an em dash`);

@@ -11,7 +11,10 @@ import { getCase } from "@/data/cases";
 import { SUBJECTS } from "@/data/subjects";
 import { parseVideoUrl } from "@/lib/cms/embed";
 import type { VideoEntry } from "@/lib/cms/types";
+import { redirect } from "next/navigation";
+import { getStudentGrade } from "@/lib/access-server";
 import { getPublished, listPublished } from "@/lib/cms/videos";
+import { canWatch, videosForGrade } from "@/lib/video-access";
 import { copy } from "@/lib/copy";
 
 const t = copy.videos;
@@ -53,6 +56,10 @@ export default async function WatchPage(props: PageProps<"/videos/[id]">) {
   }
   // Drafts and unknown ids look the same to a learner
   if (!video) notFound();
+  // A direct link to a video above the student's grade gets the same explanation as a chapter link
+  const grade = await getStudentGrade();
+  if (!canWatch(grade, video)) redirect(`/locked?case=${encodeURIComponent(video.caseId ?? "")}`);
+  siblings = videosForGrade(siblings, grade);
 
   const subject = SUBJECTS[video.subjectId];
   const chapter = video.caseId ? getCase(video.caseId) : undefined;
@@ -106,6 +113,11 @@ export default async function WatchPage(props: PageProps<"/videos/[id]">) {
       {video.channel && (
         <p className="mt-3 max-w-prose text-sm text-ink-soft">
           {t.credit(video.sourceTitle ?? video.title, video.channel)}
+        </p>
+      )}
+      {video.captionsInfo && (
+        <p className="mt-2 max-w-prose text-sm text-ink-soft">
+          <span className="font-semibold">{t.captionsLabel}</span> {video.captionsInfo}. {t.captionsHow}
         </p>
       )}
       {video.note && (

@@ -31,7 +31,7 @@ export function JoinWizard() {
   const router = useRouter();
   const [step, setStep] = useState(0);
   const [name, setName] = useState("");
-  const [avatarId, setAvatarId] = useState<AvatarId>("magnifier");
+  const [avatarId, setAvatarId] = useState<AvatarId>("amara");
   const [interests, setInterests] = useState<string[]>([]);
   const [grade, setGrade] = useState<Grade | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -164,14 +164,17 @@ export function JoinWizard() {
 
                 <fieldset className="mt-6">
                   <legend className="text-lg font-semibold">{t.about.avatarLegend}</legend>
-                  <div className="mt-2 grid grid-cols-3 gap-4 sm:grid-cols-6">
+                  <p className="mt-1 text-sm text-ink-soft">{t.about.avatarHelp}</p>
+                  {/* Radio buttons: arrow keys move between portraits, and the focus mark comes from globals.css (label:has(...)) */}
+                  <div className="mt-3 grid grid-cols-4 gap-2 sm:gap-3 lg:grid-cols-8">
                     {AVATARS.map((a) => {
                       const on = a.id === avatarId;
                       return (
                         <label
                           key={a.id}
-                          className={`flex cursor-pointer flex-col items-center gap-2 rounded-[3px]  p-2 text-center text-sm -[3px] -coffee ${
-                            on ? " bg-postit-light" : " bg-paper "
+                          title={a.description}
+                          className={`relative flex min-h-11 cursor-pointer flex-col items-center gap-1.5 rounded-[3px] p-2 text-center text-sm transition-colors ${
+                            on ? "bg-postit-light font-semibold shadow-[inset_0_0_0_2px_var(--color-espresso)]" : "bg-paper hover:bg-manila-50"
                           }`}
                         >
                           <input
@@ -182,8 +185,16 @@ export function JoinWizard() {
                             onChange={() => setAvatarId(a.id)}
                             className="sr-only"
                           />
-                          <Avatar avatarId={a.id} size={52} />
-                          <span className="leading-tight">{a.label}</span>
+                          <Avatar avatarId={a.id} size={56} className={on ? "ring-2 ring-espresso ring-offset-2 ring-offset-postit-light" : ""} />
+                          <span className="leading-tight">
+                            {a.name}
+                            <span className="sr-only">: {a.description}</span>
+                          </span>
+                          {on && (
+                            <span aria-hidden="true" className="absolute right-1 top-1 rounded-full bg-espresso px-1.5 text-xs leading-5 text-paper">
+                              ✓
+                            </span>
+                          )}
                         </label>
                       );
                     })}

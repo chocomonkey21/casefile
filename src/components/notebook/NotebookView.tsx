@@ -5,9 +5,10 @@ import { useState } from "react";
 import { NoteForm } from "@/components/notes/NoteForm";
 import { Button } from "@/components/ui/Button";
 import { TrashIcon } from "@/components/ui/Icons";
-import { CASES, getCase } from "@/data/cases";
+import { getCase } from "@/data/cases";
 import { copy } from "@/lib/copy";
 import { actions, useCaseFile, useHydrated } from "@/lib/store";
+import { useAllowedCases } from "@/lib/use-access";
 import { RedThread } from "@/components/ui/RedThread";
 
 const t = copy.notebook;
@@ -16,6 +17,8 @@ const t = copy.notebook;
 export function NotebookView() {
   const { notes } = useCaseFile();
   const hydrated = useHydrated();
+  // Notes can only be filed against chapters open to the student's grade
+  const CASES = useAllowedCases();
   const [filter, setFilter] = useState<string>("all");
   const [formCaseId, setFormCaseId] = useState<string>("puddle");
 

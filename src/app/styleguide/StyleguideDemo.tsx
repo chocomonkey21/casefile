@@ -46,7 +46,7 @@ export function StyleguideDemo() {
           {AVATARS.map((a) => (
             <li key={a.id} className="flex flex-col items-center gap-1 text-sm text-ink-soft">
               <Avatar avatarId={a.id} size={56} />
-              {a.label}
+              {a.name}
             </li>
           ))}
         </ul>
@@ -82,7 +82,7 @@ export function StyleguideDemo() {
             onClick={() =>
               actions.setProfile({
                 name: "Sam",
-                avatarId: "magnifier",
+                avatarId: "amara",
                 interests: ["space"],
                 grade: 7,
               })

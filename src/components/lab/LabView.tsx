@@ -4,12 +4,12 @@ import Link from "next/link";
 import { StatusStamp } from "@/components/case/StatusStamp";
 import { Button } from "@/components/ui/Button";
 import { ProgressBar } from "@/components/ui/ProgressBar";
-import { CASES } from "@/data/cases";
 import { RANKS } from "@/data/ranks";
 import { coldCases, coolingCases, overallStats, splitTopics, topicStats, type TopicStat } from "@/lib/lab";
 import { copy } from "@/lib/copy";
 import { COLD_AFTER_DAYS, currentStreak, levelFor, solvedCount } from "@/lib/progress";
 import { actions, useCaseFile, useHydrated } from "@/lib/store";
+import { useAllowedCases } from "@/lib/use-access";
 import { RedThread } from "@/components/ui/RedThread";
 
 const t = copy.lab;
@@ -18,6 +18,7 @@ const t = copy.lab;
 export function LabView() {
   const state = useCaseFile();
   const hydrated = useHydrated();
+  const CASES = useAllowedCases();
 
   if (!hydrated) {
     return (
