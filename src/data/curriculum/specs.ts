@@ -21,6 +21,11 @@ import { EXTRA_G7 } from "./extra-g7";
 import { EXTRA_G8 } from "./extra-g8";
 import { EXTRA_G9 } from "./extra-g9";
 import { EXTRA_G10 } from "./extra-g10";
+import { ICSE_G6 } from "./icse-g6";
+import { ICSE_G7 } from "./icse-g7";
+import { ICSE_G8 } from "./icse-g8";
+import { ICSE_G9 } from "./icse-g9";
+import { ICSE_G10 } from "./icse-g10";
 
 /*
   SERVER ONLY. This file imports every chapter's full lesson text, so do not import it from browser code.
@@ -29,9 +34,10 @@ import { EXTRA_G10 } from "./extra-g10";
   Chapters added for Grades 6 to 10. Each one is written as a ChapterSpec (see build.ts) and built into the
   same structures the older chapters use, so the rest of the app treats them all alike.
   extra-g6.ts to extra-g10.ts add two shorter chapters (one lesson each) per grade and subject, so each has three chapters.
+  icse-g6.ts to icse-g10.ts are the ICSE library: two chapters per grade and subject, marked board: "icse".
   Add a chapter here, give it a grade, and it appears in /subjects, /cases, the lesson pages and the final test.
 */
-export const SPECS: ChapterSpec[] = [MAPS_GLOBES, RATIOS, ANCIENT_GREECE, MATTER_ATOMS, EQUATIONS_GRAPHS, ROMAN_EMPIRE, WEATHER_CLIMATE, FORCES_MOTION, GEOMETRY, INDUSTRIAL_REVOLUTION, POPULATION_CITIES, GENES_EVOLUTION, QUADRATICS_TRIG, WORLD_WARS, CLIMATE_CHANGE, ...EXTRA_G6, ...EXTRA_G7, ...EXTRA_G8, ...EXTRA_G9, ...EXTRA_G10];
+export const SPECS: ChapterSpec[] = [MAPS_GLOBES, RATIOS, ANCIENT_GREECE, MATTER_ATOMS, EQUATIONS_GRAPHS, ROMAN_EMPIRE, WEATHER_CLIMATE, FORCES_MOTION, GEOMETRY, INDUSTRIAL_REVOLUTION, POPULATION_CITIES, GENES_EVOLUTION, QUADRATICS_TRIG, WORLD_WARS, CLIMATE_CHANGE, ...EXTRA_G6, ...EXTRA_G7, ...EXTRA_G8, ...EXTRA_G9, ...EXTRA_G10, ...ICSE_G6, ...ICSE_G7, ...ICSE_G8, ...ICSE_G9, ...ICSE_G10];
 
 const BUILT = SPECS.map(buildChapter);
 

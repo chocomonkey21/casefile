@@ -5,7 +5,7 @@ import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { PrevNext } from "@/components/ui/PrevNext";
 import { RedThread } from "@/components/ui/RedThread";
 import { copy } from "@/lib/copy";
-import { getStudentGrade } from "@/lib/access-server";
+import { getStudentAccess } from "@/lib/access-server";
 import { getSubject, getSubjects } from "@/lib/structure";
 
 const t = copy.subjectsPage;
@@ -23,11 +23,11 @@ export async function generateMetadata(props: PageProps<"/subjects/[subject]">) 
 export default async function SubjectPage(props: PageProps<"/subjects/[subject]">) {
   const { subject: id } = await props.params;
   // Only chapters open to the student's grade (lib/access.ts)
-  const grade = await getStudentGrade();
-  const subject = getSubject(id, grade);
+  const { grade, board } = await getStudentAccess();
+  const subject = getSubject(id, grade, board);
   if (!subject) notFound();
 
-  const all = getSubjects(grade);
+  const all = getSubjects(grade, board);
   const i = all.findIndex((s) => s.id === subject.id);
   const link = (s: (typeof all)[number] | undefined, label: string) =>
     s ? { href: `/subjects/${s.id}`, label, title: s.label } : null;
@@ -42,7 +42,7 @@ export default async function SubjectPage(props: PageProps<"/subjects/[subject]"
         <p className="mt-2 text-lg font-semibold text-ink-soft">
           {t.chapters(subject.chapters.length)} · {t.lessons(subject.lessonCount)}
         </p>
-        {grade && <p className="mt-1 text-ink-soft">{copy.grades.showing(grade)}</p>}
+        {grade && <p className="mt-1 text-ink-soft">{copy.grades.showing(grade, board)}</p>}
       </header>
 
       <section aria-labelledby="chapters-heading" className="mt-8">

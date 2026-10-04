@@ -53,7 +53,7 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
-              <Link href="/families#privacy" className={linkClass}>
+              <Link href="/privacy" className={linkClass}>
                 {f.privacy}
               </Link>
             </li>

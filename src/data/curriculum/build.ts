@@ -1,4 +1,4 @@
-import type { Block, CaseDef, ClueContent, ClueDef, EvidenceDef, Grade, Question, SubjectId, VerdictQuestion } from "@/lib/types";
+import type { Block, Board, CaseDef, ClueContent, ClueDef, EvidenceDef, Grade, Question, SubjectId, VerdictQuestion } from "@/lib/types";
 
 /*
   A compact way to write a lesson, and the builder that turns it into what the app already uses:
@@ -63,6 +63,8 @@ export type ChapterSpec = {
   topic: string;
   subject: SubjectId;
   grade: Grade;
+  /** Left out for CBSE chapters (the default board); set to "icse" for ICSE chapters */
+  board?: Board;
   tagline: string;
   hook: string;
   goal: string;
@@ -163,6 +165,7 @@ export function buildChapter(spec: ChapterSpec): BuiltChapter {
       topic: spec.topic,
       subject: spec.subject,
       grade: spec.grade,
+      ...(spec.board ? { board: spec.board } : {}),
       tagline: spec.tagline,
       hook: spec.hook,
       goal: spec.goal,

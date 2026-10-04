@@ -1,21 +1,23 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { getCase } from "@/data/cases";
-import { canOpenCase, GRADE_COOKIE, joinHref, parseGrade } from "@/lib/access";
+import { BOARD_COOKIE, canOpenCase, DEFAULT_BOARD, GRADE_COOKIE, joinHref, parseBoard, parseGrade } from "@/lib/access";
 
 /*
-  The library is for signed-up students only, and each student sees their own grade and the grades below it
-  (rule in lib/access.ts).
+  The library is for signed-up students (and signed-in teachers) only. Each student sees their own board, their
+  grade and the grades below it (rules in lib/access.ts).
 
-  - No grade cookie (a visitor, or sign-up not finished): pages go to /join, and the video API answers 401.
-  - A chapter above the student's grade, opened by a direct link: goes to /locked, which explains and links back.
+  - No grade cookie (a visitor, or sign-up not finished): pages go to /join, and the student APIs answer 401.
+  - A chapter for another board, or above the student's grade, opened by a direct link: goes to /locked,
+    which explains and links back.
 
-  Video watch pages and the video lists check grades themselves, because a video's chapter is only known after a
+  Video watch pages and the video lists check access themselves, because a video's chapter is only known after a
   CMS lookup, and proxy should stay fast. Subject pages filter their chapter lists the same way.
 */
 
 export function proxy(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
   const grade = parseGrade(request.cookies.get(GRADE_COOKIE)?.value);
+  const board = parseBoard(request.cookies.get(BOARD_COOKIE)?.value) ?? DEFAULT_BOARD;
 
   if (grade === null) {
     if (pathname.startsWith("/api/")) {
@@ -27,7 +29,7 @@ export function proxy(request: NextRequest) {
   const caseMatch = pathname.match(/^\/cases\/([^/]+)/);
   if (caseMatch) {
     const caseDef = getCase(decodeURIComponent(caseMatch[1]));
-    if (caseDef && !canOpenCase(grade, caseDef)) {
+    if (caseDef && !canOpenCase(grade, board, caseDef)) {
       return NextResponse.redirect(new URL(`/locked?case=${encodeURIComponent(caseDef.id)}`, request.url));
     }
   }
@@ -49,5 +51,7 @@ export const config = {
     "/notebook",
     "/api/videos",
     "/api/videos/:path*",
+    "/api/drawer",
+    "/api/drawer/:path*",
   ],
 };

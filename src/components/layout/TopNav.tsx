@@ -20,7 +20,8 @@ export function TopNav() {
   const { rank } = levelFor(state);
   const days = currentStreak(state.streak);
   // The library opens after sign-up (proxy.ts). Visitors on open pages such as About see one "Get started" action instead.
-  const visitor = useHydrated() && !state.profile;
+  const hydrated = useHydrated();
+  const visitor = hydrated && !state.profile && !state.teacher;
 
   return (
     <header className="sticky top-0 z-40 on-dark bg-espresso">
@@ -66,7 +67,8 @@ export function TopNav() {
           </Button>
         ) : (
         <div className="flex items-center gap-4 sm:gap-4">
-          <p className="hidden text-right text-xs leading-snug text-beige sm:block">
+          {/* Level and streak come from saved progress, so they wait for it to load rather than flash “Rookie, 0 days” */}
+          <p className={`hidden text-right text-xs leading-snug text-beige sm:block ${hydrated && !state.teacher ? "" : "invisible"}`}>
             <span className="block">{copy.level.label(rank.name)}</span>
             <span className="block">{copy.level.streak(days)}</span>
           </p>

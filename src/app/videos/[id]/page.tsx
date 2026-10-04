@@ -12,9 +12,9 @@ import { SUBJECTS } from "@/data/subjects";
 import { parseVideoUrl } from "@/lib/cms/embed";
 import type { VideoEntry } from "@/lib/cms/types";
 import { redirect } from "next/navigation";
-import { getStudentGrade } from "@/lib/access-server";
+import { getStudentAccess } from "@/lib/access-server";
 import { getPublished, listPublished } from "@/lib/cms/videos";
-import { canWatch, videosForGrade } from "@/lib/video-access";
+import { canWatch, videosForStudent } from "@/lib/video-access";
 import { copy } from "@/lib/copy";
 
 const t = copy.videos;
@@ -57,9 +57,9 @@ export default async function WatchPage(props: PageProps<"/videos/[id]">) {
   // Drafts and unknown ids look the same to a learner
   if (!video) notFound();
   // A direct link to a video above the student's grade gets the same explanation as a chapter link
-  const grade = await getStudentGrade();
-  if (!canWatch(grade, video)) redirect(`/locked?case=${encodeURIComponent(video.caseId ?? "")}`);
-  siblings = videosForGrade(siblings, grade);
+  const { grade, board } = await getStudentAccess();
+  if (!canWatch(grade, board, video)) redirect(`/locked?case=${encodeURIComponent(video.caseId ?? "")}`);
+  siblings = videosForStudent(siblings, grade, board);
 
   const subject = SUBJECTS[video.subjectId];
   const chapter = video.caseId ? getCase(video.caseId) : undefined;

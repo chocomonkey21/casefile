@@ -7,7 +7,7 @@ import { SUBJECTS, SUBJECT_IDS } from "@/data/subjects";
 import { copy } from "@/lib/copy";
 import { caseStatus, solvedCount } from "@/lib/progress";
 import { useCaseFile, useHydrated } from "@/lib/store";
-import { useAllowedCases, useStudentGrade } from "@/lib/use-access";
+import { useAllowedCases, useStudentBoard, useStudentGrade } from "@/lib/use-access";
 import type { CaseStatus, SubjectId } from "@/lib/types";
 import { RedThread } from "@/components/ui/RedThread";
 
@@ -24,9 +24,10 @@ export function CasesLibrary() {
   const [subject, setSubject] = useState<SubjectId | "all">("all");
   const [status, setStatus] = useState<CaseStatus | "all">("all");
   const [grade, setGrade] = useState<string>("all");
-  // Only the student's grade and the ones below it (lib/access.ts); higher grades are not listed at all
+  // Only the student's board, grade and the grades below it (lib/access.ts); nothing else is listed at all
   const cases = useAllowedCases();
   const studentGrade = useStudentGrade();
+  const studentBoard = useStudentBoard();
   const GRADE_IDS = [...new Set(cases.map((c) => c.grade).filter((g): g is NonNullable<typeof g> => !!g))].sort((a, b) => a - b).map(String);
 
   const rows = cases.map((c) => ({ c, status: caseStatus(c, state), solved: solvedCount(c, state) })).filter(
@@ -42,7 +43,7 @@ export function CasesLibrary() {
         <p className="mt-2 max-w-prose text-lg text-ink-soft">
           {copy.library.intro}
         </p>
-        {studentGrade && <p className="mt-1 font-semibold text-ink-soft">{copy.grades.showing(studentGrade)}</p>}
+        {studentGrade && <p className="mt-1 font-semibold text-ink-soft">{copy.grades.showing(studentGrade, studentBoard)}</p>}
         <p className="mt-1">
           <Link
             href="/subjects"

@@ -4935,6 +4935,2126 @@ export const NEW_CASES: CaseDef[] = [
     ]
    }
   ]
+ },
+ {
+  "id": "icse-light-shadows",
+  "number": "301",
+  "title": "The Case of the Long Shadow",
+  "topic": "Light and shadows",
+  "subject": "science",
+  "grade": 6,
+  "board": "icse",
+  "tagline": "Find out where light comes from, how it travels and why shadows change through the day.",
+  "hook": "A detective notices that a lamp post’s shadow is short at lunchtime but stretches across the road by evening. The lamp post has not moved. What has?",
+  "goal": "Explain luminous and non-luminous objects, how light travels in straight lines, and how shadows form.",
+  "learn": [
+   "Sort objects into luminous and non-luminous",
+   "Explain that light travels in straight lines",
+   "Explain how shadows form and change"
+  ],
+  "clues": [
+   {
+    "id": "shadows",
+    "title": "Light and shadows",
+    "goals": [
+     "Name luminous and non-luminous objects",
+     "Explain that light travels in straight lines",
+     "Explain how the size and direction of a shadow depend on the light source"
+    ],
+    "teaser": "Light travels in straight lines, so solid objects block it.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "shadows-read",
+      "kind": "reading",
+      "title": "Light and shadows",
+      "minutes": 4,
+      "blurb": "Name luminous and non-luminous objects"
+     },
+     {
+      "id": "shadows-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "shadows-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-leaf",
+  "number": "302",
+  "title": "The Case of the Green Kitchen",
+  "topic": "The leaf and photosynthesis",
+  "subject": "science",
+  "grade": 6,
+  "board": "icse",
+  "tagline": "Explore the parts of a leaf and how it makes food from sunlight, water and air.",
+  "hook": "A plant in a dark cupboard turns pale and droopy, while the same kind of plant on the windowsill stays green and strong. Both had the same water. What was the cupboard plant missing?",
+  "goal": "Describe the parts of a leaf and explain what a plant needs for photosynthesis and what it makes.",
+  "learn": [
+   "Name the parts of a leaf",
+   "State what photosynthesis needs and makes",
+   "Explain why light is essential for green plants"
+  ],
+  "clues": [
+   {
+    "id": "photosynthesis",
+    "title": "The leaf and photosynthesis",
+    "goals": [
+     "Name the lamina, petiole, midrib, veins and stomata",
+     "State the raw materials and products of photosynthesis",
+     "Explain why plants need light"
+    ],
+    "teaser": "Leaves are a plant’s kitchen.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "photosynthesis-read",
+      "kind": "reading",
+      "title": "The leaf and photosynthesis",
+      "minutes": 4,
+      "blurb": "Name the lamina, petiole, midrib, veins and stomata"
+     },
+     {
+      "id": "photosynthesis-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "photosynthesis-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-hcf-lcm",
+  "number": "303",
+  "title": "The Case of the Matching Packs",
+  "topic": "HCF and LCM",
+  "subject": "maths",
+  "grade": 6,
+  "board": "icse",
+  "tagline": "Use factors and multiples to share things equally and to find when events line up.",
+  "hook": "Rolls come in packs of 6 and sausages in packs of 8. A cook wants exactly the same number of each with none left over. What is the smallest number of each she can buy?",
+  "goal": "Find the HCF and LCM of numbers using prime factorisation, and use them to solve problems.",
+  "learn": [
+   "Write a number as a product of primes",
+   "Find the highest common factor",
+   "Find the lowest common multiple"
+  ],
+  "clues": [
+   {
+    "id": "hcf-lcm",
+    "title": "HCF and LCM",
+    "goals": [
+     "Write a number as a product of prime factors",
+     "Find the HCF of two numbers",
+     "Find the LCM of two numbers and use it in problems"
+    ],
+    "teaser": "Highest common factor and lowest common multiple.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "hcf-lcm-read",
+      "kind": "reading",
+      "title": "HCF and LCM",
+      "minutes": 4,
+      "blurb": "Write a number as a product of prime factors"
+     },
+     {
+      "id": "hcf-lcm-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "hcf-lcm-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-sets",
+  "number": "304",
+  "title": "The Case of the Sorted Suspects",
+  "topic": "Sets",
+  "subject": "maths",
+  "grade": 6,
+  "board": "icse",
+  "tagline": "Group things into sets, write them in roster and set-builder form, and spot what belongs.",
+  "hook": "A detective lists every suspect who wore a red hat. Another list shows everyone who was in the library. To find who did both, she needs to think in sets.",
+  "goal": "Describe sets, write them in roster and set-builder form, and use the symbols for belonging, empty sets and subsets.",
+  "learn": [
+   "Recognise a well-defined collection",
+   "Write sets in roster and set-builder form",
+   "Use ∈, ∉, the empty set and subsets"
+  ],
+  "clues": [
+   {
+    "id": "sets-intro",
+    "title": "Sets",
+    "goals": [
+     "Explain what makes a collection well-defined",
+     "Write sets in roster form and set-builder form",
+     "Use the symbols ∈ and ∉, and recognise empty sets and subsets"
+    ],
+    "teaser": "A well-defined collection of objects.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "sets-intro-read",
+      "kind": "reading",
+      "title": "Sets",
+      "minutes": 4,
+      "blurb": "Explain what makes a collection well-defined"
+     },
+     {
+      "id": "sets-intro-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "sets-intro-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-vedic",
+  "number": "305",
+  "title": "The Case of the Spoken Hymns",
+  "topic": "The Vedic period",
+  "subject": "history",
+  "grade": 6,
+  "board": "icse",
+  "tagline": "Learn how historians study a period whose main sources were memorised and sung for centuries.",
+  "hook": "For hundreds of years, a collection of hymns was passed on only by memory, word for word, before anyone wrote it down. How can hymns tell historians about ordinary life?",
+  "goal": "Describe life in the Vedic period and explain how the Vedas are used as historical sources.",
+  "learn": [
+   "Explain what the Vedas are",
+   "Describe society and economy in the Vedic period",
+   "Compare the early and later Vedic periods"
+  ],
+  "clues": [
+   {
+    "id": "vedic-age",
+    "title": "The Vedic period",
+    "goals": [
+     "Explain what the Vedas are and why they are important sources",
+     "Describe the economy, society and government of the Vedic period",
+     "Describe changes from the early to the later Vedic period"
+    ],
+    "teaser": "Hymns, herds, villages and the varna system.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "vedic-age-read",
+      "kind": "reading",
+      "title": "The Vedic period",
+      "minutes": 4,
+      "blurb": "Explain what the Vedas are and why they are important sources"
+     },
+     {
+      "id": "vedic-age-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "vedic-age-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-jainism-buddhism",
+  "number": "306",
+  "title": "The Case of the Two Princes",
+  "topic": "Jainism and Buddhism",
+  "subject": "history",
+  "grade": 6,
+  "board": "icse",
+  "tagline": "Meet two princes who gave up palaces to search for an answer to suffering.",
+  "hook": "Around 2,500 years ago, two princes in north India each left a life of comfort. Their teachings spread across Asia. Why did people listen to them?",
+  "goal": "Describe the lives and teachings of Mahavira and Gautama Buddha and explain why their ideas spread.",
+  "learn": [
+   "Describe the lives of Mahavira and the Buddha",
+   "Explain the main teachings of Jainism and Buddhism",
+   "Explain why the new ideas appealed to people"
+  ],
+  "clues": [
+   {
+    "id": "mahavira-buddha",
+    "title": "Jainism and Buddhism",
+    "goals": [
+     "Describe the lives of Mahavira and Gautama Buddha",
+     "Explain key teachings such as ahimsa, the Four Noble Truths and the Eightfold Path",
+     "Explain why these teachings appealed to many people"
+    ],
+    "teaser": "Non-violence, the Middle Path and the search for freedom from suffering.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "mahavira-buddha-read",
+      "kind": "reading",
+      "title": "Jainism and Buddhism",
+      "minutes": 4,
+      "blurb": "Describe the lives of Mahavira and Gautama Buddha"
+     },
+     {
+      "id": "mahavira-buddha-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "mahavira-buddha-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-landforms",
+  "number": "307",
+  "title": "The Case of the Flat-Topped Hill",
+  "topic": "Major landforms",
+  "subject": "geography",
+  "grade": 6,
+  "board": "icse",
+  "tagline": "Tell mountains, plateaus and plains apart, and see why people live where they do.",
+  "hook": "From a train window, the land rises into a high, wide, flat-topped area. It is high like a mountain but flat like a field. What is it?",
+  "goal": "Describe mountains, plateaus and plains, how they form, and how people use them.",
+  "learn": [
+   "Describe the features of mountains, plateaus and plains",
+   "Give examples from India and the world",
+   "Explain how landforms affect where people live"
+  ],
+  "clues": [
+   {
+    "id": "mountains-plateaus-plains",
+    "title": "Mountains, plateaus and plains",
+    "goals": [
+     "Describe the features of mountains, plateaus and plains",
+     "Name examples, including the Himalayas, the Deccan Plateau and the Indo-Gangetic Plain",
+     "Explain how each landform is useful to people"
+    ],
+    "teaser": "High and steep, high and flat, low and flat.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "mountains-plateaus-plains-read",
+      "kind": "reading",
+      "title": "Mountains, plateaus and plains",
+      "minutes": 4,
+      "blurb": "Describe the features of mountains, plateaus and plains"
+     },
+     {
+      "id": "mountains-plateaus-plains-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "mountains-plateaus-plains-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-earth-domains",
+  "number": "308",
+  "title": "The Case of the Four Spheres",
+  "topic": "The domains of the Earth",
+  "subject": "geography",
+  "grade": 6,
+  "board": "icse",
+  "tagline": "Meet the land, water, air and life that together make Earth unique.",
+  "hook": "A raindrop falls on a mountain, soaks into the soil, is drunk by a tree, and escapes into the air from a leaf. In one short journey it passes through all four of Earth’s domains. What are they?",
+  "goal": "Describe the lithosphere, hydrosphere, atmosphere and biosphere and explain how they interact.",
+  "learn": [
+   "Name the four domains of the Earth",
+   "Describe what each contains",
+   "Explain how they interact"
+  ],
+  "clues": [
+   {
+    "id": "four-domains",
+    "title": "The domains of the Earth",
+    "goals": [
+     "Name and describe the lithosphere, hydrosphere, atmosphere and biosphere",
+     "Give facts about each, such as how much of the surface is water",
+     "Explain how the domains interact"
+    ],
+    "teaser": "Lithosphere, hydrosphere, atmosphere and biosphere.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "four-domains-read",
+      "kind": "reading",
+      "title": "The domains of the Earth",
+      "minutes": 4,
+      "blurb": "Name and describe the lithosphere, hydrosphere, atmosphere and biosphere"
+     },
+     {
+      "id": "four-domains-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "four-domains-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-mixtures",
+  "number": "311",
+  "title": "The Case of the Salty Sand",
+  "topic": "Separating mixtures",
+  "subject": "science",
+  "grade": 7,
+  "board": "icse",
+  "tagline": "Choose the right method to pull a mixture apart: filter, evaporate, distil or use chromatography.",
+  "hook": "A jar of beach sand has been mixed with salt. The lab needs pure, dry salt back. Picking out grains by hand would take forever. Is there a better way?",
+  "goal": "Choose and explain methods to separate mixtures based on the properties of their parts.",
+  "learn": [
+   "Explain the difference between a pure substance and a mixture",
+   "Use filtration, evaporation, distillation and chromatography",
+   "Choose a method based on the properties of the parts"
+  ],
+  "clues": [
+   {
+    "id": "separation",
+    "title": "Separating mixtures",
+    "goals": [
+     "Explain that the parts of a mixture keep their own properties",
+     "Describe filtration, evaporation, distillation and chromatography",
+     "Choose a separation method and explain why it works"
+    ],
+    "teaser": "Use a difference between the parts to pull them apart.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "separation-read",
+      "kind": "reading",
+      "title": "Separating mixtures",
+      "minutes": 4,
+      "blurb": "Explain that the parts of a mixture keep their own properties"
+     },
+     {
+      "id": "separation-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "separation-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-energy",
+  "number": "312",
+  "title": "The Case of the Bouncing Ball",
+  "topic": "Forms of energy and energy changes",
+  "subject": "science",
+  "grade": 7,
+  "board": "icse",
+  "tagline": "Follow energy as it changes from one form to another, without ever being destroyed.",
+  "hook": "A ball dropped from a balcony bounces lower and lower until it stops. Where did its energy go? It did not just vanish.",
+  "goal": "Name forms of energy, describe energy changes, and explain the conservation of energy.",
+  "learn": [
+   "Name the main forms of energy",
+   "Describe energy conversions in everyday devices",
+   "Explain that energy is conserved"
+  ],
+  "clues": [
+   {
+    "id": "energy-forms",
+    "title": "Forms of energy and energy changes",
+    "goals": [
+     "Name forms of energy such as kinetic, potential, heat, light, sound, chemical and electrical",
+     "Describe energy conversions in devices and activities",
+     "Explain the law of conservation of energy"
+    ],
+    "teaser": "Energy changes form, but the total stays the same.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "energy-forms-read",
+      "kind": "reading",
+      "title": "Forms of energy and energy changes",
+      "minutes": 4,
+      "blurb": "Name forms of energy such as kinetic, potential, heat, light, sound, chemical and electrical"
+     },
+     {
+      "id": "energy-forms-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "energy-forms-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-simple-interest",
+  "number": "313",
+  "title": "The Case of the Borrowed Bicycle Money",
+  "topic": "Simple interest",
+  "subject": "maths",
+  "grade": 7,
+  "board": "icse",
+  "tagline": "Work out how much extra you pay when you borrow, or earn when you save.",
+  "hook": "Riya borrows ₹5,000 to buy a bicycle. The lender charges 8% per year simple interest. After 3 years, how much must she pay back?",
+  "goal": "Calculate simple interest and the amount, and find the principal, rate or time.",
+  "learn": [
+   "Explain principal, rate, time, interest and amount",
+   "Use SI = P × R × T ÷ 100",
+   "Find the amount, and work backwards to find P, R or T"
+  ],
+  "clues": [
+   {
+    "id": "simple-interest",
+    "title": "Simple interest",
+    "goals": [
+     "Explain principal, rate, time, interest and amount",
+     "Calculate simple interest with SI = PRT ÷ 100",
+     "Find the amount, and rearrange the formula to find P, R or T"
+    ],
+    "teaser": "SI = P × R × T ÷ 100.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "simple-interest-read",
+      "kind": "reading",
+      "title": "Simple interest",
+      "minutes": 4,
+      "blurb": "Explain principal, rate, time, interest and amount"
+     },
+     {
+      "id": "simple-interest-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "simple-interest-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-parallel-lines",
+  "number": "314",
+  "title": "The Case of the Railway Crossing",
+  "topic": "Parallel lines and transversals",
+  "subject": "maths",
+  "grade": 7,
+  "board": "icse",
+  "tagline": "Find hidden equal angles wherever a straight road crosses parallel tracks.",
+  "hook": "A road crosses two straight, parallel railway tracks. The surveyor measures only one angle, 65°, and then fills in all eight angles at the crossing. How?",
+  "goal": "Identify corresponding, alternate and co-interior angles and use them to find missing angles.",
+  "learn": [
+   "Identify a transversal and the angles it makes",
+   "Use corresponding and alternate angles",
+   "Use co-interior angles"
+  ],
+  "clues": [
+   {
+    "id": "transversal-angles",
+    "title": "Parallel lines and transversals",
+    "goals": [
+     "Identify a transversal crossing parallel lines",
+     "Use the facts that corresponding angles and alternate angles are equal",
+     "Use the fact that co-interior angles add up to 180°"
+    ],
+    "teaser": "Corresponding, alternate and co-interior angles.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "transversal-angles-read",
+      "kind": "reading",
+      "title": "Parallel lines and transversals",
+      "minutes": 4,
+      "blurb": "Identify a transversal crossing parallel lines"
+     },
+     {
+      "id": "transversal-angles-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "transversal-angles-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-delhi-sultanate",
+  "number": "315",
+  "title": "The Case of the Tall Tower",
+  "topic": "The Delhi Sultanate",
+  "subject": "history",
+  "grade": 7,
+  "board": "icse",
+  "tagline": "Investigate the dynasties that ruled from Delhi for over 300 years.",
+  "hook": "In Delhi stands the Qutb Minar, a tower about 73 metres tall, begun around 1199. Who built it, and what does it tell us about the rulers of the time?",
+  "goal": "Describe the rise, rulers and administration of the Delhi Sultanate and its legacy.",
+  "learn": [
+   "Name the dynasties of the Delhi Sultanate",
+   "Describe key rulers and their policies",
+   "Explain the Sultanate’s legacy in architecture and culture"
+  ],
+  "clues": [
+   {
+    "id": "sultans",
+    "title": "The Delhi Sultanate",
+    "goals": [
+     "Name the five dynasties and the dates of the Sultanate",
+     "Describe rulers such as Iltutmish, Razia Sultan and Alauddin Khalji",
+     "Explain the Sultanate’s legacy, including its architecture and the iqta system"
+    ],
+    "teaser": "Five dynasties, from 1206 to 1526.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "sultans-read",
+      "kind": "reading",
+      "title": "The Delhi Sultanate",
+      "minutes": 4,
+      "blurb": "Name the five dynasties and the dates of the Sultanate"
+     },
+     {
+      "id": "sultans-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "sultans-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-mughals",
+  "number": "316",
+  "title": "The Case of the Emperor’s Hall",
+  "topic": "The Mughal Empire under Akbar",
+  "subject": "history",
+  "grade": 7,
+  "board": "icse",
+  "tagline": "Find out how Akbar ran a vast empire of many faiths and peoples.",
+  "hook": "At Fatehpur Sikri, Emperor Akbar built a hall where scholars of many religions came to debate. Why would an emperor invite people to argue about beliefs?",
+  "goal": "Explain how Akbar strengthened the Mughal Empire through administration and religious tolerance.",
+  "learn": [
+   "Describe the founding of the Mughal Empire",
+   "Explain Akbar’s administration (the mansabdari system)",
+   "Explain Akbar’s policy of sulh-i-kul"
+  ],
+  "clues": [
+   {
+    "id": "akbar",
+    "title": "The Mughal Empire under Akbar",
+    "goals": [
+     "Describe how the Mughal Empire was founded and expanded",
+     "Explain the mansabdari system",
+     "Explain Akbar’s policy of sulh-i-kul (peace with all) and why it helped him rule"
+    ],
+    "teaser": "Conquest, the mansabdari system and sulh-i-kul.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "akbar-read",
+      "kind": "reading",
+      "title": "The Mughal Empire under Akbar",
+      "minutes": 4,
+      "blurb": "Describe how the Mughal Empire was founded and expanded"
+     },
+     {
+      "id": "akbar-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "akbar-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-weathering",
+  "number": "317",
+  "title": "The Case of the Cracked Boulder",
+  "topic": "Weathering and soil formation",
+  "subject": "geography",
+  "grade": 7,
+  "board": "icse",
+  "tagline": "Discover how rocks break down where they stand, and how that makes soil.",
+  "hook": "In a desert, a huge boulder has split cleanly in two. No one hit it, and it did not fall. How can a rock break by itself?",
+  "goal": "Explain physical, chemical and biological weathering and how weathering forms soil.",
+  "learn": [
+   "Explain the difference between weathering and erosion",
+   "Describe physical, chemical and biological weathering",
+   "Explain how soil forms"
+  ],
+  "clues": [
+   {
+    "id": "weathering-soil",
+    "title": "Weathering and soil formation",
+    "goals": [
+     "Explain the difference between weathering and erosion",
+     "Describe physical, chemical and biological weathering",
+     "Explain how weathering helps to form soil"
+    ],
+    "teaser": "Rocks broken down in place by heat, frost, water and living things.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "weathering-soil-read",
+      "kind": "reading",
+      "title": "Weathering and soil formation",
+      "minutes": 4,
+      "blurb": "Explain the difference between weathering and erosion"
+     },
+     {
+      "id": "weathering-soil-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "weathering-soil-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-atmosphere",
+  "number": "318",
+  "title": "The Case of the Thin Air",
+  "topic": "Layers of the atmosphere",
+  "subject": "geography",
+  "grade": 7,
+  "board": "icse",
+  "tagline": "Climb through the layers of air above us, from the weather layer to the edge of space.",
+  "hook": "Mountaineers on Everest often carry oxygen tanks, and passenger jets fly above most of the clouds. What changes as you go higher into the atmosphere?",
+  "goal": "Describe the composition and layers of the atmosphere and the importance of each layer.",
+  "learn": [
+   "Describe the gases in the atmosphere",
+   "Name the layers of the atmosphere in order",
+   "Explain what happens in each layer"
+  ],
+  "clues": [
+   {
+    "id": "atmosphere-layers",
+    "title": "Layers of the atmosphere",
+    "goals": [
+     "Describe the main gases in the atmosphere",
+     "Name the layers of the atmosphere in order from the ground up",
+     "Explain the key features of each layer"
+    ],
+    "teaser": "Troposphere, stratosphere, mesosphere, thermosphere, exosphere.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "atmosphere-layers-read",
+      "kind": "reading",
+      "title": "Layers of the atmosphere",
+      "minutes": 4,
+      "blurb": "Describe the main gases in the atmosphere"
+     },
+     {
+      "id": "atmosphere-layers-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "atmosphere-layers-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-reflection",
+  "number": "321",
+  "title": "The Case of the Backwards Sign",
+  "topic": "Reflection of light",
+  "subject": "science",
+  "grade": 8,
+  "board": "icse",
+  "tagline": "Learn the laws of reflection and why mirror images look the way they do.",
+  "hook": "Ambulances often have the word AMBULANCE painted backwards on the front. A driver glancing in a rear-view mirror reads it the right way round. Why does a mirror flip words?",
+  "goal": "State the laws of reflection and describe images formed by plane mirrors.",
+  "learn": [
+   "Use the terms incident ray, reflected ray and normal",
+   "State the laws of reflection",
+   "Describe the image in a plane mirror"
+  ],
+  "clues": [
+   {
+    "id": "laws-of-reflection",
+    "title": "Reflection of light",
+    "goals": [
+     "Label incident ray, reflected ray, normal, angle of incidence and angle of reflection",
+     "State the two laws of reflection",
+     "Describe the image formed by a plane mirror, including lateral inversion"
+    ],
+    "teaser": "Angle of incidence equals angle of reflection.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "laws-of-reflection-read",
+      "kind": "reading",
+      "title": "Reflection of light",
+      "minutes": 4,
+      "blurb": "Label incident ray, reflected ray, normal, angle of incidence and angle of reflection"
+     },
+     {
+      "id": "laws-of-reflection-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "laws-of-reflection-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-acids-bases",
+  "number": "322",
+  "title": "The Case of the Purple Cabbage",
+  "topic": "Acids, bases and indicators",
+  "subject": "science",
+  "grade": 8,
+  "board": "icse",
+  "tagline": "Use indicators to test substances, and see what happens when acids meet bases.",
+  "hook": "A cook boils red cabbage and the water turns purple. A splash of lemon juice turns it pink; a pinch of baking soda turns it green. Is the cabbage water a secret detector?",
+  "goal": "Describe acids and bases, use indicators and the pH scale, and explain neutralisation.",
+  "learn": [
+   "Describe properties of acids and bases",
+   "Use indicators and the pH scale",
+   "Explain neutralisation and everyday uses"
+  ],
+  "clues": [
+   {
+    "id": "indicators-ph",
+    "title": "Acids, bases and indicators",
+    "goals": [
+     "Describe common acids and bases and their properties",
+     "Use litmus, other indicators and the pH scale",
+     "Explain neutralisation and give everyday examples"
+    ],
+    "teaser": "Litmus, pH and neutralisation.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "indicators-ph-read",
+      "kind": "reading",
+      "title": "Acids, bases and indicators",
+      "minutes": 4,
+      "blurb": "Describe common acids and bases and their properties"
+     },
+     {
+      "id": "indicators-ph-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "indicators-ph-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-exponents",
+  "number": "323",
+  "title": "The Case of the Doubling Rice",
+  "topic": "Exponents and their laws",
+  "subject": "maths",
+  "grade": 8,
+  "board": "icse",
+  "tagline": "Write huge numbers simply with powers, and use the laws of exponents to simplify them.",
+  "hook": "An old story tells of a reward: one grain of rice on the first square of a chessboard, two on the next, four on the next, doubling each time. How can you even write the number on the last square?",
+  "goal": "Use exponents and the laws of exponents to simplify expressions, including zero and negative powers.",
+  "learn": [
+   "Read and write numbers in exponential form",
+   "Use the laws of exponents",
+   "Understand zero and negative exponents"
+  ],
+  "clues": [
+   {
+    "id": "laws-of-exponents",
+    "title": "Exponents and their laws",
+    "goals": [
+     "Write repeated multiplication using exponents",
+     "Use the product, quotient and power laws",
+     "Explain zero and negative exponents"
+    ],
+    "teaser": "aᵐ × aⁿ = aᵐ⁺ⁿ, and more.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "laws-of-exponents-read",
+      "kind": "reading",
+      "title": "Exponents and their laws",
+      "minutes": 4,
+      "blurb": "Write repeated multiplication using exponents"
+     },
+     {
+      "id": "laws-of-exponents-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "laws-of-exponents-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-profit-loss",
+  "number": "324",
+  "title": "The Case of the Sale Signs",
+  "topic": "Profit, loss and discount",
+  "subject": "maths",
+  "grade": 8,
+  "board": "icse",
+  "tagline": "Work out profit, loss and discounts like a shopkeeper and spot a real bargain.",
+  "hook": "A shop marks a jacket at ₹2,000 and offers 20% off. The shopkeeper still makes a profit. If she bought it for ₹1,250, what is her profit percentage?",
+  "goal": "Calculate profit, loss, percentages, marked price, discount and selling price.",
+  "learn": [
+   "Find profit or loss and their percentages",
+   "Work with marked price and discount",
+   "Solve problems linking discount and profit"
+  ],
+  "clues": [
+   {
+    "id": "profit-discount",
+    "title": "Profit, loss and discount",
+    "goals": [
+     "Find profit, loss and profit or loss percentages on the cost price",
+     "Find the selling price after a discount on the marked price",
+     "Combine discount and profit in one problem"
+    ],
+    "teaser": "Cost price, selling price, marked price and discount.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "profit-discount-read",
+      "kind": "reading",
+      "title": "Profit, loss and discount",
+      "minutes": 4,
+      "blurb": "Find profit, loss and profit or loss percentages on the cost price"
+     },
+     {
+      "id": "profit-discount-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "profit-discount-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-revolt-1857",
+  "number": "325",
+  "title": "The Case of the Greased Cartridge",
+  "topic": "The Revolt of 1857",
+  "subject": "history",
+  "grade": 8,
+  "board": "icse",
+  "tagline": "Investigate the great uprising of 1857 against the East India Company: its causes, events and results.",
+  "hook": "In 1857, a rumour spread among Indian soldiers that their new rifle cartridges were greased with cow and pig fat. Within weeks, a revolt had spread across north India. Was a cartridge really the cause?",
+  "goal": "Explain the long-term and immediate causes, main events and consequences of the Revolt of 1857.",
+  "learn": [
+   "Explain the political, economic, social and military causes",
+   "Describe the main centres and leaders",
+   "Explain the results, including the end of Company rule"
+  ],
+  "clues": [
+   {
+    "id": "uprising",
+    "title": "The Revolt of 1857",
+    "goals": [
+     "Distinguish the long-term causes from the immediate cause",
+     "Describe key centres and leaders such as Delhi, Kanpur, Lucknow and Jhansi",
+     "Explain the consequences, including the Government of India Act 1858"
+    ],
+    "teaser": "Many grievances, one spark.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "uprising-read",
+      "kind": "reading",
+      "title": "The Revolt of 1857",
+      "minutes": 4,
+      "blurb": "Distinguish the long-term causes from the immediate cause"
+     },
+     {
+      "id": "uprising-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "uprising-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-social-reform",
+  "number": "326",
+  "title": "The Case of the Reformer’s Pen",
+  "topic": "Social reform in 19th-century India",
+  "subject": "history",
+  "grade": 8,
+  "board": "icse",
+  "tagline": "Meet the reformers who campaigned against cruel customs and for education for all.",
+  "hook": "In 1829, a law banned the practice of sati, in which a widow was burned on her husband’s funeral pyre. One reformer had campaigned for years, using newspapers and old texts as evidence. Who was he?",
+  "goal": "Describe the main social reformers of 19th-century India and the changes they campaigned for.",
+  "learn": [
+   "Describe Raja Ram Mohan Roy and the Brahmo Samaj",
+   "Describe reforms on widow remarriage, child marriage and education",
+   "Explain how reformers used print and argument"
+  ],
+  "clues": [
+   {
+    "id": "reformers",
+    "title": "Social reform in 19th-century India",
+    "goals": [
+     "Describe the work of Raja Ram Mohan Roy and the Brahmo Samaj",
+     "Describe the work of other reformers such as Ishwar Chandra Vidyasagar and Jyotirao and Savitribai Phule",
+     "Explain the methods reformers used: print, petitions, schools and debate"
+    ],
+    "teaser": "Sati, widow remarriage and education for girls.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "reformers-read",
+      "kind": "reading",
+      "title": "Social reform in 19th-century India",
+      "minutes": 4,
+      "blurb": "Describe the work of Raja Ram Mohan Roy and the Brahmo Samaj"
+     },
+     {
+      "id": "reformers-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "reformers-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-contours",
+  "number": "327",
+  "title": "The Case of the Wiggly Lines",
+  "topic": "Contours and relief on maps",
+  "subject": "geography",
+  "grade": 8,
+  "board": "icse",
+  "tagline": "Read hills, valleys and cliffs from the lines on a flat map.",
+  "hook": "A hiking map shows a hill only as a set of curved lines, some packed tightly together, some far apart. Which side of the hill would be the hardest to climb?",
+  "goal": "Read contour lines to work out height, slope and landforms on a topographical map.",
+  "learn": [
+   "Explain what contour lines and the contour interval show",
+   "Tell steep slopes from gentle ones",
+   "Recognise landforms from contour patterns"
+  ],
+  "clues": [
+   {
+    "id": "contour-lines",
+    "title": "Contours and relief on maps",
+    "goals": [
+     "Explain contour lines and the contour interval",
+     "Tell steep and gentle slopes from the spacing of contour lines",
+     "Recognise hills, valleys, ridges and cliffs from contour patterns"
+    ],
+    "teaser": "Close lines mean steep; far apart means gentle.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "contour-lines-read",
+      "kind": "reading",
+      "title": "Contours and relief on maps",
+      "minutes": 4,
+      "blurb": "Explain contour lines and the contour interval"
+     },
+     {
+      "id": "contour-lines-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "contour-lines-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-disasters",
+  "number": "328",
+  "title": "The Case of the Early Warning",
+  "topic": "Natural disasters and their management",
+  "subject": "geography",
+  "grade": 8,
+  "board": "icse",
+  "tagline": "Learn how communities prepare for, respond to and recover from floods, cyclones and earthquakes.",
+  "hook": "Two strong cyclones hit the same coast years apart. The first killed thousands; the second, just as strong, killed far fewer. The storm was no weaker. What had changed?",
+  "goal": "Explain the causes and effects of natural disasters and how good management reduces harm.",
+  "learn": [
+   "Explain hazards and disasters",
+   "Describe earthquakes, cyclones and floods",
+   "Explain the stages of disaster management"
+  ],
+  "clues": [
+   {
+    "id": "disaster-management",
+    "title": "Natural disasters and their management",
+    "goals": [
+     "Explain the difference between a natural hazard and a disaster",
+     "Describe the causes and effects of earthquakes, cyclones and floods",
+     "Explain the stages of disaster management with examples"
+    ],
+    "teaser": "Preparedness, response, recovery and mitigation.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "disaster-management-read",
+      "kind": "reading",
+      "title": "Natural disasters and their management",
+      "minutes": 4,
+      "blurb": "Explain the difference between a natural hazard and a disaster"
+     },
+     {
+      "id": "disaster-management-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "disaster-management-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-upthrust",
+  "number": "331",
+  "title": "The Case of the Floating Ship",
+  "topic": "Upthrust and Archimedes’ principle",
+  "subject": "science",
+  "grade": 9,
+  "board": "icse",
+  "tagline": "Explain why a steel ship floats while a steel nail sinks.",
+  "hook": "A tiny steel nail sinks straight to the bottom of a bucket, yet a steel ship weighing thousands of tonnes floats. Both are made of steel. What makes the difference?",
+  "goal": "Explain upthrust, state Archimedes’ principle, and use it to explain floating and sinking.",
+  "learn": [
+   "Explain upthrust (buoyant force)",
+   "State Archimedes’ principle",
+   "Explain floating and sinking using density and the principle of floatation"
+  ],
+  "clues": [
+   {
+    "id": "archimedes",
+    "title": "Upthrust and Archimedes’ principle",
+    "goals": [
+     "Explain upthrust and what it depends on",
+     "State Archimedes’ principle and use it to calculate upthrust",
+     "Explain floating using density and the principle of floatation"
+    ],
+    "teaser": "The upthrust equals the weight of fluid displaced.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "archimedes-read",
+      "kind": "reading",
+      "title": "Upthrust and Archimedes’ principle",
+      "minutes": 4,
+      "blurb": "Explain upthrust and what it depends on"
+     },
+     {
+      "id": "archimedes-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "archimedes-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-gas-laws",
+  "number": "332",
+  "title": "The Case of the Bursting Balloon",
+  "topic": "Boyle’s law and Charles’s law",
+  "subject": "science",
+  "grade": 9,
+  "board": "icse",
+  "tagline": "Predict how a gas changes when you squeeze it or heat it.",
+  "hook": "A balloon left in a hot car bursts. A sealed packet of crisps puffs up on a mountain road. What do these two mysteries have in common?",
+  "goal": "Use Boyle’s law and Charles’s law to explain and calculate changes in the volume of a gas.",
+  "learn": [
+   "Explain gas pressure using particles",
+   "Use Boyle’s law (constant temperature)",
+   "Use Charles’s law with the kelvin scale"
+  ],
+  "clues": [
+   {
+    "id": "boyle-charles",
+    "title": "Boyle’s law and Charles’s law",
+    "goals": [
+     "Explain gas pressure in terms of moving particles",
+     "Use Boyle’s law, P₁V₁ = P₂V₂, at constant temperature",
+     "Use Charles’s law, V₁/T₁ = V₂/T₂, with temperatures in kelvin"
+    ],
+    "teaser": "Squeeze it and the pressure rises; heat it and it expands.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "boyle-charles-read",
+      "kind": "reading",
+      "title": "Boyle’s law and Charles’s law",
+      "minutes": 4,
+      "blurb": "Explain gas pressure in terms of moving particles"
+     },
+     {
+      "id": "boyle-charles-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "boyle-charles-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-compound-interest",
+  "number": "333",
+  "title": "The Case of the Growing Savings",
+  "topic": "Compound interest",
+  "subject": "maths",
+  "grade": 9,
+  "board": "icse",
+  "tagline": "See how interest on interest makes money grow faster than simple interest.",
+  "hook": "Two friends each save ₹10,000 for 3 years at 10% a year. One bank pays simple interest, the other compound interest. They end up with different amounts. How much more does the second friend get?",
+  "goal": "Calculate compound interest year by year and with the formula, and compare it with simple interest.",
+  "learn": [
+   "Calculate compound interest year by year",
+   "Use A = P(1 + r/100)ⁿ",
+   "Compare simple and compound interest"
+  ],
+  "clues": [
+   {
+    "id": "compound",
+    "title": "Compound interest",
+    "goals": [
+     "Calculate compound interest year by year",
+     "Use the formula A = P(1 + r/100)ⁿ",
+     "Compare compound interest with simple interest"
+    ],
+    "teaser": "Interest earns interest.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "compound-read",
+      "kind": "reading",
+      "title": "Compound interest",
+      "minutes": 4,
+      "blurb": "Calculate compound interest year by year"
+     },
+     {
+      "id": "compound-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "compound-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-logarithms",
+  "number": "334",
+  "title": "The Case of the Hidden Power",
+  "topic": "Logarithms",
+  "subject": "maths",
+  "grade": 9,
+  "board": "icse",
+  "tagline": "Turn “what power?” questions into logarithms and use the laws of logarithms.",
+  "hook": "Bacteria double every hour. Starting with one, how many hours until there are over a million? The answer is a power you need to find, and logarithms are the tool for finding it.",
+  "goal": "Convert between exponential and logarithmic form and use the laws of logarithms.",
+  "learn": [
+   "Convert between exponent form and log form",
+   "Evaluate simple logarithms",
+   "Use the product, quotient and power laws"
+  ],
+  "clues": [
+   {
+    "id": "logs-intro",
+    "title": "Logarithms",
+    "goals": [
+     "Convert between aˣ = N and logₐN = x",
+     "Evaluate simple logarithms such as log₂8 and log₁₀1000",
+     "Use the laws: log(mn) = log m + log n, log(m/n) = log m − log n, log mⁿ = n log m"
+    ],
+    "teaser": "A logarithm is an exponent.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "logs-intro-read",
+      "kind": "reading",
+      "title": "Logarithms",
+      "minutes": 4,
+      "blurb": "Convert between aˣ = N and logₐN = x"
+     },
+     {
+      "id": "logs-intro-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "logs-intro-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-mauryan-empire",
+  "number": "335",
+  "title": "The Case of the Emperor’s Edicts",
+  "topic": "The Mauryan Empire and Ashoka",
+  "subject": "history",
+  "grade": 9,
+  "board": "icse",
+  "tagline": "Read the messages an emperor carved on rocks and pillars across his empire.",
+  "hook": "After a terrible war at Kalinga, an emperor had messages carved into rocks and pillars across his empire. One expresses deep regret for the suffering the war caused. Why would a conqueror carve his regret in stone?",
+  "goal": "Describe the rise and administration of the Mauryan Empire, and explain Ashoka’s policy of Dhamma.",
+  "learn": [
+   "Describe how Chandragupta Maurya founded the empire",
+   "Describe Mauryan administration and sources",
+   "Explain the Kalinga war and Ashoka’s Dhamma"
+  ],
+  "clues": [
+   {
+    "id": "ashoka",
+    "title": "The Mauryan Empire and Ashoka",
+    "goals": [
+     "Describe the founding of the Mauryan Empire and its sources",
+     "Describe Mauryan administration",
+     "Explain how the Kalinga war changed Ashoka and what Dhamma meant"
+    ],
+    "teaser": "Chandragupta, Kautilya, Kalinga and Dhamma.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "ashoka-read",
+      "kind": "reading",
+      "title": "The Mauryan Empire and Ashoka",
+      "minutes": 4,
+      "blurb": "Describe the founding of the Mauryan Empire and its sources"
+     },
+     {
+      "id": "ashoka-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "ashoka-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-constitution",
+  "number": "336",
+  "title": "The Case of the Opening Words",
+  "topic": "The Indian Constitution: Preamble and Fundamental Rights",
+  "subject": "history",
+  "grade": 9,
+  "board": "icse",
+  "tagline": "Read the Preamble line by line, and find out which rights the Constitution guarantees.",
+  "hook": "The Constitution of India begins with the words “We, the people of India”. Not “We, the government”, not “We, the leaders”. Why does that choice of words matter?",
+  "goal": "Explain the key ideas in the Preamble and describe the Fundamental Rights.",
+  "learn": [
+   "Explain the key words of the Preamble",
+   "Describe the making of the Constitution",
+   "Describe the Fundamental Rights and how they are protected"
+  ],
+  "clues": [
+   {
+    "id": "preamble-rights",
+    "title": "The Preamble and Fundamental Rights",
+    "goals": [
+     "Explain the key words of the Preamble",
+     "Describe how the Constitution was made and when it came into force",
+     "List the Fundamental Rights and explain how they are protected"
+    ],
+    "teaser": "Sovereign, socialist, secular, democratic, republic.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "preamble-rights-read",
+      "kind": "reading",
+      "title": "The Preamble and Fundamental Rights",
+      "minutes": 4,
+      "blurb": "Explain the key words of the Preamble"
+     },
+     {
+      "id": "preamble-rights-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "preamble-rights-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-rotation-revolution",
+  "number": "337",
+  "title": "The Case of the Longest Day",
+  "topic": "Rotation and revolution of the Earth",
+  "subject": "geography",
+  "grade": 9,
+  "board": "icse",
+  "tagline": "Explain day and night, the seasons, and why days are longer in summer.",
+  "hook": "On 21 June, Delhi gets about 14 hours of daylight; on 22 December, only about 10. Earth spins at the same speed all year. So why do the days change?",
+  "goal": "Explain the effects of the Earth’s rotation and revolution, including day and night, seasons and changing day length.",
+  "learn": [
+   "Explain rotation and its effects",
+   "Explain revolution and the tilt of the axis",
+   "Explain solstices, equinoxes and the seasons"
+  ],
+  "clues": [
+   {
+    "id": "seasons-motion",
+    "title": "Rotation and revolution of the Earth",
+    "goals": [
+     "Explain rotation and its effects: day and night, and the apparent movement of the Sun",
+     "Explain revolution and the tilt of the Earth’s axis",
+     "Explain solstices, equinoxes and changing day length"
+    ],
+    "teaser": "Spin gives day and night; the tilted orbit gives seasons.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "seasons-motion-read",
+      "kind": "reading",
+      "title": "Rotation and revolution of the Earth",
+      "minutes": 4,
+      "blurb": "Explain rotation and its effects: day and night, and the apparent movement of the Sun"
+     },
+     {
+      "id": "seasons-motion-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "seasons-motion-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-pressure-winds",
+  "number": "338",
+  "title": "The Case of the Trade Winds",
+  "topic": "Pressure belts and planetary winds",
+  "subject": "geography",
+  "grade": 9,
+  "board": "icse",
+  "tagline": "Map the world’s great wind belts and explain why sailors once relied on them.",
+  "hook": "For centuries, sailing ships crossing the Atlantic followed the same routes, using steady winds sailors called the trades. How could winds blow in the same direction year after year?",
+  "goal": "Describe the world’s pressure belts and explain the planetary winds and the Coriolis effect.",
+  "learn": [
+   "Explain how pressure differences cause wind",
+   "Describe the main pressure belts",
+   "Name the planetary winds and explain their direction"
+  ],
+  "clues": [
+   {
+    "id": "wind-belts",
+    "title": "Pressure belts and planetary winds",
+    "goals": [
+     "Explain that wind blows from high pressure to low pressure",
+     "Describe the seven pressure belts",
+     "Name the planetary winds and explain how the Coriolis effect deflects them"
+    ],
+    "teaser": "Wind blows from high to low pressure, bent by the Earth’s spin.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "wind-belts-read",
+      "kind": "reading",
+      "title": "Pressure belts and planetary winds",
+      "minutes": 4,
+      "blurb": "Explain that wind blows from high pressure to low pressure"
+     },
+     {
+      "id": "wind-belts-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "wind-belts-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-electrolysis",
+  "number": "341",
+  "title": "The Case of the Copper-Coated Key",
+  "topic": "Electrolysis",
+  "subject": "science",
+  "grade": 10,
+  "board": "icse",
+  "tagline": "Use electricity to split compounds and to coat metals.",
+  "hook": "A plain iron key is hung in a blue solution and connected to a battery. An hour later it is coated in shiny copper. Where did the copper come from?",
+  "goal": "Explain electrolysis, the movement of ions to electrodes, and uses such as electroplating.",
+  "learn": [
+   "Define electrolytes and electrolysis",
+   "Explain what happens at the cathode and anode",
+   "Describe electroplating and the extraction of reactive metals"
+  ],
+  "clues": [
+   {
+    "id": "electrolysis-basics",
+    "title": "Electrolysis",
+    "goals": [
+     "Explain what an electrolyte is and why it must be molten or dissolved",
+     "Describe the movement of ions and the reactions at the cathode and anode",
+     "Explain electroplating and other uses of electrolysis"
+    ],
+    "teaser": "Positive ions to the cathode, negative ions to the anode.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "electrolysis-basics-read",
+      "kind": "reading",
+      "title": "Electrolysis",
+      "minutes": 4,
+      "blurb": "Explain what an electrolyte is and why it must be molten or dissolved"
+     },
+     {
+      "id": "electrolysis-basics-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "electrolysis-basics-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-radioactivity",
+  "number": "342",
+  "title": "The Case of the Fogged Photographic Plate",
+  "topic": "Radioactivity",
+  "subject": "science",
+  "grade": 10,
+  "board": "icse",
+  "tagline": "Discover the invisible radiation from unstable nuclei: alpha, beta and gamma.",
+  "hook": "In 1896, Henri Becquerel left uranium salts on a wrapped photographic plate in a dark drawer. When he developed it, the plate showed a dark image. No light had reached it. What had?",
+  "goal": "Describe radioactivity, compare alpha, beta and gamma radiation, and explain uses and safety.",
+  "learn": [
+   "Explain radioactivity",
+   "Compare alpha, beta and gamma radiation",
+   "Describe uses, hazards and safety precautions"
+  ],
+  "clues": [
+   {
+    "id": "alpha-beta-gamma",
+    "title": "Radioactivity",
+    "goals": [
+     "Explain radioactivity as the spontaneous decay of unstable nuclei",
+     "Compare the nature, charge, penetrating power and ionising power of alpha, beta and gamma radiation",
+     "Describe uses of radioactivity and safety precautions"
+    ],
+    "teaser": "Unstable nuclei give out alpha, beta and gamma radiation.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "alpha-beta-gamma-read",
+      "kind": "reading",
+      "title": "Radioactivity",
+      "minutes": 4,
+      "blurb": "Explain radioactivity as the spontaneous decay of unstable nuclei"
+     },
+     {
+      "id": "alpha-beta-gamma-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "alpha-beta-gamma-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-matrices",
+  "number": "343",
+  "title": "The Case of the Shop Ledger",
+  "topic": "Matrices",
+  "subject": "maths",
+  "grade": 10,
+  "board": "icse",
+  "tagline": "Store numbers in tables called matrices, and add and multiply them.",
+  "hook": "Two branches of a bakery record their weekly sales of bread and cakes in neat tables. The owner wants the total for both branches, and the takings using each item’s price. Matrices make both jobs quick.",
+  "goal": "Understand the order of a matrix and carry out addition, subtraction and multiplication of matrices.",
+  "learn": [
+   "Find the order of a matrix",
+   "Add, subtract and multiply by a number",
+   "Multiply two matrices when possible"
+  ],
+  "clues": [
+   {
+    "id": "matrix-operations",
+    "title": "Matrices",
+    "goals": [
+     "Write the order of a matrix as rows × columns",
+     "Add and subtract matrices of the same order, and multiply by a scalar",
+     "Multiply two matrices and know when multiplication is possible"
+    ],
+    "teaser": "Rows, columns, and multiplying row by column.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "matrix-operations-read",
+      "kind": "reading",
+      "title": "Matrices",
+      "minutes": 4,
+      "blurb": "Write the order of a matrix as rows × columns"
+     },
+     {
+      "id": "matrix-operations-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "matrix-operations-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-section-formula",
+  "number": "344",
+  "title": "The Case of the Meeting Point",
+  "topic": "Section and mid-point formula",
+  "subject": "maths",
+  "grade": 10,
+  "board": "icse",
+  "tagline": "Find the point that divides a line in a given ratio, using coordinates.",
+  "hook": "Two friends live at A(2, 3) and B(10, 7) on a town grid. They agree to meet at a café that is twice as far from A as from B, on the straight road between them. Where is the café?",
+  "goal": "Use the section formula and the mid-point formula to find points dividing a line segment.",
+  "learn": [
+   "Use the mid-point formula",
+   "Use the section formula for internal division",
+   "Find the ratio in which a point divides a segment"
+  ],
+  "clues": [
+   {
+    "id": "section-midpoint",
+    "title": "Section and mid-point formula",
+    "goals": [
+     "Use the mid-point formula",
+     "Use the section formula for a point dividing a segment internally in the ratio m : n",
+     "Find the ratio in which a given point divides a segment"
+    ],
+    "teaser": "Divide a line segment in the ratio m : n.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "section-midpoint-read",
+      "kind": "reading",
+      "title": "Section and mid-point formula",
+      "minutes": 4,
+      "blurb": "Use the mid-point formula"
+     },
+     {
+      "id": "section-midpoint-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "section-midpoint-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-parliament",
+  "number": "345",
+  "title": "The Case of the Two Houses",
+  "topic": "The Union Parliament",
+  "subject": "history",
+  "grade": 10,
+  "board": "icse",
+  "tagline": "Find out how India’s Parliament is made up and how a bill becomes law.",
+  "hook": "A bill passes in the Lok Sabha, but the Rajya Sabha wants changes. The two houses disagree. Who decides, and how does a bill become a law?",
+  "goal": "Describe the structure, powers and law-making process of the Union Parliament.",
+  "learn": [
+   "Describe the Lok Sabha and the Rajya Sabha",
+   "Explain the powers of Parliament",
+   "Explain how a bill becomes a law"
+  ],
+  "clues": [
+   {
+    "id": "lok-rajya-sabha",
+    "title": "The Union Parliament",
+    "goals": [
+     "Describe the composition of the Lok Sabha and the Rajya Sabha",
+     "Explain the main powers and functions of Parliament",
+     "Explain how a bill becomes law, including a joint sitting"
+    ],
+    "teaser": "The President, the Lok Sabha and the Rajya Sabha.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "lok-rajya-sabha-read",
+      "kind": "reading",
+      "title": "The Union Parliament",
+      "minutes": 4,
+      "blurb": "Describe the composition of the Lok Sabha and the Rajya Sabha"
+     },
+     {
+      "id": "lok-rajya-sabha-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "lok-rajya-sabha-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-united-nations",
+  "number": "346",
+  "title": "The Case of the Blue Helmets",
+  "topic": "The United Nations",
+  "subject": "history",
+  "grade": 10,
+  "board": "icse",
+  "tagline": "Learn why the United Nations was created and how its main organs work.",
+  "hook": "After two world wars, 51 countries signed a charter in 1945 promising to “save succeeding generations from the scourge of war”. Today the organisation has 193 members. How does it try to keep that promise?",
+  "goal": "Explain why the UN was founded, describe its objectives and main organs, and evaluate its work.",
+  "learn": [
+   "Explain why the UN was founded",
+   "Describe its objectives and principal organs",
+   "Describe the work of its agencies"
+  ],
+  "clues": [
+   {
+    "id": "un-organs",
+    "title": "The United Nations",
+    "goals": [
+     "Explain the reasons for founding the UN in 1945",
+     "Describe the General Assembly, the Security Council and other principal organs",
+     "Describe the work of agencies such as UNICEF and the WHO"
+    ],
+    "teaser": "General Assembly, Security Council and agencies.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "un-organs-read",
+      "kind": "reading",
+      "title": "The United Nations",
+      "minutes": 4,
+      "blurb": "Explain the reasons for founding the UN in 1945"
+     },
+     {
+      "id": "un-organs-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "un-organs-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-monsoon",
+  "number": "347",
+  "title": "The Case of the Bursting Rains",
+  "topic": "The climate of India: the monsoon",
+  "subject": "geography",
+  "grade": 10,
+  "board": "icse",
+  "tagline": "Explain how the monsoon winds bring most of India’s rain, and why their timing matters so much.",
+  "hook": "Around 1 June, the south-west monsoon usually reaches Kerala, and over the next weeks heavy rain spreads across almost the whole country. Months later the winds reverse. Why do the winds change direction with the seasons?",
+  "goal": "Explain the mechanism of the Indian monsoon and describe India’s seasons and rainfall pattern.",
+  "learn": [
+   "Explain how the monsoon works",
+   "Describe the seasons of India",
+   "Explain the importance and unreliability of the monsoon"
+  ],
+  "clues": [
+   {
+    "id": "monsoon-mechanism",
+    "title": "The climate of India: the monsoon",
+    "goals": [
+     "Explain the monsoon as a seasonal reversal of winds caused by differential heating",
+     "Describe India’s four seasons",
+     "Explain why the monsoon is important and why it is unreliable"
+    ],
+    "teaser": "Seasonal reversal of winds, driven by land heating faster than sea.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "monsoon-mechanism-read",
+      "kind": "reading",
+      "title": "The climate of India: the monsoon",
+      "minutes": 4,
+      "blurb": "Explain the monsoon as a seasonal reversal of winds caused by differential heating"
+     },
+     {
+      "id": "monsoon-mechanism-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "monsoon-mechanism-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "icse-soils-india",
+  "number": "348",
+  "title": "The Case of the Black Cotton Fields",
+  "topic": "Soils of India",
+  "subject": "geography",
+  "grade": 10,
+  "board": "icse",
+  "tagline": "Match India’s main soil types to where they are found and what grows in them.",
+  "hook": "Farmers on the Deccan Plateau grow cotton in sticky black soil that cracks in summer. On the Ganga plains, wheat and rice grow in soft, grey alluvium. Why is India’s soil so different from place to place?",
+  "goal": "Describe the formation, distribution, characteristics and crops of India’s main soil types, and explain soil erosion and conservation.",
+  "learn": [
+   "Describe the formation of soil",
+   "Describe alluvial, black, red and laterite soils",
+   "Explain soil erosion and conservation"
+  ],
+  "clues": [
+   {
+    "id": "soil-types",
+    "title": "Soils of India",
+    "goals": [
+     "Explain how parent rock and climate shape soil",
+     "Describe the main soil types of India, where they are found and their crops",
+     "Explain the causes of soil erosion and methods of conservation"
+    ],
+    "teaser": "Alluvial, black, red and laterite soils.",
+    "minutes": 9,
+    "evidence": [
+     {
+      "id": "soil-types-read",
+      "kind": "reading",
+      "title": "Soils of India",
+      "minutes": 4,
+      "blurb": "Explain how parent rock and climate shape soil"
+     },
+     {
+      "id": "soil-types-try",
+      "kind": "reading",
+      "title": "Try it",
+      "minutes": 3,
+      "blurb": "A worked example or short activity."
+     },
+     {
+      "id": "soil-types-practice",
+      "kind": "practice",
+      "title": "Check your understanding",
+      "minutes": 2,
+      "blurb": "Two quick practice questions."
+     }
+    ]
+   }
+  ]
  }
 ];
 

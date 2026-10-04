@@ -3,11 +3,25 @@ export type AvatarId = "amara" | "kenji" | "sofia" | "zayn" | "leila" | "malik" 
 
 export type Grade = 6 | 7 | 8 | 9 | 10;
 
+/** Exam board the student follows. Chapters are listed separately for each board (see lib/access.ts). */
+export type Board = "cbse" | "icse";
+
 export type Profile = {
   name: string;
   avatarId: AvatarId;
   interests: string[];
   grade: Grade;
+  /** Missing on profiles saved before boards existed; those are treated as CBSE (see lib/access.ts) */
+  board?: Board;
+  /** Class codes the student joined, to receive their teachers’ Drawer materials */
+  classCodes?: string[];
+};
+
+/** A signed-in teacher, as remembered on this device for the interface. The server checks the real session. */
+export type TeacherProfile = {
+  name: string;
+  username: string;
+  board: Board;
 };
 
 export type RankId = "rookie" | "junior" | "detective" | "inspector" | "chief";
@@ -54,6 +68,11 @@ export type CaseDef = {
   subject: SubjectId;
   /** Suggested grade level (6 to 10). A suggestion by the project team, not a match to any official curriculum. */
   grade?: Grade;
+  /**
+   * Exam board this chapter is written for. Chapters without a board belong to CBSE: the original library was
+   * placed under CBSE at the client's request. The practice case has no board and is open to everyone.
+   */
+  board?: Board;
   tagline: string;
   /** The story that opens the brief */
   hook: string;
@@ -90,6 +109,8 @@ export type Note = {
 /** Everything we save in localStorage. */
 export type CaseFileState = {
   profile: Profile | null;
+  /** Set while a teacher is signed in on this device (display only; the server checks the session cookie) */
+  teacher: TeacherProfile | null;
   /** When the student set up their profile (ISO time) */
   joinedAt: string | null;
   /** The "How CaseFile works" walkthrough has been seen or skipped */

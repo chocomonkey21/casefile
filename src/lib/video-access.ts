@@ -1,22 +1,20 @@
 import { getCase } from "@/data/cases";
-import { canAccessGrade } from "./access";
+import { canOpenCase } from "./access";
 import type { VideoEntry } from "./cms/types";
-import type { Grade } from "./types";
+import type { Board, Grade } from "./types";
 
 /*
-  Videos take their grade from the chapter they belong to.
-  ASSUMPTION: a video an editor attached to a whole subject (no chapter) has no grade, so every signed-up
-  student can see it. The editor desk has no grade field; add one there if subject-wide videos need limits.
+  Videos follow the chapter they belong to: same grade rule, same board.
+  ASSUMPTION: a video an editor attached to a whole subject (no chapter) has no grade or board, so every signed-up
+  student can see it. The editor desk has no grade or board field; add one there if subject-wide videos need limits.
 */
 
-export function videoGrade(video: Pick<VideoEntry, "caseId">): Grade | undefined {
-  return video.caseId ? getCase(video.caseId)?.grade : undefined;
+export function canWatch(grade: Grade | null, board: Board, video: Pick<VideoEntry, "caseId">): boolean {
+  if (grade === null) return false;
+  const chapter = video.caseId ? getCase(video.caseId) : undefined;
+  return chapter ? canOpenCase(grade, board, chapter) : true;
 }
 
-export function canWatch(studentGrade: Grade | null, video: Pick<VideoEntry, "caseId">): boolean {
-  return canAccessGrade(studentGrade, videoGrade(video));
-}
-
-export function videosForGrade<T extends Pick<VideoEntry, "caseId">>(videos: T[], studentGrade: Grade | null): T[] {
-  return videos.filter((v) => canWatch(studentGrade, v));
+export function videosForStudent<T extends Pick<VideoEntry, "caseId">>(videos: T[], grade: Grade | null, board: Board): T[] {
+  return videos.filter((v) => canWatch(grade, board, v));
 }
