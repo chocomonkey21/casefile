@@ -11,7 +11,8 @@
     "test:cms": "node --test scripts/test-cms.mjs",
     "check:curriculum": "node scripts/check-curriculum.mjs",
     "gen:curriculum": "node scripts/gen-curriculum-meta.mjs",
-    "check:videos": "node scripts/check-videos.mjs"
+    "check:videos": "node scripts/check-videos.mjs",
+    "report:curriculum": "node scripts/gen-curriculum-report.mjs"
   },
   "dependencies": {
     "motion": "^13.4.6",
