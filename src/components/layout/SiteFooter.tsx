@@ -21,8 +21,18 @@ export function SiteFooter() {
           </h2>
           <ul className="mt-2">
             <li>
+              <Link href="/subjects" className={linkClass}>
+                {f.subjects}
+              </Link>
+            </li>
+            <li>
               <Link href="/cases" className={linkClass}>
                 {f.cases}
+              </Link>
+            </li>
+            <li>
+              <Link href="/videos" className={linkClass}>
+                {f.videos}
               </Link>
             </li>
             <li>

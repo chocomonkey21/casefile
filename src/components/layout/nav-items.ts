@@ -4,6 +4,7 @@ import {
   FolderIcon,
   LabIcon,
   NotebookIcon,
+  PlayIcon,
 } from "@/components/ui/Icons";
 import { copy } from "@/lib/copy";
 
@@ -15,6 +16,7 @@ export const NAV_ITEMS = [
   { href: "/board", label: n.board.label, short: n.board.short, Icon: BoardIcon },
   { href: "/notebook", label: n.notebook.label, short: n.notebook.short, Icon: NotebookIcon },
   { href: "/lab", label: n.lab.label, short: n.lab.short, Icon: LabIcon },
+  { href: "/videos", label: n.videos.label, short: n.videos.short, Icon: PlayIcon },
 ] as const;
 
 /** /cases/puddle/clues/evaporation still counts as "Cases" */

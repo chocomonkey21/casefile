@@ -11,7 +11,8 @@ const BARE_ROUTES = ["/", "/join", "/families"];
 
 export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
-  const bare = BARE_ROUTES.includes(pathname);
+  // The editor desk has its own header and is never part of the learner navigation
+  const bare = BARE_ROUTES.includes(pathname) || pathname.startsWith("/studio");
 
   return (
     <>

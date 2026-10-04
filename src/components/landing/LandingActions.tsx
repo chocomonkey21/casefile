@@ -45,6 +45,9 @@ export function HeaderNav() {
       <Link href="/cases" className={headerLink}>
         {t.headerCases}
       </Link>
+      <Link href="/videos" className={headerLink}>
+        {t.headerVideos}
+      </Link>
       {profile ? (
         <Link href="/desk" className={headerLink}>
           {t.headerCtaDesk}

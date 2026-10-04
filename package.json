@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "contrast": "node --no-warnings scripts/check-contrast.mjs"
+    "contrast": "node --no-warnings scripts/check-contrast.mjs",
+    "test:cms": "node --test scripts/test-cms.mjs"
   },
   "dependencies": {
     "motion": "^13.4.6",

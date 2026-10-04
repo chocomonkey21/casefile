@@ -73,7 +73,7 @@ export function Explainer({ scene, steps }: ExplainerProps) {
       </div>
 
       <details className="mt-4">
-        <summary className="cursor-pointer py-2 font-semibold text-coffee">{copy.lesson.transcript}</summary>
+        <summary className="inline-flex min-h-11 cursor-pointer items-center py-2 font-semibold text-coffee">{copy.lesson.transcript}</summary>
         <ol className="list-decimal space-y-1 pl-6 text-ink-soft">
           {steps.map((s) => (
             <li key={s}>{s}</li>

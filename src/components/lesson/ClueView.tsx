@@ -6,12 +6,16 @@ import { EvidenceCard } from "@/components/case/EvidenceCard";
 import { HintSheet } from "@/components/hints/HintSheet";
 import { NoteCards } from "@/components/notes/NoteCards";
 import { NoteForm } from "@/components/notes/NoteForm";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { Button } from "@/components/ui/Button";
+import { PrevNext } from "@/components/ui/PrevNext";
+import { RelatedVideos } from "@/components/videos/RelatedVideos";
 import { ArrowLeftIcon, ClockIcon, LockIcon } from "@/components/ui/Icons";
 import { Stamp } from "@/components/ui/Stamp";
 import { copy } from "@/lib/copy";
 import { clueState, nextClue } from "@/lib/progress";
 import { actions, useCaseFile, useHydrated } from "@/lib/store";
+import { lessonCrumbs, lessonNeighbours } from "@/lib/structure";
 import type { CaseDef, ClueContent, EvidenceDef } from "@/lib/types";
 import { DiagramFigure } from "./DiagramFigure";
 import { EvidenceSection } from "./EvidenceSection";
@@ -74,6 +78,7 @@ export function ClueView({ caseDef, clueIndex, lesson }: ClueViewProps) {
     const open = nextClue(caseDef, state);
     return (
       <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6 sm:py-12">
+        <Breadcrumb items={lessonCrumbs(caseDef, clue)} className="mb-2" />
         {backLink}
         <div className="rounded-[3px] bg-manila-100 p-6 sm:p-8">
           <LockIcon width={32} height={32} className="text-ink-soft" />
@@ -97,10 +102,11 @@ export function ClueView({ caseDef, clueIndex, lesson }: ClueViewProps) {
   const clueNotes = state.notes.filter((n) => n.caseId === caseDef.id && n.clueId === clue.id);
   const solved = status === "solved";
   const names = copy.hints.levelNames;
+  const { prev: prevLesson, next: nextLesson } = lessonNeighbours(caseDef, clueIndex);
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-6 sm:px-6 sm:py-10">
-      {backLink}
+      <Breadcrumb items={lessonCrumbs(caseDef, clue)} className="mb-2" />
 
       <header>
         <p className="label text-ink-soft">{t.position(caseDef.title, clueIndex + 1, caseDef.clues.length)}</p>
@@ -194,6 +200,14 @@ export function ClueView({ caseDef, clueIndex, lesson }: ClueViewProps) {
             </div>
           </section>
 
+          <RelatedVideos
+            chapter={caseDef.id}
+            lesson={clue.id}
+            heading={copy.videos.lessonHeading}
+            headingId="lesson-videos-heading"
+            intro={copy.videos.lessonIntro}
+          />
+
           <section aria-labelledby="notes-heading" className="mt-10">
             <h2 id="notes-heading" className="text-2xl sm:text-3xl">
               {t.notesHeading}
@@ -227,6 +241,17 @@ export function ClueView({ caseDef, clueIndex, lesson }: ClueViewProps) {
               </a>
             </div>
           </section>
+
+          <div className="mt-10 space-y-4">
+            <PrevNext
+              label={copy.wayfinding.lessonNav}
+              prev={prevLesson ? { href: `/cases/${caseDef.id}/clues/${prevLesson.id}`, label: copy.wayfinding.prevLesson, title: prevLesson.title } : null}
+              next={nextLesson ? { href: `/cases/${caseDef.id}/clues/${nextLesson.id}`, label: copy.wayfinding.nextLesson, title: nextLesson.title } : null}
+            />
+            <Button href={`/cases/${caseDef.id}?tab=clues`} variant="secondary">
+              {copy.wayfinding.backToChapter}
+            </Button>
+          </div>
         </>
       )}
     </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { FolderCard } from "@/components/case/FolderCard";
 import { CASES } from "@/data/cases";
@@ -34,6 +35,14 @@ export function CasesLibrary() {
 <RedThread className="mt-4" />
         <p className="mt-2 max-w-prose text-lg text-ink-soft">
           {copy.library.intro}
+        </p>
+        <p className="mt-1">
+          <Link
+            href="/subjects"
+            className="inline-flex min-h-11 items-center font-semibold text-evidence-dark underline underline-offset-4 hover:no-underline"
+          >
+            {copy.library.browseSubjects}
+          </Link>
         </p>
       </header>
 

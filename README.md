@@ -4,7 +4,7 @@ A learning platform for ages 11 to 15, built around one idea: **a detective case
 Each subject is a case, each lesson is a clue, and the student works through it one step at a time.
 
 Built for a User Interface Studies assignment. Next.js (App Router), TypeScript, Tailwind CSS v4 and the Motion library.
-There is no backend: course content is local mock data and progress is saved in `localStorage`.
+Course content is local data and each learner's progress is saved in `localStorage`. The only server-side data is the optional video list managed in the editor desk (see below).
 
 ## Run it
 
@@ -93,3 +93,39 @@ src/
 ## Saved data
 
 Everything is stored in the browser under the key `casefile:v1`. Use **Log out** in the profile menu to clear it.
+
+## Subjects, chapters and lessons
+
+Browsing goes Subject → Chapter → Lesson. Nothing is regrouped: it is read from the course data in `src/data/cases.ts`.
+
+| Level | In the course data | Page |
+| --- | --- | --- |
+| Subject | `subject` on a case (science, maths, history, geography) | `/subjects`, `/subjects/[subject]` |
+| Chapter | a case | `/cases/[caseId]` (breadcrumbs and previous/next chapter added) |
+| Lesson | a clue | `/cases/[caseId]/clues/[clueId]` (breadcrumbs, previous/next lesson, back to chapter) |
+
+The practice case belongs to sign-up and is left out of subject browsing. `src/lib/structure.ts` holds the helpers.
+To add a chapter, add a case. To add a subject, add it to `src/data/subjects.ts` and give a case that `subject`.
+
+## Videos and the editor desk
+
+Learners watch at `/videos` and `/videos/[id]`, and see related videos on subject, chapter and lesson pages.
+Editors manage them at `/studio`, which is not linked anywhere in the learner site and is marked `noindex`.
+
+Videos are not downloaded or copied. An editor pastes a link and CaseFile embeds it from its host. Accepted sources:
+YouTube, Vimeo, or a direct https link to an `.mp4`, `.webm` or `.ogv` file. Anything else is refused (`src/lib/cms/embed.ts`).
+Nothing is loaded from the host until the learner presses Play.
+
+### Turning editing on
+
+Copy `.env.example` to `.env.local` and fill it in. On Vercel, add the same names under Project Settings, Environment Variables.
+
+- `EDITOR_PASSWORD` (12+ characters) and `EDITOR_SESSION_SECRET` (32+ random characters). With either missing the editor desk stays off. There is no default password.
+- Somewhere to save entries. On Vercel connect a Redis store (`UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN`, or the `KV_REST_API_*` pair Vercel adds). Upstash is a separate account with a free tier. Without any of these, entries are saved to `.data/videos.json` when running locally, and nowhere on Vercel.
+
+The sign-in is one shared password, a signed httpOnly cookie that lasts 8 hours, and a check on every editor page and action.
+It has no individual accounts, so it cannot say who changed what. If that matters, put proper accounts in front of it.
+
+```bash
+npm run test:cms   # embed-link allowlist and editor session tests
+```

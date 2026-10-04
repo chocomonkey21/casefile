@@ -1,12 +1,14 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "motion/react";
 import { useId, useState } from "react";
 import { NoteCards } from "@/components/notes/NoteCards";
 import { NoteForm } from "@/components/notes/NoteForm";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { Button } from "@/components/ui/Button";
-import { ArrowLeftIcon, ClockIcon } from "@/components/ui/Icons";
+import { PrevNext } from "@/components/ui/PrevNext";
+import { RelatedVideos } from "@/components/videos/RelatedVideos";
+import { ClockIcon } from "@/components/ui/Icons";
 import { ProgressBar } from "@/components/ui/ProgressBar";
 import { Tabs, type TabItem } from "@/components/ui/Tabs";
 import { SUBJECTS } from "@/data/subjects";
@@ -22,6 +24,7 @@ import {
   warrantState,
 } from "@/lib/progress";
 import { useCaseFile } from "@/lib/store";
+import { chapterCrumbs, chapterNeighbours, isChapter } from "@/lib/structure";
 import type { CaseTab } from "@/lib/case-tabs";
 import type { CaseDef } from "@/lib/types";
 import { ClueCard } from "./ClueCard";
@@ -43,6 +46,7 @@ export function CaseFileView({ caseDef, initialTab }: { caseDef: CaseDef; initia
   const finalTest = warrantState(caseDef, state);
   const subject = SUBJECTS[caseDef.subject];
   const notes = state.notes.filter((n) => n.caseId === caseDef.id);
+  const { prev: prevChapter, next: nextChapter } = chapterNeighbours(caseDef);
 
   const tabs: TabItem[] = [
     { id: "brief", label: t.tabs.brief },
@@ -59,13 +63,7 @@ export function CaseFileView({ caseDef, initialTab }: { caseDef: CaseDef; initia
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6 sm:py-10">
-      <Link
-        href="/cases"
-        className="mb-4 inline-flex min-h-11 items-center gap-2 font-semibold text-coffee underline-offset-4 hover:underline"
-      >
-        <ArrowLeftIcon width={18} height={18} />
-        {t.allCases}
-      </Link>
+      <Breadcrumb items={chapterCrumbs(caseDef)} className="mb-2" />
 
       {/* The folder "unfolds" as the page arrives (flip-open from the library ends here) */}
       <div style={{ perspective: 1400 }}>
@@ -126,6 +124,19 @@ export function CaseFileView({ caseDef, initialTab }: { caseDef: CaseDef; initia
           </div>
         </motion.div>
       </div>
+
+      {isChapter(caseDef) && (
+        <>
+          <RelatedVideos chapter={caseDef.id} heading={copy.videos.chapterHeading} headingId="chapter-videos-heading" />
+          <div className="mt-10">
+            <PrevNext
+              label={copy.wayfinding.chapterNav}
+              prev={prevChapter ? { href: `/cases/${prevChapter.id}?tab=clues`, label: copy.wayfinding.prevChapter, title: prevChapter.title } : null}
+              next={nextChapter ? { href: `/cases/${nextChapter.id}?tab=clues`, label: copy.wayfinding.nextChapter, title: nextChapter.title } : null}
+            />
+          </div>
+        </>
+      )}
     </div>
   );
 }
