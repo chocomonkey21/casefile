@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MagnifierIcon } from "@/components/ui/Icons";
+import { BrandMark } from "@/components/ui/BrandMark";
 import { copy } from "@/lib/copy";
 import { currentStreak, levelFor } from "@/lib/progress";
 import { useCaseFile } from "@/lib/store";
@@ -24,9 +24,7 @@ export function TopNav() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-2 px-4 sm:gap-4 sm:px-6">
         <div className="flex items-center gap-8">
           <Link href="/desk" className="flex min-h-11 items-center gap-2" aria-label={copy.brand.logoLabel}>
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[3px] bg-postit text-ink">
-              <MagnifierIcon width={22} height={22} />
-            </span>
+            <BrandMark />
             <span className="font-display text-xl tracking-wide sm:text-2xl">{copy.brand.name}</span>
           </Link>
 

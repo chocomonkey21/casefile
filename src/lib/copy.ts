@@ -62,6 +62,7 @@ export const copy = {
     verdict: "The Verdict",
     notFound: "Page not found",
     styleguide: "Style guide",
+    families: "For parents and teachers",
   },
 
   nav: {
@@ -744,9 +745,82 @@ export const copy = {
     finalCta: "Get started",
     finalCtaDesk: "Back to the Desk",
     footer: "CaseFile. A learning platform for ages 11 to 15.",
+    headerCases: "Cases",
+    peekOpen: (title: string) => `Open the case: ${title}`,
+    peekCta: "Preview this case",
+    trust: {
+      heading: "For families and teachers",
+      text: "Plain answers about privacy, who writes the lessons, and what they cover.",
+      linkAll: "Read more for parents and teachers",
+      items: [
+        {
+          title: "No account or email",
+          text: "Setting up asks for a first name or nickname, an avatar, interests and a grade. That is all.",
+        },
+        {
+          title: "Saved on this device",
+          text: "A learner’s profile, notes and progress are saved in the browser on their own device. The app does not send them to a server.",
+        },
+        {
+          title: "Who writes the lessons",
+          text: "To be confirmed by the CaseFile team.",
+          pending: true,
+        },
+        {
+          title: "Which curriculum it follows",
+          text: "To be confirmed by the CaseFile team.",
+          pending: true,
+        },
+      ] as { title: string; text: string; pending?: boolean }[],
+    },
+    footerNav: {
+      explore: "Explore",
+      cases: "Cases",
+      how: "How it works",
+      families: "For families and teachers",
+      parents: "Parents and teachers",
+      privacy: "Privacy and safety",
+      content: "Who creates the content",
+      curriculum: "Curriculum",
+    },
     home: "Home",
     illustrationLabel:
       "A desk seen from above. On it are a manila case folder labelled The Vanishing Puddle, a magnifying glass, a sticky note, a notebook, a mug, a pencil, and two cards joined by red string.",
+  },
+
+  /** The parents and teachers page. Anything marked pending is a placeholder, not a claim. */
+  families: {
+    eyebrow: "For parents and teachers",
+    heading: "What families and teachers should know",
+    intro: "CaseFile is a learning platform for ages 11 to 15. This page covers privacy, who writes the lessons, and what they cover. Where we do not yet have a confirmed answer, it says so.",
+    pending: "To be confirmed",
+    back: "Back to the home page",
+    sections: {
+      privacy: {
+        id: "privacy",
+        heading: "Privacy and safety",
+        facts: [
+          "Setting up a profile asks for a first name or nickname, an avatar, interests and a grade (6 to 10). It does not ask for an email address, a surname or a password.",
+          "A learner’s profile, notes and progress are saved in the browser on the device they use. The app does not send them to a server.",
+          "Because they are stored in that browser, clearing the browser’s site data removes them, and they do not follow the learner to another device.",
+          "There is no chat, messaging or public profile between learners.",
+        ],
+        pendingNote: "A full privacy policy and any safeguarding contact have not been published yet. They will be linked here.",
+      },
+      content: {
+        id: "content",
+        heading: "Who creates the content",
+        pendingNote: "The author or team behind the lessons, and how they are reviewed, have not been confirmed yet. We will not name anyone here until we can.",
+      },
+      curriculum: {
+        id: "curriculum",
+        heading: "Which curriculum it follows",
+        facts: [
+          "At the moment CaseFile has five cases across science, maths, history and geography, plus one short practice case.",
+        ],
+        pendingNote: "Which curriculum or exam board the lessons follow has not been confirmed. CaseFile does not claim any curriculum alignment until it has.",
+      },
+    },
   },
 
   notFound: {

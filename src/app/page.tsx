@@ -1,6 +1,8 @@
-import { DeskIllustration } from "@/components/landing/DeskIllustration";
-import { FinalAction, HeaderAction, HeroActions } from "@/components/landing/LandingActions";
+import { DeskIllustration, DeskIllustrationCompact } from "@/components/landing/DeskIllustration";
+import Link from "next/link";
+import { FinalAction, HeaderNav, HeroActions } from "@/components/landing/LandingActions";
 import { SimpleHeader } from "@/components/layout/SimpleHeader";
+import { SiteFooter } from "@/components/layout/SiteFooter";
 import { CASES } from "@/data/cases";
 import { SUBJECTS } from "@/data/subjects";
 import { copy } from "@/lib/copy";
@@ -10,19 +12,24 @@ import { StepStamp } from "@/components/ui/StepStamp";
 const t = copy.landing;
 
 export default function Home() {
-  // A peek at real cases, without the saved-progress bits
+  // Every real case, so the copy ("science, maths, history and geography") matches what is shown.
+  // The practice case is left out: it belongs to sign-up, not the library.
   const peek = CASES.filter((c) => !c.practice);
 
   return (
     <>
       <SimpleHeader>
-        <HeaderAction />
+        <HeaderNav />
       </SimpleHeader>
 
       <main id="main-content" className="flex-1">
         <div className="sheet mx-2 mb-2 mt-4 sm:mx-8 sm:mb-8 sm:mt-6 xl:mx-auto xl:max-w-[80rem] overflow-hidden">
         {/* Hero */}
-        <section className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1fr_1.05fr] lg:py-20">
+        <section className="mx-auto grid max-w-6xl items-center gap-6 px-4 py-8 sm:gap-10 sm:px-6 sm:py-12 lg:grid-cols-[1fr_1.05fr] lg:py-20">
+          {/* Phones only: a short strip of the desk above the headline. Wider screens get the full scene beside it. */}
+          <div className="sm:hidden">
+            <DeskIllustrationCompact />
+          </div>
           <div>
             <p className="label text-evidence-dark">{t.eyebrow}</p>
             <h1 className="mt-4 text-5xl leading-[1.05] sm:text-6xl">{t.heading}</h1>
@@ -33,7 +40,7 @@ export default function Home() {
             </div>
             <p className="mt-4 text-sm text-ink-soft">{t.note}</p>
           </div>
-          <div className="mx-auto w-full max-w-xl">
+          <div className="mx-auto hidden w-full max-w-xl sm:block">
             <DeskIllustration />
           </div>
         </section>
@@ -63,7 +70,7 @@ export default function Home() {
           </h2>
           <p className="mt-2 max-w-prose text-lg text-ink-soft">{t.peekText}</p>
           <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {peek.slice(0, 3).map((c) => (
+            {peek.map((c) => (
               <li key={c.id} className="relative pt-8">
                 <div
                   aria-hidden="true"
@@ -71,18 +78,57 @@ export default function Home() {
                 >
                   {copy.folder.caseNo(c.number)}
                 </div>
-                <div className="tex-manila tex-worn tex-crease h-full rounded-b-[3px] rounded-tr-[3px] p-6 shadow-folder">
+                {/* The whole folder is one link to the case preview, so it works with keyboard and screen readers */}
+                <Link
+                  href={`/cases/${c.id}`}
+                  aria-label={t.peekOpen(c.title)}
+                  className="tex-manila tex-worn tex-crease group block h-full rounded-b-[3px] rounded-tr-[3px] p-6 shadow-folder transition-transform active:scale-[0.99] motion-safe:hover:-translate-y-0.5"
+                >
                   <p className="label flex items-center gap-2 text-ink-soft">
                     <span aria-hidden="true" className={`h-2.5 w-2.5 rounded-full ${SUBJECTS[c.subject].dot}`} />
                     {SUBJECTS[c.subject].label}
                   </p>
                   <h3 className="mt-2 text-xl leading-snug">{c.title}</h3>
                   <p className="mt-2 text-ink-soft">{c.tagline}</p>
-                  <p className="mt-4 text-sm font-semibold">{t.lessons(c.clues.length)}</p>
-                </div>
+                  <p className="mt-4 flex items-center justify-between gap-2 text-sm font-semibold">
+                    <span>{t.lessons(c.clues.length)}</span>
+                    <span aria-hidden="true" className="text-evidence-dark underline underline-offset-4 group-hover:no-underline">
+                      {t.peekCta} →
+                    </span>
+                  </p>
+                </Link>
               </li>
             ))}
           </ul>
+        </section>
+
+        {/* Trust: only facts the code supports. Unknowns are shown as labelled placeholders. */}
+        <section aria-labelledby="trust-heading" className="bg-manila-100/70">
+          <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+            <h2 id="trust-heading" className="text-3xl sm:text-4xl">
+              {t.trust.heading}
+            </h2>
+            <p className="mt-2 max-w-prose text-lg text-ink-soft">{t.trust.text}</p>
+            <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {t.trust.items.map((item) => (
+                <li
+                  key={item.title}
+                  className={`rounded-[3px] p-5 shadow-card ${item.pending ? "tex-postit" : "tex-paper tex-worn"}`}
+                >
+                  <h3 className="text-xl leading-snug">{item.title}</h3>
+                  <p className="mt-2 text-ink-soft">{item.text}</p>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-6">
+              <Link
+                href="/families"
+                className="inline-flex min-h-11 items-center font-semibold text-evidence-dark underline underline-offset-4 hover:no-underline"
+              >
+                {t.trust.linkAll}
+              </Link>
+            </p>
+          </div>
         </section>
 
         {/* Final call */}
@@ -100,9 +146,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="on-dark bg-espresso py-6 text-center text-sm text-beige">
-        <p>{t.footer}</p>
-      </footer>
+      <SiteFooter />
     </>
   );
 }

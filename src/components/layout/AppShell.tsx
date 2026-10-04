@@ -7,7 +7,7 @@ import { MobileNav } from "./MobileNav";
 import { TopNav } from "./TopNav";
 
 /** Pages that carry their own header, main and footer instead of the app navigation */
-const BARE_ROUTES = ["/", "/join"];
+const BARE_ROUTES = ["/", "/join", "/families"];
 
 export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();

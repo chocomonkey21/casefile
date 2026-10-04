@@ -204,7 +204,7 @@ export function FolderCard({ caseDef, status, solved }: FolderCardProps) {
             }}
             transition={paperSpring(0)}
           >
-            <p className="label text-[0.7rem] text-evidence-dark">{copy.folder.peekBrief}</p>
+            <p className="label text-evidence-dark">{copy.folder.peekBrief}</p>
             <p className="mt-1 line-clamp-2 text-xs leading-snug text-ink-soft">{caseDef.goal}</p>
           </motion.div>
 
@@ -219,7 +219,7 @@ export function FolderCard({ caseDef, status, solved }: FolderCardProps) {
             }}
             transition={paperSpring(1)}
           >
-            <p className="label text-[0.7rem] text-ink-soft">{status === "closed" ? copy.folder.peekClosed : next ? copy.folder.peekNext : copy.folder.peekFinal}</p>
+            <p className="label text-ink-soft">{status === "closed" ? copy.folder.peekClosed : next ? copy.folder.peekNext : copy.folder.peekFinal}</p>
             <p className="mt-1 line-clamp-2 font-display text-sm leading-snug">
               {status === "closed" ? caseDef.topic : next ? next.clue.title : copy.folder.peekFinalText}
             </p>
