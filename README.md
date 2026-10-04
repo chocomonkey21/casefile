@@ -129,3 +129,29 @@ It has no individual accounts, so it cannot say who changed what. If that matter
 ```bash
 npm run test:cms   # embed-link allowlist and editor session tests
 ```
+
+## Grades 6 to 10: chapters, lessons and lesson videos
+
+Every chapter has a suggested grade (`grade` on the case). The suggestion is the project team's, not a match to any curriculum or exam board.
+There are 20 chapters, one for each grade (6 to 10) in each of the four subjects, and every chapter has five lessons.
+Each lesson has learning goals, a question, hints, a reading, a "Try it" activity, two practice questions, three quiz questions, two final-test questions and one YouTube video.
+
+| Where | What |
+| --- | --- |
+| `src/data/curriculum/g*-*.ts` | One file per new chapter, written in a compact format (see `build.ts`). **Server only.** |
+| `src/data/curriculum/top-ups.ts` | The fifth lesson added to Fractions, Solar system, Ancient Egypt and Earthquakes and volcanoes |
+| `src/data/curriculum/goals.ts` | Learning goals for the lessons that were written before goals existed |
+| `src/data/curriculum/meta.generated.ts` | Chapter and lesson lists without lesson text, for browser code. **Generated.** |
+| `src/data/videos-curated.ts` | The lesson videos, with title, channel, why they fit and any caveat |
+
+```bash
+npm run gen:curriculum     # after editing a chapter: rebuilds meta.generated.ts
+npm run check:curriculum   # structure, answer integrity, 5 lessons per grade and subject, a video for every lesson
+npm run check:videos       # asks YouTube whether every lesson video still exists, embeds, and has the recorded title and channel
+npm run test:cms           # embed-link allowlist and editor session tests
+```
+
+To add a chapter: copy an existing chapter file, give it a new id, number and grade, add it to `SPECS` in `specs.ts`, run `npm run gen:curriculum`, and add a video for each lesson to `videos-curated.ts`.
+
+Lesson videos are never downloaded or copied. They are embedded from YouTube only after a learner presses Play, and each page credits the video's title and channel.
+Videos in `videos-curated.ts` are read-only in the editor desk. Videos added in the editor desk appear alongside them.

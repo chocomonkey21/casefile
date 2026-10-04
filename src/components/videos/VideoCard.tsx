@@ -5,7 +5,7 @@ import { SUBJECTS } from "@/data/subjects";
 import { copy } from "@/lib/copy";
 import type { VideoEntry } from "@/lib/cms/types";
 
-type CardVideo = Pick<VideoEntry, "id" | "title" | "subjectId" | "caseId" | "thumbnailUrl">;
+type CardVideo = Pick<VideoEntry, "id" | "title" | "subjectId" | "caseId" | "thumbnailUrl"> & { channel?: string };
 
 /** A video as a printed photo on the desk: a still, a title, and where it belongs. The whole card is one link. */
 export function VideoCard({ video }: { video: CardVideo }) {
@@ -21,7 +21,10 @@ export function VideoCard({ video }: { video: CardVideo }) {
           // eslint-disable-next-line @next/next/no-img-element -- editor-supplied address, so next/image would need every host listed
           <img src={video.thumbnailUrl} alt="" loading="lazy" className="h-full w-full object-cover" />
         ) : (
-          <span className="flex h-full w-full items-center justify-center bg-manila-400 font-display text-lg text-ink">{copy.videos.noThumb}</span>
+          <span className="flex h-full w-full flex-col items-center justify-center bg-manila-400 font-display text-ink">
+            <span className="text-3xl">{chapter?.grade ? copy.grades.label(chapter.grade) : copy.videos.noThumb}</span>
+            <span className="text-base">{subject.label}</span>
+          </span>
         )}
         <span
           aria-hidden="true"
@@ -36,7 +39,13 @@ export function VideoCard({ video }: { video: CardVideo }) {
           {subject.label}
         </span>
         <span className="mt-1 block font-display text-xl leading-snug">{video.title}</span>
-        {chapter && <span className="mt-1 block text-sm text-ink-soft">{chapter.title}</span>}
+        {chapter && (
+          <span className="mt-1 block text-sm text-ink-soft">
+            {chapter.title}
+            {chapter.grade ? ` · ${copy.grades.label(chapter.grade)}` : ""}
+          </span>
+        )}
+        {video.channel && <span className="mt-1 block text-sm text-ink-soft">{video.channel}</span>}
       </span>
     </Link>
   );

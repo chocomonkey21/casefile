@@ -24,6 +24,13 @@ export type VideoEntry = {
   status: VideoStatus;
   createdAt: string;
   updatedAt: string;
+  /** Credit: the video's own title and channel on YouTube. Set on the built-in lesson videos. */
+  sourceTitle?: string;
+  channel?: string;
+  /** A caveat for teachers and parents, such as advanced vocabulary or difficult subject matter */
+  note?: string;
+  /** True for the lesson videos that ship with the project (src/data/videos-curated.ts). They cannot be edited in the editor desk. */
+  builtin?: boolean;
 };
 
 export type StoreKind = "upstash" | "file" | "none";

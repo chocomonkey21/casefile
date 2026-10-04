@@ -16,15 +16,18 @@ const STATUSES: { id: CaseStatus; label: string }[] = (["open", "active", "cold"
   label: copy.status[id],
 }));
 
+const GRADE_IDS = [...new Set(CASES.map((c) => c.grade).filter((g): g is NonNullable<typeof g> => !!g))].sort((a, b) => a - b).map(String);
+
 /** Browse every case as a folder. Filter by subject and by status. */
 export function CasesLibrary() {
   const state = useCaseFile();
   const hydrated = useHydrated();
   const [subject, setSubject] = useState<SubjectId | "all">("all");
   const [status, setStatus] = useState<CaseStatus | "all">("all");
+  const [grade, setGrade] = useState<string>("all");
 
   const rows = CASES.map((c) => ({ c, status: caseStatus(c, state), solved: solvedCount(c, state) })).filter(
-    (r) => (subject === "all" || r.c.subject === subject) && (status === "all" || r.status === status),
+    (r) => (subject === "all" || r.c.subject === subject) && (status === "all" || r.status === status) && (grade === "all" || String(r.c.grade) === grade),
   );
 
   return (
@@ -52,6 +55,12 @@ export function CasesLibrary() {
           value={subject}
           onChange={setSubject}
           options={[{ id: "all", label: copy.library.all }, ...SUBJECT_IDS.map((id) => ({ id, label: SUBJECTS[id].label }))]}
+        />
+        <FilterGroup
+          label={copy.grades.filter}
+          value={grade}
+          onChange={setGrade}
+          options={[{ id: "all", label: copy.library.all }, ...GRADE_IDS.map((g) => ({ id: g, label: copy.grades.label(Number(g)) }))]}
         />
         <FilterGroup
           label={copy.library.status}
@@ -87,6 +96,7 @@ export function CasesLibrary() {
             onClick={() => {
               setSubject("all");
               setStatus("all");
+              setGrade("all");
             }}
           >
             {copy.library.clear}

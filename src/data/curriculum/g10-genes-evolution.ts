@@ -1,0 +1,266 @@
+import { h, list, p, tip, type ChapterSpec } from "./build";
+
+/* Grade 10 science: DNA, inheritance and evolution. */
+export const GENES_EVOLUTION: ChapterSpec = {
+  id: "genes-evolution",
+  number: "156",
+  title: "The Case of the Family Resemblance",
+  topic: "Genes and evolution",
+  subject: "science",
+  grade: 10,
+  tagline: "How DNA passes traits from parents to children, and how populations change over time.",
+  hook: "Three generations of one family stand in a photograph. They share the same nose, the same laugh, even the same freckle. But the youngest has a trait no one else has. Where did it come from? To crack it, you will need to read the code hidden in every cell.",
+  goal: "Explain how DNA carries information, how traits are inherited, and how natural selection leads to evolution.",
+  learn: [
+    "Describe the structure of DNA and what genes do",
+    "Explain dominant and recessive alleles",
+    "Use Punnett squares to predict inheritance",
+    "Explain how natural selection works",
+    "Describe the evidence for evolution",
+  ],
+  lessons: [
+    {
+      id: "dna",
+      title: "DNA and genes",
+      teaser: "The code inside every cell.",
+      question: "How can a tiny cell carry the instructions for building a whole person?",
+      goals: ["Describe the structure of DNA", "Say what a gene and a chromosome are", "Explain how genes lead to traits"],
+      hint: "Think about DNA as a code, written with four letters, that gives instructions for making proteins.",
+      walk: "DNA is a long molecule shaped like a twisted ladder. Its sequence of four bases, A, T, C and G, forms a code. A gene is a section of DNA with the instructions for making one protein. Proteins build and run the body, so genes lead to traits.",
+      summary: [
+        "DNA is a double helix whose four bases (A, T, C, G) form a code. A gene is a section of DNA that carries the instructions for a protein.",
+        "DNA is coiled into chromosomes. Humans have 46 chromosomes in most cells, arranged in 23 pairs.",
+      ],
+      explain: [
+        p("Almost every cell in your body contains a complete set of instructions for building and running you. These instructions are stored in a molecule called DNA, short for deoxyribonucleic acid. In human cells, most DNA is in the nucleus."),
+        h("The structure of DNA"),
+        p("DNA is made of two long strands twisted into a double helix, like a twisted ladder. The rungs of the ladder are pairs of chemicals called bases. There are four bases: adenine (A), thymine (T), cytosine (C) and guanine (G). They always pair in the same way: A with T, and C with G."),
+        tip("Key idea", "The order of the bases along a strand is a code. A pairs with T, and C pairs with G."),
+        p("The structure was worked out in 1953 by James Watson and Francis Crick, using X-ray images taken by Rosalind Franklin and Maurice Wilkins."),
+        h("Genes and chromosomes"),
+        p("A gene is a section of DNA that carries the instructions for making one protein. Proteins do most of the work in cells and help to form traits, such as hair colour or how well you digest milk. Humans have about 20,000 genes. DNA is coiled tightly into structures called chromosomes. Human body cells have 46 chromosomes, in 23 pairs, with one of each pair from each parent. Sex cells (eggs and sperm) have 23."),
+        p("Any two people share about 99.9% of their DNA. The small differences make each person unique, apart from identical twins."),
+      ],
+      tryIt: [
+        h("Pair the bases"),
+        list(
+          "The base order on one strand is A–T–G–C–C. Write the matching strand: T–A–C–G–G.",
+          "How many chromosomes are in a human body cell? 46. In an egg or sperm cell? 23.",
+        ),
+        p("Challenge (with your teacher): extract DNA from a strawberry. Mash it with a little water, salt and washing-up liquid, filter it, and gently pour cold rubbing alcohol down the side of the container. Stringy white DNA clumps where the layers meet. What does the soap do? (It breaks open the cell membranes.)"),
+      ],
+      practice: [
+        { p: "Which base pairs with adenine (A)?", a: "Thymine (T)", w: [["Cytosine (C)", "Cytosine pairs with guanine."], ["Guanine (G)", "Guanine pairs with cytosine."]], x: "A always pairs with T." },
+        { p: "What is a gene?", a: "A section of DNA that carries instructions for making a protein", w: [["A whole chromosome", "A chromosome contains many genes."], ["A type of cell", "A gene is a section of DNA."]], x: "A gene is a unit of instructions." },
+      ],
+      quiz: [
+        { p: "How many chromosomes are in a normal human body cell?", a: "46", w: [["23", "That is the number in a sex cell."], ["92", "That is double the real number."]], x: "Human body cells have 23 pairs, so 46." },
+        { p: "What is the shape of a DNA molecule?", a: "A double helix", w: [["A single straight chain", "DNA has two strands twisted together."], ["A sphere", "DNA is a long molecule."]], x: "DNA is two strands twisted into a double helix." },
+        { p: "Three statements. Which is true?", a: "Genes carry instructions for making proteins, which help produce traits.", w: [["Genes are only found in egg and sperm cells.", "Almost every body cell contains genes."], ["All humans have exactly the same DNA.", "Humans share about 99.9%, but not all."]], x: "Genes lead to proteins, and proteins lead to traits.", lineup: true },
+      ],
+      check: [
+        { p: "A strand of DNA has the bases A–T–G–C. What is the matching strand?", a: "T–A–C–G", w: [["A–T–G–C", "That is the same strand. Pair A with T and G with C."], ["T–A–G–C", "Check each pair: A→T, T→A, G→C, C→G."]], x: "Each base pairs with its partner." },
+        { p: "Where is most DNA found in a human cell?", a: "In the nucleus", w: [["In the cell membrane", "The membrane surrounds the cell."], ["In the ribosomes", "Ribosomes make proteins."]], x: "The nucleus holds the chromosomes." },
+      ],
+    },
+    {
+      id: "alleles",
+      title: "Alleles: dominant and recessive",
+      teaser: "Why a trait can skip a generation.",
+      question: "Two tall pea plants produce a short plant. How is that possible?",
+      goals: ["Say what an allele is", "Tell dominant from recessive alleles", "Explain genotype and phenotype"],
+      hint: "Each plant carries two copies of the gene for height. Could a hidden version be passed on?",
+      walk: "Each plant has two alleles for height, one from each parent. The tall allele (T) is dominant and the short allele (t) is recessive. A tall plant could be Tt, carrying a hidden short allele. Two Tt plants can each pass on a t, and a plant that receives two t alleles (tt) is short.",
+      summary: [
+        "Alleles are different versions of the same gene. Each person has two alleles, one from each parent.",
+        "A dominant allele shows if it is present. A recessive allele only shows when there are two copies.",
+      ],
+      explain: [
+        p("You have two copies of most genes, one from each parent. The copies can be slightly different. Different versions of the same gene are called alleles."),
+        p("The Austrian monk Gregor Mendel studied pea plants in the 1850s and 1860s. He noticed that some traits, like tall height, appeared in the offspring even when only one parent had them. He called these dominant. Others could be hidden for a generation. He called these recessive."),
+        tip("Key idea", "A dominant allele (written as a capital letter, such as T) shows up even if there is only one copy. A recessive allele (a small letter, such as t) only shows if there are two copies."),
+        h("Genotype and phenotype"),
+        list(
+          "The genotype is the pair of alleles an organism has, such as Tt.",
+          "The phenotype is the trait you can see, such as tall.",
+          "Homozygous means two identical alleles (TT or tt). Heterozygous means two different alleles (Tt).",
+        ),
+        p("A plant with genotype TT or Tt is tall. Only a plant with the genotype tt is short. A Tt plant is a carrier of the short allele. It looks tall but can pass on the short allele."),
+        p("Real life is more complicated. Many traits, such as height and eye colour, are controlled by several genes and by the environment. Pea plants give a simple model of how single genes can work."),
+      ],
+      tryIt: [
+        h("Work out the genotype"),
+        list(
+          "TT: tall, homozygous dominant.",
+          "Tt: tall, heterozygous.",
+          "tt: short, homozygous recessive.",
+          "If two tall parents have a short offspring, what must both parents' genotype be? Both are Tt.",
+        ),
+        p("Challenge: some inherited conditions, such as cystic fibrosis, are caused by a recessive allele. Explain why two healthy parents who are both carriers can still have an affected child."),
+      ],
+      practice: [
+        { p: "A pea plant has the genotype Tt. What is its phenotype?", a: "Tall", w: [["Short", "The tall allele is dominant, so it shows."], ["Both tall and short", "A plant is either tall or short."]], x: "The dominant allele hides the recessive one." },
+        { p: "A genotype with two identical alleles, such as TT or tt, is called:", a: "Homozygous", w: [["Heterozygous", "Heterozygous means two different alleles."], ["Dominant", "Dominant describes an allele, not a genotype."]], x: "Homozygous means the same alleles." },
+      ],
+      quiz: [
+        { p: "What are alleles?", a: "Different versions of the same gene", w: [["Different genes on different chromosomes", "Alleles are variants of one gene."], ["Types of cell", "Alleles are not cells."]], x: "Each gene can have several alleles." },
+        { p: "For a recessive trait to appear, the individual must have:", a: "Two copies of the recessive allele", w: [["One recessive and one dominant allele", "The dominant allele would show instead."], ["Only dominant alleles", "A recessive trait cannot show without recessive alleles."]], x: "A recessive trait shows only when both alleles are recessive." },
+        { p: "Three statements. Which is true?", a: "Two tall plants with genotype Tt can have a short offspring (tt).", w: [["Two short plants can have tall offspring.", "Two tt plants can only pass on t, so offspring are tt."], ["Dominant alleles are always the most common.", "Dominant does not mean common."]], x: "Each parent can pass on a hidden t.", lineup: true },
+      ],
+      check: [
+        { p: "What is the difference between genotype and phenotype?", a: "Genotype is the alleles an organism has. Phenotype is the trait you can see.", w: [["Genotype is the trait you can see. Phenotype is the alleles.", "That is the wrong way round."], ["They mean the same thing", "They describe different things."]], x: "Genotype is the genetic make-up and phenotype is the appearance." },
+        { p: "A plant has the genotype Tt. Which word describes it?", a: "Heterozygous", w: [["Homozygous", "Homozygous means two identical alleles."], ["Recessive", "Recessive describes an allele that is hidden."]], x: "Tt has two different alleles." },
+      ],
+    },
+    {
+      id: "punnett",
+      title: "Punnett squares",
+      teaser: "Predict the odds of each possible offspring.",
+      question: "Two tall pea plants, both Tt, are crossed. What fraction of their offspring will be short?",
+      goals: ["Complete a Punnett square", "Work out genotype and phenotype ratios", "Explain what the results mean in terms of probability"],
+      hint: "Each parent passes on one allele. List the possible alleles from each parent and combine them in a grid.",
+      walk: "Each Tt parent can pass on T or t. Draw a 2×2 grid with the parents' alleles along the top and side, then fill each box with one allele from each. The boxes are TT, Tt, Tt and tt. One box in four, or 25%, is tt, so one quarter are expected to be short.",
+      summary: [
+        "A Punnett square shows all the possible allele combinations from a cross, and how likely each is.",
+        "A Tt × Tt cross gives 1 TT : 2 Tt : 1 tt, which is 3 tall to 1 short. These are probabilities, not guarantees.",
+      ],
+      explain: [
+        p("A Punnett square is a grid that predicts the possible offspring of a genetic cross. Each parent passes on one allele of each gene, chosen at random."),
+        list(
+          "Write one parent's possible alleles along the top, and the other parent's down the side.",
+          "Fill each box with the allele from its column and its row.",
+          "Count the genotypes in the four boxes.",
+        ),
+        p("For a Tt × Tt cross, the top row has T and t, and the side column has T and t. The four boxes contain TT, Tt, Tt and tt."),
+        list("The genotype ratio is 1 TT : 2 Tt : 1 tt.", "The phenotype ratio is 3 tall : 1 short, because TT and Tt are both tall.", "The probability of a short offspring is 1/4, or 25%."),
+        tip("Key idea", "A Punnett square gives probabilities. It tells you what is likely, not what will definitely happen."),
+        p("Each offspring is a separate chance, like flipping a coin. A couple with a one-in-four chance of a trait can have four children without it, or four with it."),
+        h("Other crosses"),
+        list("TT × tt: all offspring are Tt, so all tall.", "Tt × tt: half Tt (tall) and half tt (short), so a 1 : 1 ratio."),
+      ],
+      tryIt: [
+        h("Draw three crosses"),
+        list(
+          "Cross TT × tt. Result: all Tt, so 100% tall.",
+          "Cross Tt × tt. Result: 50% Tt (tall), 50% tt (short).",
+          "Cross Tt × Tt. Result: 25% TT, 50% Tt, 25% tt, so 75% tall.",
+        ),
+        p("Challenge: you toss two coins 40 times. About how many times do you expect two heads? How does this compare with a Tt × Tt cross? (About 10 times, or 1 in 4. The same pattern of chance.)"),
+      ],
+      practice: [
+        { p: "In a Tt × Tt cross, what percentage of offspring are expected to be tt?", a: "25%", w: [["50%", "That is the share that are Tt."], ["75%", "That is the share that are tall."]], x: "One of the four boxes is tt." },
+        { p: "What does a Punnett square show?", a: "The possible allele combinations and how likely each is", w: [["The exact genotype of every offspring", "It gives probabilities, not certainties."], ["The age of the parents", "A Punnett square is about alleles."]], x: "It predicts chances." },
+      ],
+      quiz: [
+        { p: "A TT plant is crossed with a tt plant. What is the genotype of all the offspring?", a: "Tt", w: [["TT", "The tt parent can only pass on t."], ["tt", "The TT parent can only pass on T."]], x: "Each offspring gets T from one parent and t from the other." },
+        { p: "A Tt plant is crossed with a tt plant. What is the ratio of tall to short offspring?", a: "1 : 1", w: [["3 : 1", "That is the ratio for Tt × Tt."], ["All tall", "Half of the boxes are tt, so half are short."]], x: "The boxes are Tt, Tt, tt and tt." },
+        { p: "Three statements. Which is true?", a: "Probability tells you what is likely, not what will definitely happen in a small number of offspring.", w: [["If the ratio is 3 : 1, a family of four will have exactly three tall and one short.", "Each offspring is an independent chance."], ["Punnett squares only work for plants.", "They work for any organism with this pattern of inheritance."]], x: "The ratios are expected averages over many offspring.", lineup: true },
+      ],
+      check: [
+        { p: "In a Tt × Tt cross, what is the probability that an offspring is tall?", a: "75%", w: [["25%", "That is the chance of a short plant."], ["50%", "That is the share that are Tt."]], x: "TT and Tt are both tall, so 3 boxes out of 4." },
+        { p: "Two short plants (tt × tt) are crossed. What will the offspring be?", a: "All short", w: [["All tall", "There is no T allele to pass on."], ["Half tall and half short", "Both parents can only pass on t."]], x: "All offspring are tt." },
+      ],
+    },
+    {
+      id: "selection",
+      title: "Natural selection",
+      teaser: "How populations change without anyone planning it.",
+      question: "How can a whole population change over many generations without any individual trying to change?",
+      goals: ["Describe the steps of natural selection", "Explain the role of variation and mutation", "Use examples such as peppered moths and antibiotic resistance"],
+      hint: "Think about differences between individuals, and which ones survive and have more offspring.",
+      walk: "Individuals in a population vary, and some of the variation is inherited. More offspring are born than can survive, so individuals with helpful traits are more likely to survive and reproduce, passing on those alleles. Over many generations, the helpful traits become more common.",
+      summary: [
+        "Natural selection: variation, more offspring than survive, survival of those with helpful inherited traits, and passing on those alleles.",
+        "Populations evolve over generations. Individuals do not change themselves to fit.",
+      ],
+      explain: [
+        p("In the 1800s, Charles Darwin and Alfred Russel Wallace both proposed natural selection as the way that species change over time. The process has four steps."),
+        list(
+          "Variation: individuals in a population differ from each other, and some of the differences are inherited through their genes.",
+          "Overproduction: more offspring are born than can survive, because food and space are limited.",
+          "Selection: individuals with traits that suit their environment are more likely to survive and reproduce.",
+          "Inheritance: they pass on those helpful alleles, so the alleles become more common in the next generation.",
+        ),
+        tip("Key idea", "Natural selection acts on individuals, but it is populations that evolve over generations."),
+        h("Where does variation come from?"),
+        p("New alleles come from mutations, which are random changes in DNA. Most mutations have little effect, some are harmful, and a few are helpful in a particular environment."),
+        h("Two famous examples"),
+        list(
+          "Peppered moths: before the Industrial Revolution, most peppered moths in Britain were pale. As soot darkened tree trunks, dark moths were better camouflaged from birds and survived more, so they became common. After clean-air laws reduced soot, the pale moths became common again.",
+          "Antibiotic resistance: when antibiotics are used, bacteria that happen to carry a resistance mutation survive and multiply. The resistant bacteria become common. The antibiotics do not cause the mutation. They select for it.",
+        ),
+        p("Natural selection has no goal. Organisms do not change because they need to. The environment simply favours some existing traits over others."),
+      ],
+      tryIt: [
+        h("Selection game"),
+        list(
+          "Scatter 20 red and 20 green paper dots on a patterned green cloth.",
+          "One person, the “bird”, has ten seconds to pick up as many dots as they can.",
+          "Count the dots left. Which colour survived best? Repeat for three rounds, with survivors each “producing” one extra dot of the same colour.",
+        ),
+        p("Challenge: use the game to explain why dark moths became more common on soot-covered trees."),
+      ],
+      practice: [
+        { p: "What is natural selection?", a: "Individuals with helpful inherited traits are more likely to survive and reproduce", w: [["Animals choosing to change", "Individuals cannot choose to change their genes."], ["Humans breeding animals", "That is artificial selection."]], x: "Helpful traits become more common over generations." },
+        { p: "Which statement about variation is correct?", a: "Individuals in a population differ in their traits, partly because of their genes", w: [["All individuals in a population are identical", "Variation is needed for natural selection."], ["Variation is never inherited", "Many differences are inherited."]], x: "Inherited variation gives selection something to act on." },
+      ],
+      quiz: [
+        { p: "Why did dark peppered moths become more common near polluted cities?", a: "They were better camouflaged on soot-darkened trees, so fewer were eaten", w: [["The moths chose to turn dark", "Moths cannot choose their colour."], ["Soot dyed their wings", "The colour is inherited, not caused by soot."]], x: "Camouflage meant more dark moths survived to reproduce." },
+        { p: "Why can bacteria become resistant to antibiotics?", a: "Resistant bacteria survive treatment and pass on resistance to their offspring", w: [["Antibiotics change the bacteria's DNA on purpose", "Resistance comes from chance mutations that already exist."], ["Bacteria learn to resist", "Bacteria do not learn. Selection favours those with a resistance allele."]], x: "Antibiotics select for bacteria that already have resistance." },
+        { p: "Three statements. Which is true?", a: "Populations evolve, not individuals.", w: [["Individuals evolve during their lifetimes to fit their environment.", "Individuals do not change their genes to fit."], ["Natural selection has a goal.", "Natural selection has no goal or plan."]], x: "Allele frequencies change in populations across generations.", lineup: true },
+      ],
+      check: [
+        { p: "What is the original source of new alleles?", a: "Mutation", w: [["Natural selection", "Selection acts on existing variation."], ["Exercise", "Exercise does not change genes passed to offspring."]], x: "Mutations are random changes in DNA." },
+        { p: "What is needed for natural selection to occur?", a: "Inherited variation in a population", w: [["No variation", "Without variation there is nothing to select."], ["A plan", "Natural selection has no plan."]], x: "Variation that can be inherited is essential." },
+      ],
+    },
+    {
+      id: "evidence",
+      title: "Evidence for evolution",
+      teaser: "Fossils, anatomy, DNA and observations.",
+      question: "How do scientists know that living things have changed over millions of years?",
+      goals: ["Describe several kinds of evidence for evolution", "Explain homologous structures", "Say what a scientific theory is"],
+      hint: "Think of several lines of evidence that agree with one another: rocks, bodies, DNA and what we can see now.",
+      walk: "Fossils show how life has changed over time. Similar bone structures in different animals point to a shared ancestor. Comparing DNA shows that related species are genetically similar. And we can watch evolution happen in fast-breeding organisms. All these lines of evidence agree.",
+      summary: [
+        "The fossil record, comparative anatomy, DNA comparisons and direct observations all support evolution.",
+        "A scientific theory is a well-tested explanation supported by a large body of evidence.",
+      ],
+      explain: [
+        p("Evolution is the change in the inherited traits of populations over many generations. Several independent kinds of evidence support the idea that all living things share common ancestors."),
+        list(
+          "Fossils: preserved remains or traces of ancient organisms, usually found in sedimentary rock. The fossil record shows that life changed over time. Fossils of “in-between” forms, such as Tiktaalik, a fish with limb-like fins, and Archaeopteryx, a feathered dinosaur with some bird features, show how groups are related.",
+          "Comparative anatomy: the bones in a human arm, a whale flipper, a bat wing and a cat leg have the same basic pattern, even though they are used for different jobs. These are called homologous structures, and they point to a shared ancestor.",
+          "DNA: the more closely related two species are, the more similar their DNA is. Humans and chimpanzees share a very high percentage of their DNA, much more than humans and mice.",
+          "Direct observation: we can see evolution happen in organisms that reproduce quickly, such as bacteria becoming resistant to antibiotics and insects becoming resistant to pesticides.",
+        ),
+        tip("Key idea", "Evidence from fossils, anatomy, DNA and direct observation all point to the same conclusion, and they were found independently."),
+        h("What is a theory?"),
+        p("In everyday speech, “theory” can mean a guess. In science, a theory is a well-tested explanation that is supported by a large amount of evidence and can be used to make predictions. The theory of evolution by natural selection is one of the best-supported ideas in biology."),
+        p("The fossil record is incomplete, because only a small fraction of organisms become fossils. But new fossils keep being found, and they fit the predictions."),
+      ],
+      tryIt: [
+        h("Compare the limbs"),
+        list(
+          "Draw the forelimb bones of a human, a bat and a whale. Label the upper arm bone, the two lower arm bones, and the finger bones.",
+          "Colour matching bones the same colour in each animal.",
+          "Explain in two sentences why a shared ancestor is a good explanation for the matching pattern.",
+        ),
+        p("Challenge: Archaeopteryx has feathers, like a bird, and teeth and a long bony tail, like a dinosaur. What does a fossil like this tell us about how birds are related to dinosaurs?"),
+      ],
+      practice: [
+        { p: "What are fossils?", a: "Preserved remains or traces of ancient living things", w: [["Living things that never changed", "Fossils are evidence of past life."], ["Rocks formed by volcanoes", "Fossils are found mainly in sedimentary rock."]], x: "Fossils show what lived in the past." },
+        { p: "What do homologous structures, such as a whale flipper and a human arm, suggest?", a: "The animals share a common ancestor", w: [["They evolved separately for identical jobs", "Homologous structures have the same underlying pattern."], ["They are made of different bones", "They have matching bone patterns."]], x: "Similar structures point to a shared ancestor." },
+      ],
+      quiz: [
+        { p: "A bat wing, a whale flipper and a human arm have similar bone patterns. This is evidence of:", a: "Common ancestry", w: [["They live in the same place", "Their habitats are very different."], ["Chance only", "The matching pattern is better explained by shared ancestry."]], x: "Similar structures show they are related." },
+        { p: "How does DNA evidence support evolution?", a: "Closely related species have more similar DNA", w: [["All species have identical DNA", "Species differ in their DNA."], ["DNA never mutates", "DNA mutates, which is a source of variation."]], x: "The more related two species are, the more similar their DNA." },
+        { p: "Three statements. Which is true?", a: "In science, a theory is a well-tested explanation supported by lots of evidence.", w: [["A theory is just a guess.", "That is the everyday meaning of the word."], ["Fossils record every living thing perfectly.", "The fossil record is incomplete."]], x: "Scientific theories are strongly supported.", lineup: true },
+      ],
+      check: [
+        { p: "In which type of rock are fossils usually found?", a: "Sedimentary rock", w: [["Igneous rock", "Igneous rock forms from cooled magma, which would destroy remains."], ["Metamorphic rock", "Heat and pressure usually destroy fossils."]], x: "Layers of sediment can preserve remains." },
+        { p: "Which evidence has been observed directly in recent times?", a: "Bacteria evolving resistance to antibiotics", w: [["The first fish leaving the water", "That happened hundreds of millions of years ago."], ["Dinosaurs becoming birds", "That happened millions of years ago."]], x: "Fast-breeding organisms can show evolution within a human lifetime." },
+      ],
+    },
+  ],
+};

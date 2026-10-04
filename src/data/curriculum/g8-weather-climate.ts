@@ -1,0 +1,257 @@
+import { h, list, p, tip, type ChapterSpec } from "./build";
+
+/* Grade 8 geography: weather, climate and biomes. */
+export const WEATHER_CLIMATE: ChapterSpec = {
+  id: "weather-climate",
+  number: "119",
+  title: "The Case of the Strange Season",
+  topic: "Weather and climate",
+  subject: "geography",
+  grade: 8,
+  tagline: "Tell weather from climate, and find out what shapes the air, the wind and the living world.",
+  hook: "One January it is freezing. A week later, the sun shines and people sit outside in T-shirts. A neighbour says, “The climate must be changing!” Is that right? To decide, you need to understand weather, climate, wind and the habitats they create.",
+  goal: "Explain the difference between weather and climate, and describe what shapes climate zones, winds, fronts and biomes.",
+  learn: [
+    "Tell weather from climate and name instruments that measure weather",
+    "Describe the world's main climate zones and what affects them",
+    "Explain how air pressure causes wind",
+    "Read the basics of a weather map and a forecast",
+    "Describe the main biomes and how living things are adapted to them",
+  ],
+  lessons: [
+    {
+      id: "weather-v-climate",
+      title: "Weather or climate?",
+      teaser: "What is happening today, and what usually happens over many years.",
+      question: "It was freezing yesterday and warm today. Has the climate changed?",
+      goals: ["Say how weather and climate differ", "Name instruments that measure the weather", "Read a simple climate graph"],
+      hint: "Think about time. One of these is about a moment. The other is about many years.",
+      walk: "Weather is what the atmosphere is doing at a place at a particular time, such as today's temperature. Climate is the average weather over a long time, usually 30 years or more. One cold day, followed by a warm one, is a change in the weather, not in the climate.",
+      summary: [
+        "Weather is short-term: the conditions today, this week. Climate is the average pattern of weather over 30 years or more.",
+        "Weather instruments measure things like temperature, rainfall and wind. A climate graph shows monthly averages.",
+      ],
+      explain: [
+        p("Weather is the state of the atmosphere at a particular place and time. It includes temperature, rain or snow, cloud, wind, sunshine, humidity and air pressure. Weather can change from hour to hour and day to day."),
+        p("Climate is the usual pattern of weather in a place, found by averaging measurements over a long period, usually 30 years or more. The climate of Cairo is hot and dry. The climate of Singapore is hot and humid all year."),
+        tip("Key idea", "Weather is what you get. Climate is what you expect."),
+        h("Measuring the weather"),
+        list("A thermometer measures temperature.", "A rain gauge measures rainfall.", "An anemometer measures wind speed, and a wind vane shows its direction.", "A barometer measures air pressure.", "A hygrometer measures humidity."),
+        p("Weather stations record these every day. After many years, the records can be averaged to describe a place's climate."),
+        h("Climate graphs"),
+        p("A climate graph shows a place's climate over a year. Average monthly temperature is usually shown as a line, and average monthly rainfall is shown as bars."),
+      ],
+      tryIt: [
+        h("Weather or climate?"),
+        list(
+          "“It rained heavily this morning.” Weather.",
+          "“Summers in Madrid are hot and dry.” Climate.",
+          "“Tomorrow will be windy.” Weather.",
+          "“The Amazon is warm and wet all year.” Climate.",
+        ),
+        p("Challenge: here are example figures for Town X. Average temperature (°C) for January, April, July, October: 4, 10, 18, 11. Rainfall (mm): 60, 50, 40, 70. Draw a climate graph with a line for temperature and bars for rainfall. Which is the warmest month shown? Which is the wettest?"),
+      ],
+      practice: [
+        { p: "Which statement describes climate?", a: "Cairo is hot and dry for most of the year", w: [["It rained in Cairo this morning", "That is the weather at one time."], ["It is windy in Cairo today", "That is today's weather."]], x: "Climate is the typical pattern over many years." },
+        { p: "About how long a period is usually used to work out a place's climate?", a: "30 years or more", w: [["One day", "A day's conditions are weather."], ["One month", "A month is too short to describe the climate."]], x: "Climate averages are usually taken over 30 years or more." },
+      ],
+      quiz: [
+        { p: "Which instrument measures rainfall?", a: "A rain gauge", w: [["An anemometer", "An anemometer measures wind speed."], ["A barometer", "A barometer measures air pressure."]], x: "A rain gauge collects and measures rain." },
+        { p: "Three statements. Which is true?", a: "One cold day does not change a place's climate.", w: [["Climate is what is happening outside right now.", "That describes the weather."], ["Weather is the average over many years.", "That describes climate."]], x: "Climate is a long-term pattern, so a single day cannot change it.", lineup: true },
+        { p: "On a climate graph, how is rainfall usually shown?", a: "As bars", w: [["As a line", "A line is usually used for temperature."], ["As a pie chart", "Pie charts are not used on climate graphs."]], x: "Rainfall is shown as bars and temperature as a line." },
+      ],
+      check: [
+        { p: "Is “it snowed last night” weather or climate?", a: "Weather", w: [["Climate", "A single night's snow is weather."], ["Both", "It describes one event, which is weather."]], x: "It describes conditions at one time." },
+        { p: "Which instrument measures wind speed?", a: "An anemometer", w: [["A barometer", "A barometer measures air pressure."], ["A thermometer", "A thermometer measures temperature."]], x: "An anemometer measures how fast the wind blows." },
+      ],
+    },
+    {
+      id: "climate-zones",
+      title: "Climate zones",
+      teaser: "Why the Sahara, London and Antarctica are so different.",
+      question: "What makes the climate of one place so different from another?",
+      goals: ["Name the three broad climate zones and where they lie", "Explain why latitude affects climate", "Describe other factors such as altitude, the sea and ocean currents"],
+      hint: "Think about how the Sun's rays hit different parts of the Earth. Then think about height and the sea.",
+      walk: "Near the equator the Sun's rays hit the ground almost head-on all year, so it is hot (tropical). At higher latitudes the rays hit at a slant and spread out, so it is cooler (temperate), and near the poles it is coldest (polar). Altitude, distance from the sea and ocean currents change this pattern.",
+      summary: [
+        "Latitude is the main factor, giving tropical, temperate and polar zones.",
+        "Altitude, distance from the sea and ocean currents can make a place warmer or colder than its latitude suggests.",
+      ],
+      explain: [
+        p("The world has three broad climate zones, based on latitude."),
+        list(
+          "The tropical zone lies between the Tropic of Cancer (23.5° N) and the Tropic of Capricorn (23.5° S). It is hot all year.",
+          "The temperate zones lie between the tropics and the polar circles (66.5° N and S). They have milder weather and four seasons.",
+          "The polar zones lie beyond the polar circles. They are cold all year, with very little sun in winter.",
+        ),
+        tip("Key idea", "Near the equator the Sun's rays strike the ground more directly, so the heat is concentrated. Near the poles the rays arrive at a slant and are spread over a larger area."),
+        h("Other things that matter"),
+        list(
+          "Altitude: temperature falls by about 6.5 °C for every 1,000 m you climb. Quito in Ecuador is on the equator but cool, because it is high in the mountains.",
+          "Distance from the sea: water heats and cools slowly, so coastal places usually have milder winters and cooler summers than places far inland.",
+          "Ocean currents: the warm North Atlantic Drift helps keep north-west Europe milder than other places at the same latitude.",
+          "Winds and mountains: winds bring moisture, and mountains make air rise and rain fall.",
+        ),
+      ],
+      tryIt: [
+        h("Sort and predict"),
+        list(
+          "Singapore, 1° N: which zone? Tropical.",
+          "Madrid, 40° N: which zone? Temperate.",
+          "Svalbard, 78° N: which zone? Polar.",
+          "Quito is 0° latitude. Predict: will it be as hot as the Amazon rainforest at sea level? Why or why not? It is cooler, because it lies about 2,850 m above sea level.",
+        ),
+        p("Challenge: a city is at 50° N, on a west coast, near a warm ocean current. Predict whether its winters are harsh or mild, and give two reasons."),
+      ],
+      practice: [
+        { p: "Which zone lies between the Tropics of Cancer and Capricorn?", a: "The tropical zone", w: [["The polar zone", "The polar zones lie beyond 66.5°."], ["The temperate zone", "The temperate zones lie between the tropics and the polar circles."]], x: "The tropical zone is the band around the equator." },
+        { p: "What happens to temperature as altitude increases?", a: "It falls", w: [["It rises", "Air is generally colder higher up."], ["It stays the same", "Temperature falls with height."]], x: "Air cools about 6.5 °C for every 1,000 m." },
+      ],
+      quiz: [
+        { p: "Why are places near the equator generally warm?", a: "The Sun's rays strike them most directly all year", w: [["They are much closer to the Sun", "The difference in distance is tiny. The angle of the rays matters."], ["Ocean currents heat all of them equally", "Ocean currents have an effect, but the angle of the Sun is the main reason."]], x: "Direct sunlight concentrates the heat." },
+        { p: "Three statements. Which is true?", a: "Mountain tops are colder than valleys at the same latitude.", w: [["Climate depends only on latitude.", "Altitude, the sea and currents matter too."], ["Places on the coast have bigger temperature swings than inland places.", "Coastal places usually have milder, steadier temperatures."]], x: "Temperature falls with height.", lineup: true },
+        { p: "What can make a country at a high latitude milder?", a: "A warm ocean current", w: [["A high mountain range", "Mountains tend to make places colder."], ["Being far from the sea", "Places far from the sea usually have more extreme temperatures."]], x: "The North Atlantic Drift warms north-west Europe." },
+      ],
+      check: [
+        { p: "The polar zones begin at about which latitude?", a: "66.5° N and 66.5° S", w: [["23.5° N and S", "That is the tropics."], ["45° N and S", "That is in the middle of the temperate zones."]], x: "The polar circles are at 66.5°." },
+        { p: "Why is Quito, which is on the equator, cool?", a: "It is high up in the mountains", w: [["It is far from the equator", "Quito is almost exactly on the equator."], ["It is in a polar zone", "It is in the tropical zone."]], x: "It stands about 2,850 m above sea level." },
+      ],
+    },
+    {
+      id: "wind-pressure",
+      title: "Air pressure and wind",
+      teaser: "Wind is air moving from high pressure to low pressure.",
+      question: "What makes the wind blow?",
+      goals: ["Say what air pressure is", "Explain why warm air rising creates low pressure", "Describe how wind blows between high and low pressure, and explain a sea breeze"],
+      hint: "Think about what happens to air when the Sun heats the ground.",
+      walk: "The Sun heats the ground, and the ground warms the air above it. Warm air rises, leaving lower pressure at the surface. Cooler air with higher pressure flows in to fill the gap. This moving air is the wind.",
+      summary: [
+        "Air has weight. Warm air rises and makes low pressure, while cool air sinks and makes high pressure.",
+        "Wind is air moving from high pressure to low pressure. The bigger the difference, the stronger the wind.",
+      ],
+      explain: [
+        p("Air has weight. The weight of the air pressing down on a place is called air pressure, and a barometer measures it, usually in hectopascals (hPa)."),
+        list("When air warms, it rises. This leaves lower pressure at the surface. Low pressure is often linked to cloud and rain.", "When air cools, it sinks. This makes higher pressure at the surface. High pressure is often linked to clear skies and calm weather."),
+        tip("Key idea", "Wind is air moving from an area of high pressure to an area of low pressure. The bigger the pressure difference, the stronger the wind."),
+        h("A sea breeze"),
+        p("During the day, the land heats up faster than the sea. Air over the land warms and rises, making lower pressure. Cooler air from over the sea moves in to replace it, as a sea breeze. At night, the land cools faster than the sea, so the pattern reverses, and a land breeze blows out to sea."),
+        h("Winds around the world"),
+        p("The same idea works on a global scale. Air rises at the hot equator, flows towards the poles at height, cools and sinks, and returns at the surface. The Earth's spin bends the winds, to the right in the Northern Hemisphere and to the left in the Southern Hemisphere. This is called the Coriolis effect. It gives steady patterns such as the trade winds."),
+      ],
+      tryIt: [
+        h("Draw a sea breeze"),
+        list(
+          "Draw a coastline, with sea on the left and land on the right.",
+          "For daytime, draw the Sun, rising warm air over the land, sinking cooler air over the sea, and arrows for the breeze along the surface.",
+          "Now redraw it for night, with the arrows reversed. Why did the breeze change direction?",
+        ),
+        p("Challenge: on a weather map, lines called isobars join places with the same pressure. Where the lines are very close together, would you expect strong winds or light winds? Strong, because the pressure changes quickly over a short distance."),
+      ],
+      practice: [
+        { p: "Wind blows from where to where?", a: "From high pressure to low pressure", w: [["From low pressure to high pressure", "That is the wrong way round."], ["From north to south", "Wind can blow in any direction."]], x: "Air moves from high to low pressure." },
+        { p: "What does a barometer measure?", a: "Air pressure", w: [["Wind speed", "An anemometer measures wind speed."], ["Rainfall", "A rain gauge measures rainfall."]], x: "A barometer measures air pressure." },
+      ],
+      quiz: [
+        { p: "What happens to air when it is warmed?", a: "It rises, lowering the pressure at the surface", w: [["It sinks, raising the pressure", "Warm air is lighter and rises."], ["It stays exactly where it is", "Warm air rises."]], x: "Warm air rises and leaves lower pressure behind." },
+        { p: "Which weather is usually linked to high pressure?", a: "Clear skies and calm weather", w: [["Storms and heavy rain", "Those are usually linked to low pressure."], ["Thunderstorms", "Thunderstorms are linked to low pressure."]], x: "Sinking air tends to bring clear, settled weather." },
+        { p: "Three statements. Which is true?", a: "During the day, a sea breeze blows from the sea onto the land.", w: [["During the day, a sea breeze blows from the land out to sea.", "That is the wrong way round."], ["Wind blows from low pressure to high pressure.", "Wind blows from high pressure to low pressure."]], x: "The land warms faster than the sea in the daytime.", lineup: true },
+      ],
+      check: [
+        { p: "What is the name of the effect that bends winds because the Earth spins?", a: "The Coriolis effect", w: [["The greenhouse effect", "That is about heat being trapped."], ["The sea breeze", "That is a local wind."]], x: "The Coriolis effect bends winds to the right in the north and left in the south." },
+        { p: "A big difference in pressure over a short distance causes what kind of wind?", a: "Strong wind", w: [["No wind", "A pressure difference makes air move."], ["Light wind", "A bigger difference makes a stronger wind."]], x: "Bigger pressure differences give stronger winds." },
+      ],
+    },
+    {
+      id: "fronts-forecast",
+      title: "Fronts and forecasting",
+      teaser: "Where warm and cold air meet, and how forecasters look ahead.",
+      question: "How do forecasters know that a storm is coming?",
+      goals: ["Say what a front is", "Describe the weather brought by warm and cold fronts", "Explain how forecasts are made and why they can be wrong"],
+      hint: "Forecasters track big masses of air. What happens where a warm air mass meets a cold one?",
+      walk: "A front is the boundary between two air masses. At a cold front, cold air pushes under warm air, giving heavy rain, then colder, clearer weather. At a warm front, warm air slides over cold air, giving thickening cloud and steady rain, then warmer weather. Forecasters use satellites, radar and weather stations in computer models to predict how fronts will move.",
+      summary: [
+        "A front is where two different air masses meet. Cold fronts bring short, heavy rain and a drop in temperature. Warm fronts bring longer, lighter rain and warmer weather.",
+        "Forecasts use data and computer models. They are less reliable further ahead because small errors grow.",
+      ],
+      explain: [
+        p("An air mass is a huge body of air with similar temperature and moisture. A front is the boundary between two air masses. Fronts often bring changes in the weather. In places like Britain, fronts usually move from west to east along with areas of low pressure."),
+        list(
+          "A cold front: cold air pushes under warm air, forcing it up quickly. This brings a narrow band of heavy rain or thunderstorms, followed by cooler, clearer air. On weather maps it is a blue line with triangles.",
+          "A warm front: warm air slides gradually up over cold air. Clouds thicken and lower, bringing steady rain, and then it becomes warmer. On weather maps it is a red line with semicircles.",
+        ),
+        tip("Key idea", "A front is a boundary between two air masses. The weather changes as it passes."),
+        h("Making a forecast"),
+        p("Forecasters collect data from weather stations, ships, balloons, radar (which detects rain) and satellites. Powerful computers use this data to model how the atmosphere will change. Isobars on a weather map show areas of equal pressure. When they are close together, the winds are strong."),
+        p("Forecasts for the next day or two are usually good. Further ahead, small errors in the starting measurements grow bigger, so forecasts become less certain. Forecasters often use probabilities to show this uncertainty."),
+      ],
+      tryIt: [
+        h("Make a forecast"),
+        p("Use these clues to forecast the weather for a town. The pressure is falling, high cloud is thickening and getting lower, and the wind is shifting to the south-west."),
+        list("What type of front is approaching? A warm front.", "What weather would you expect next? Thickening cloud, then steady rain, then warmer, muggy air."),
+        p("Challenge: keep a weather diary for a week. Each day, record temperature, cloud, wind and rain. Compare it with yesterday's forecast. How accurate was it?"),
+      ],
+      practice: [
+        { p: "Which symbol is used for a cold front on a weather map?", a: "A blue line with triangles", w: [["A red line with semicircles", "That is a warm front."], ["A circle with a number", "That is the symbol for a weather station."]], x: "Cold fronts are shown with blue triangles." },
+        { p: "What do isobars join?", a: "Places with the same air pressure", w: [["Places with the same temperature", "Lines of equal temperature are isotherms."], ["Places with the same rainfall", "Isobars show pressure."]], x: "Isobars are lines of equal pressure." },
+      ],
+      quiz: [
+        { p: "What weather does a cold front usually bring?", a: "A narrow band of heavy rain, then cooler, clearer air", w: [["Days of steady drizzle, then warmer weather", "That describes a warm front."], ["Clear skies only", "A cold front often brings heavy rain or thunderstorms."]], x: "Cold air pushes warm air up quickly." },
+        { p: "Why are forecasts further ahead less reliable?", a: "Small errors in the starting measurements grow over time", w: [["Forecasters stop trying", "Forecasters keep modelling, but the atmosphere is complex."], ["The Sun changes its heat", "The reason is the growth of small errors."]], x: "The further ahead you look, the more uncertain the forecast." },
+        { p: "Three statements about weather maps. Which is true?", a: "Isobars close together mean strong winds.", w: [["Isobars far apart mean strong winds.", "Isobars close together show a steep pressure change and strong winds."], ["Isobars show temperature.", "Isobars show pressure."]], x: "Closely spaced isobars mean winds are strong.", lineup: true },
+      ],
+      check: [
+        { p: "What is a front?", a: "The boundary between two different air masses", w: [["A very strong wind", "A front is a boundary, not a wind."], ["A type of cloud", "A front can produce clouds but is not a cloud."]], x: "Fronts form where air masses meet." },
+        { p: "Which tool lets forecasters see where rain is falling over a wide area?", a: "Radar", w: [["An anemometer", "That measures wind speed at one spot."], ["A rain gauge", "That measures rain at one spot."]], x: "Radar detects rain across a large area." },
+      ],
+    },
+    {
+      id: "biomes",
+      title: "Biomes",
+      teaser: "Climate shapes the plants and animals that can live somewhere.",
+      question: "Why do rainforests, deserts and tundra look so different?",
+      goals: ["Say what a biome is", "Describe the main land biomes and their climates", "Give examples of how living things are adapted to their biome"],
+      hint: "Think about temperature and rainfall. What can grow, and what can live, in each?",
+      walk: "A biome is a large region with a particular climate and the plants and animals suited to it. Climate decides the biome. Hot, wet climates grow rainforest, hot dry ones make desert, and cold ones make tundra. Plants and animals have adaptations to survive there.",
+      summary: [
+        "A biome is a large area defined by its climate and the living things that are adapted to it.",
+        "Temperature and rainfall decide which biome forms. Plants and animals have features, called adaptations, that help them survive.",
+      ],
+      explain: [
+        p("A biome is a large region of the world with a similar climate, plants and animals. The main driver is climate, especially temperature and rainfall."),
+        list(
+          "Tropical rainforest: hot and wet all year. It has more species than any other biome. The trees form layers, from the tall emergent trees to the dark forest floor.",
+          "Savanna: warm, with a wet season and a dry season. Grassland with scattered trees, home to grazing animals and their predators.",
+          "Desert: less than about 250 mm of rain a year. Deserts can be hot, like the Sahara, or cold, like the Gobi.",
+          "Temperate deciduous forest: four seasons. Trees lose their leaves in autumn.",
+          "Taiga (boreal forest): long, cold winters. Mostly conifer trees such as pine and spruce.",
+          "Tundra: very cold, with permafrost (ground frozen all year) and no trees. Plants are small and low to the ground.",
+        ),
+        tip("Key idea", "Climate decides the biome. Living things have adaptations that help them survive in it."),
+        h("Adaptations"),
+        p("A cactus stores water in its thick stem and has spines instead of leaves to lose less water. A camel can go for days without drinking. Polar bears have thick fur and a layer of fat to keep warm. In the rainforest, many plants have waxy leaves with pointed tips so heavy rain runs off quickly."),
+      ],
+      tryIt: [
+        h("Biome fact file"),
+        list(
+          "Pick a biome. Find out its typical temperature and rainfall.",
+          "Name three plants and three animals that live there.",
+          "For two of them, explain an adaptation that helps them survive.",
+        ),
+        p("Challenge: predict what would happen to a rainforest if it became much drier for many years. What would happen to the plants first, and then to the animals?"),
+      ],
+      practice: [
+        { p: "Which biome is hot and wet all year and has the most species?", a: "Tropical rainforest", w: [["Desert", "Deserts are dry."], ["Tundra", "Tundra is cold."]], x: "Tropical rainforests have a vast number of species." },
+        { p: "Which biome has permafrost and almost no trees?", a: "Tundra", w: [["Taiga", "Taiga has many conifer trees."], ["Savanna", "Savanna is warm grassland."]], x: "The tundra's frozen ground stops trees growing." },
+      ],
+      quiz: [
+        { p: "What mainly decides which biome grows in a place?", a: "Climate: temperature and rainfall", w: [["The colour of the soil", "Soil matters, but climate is the main driver."], ["The nearest city", "Cities do not decide biomes."]], x: "Temperature and rainfall decide which plants can grow." },
+        { p: "A cactus stores water in its thick stem. What is this an example of?", a: "An adaptation to a dry climate", w: [["A feature of rainforest trees", "Rainforests are wet."], ["An adaptation to cold weather", "Water storage helps in dry places."]], x: "An adaptation is a feature that helps a living thing survive in its habitat." },
+        { p: "Three statements. Which is true?", a: "Deserts get less than about 250 mm of rain a year.", w: [["All deserts are hot.", "Some deserts, such as the Gobi and Antarctica, are cold."], ["Tundra has many tall trees.", "Tundra has no trees."]], x: "A desert is defined by how dry it is, not how hot.", lineup: true },
+      ],
+      check: [
+        { p: "Which biome has trees that lose their leaves in autumn?", a: "Temperate deciduous forest", w: [["Tropical rainforest", "Rainforest trees are green all year."], ["Tundra", "The tundra has no trees."]], x: "Deciduous trees drop their leaves in the cold season." },
+        { p: "Why do polar bears have thick fur and a layer of fat?", a: "To keep warm in the cold", w: [["To store water", "Fat and fur are for insulation."], ["To stay cool", "They live in the cold Arctic."]], x: "Thick fur and fat insulate against the cold." },
+      ],
+    },
+  ],
+};

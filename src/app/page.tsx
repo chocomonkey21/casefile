@@ -3,18 +3,20 @@ import Link from "next/link";
 import { FinalAction, HeaderNav, HeroActions } from "@/components/landing/LandingActions";
 import { SimpleHeader } from "@/components/layout/SimpleHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
-import { CASES } from "@/data/cases";
 import { SUBJECTS } from "@/data/subjects";
 import { copy } from "@/lib/copy";
+import { getSubjects } from "@/lib/structure";
 import { RedThread } from "@/components/ui/RedThread";
 import { StepStamp } from "@/components/ui/StepStamp";
 
 const t = copy.landing;
 
 export default function Home() {
-  // Every real case, so the copy ("science, maths, history and geography") matches what is shown.
-  // The practice case is left out: it belongs to sign-up, not the library.
-  const peek = CASES.filter((c) => !c.practice);
+  // One chapter from each subject, earliest grade first, so the copy ("science, maths, history and geography") matches what is shown.
+  // The full list is one click away.
+  const subjects = getSubjects();
+  const peek = subjects.map((s) => [...s.chapters].sort((a, b) => (a.grade ?? 0) - (b.grade ?? 0) || a.number.localeCompare(b.number))[0]);
+  const totalChapters = subjects.reduce((n, s) => n + s.chapters.length, 0);
 
   return (
     <>
@@ -87,6 +89,7 @@ export default function Home() {
                   <p className="label flex items-center gap-2 text-ink-soft">
                     <span aria-hidden="true" className={`h-2.5 w-2.5 rounded-full ${SUBJECTS[c.subject].dot}`} />
                     {SUBJECTS[c.subject].label}
+                    {c.grade ? ` · ${copy.grades.label(c.grade)}` : ""}
                   </p>
                   <h3 className="mt-2 text-xl leading-snug">{c.title}</h3>
                   <p className="mt-2 text-ink-soft">{c.tagline}</p>
@@ -100,6 +103,14 @@ export default function Home() {
               </li>
             ))}
           </ul>
+          <p className="mt-6">
+            <Link
+              href="/cases"
+              className="inline-flex min-h-11 items-center font-semibold text-evidence-dark underline underline-offset-4 hover:no-underline"
+            >
+              {t.peekAll(totalChapters)}
+            </Link>
+          </p>
         </section>
 
         {/* Trust: only facts the code supports. Unknowns are shown as labelled placeholders. */}

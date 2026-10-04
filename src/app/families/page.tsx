@@ -3,11 +3,19 @@ import { SimpleHeader } from "@/components/layout/SimpleHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { RedThread } from "@/components/ui/RedThread";
 import { copy } from "@/lib/copy";
+import { getSubjects } from "@/lib/structure";
 
 export const metadata = { title: copy.meta.families };
 
 const t = copy.families;
 const S = t.sections;
+
+// Counted from the course data, so this page cannot drift out of date
+const subjects = getSubjects();
+const chapterCount = subjects.reduce((n, s) => n + s.chapters.length, 0);
+const lessonCount = subjects.reduce((n, s) => n + s.lessonCount, 0);
+const grades = subjects.flatMap((s) => s.chapters.map((c) => c.grade ?? 0)).filter(Boolean);
+const gradeRange = grades.length ? `Grades ${Math.min(...grades)} to ${Math.max(...grades)}` : "students aged 11 to 15";
 
 /** A clearly labelled gap. Nothing is claimed here until the team supplies the real answer. */
 function Pending({ children }: { children: string }) {
@@ -78,7 +86,7 @@ export default function FamiliesPage() {
               <h2 id="curriculum-heading" className="text-3xl">
                 {S.curriculum.heading}
               </h2>
-              <Facts items={S.curriculum.facts} />
+              <Facts items={S.curriculum.facts(chapterCount, lessonCount, gradeRange)} />
               <Pending>{S.curriculum.pendingNote}</Pending>
             </section>
 

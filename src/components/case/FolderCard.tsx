@@ -268,6 +268,7 @@ export function FolderCard({ caseDef, status, solved }: FolderCardProps) {
             <span className="label flex items-center gap-2 text-ink-soft">
               <span aria-hidden="true" className={`h-2.5 w-2.5 rounded-full ${subject.dot}`} />
               {subject.label}
+              {caseDef.grade ? ` · ${copy.grades.label(caseDef.grade)}` : ""}
             </span>
             <StatusStamp status={status} />
           </div>

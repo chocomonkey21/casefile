@@ -81,6 +81,7 @@ export function CaseFileView({ caseDef, initialTab }: { caseDef: CaseDef; initia
                 <span className="flex items-center gap-2">
                   <span aria-hidden="true" className={`h-2.5 w-2.5 rounded-full ${subject.dot}`} />
                   {subject.label}
+                  {caseDef.grade ? ` · ${copy.grades.label(caseDef.grade)}` : ""}
                 </span>
               </p>
               <h1 className="mt-1 text-3xl leading-tight sm:text-4xl">{caseDef.title}</h1>

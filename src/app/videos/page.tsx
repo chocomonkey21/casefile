@@ -77,6 +77,7 @@ export default async function VideosPage(props: PageProps<"/videos">) {
             {entry.chapters.map((c) => (
               <Link key={c.id} href={href(subject, c.id)} aria-current={chapter === c.id ? "true" : undefined} className={chip(chapter === c.id)}>
                 {c.title}
+                {c.grade ? ` · ${copy.grades.label(c.grade)}` : ""}
               </Link>
             ))}
           </div>

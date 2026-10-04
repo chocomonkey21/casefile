@@ -12,6 +12,7 @@ import { PrevNext } from "@/components/ui/PrevNext";
 import { RelatedVideos } from "@/components/videos/RelatedVideos";
 import { ArrowLeftIcon, ClockIcon, LockIcon } from "@/components/ui/Icons";
 import { Stamp } from "@/components/ui/Stamp";
+import { SUBJECTS } from "@/data/subjects";
 import { copy } from "@/lib/copy";
 import { clueState, nextClue } from "@/lib/progress";
 import { actions, useCaseFile, useHydrated } from "@/lib/store";
@@ -109,7 +110,12 @@ export function ClueView({ caseDef, clueIndex, lesson }: ClueViewProps) {
       <Breadcrumb items={lessonCrumbs(caseDef, clue)} className="mb-2" />
 
       <header>
-        <p className="label text-ink-soft">{t.position(caseDef.title, clueIndex + 1, caseDef.clues.length)}</p>
+        <p className="label text-ink-soft">
+          {SUBJECTS[caseDef.subject].label}
+          {caseDef.grade ? ` · ${copy.grades.label(caseDef.grade)}` : ""}
+          {" · "}
+          {t.position(caseDef.title, clueIndex + 1, caseDef.clues.length)}
+        </p>
         <div className="mt-1 flex flex-wrap items-start justify-between gap-4">
           <h1 className="text-3xl leading-tight sm:text-4xl">{clue.title}</h1>
           {solved && (
@@ -119,6 +125,18 @@ export function ClueView({ caseDef, clueIndex, lesson }: ClueViewProps) {
           )}
         </div>
         <p className="mt-2 text-lg text-ink-soft">{clue.teaser}</p>
+        {clue.goals && clue.goals.length > 0 && (
+          <section aria-labelledby="goals-heading" className="mt-4">
+            <h2 id="goals-heading" className="label text-ink">
+              {copy.grades.goalsHeading}
+            </h2>
+            <ul className="mt-2 list-disc space-y-1 pl-6 text-lg">
+              {clue.goals.map((g) => (
+                <li key={g}>{g}</li>
+              ))}
+            </ul>
+          </section>
+        )}
         <p className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-ink-soft">
           <span className="flex items-center gap-2">
             <ClockIcon width={16} height={16} />

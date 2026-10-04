@@ -743,7 +743,8 @@ export const copy = {
       },
     ],
     peekHeading: "Some of the cases",
-    peekText: "Science, maths, history and geography.",
+    peekText: "Science, maths, history and geography, for Grades 6 to 10. Here is one chapter from each subject.",
+    peekAll: (n: number) => `See all ${n} cases`,
     lessons: (n: number) => plural(n, "lesson"),
     finalHeading: "Ready to start learning?",
     finalText: "Set up your profile and begin with a short practice case.",
@@ -794,6 +795,14 @@ export const copy = {
     home: "Home",
     illustrationLabel:
       "A desk seen from above. On it are a manila case folder labelled The Vanishing Puddle, a magnifying glass, a sticky note, a notebook, a mug, a pencil, and two cards joined by red string.",
+  },
+
+  grades: {
+    label: (n: number) => `Grade ${n}`,
+    filter: "Grade",
+    yourGrade: "Your grade",
+    note: "Suggested grade level",
+    goalsHeading: "What you will learn",
   },
 
   /** Breadcrumbs and "where am I" wording shared by subject, chapter, lesson and video pages */
@@ -857,6 +866,8 @@ export const copy = {
     fallbackText: "Some browsers, schools and networks block embedded video.",
     openAt: (host: string) => `Open it on ${host}`,
     directFailed: "This video file could not be played. Check your connection, or try again later.",
+    credit: (title: string, channel: string) => `Video: “${title}” by ${channel}, on YouTube.`,
+    noteLabel: "Note for teachers and parents:",
     transcript: "Transcript",
     showTranscript: "Show the transcript",
     noTranscript: "No transcript has been added for this video yet.",
@@ -903,8 +914,9 @@ export const copy = {
       curriculum: {
         id: "curriculum",
         heading: "Which curriculum it follows",
-        facts: [
-          "At the moment CaseFile has five cases across science, maths, history and geography, plus one short practice case.",
+        facts: (chapters: number, lessons: number, grades: string) => [
+          `CaseFile has ${chapters} chapters and ${lessons} lessons across science, maths, history and geography, for ${grades}, plus one short practice case.`,
+          "Each chapter has a suggested grade level chosen by the project team. These are suggestions. They are not matched to any official curriculum or exam board.",
         ],
         pendingNote: "Which curriculum or exam board the lessons follow has not been confirmed. CaseFile does not claim any curriculum alignment until it has.",
       },

@@ -1,9 +1,38 @@
 import { getCase } from "@/data/cases";
+import { CURATED_VIDEOS } from "@/data/videos-curated";
 import { getSubjects, isChapter, isSubjectId } from "@/lib/structure";
 import { FIELD_LIMITS, type FormErrors, type VideoFormValues } from "./form";
 import { parseCaptionsUrl, parseThumbnail, parseVideoUrl } from "./embed";
 import { readAll, update } from "./store";
 import type { VideoEntry, VideoStatus } from "./types";
+
+/* ---------- Built-in lesson videos ---------- */
+
+const BUILT_AT = "2026-10-04T00:00:00.000Z";
+
+/** The curated lesson videos as entries. Anything pointing at a chapter or lesson that does not exist is dropped. */
+const BUILTIN: VideoEntry[] = CURATED_VIDEOS.filter((v) => getCase(v.caseId)?.clues.some((c) => c.id === v.clueId)).map((v, i) => ({
+  id: `c-${v.caseId}-${v.clueId}`,
+  title: v.lesson,
+  description: v.why,
+  subjectId: v.subject,
+  caseId: v.caseId,
+  clueId: v.clueId,
+  thumbnailUrl: null,
+  videoUrl: `https://www.youtube.com/watch?v=${v.youtubeId}`,
+  captionsUrl: null,
+  transcript: "",
+  order: 1000 + i,
+  status: "published" as const,
+  createdAt: BUILT_AT,
+  updatedAt: BUILT_AT,
+  sourceTitle: v.sourceTitle,
+  channel: v.channel,
+  note: v.note || undefined,
+  builtin: true,
+}));
+
+export const BUILTIN_VIDEO_COUNT = BUILTIN.length;
 
 /* ---------- Reading (used by learner pages and the editor desk) ---------- */
 
@@ -23,7 +52,14 @@ function matches(v: VideoEntry, f: VideoFilter) {
 
 /** Published videos only. This is the single place learner pages get their videos from. */
 export async function listPublished(filter: VideoFilter = {}): Promise<VideoEntry[]> {
-  return sortVideos((await readAll()).filter((v) => v.status === "published" && matches(v, filter)));
+  // Built-in videos always show. If the editor store cannot be read, learners still get them.
+  let editable: VideoEntry[] = [];
+  try {
+    editable = await readAll();
+  } catch (e) {
+    if (BUILTIN.length === 0) throw e;
+  }
+  return sortVideos([...BUILTIN, ...editable].filter((v) => v.status === "published" && matches(v, filter)));
 }
 
 export async function getPublished(id: string): Promise<VideoEntry | null> {
@@ -163,7 +199,7 @@ function slug(title: string) {
 }
 
 function uniqueId(base: string, list: VideoEntry[]) {
-  const taken = new Set(list.map((v) => v.id));
+  const taken = new Set([...list, ...BUILTIN].map((v) => v.id));
   if (!taken.has(base)) return base;
   let n = 2;
   while (taken.has(`${base}-${n}`)) n++;

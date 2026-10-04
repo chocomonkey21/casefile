@@ -43,3 +43,5 @@ next-env.d.ts
 
 # Local video data written by the editor desk when running without Redis
 /.data/
+
+/.tmp-curriculum/

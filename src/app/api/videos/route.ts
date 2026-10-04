@@ -4,7 +4,7 @@ import type { VideoEntry } from "@/lib/cms/types";
 /** What a video card needs. The video address and transcript are only sent on the watch page. */
 export type VideoSummary = Pick<
   VideoEntry,
-  "id" | "title" | "description" | "subjectId" | "caseId" | "clueId" | "thumbnailUrl"
+  "id" | "title" | "description" | "subjectId" | "caseId" | "clueId" | "thumbnailUrl" | "channel"
 >;
 
 const clean = (v: string | null) => (v && /^[a-z0-9-]{1,80}$/.test(v) ? v : undefined);
@@ -18,7 +18,7 @@ export async function GET(request: Request) {
       caseId: clean(params.get("chapter")),
       clueId: clean(params.get("lesson")),
     });
-    const summaries: VideoSummary[] = videos.map(({ id, title, description, subjectId, caseId, clueId, thumbnailUrl }) => ({
+    const summaries: VideoSummary[] = videos.map(({ id, title, description, subjectId, caseId, clueId, thumbnailUrl, channel }) => ({
       id,
       title,
       description,
@@ -26,6 +26,7 @@ export async function GET(request: Request) {
       caseId,
       clueId,
       thumbnailUrl,
+      channel,
     }));
     return Response.json({ videos: summaries }, { headers: { "Cache-Control": "no-store" } });
   } catch {

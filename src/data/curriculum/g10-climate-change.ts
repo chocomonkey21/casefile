@@ -1,0 +1,257 @@
+import { h, list, p, tip, type ChapterSpec } from "./build";
+
+/* Grade 10 geography: climate change. Figures are rounded and follow IPCC and NASA summaries. */
+export const CLIMATE_CHANGE: ChapterSpec = {
+  id: "climate-change",
+  number: "178",
+  title: "The Case of the Melting Evidence",
+  topic: "Climate change and sustainability",
+  subject: "geography",
+  grade: 10,
+  tagline: "How the greenhouse effect works, how we know the world is warming, and what can be done.",
+  hook: "A glacier that tourists once walked up has shrunk so far that the car park built beside it now sits miles from the ice. A museum label shows a photograph from a hundred years ago. What changed, and why? To solve this one, you will follow the evidence from the atmosphere to the ice.",
+  goal: "Explain the greenhouse effect, the evidence and causes of climate change, its impacts, and the main responses.",
+  learn: [
+    "Explain the natural and enhanced greenhouse effect",
+    "Describe the evidence that the climate is changing",
+    "Explain the human causes of climate change",
+    "Describe the main impacts on people and nature",
+    "Tell mitigation from adaptation and give examples of each",
+  ],
+  lessons: [
+    {
+      id: "greenhouse",
+      title: "The greenhouse effect",
+      teaser: "A natural blanket that is getting thicker.",
+      question: "Without any greenhouse effect, Earth would be a frozen world. So why is the greenhouse effect now a problem?",
+      goals: ["Explain how the natural greenhouse effect works", "Name the main greenhouse gases", "Explain the enhanced greenhouse effect"],
+      hint: "Think about what happens to the Sun's energy when it reaches Earth, and what greenhouse gases do to the heat leaving.",
+      walk: "Sunlight warms Earth's surface. The surface gives off heat as infrared radiation. Greenhouse gases absorb some of this heat and send part of it back down, keeping Earth warmer than it would be. Human activity adds more of these gases, so more heat is trapped. This is the enhanced greenhouse effect.",
+      summary: [
+        "Greenhouse gases absorb and re-emit heat from Earth's surface. The natural effect keeps the planet about 33 °C warmer than it would be without it.",
+        "Burning fossil fuels and other human activities have added greenhouse gases, strengthening the effect and warming the planet.",
+      ],
+      explain: [
+        p("The greenhouse effect is a natural process. Sunlight passes through the atmosphere and warms the surface of the Earth. The warm surface sends heat back out as infrared radiation. Some gases in the atmosphere, called greenhouse gases, absorb some of this heat and re-emit it in all directions, including back towards the surface. This keeps the lower atmosphere warmer than it would otherwise be."),
+        p("Without the natural greenhouse effect, Earth's average temperature would be about −18 °C. With it, the average is about 15 °C. That is about 33 °C warmer, and it is what makes life on Earth possible."),
+        list("Water vapour", "Carbon dioxide (CO₂)", "Methane (CH₄)", "Nitrous oxide (N₂O)"),
+        tip("Key idea", "The greenhouse effect is natural and essential. The problem is that human activity is adding to it."),
+        h("The enhanced greenhouse effect"),
+        p("Since the Industrial Revolution, people have burned huge amounts of coal, oil and gas, which release CO₂. We have also cut down forests, and raised livestock and crops that release methane and nitrous oxide. The amount of CO₂ in the air has risen from about 280 parts per million before industry to over 420 parts per million today. More greenhouse gases trap more heat, and so the planet warms. This is called the enhanced greenhouse effect."),
+        p("A planet with far more greenhouse gas shows how strong the effect can be. Venus has a thick atmosphere of mostly CO₂, and its surface is about 465 °C, hotter than Mercury, which is closer to the Sun."),
+        p("The greenhouse effect is not the same as the hole in the ozone layer, which is a separate problem."),
+      ],
+      tryIt: [
+        h("Model it"),
+        list(
+          "Fill two identical jars with the same amount of air. Cover one tightly with clear plastic wrap, and leave the other open.",
+          "Put a thermometer in each and place them in strong sunlight for 20 minutes. Record the temperatures every five minutes.",
+          "Which gets warmer? Think about how this model is similar to the greenhouse effect, and how it is different. (The wrap stops warm air rising away. Greenhouse gases trap radiation.)",
+        ),
+        p("Challenge: why is Venus hotter than Mercury, even though Mercury is closer to the Sun? Explain using the greenhouse effect."),
+      ],
+      practice: [
+        { p: "Which greenhouse gas is mainly released by burning fossil fuels?", a: "Carbon dioxide", w: [["Oxygen", "Oxygen is not a greenhouse gas."], ["Nitrogen", "Nitrogen is the most common gas in the air but does not trap heat."]], x: "Burning coal, oil and gas releases carbon dioxide." },
+        { p: "About what would Earth's average temperature be without the natural greenhouse effect?", a: "About −18 °C", w: [["About 15 °C", "That is the current average, with the greenhouse effect."], ["About 100 °C", "Without the greenhouse effect it would be much colder."]], x: "The natural effect warms Earth by about 33 °C." },
+      ],
+      quiz: [
+        { p: "How do greenhouse gases warm the Earth?", a: "They absorb heat radiated from the surface and re-emit it, some back towards the surface", w: [["They produce their own heat", "They trap heat that is already there."], ["They block sunlight from reaching Earth", "Sunlight still reaches the surface. The gases affect the heat leaving it."]], x: "They slow the escape of heat to space." },
+        { p: "Which of these is a greenhouse gas?", a: "Methane", w: [["Oxygen", "Oxygen does not trap heat in this way."], ["Argon", "Argon is a noble gas."]], x: "Methane is a powerful greenhouse gas." },
+        { p: "Three statements. Which is true?", a: "The greenhouse effect is natural and essential for life, but human activity is strengthening it.", w: [["The greenhouse effect is entirely human-made.", "A natural greenhouse effect has always existed."], ["The greenhouse effect is the same as the hole in the ozone layer.", "They are different problems."]], x: "People have added to a natural process.", lineup: true },
+      ],
+      check: [
+        { p: "By roughly how much has atmospheric CO₂ risen since before the Industrial Revolution?", a: "From about 280 ppm to over 420 ppm", w: [["It has not changed", "Measurements show a large rise."], ["It has fallen by half", "Levels have risen sharply."]], x: "Measurements at places like Mauna Loa show a steady rise." },
+        { p: "Which planet is an example of a very strong greenhouse effect?", a: "Venus", w: [["Mars", "Mars has a thin atmosphere."], ["Mercury", "Mercury has almost no atmosphere."]], x: "Venus's thick CO₂ atmosphere traps heat." },
+      ],
+    },
+    {
+      id: "evidence",
+      title: "Evidence of climate change",
+      teaser: "Thermometers, satellites, ice cores and rising seas all agree.",
+      question: "How do we know the world is getting warmer, and not just having a few hot years?",
+      goals: ["Describe several kinds of evidence for climate change", "Explain how ice cores give information about the past", "Explain why one cold winter does not disprove global warming"],
+      hint: "Look for evidence from many different sources. Do they point the same way?",
+      walk: "Thermometer records, satellites and ocean buoys show the global average temperature has risen about 1.1 to 1.2 °C since the late 1800s. Glaciers and Arctic sea ice are shrinking, sea level is rising, and ice cores show that CO₂ is now higher than at any time in 800,000 years. Many independent measurements agree.",
+      summary: [
+        "The global average temperature has risen by about 1.1 to 1.2 °C since the late 1800s. Ice, oceans and sea level show the same trend.",
+        "Ice cores let scientists measure ancient temperatures and CO₂, showing today's CO₂ is higher than at any time in the past 800,000 years.",
+      ],
+      explain: [
+        p("Weather changes from day to day, but climate is the long-term pattern. To see if the climate is changing, scientists look at many kinds of evidence over many years."),
+        list(
+          "Temperature records: thermometer readings from around the world, plus satellites and ocean buoys, show that the global average surface temperature has risen by about 1.1 to 1.2 °C since 1850–1900. The last ten years have been the warmest on record.",
+          "Ice: glaciers around the world are shrinking. Summer sea ice in the Arctic has declined. The huge ice sheets of Greenland and Antarctica are losing ice.",
+          "Sea level: global average sea level has risen about 20 cm since 1900, and the rate is increasing.",
+          "Oceans: they have warmed, and they are becoming more acidic as they absorb CO₂.",
+          "Living things: many plants flower earlier, and many animals and plants have moved towards the poles or up mountains.",
+        ),
+        tip("Key idea", "Many independent kinds of evidence point the same way, so scientists are very confident that the Earth is warming."),
+        h("Ice cores"),
+        p("In Antarctica and Greenland, snow builds up in layers that turn to ice and trap tiny bubbles of ancient air. By drilling out long cores of ice, scientists can measure the CO₂ in the air from up to 800,000 years ago, and work out the temperature. Over that time CO₂ has gone up and down in step with temperature. Today's CO₂ is higher than at any time in that record."),
+        p("A single cold winter in one place does not disprove global warming. Climate is about long-term averages across the whole planet, and some places can have cold spells while the global average still rises."),
+      ],
+      tryIt: [
+        h("Read the data"),
+        p("These are approximate decade averages for how much warmer or cooler the world was than the 1951–1980 average."),
+        list("1920s: about −0.25 °C", "1950s: about 0 °C", "1980s: about +0.2 °C", "2010s: about +0.75 °C"),
+        p("Draw a bar chart. What is the trend? What would you say to someone who says one cold winter proves the world is not warming?"),
+        p("Challenge: list three different measurements that all show warming. Why is it stronger evidence to have several kinds that agree?"),
+      ],
+      practice: [
+        { p: "Which of these gives direct information about the air of the past?", a: "Ice cores that trap ancient air bubbles", w: [["Today's weather forecast", "A forecast does not tell us about the past."], ["A weather vane", "A weather vane measures current wind direction."]], x: "Air bubbles in ice preserve samples of the atmosphere." },
+        { p: "By roughly how much has the global average temperature risen since the late 1800s?", a: "About 1.1 to 1.2 °C", w: [["About 10 °C", "That is far too large."], ["About 0.01 °C", "That is far too small."]], x: "The rise is a little over 1 °C." },
+      ],
+      quiz: [
+        { p: "Why do scientists trust the evidence that the climate is warming?", a: "Many independent measurements agree", w: [["Only one thermometer was used", "Many thousands of measurements are used."], ["It is based on opinions", "It is based on measurements."]], x: "Thermometers, satellites, ice, sea level and living things all point the same way." },
+        { p: "What can scientists learn from ice cores?", a: "Past temperatures and the CO₂ in ancient air", w: [["Only tomorrow's weather", "Ice cores give information about the past."], ["The names of past rulers", "Ice cores record climate information."]], x: "Layers of ice preserve a record of past climate." },
+        { p: "Three statements. Which is true?", a: "A single cold winter does not disprove global warming, because climate is long-term.", w: [["Global warming means every place gets warmer every year.", "Local weather still varies."], ["Sea level has fallen since 1900.", "Sea level has risen."]], x: "Climate is the long-term average.", lineup: true },
+      ],
+      check: [
+        { p: "About how much has global average sea level risen since 1900?", a: "About 20 cm", w: [["About 20 m", "That is far too large."], ["It has not changed", "Measurements show a rise."]], x: "Sea level rise comes from melting ice and warming water." },
+        { p: "Which change has been observed in the Arctic?", a: "Summer sea ice has declined", w: [["Summer sea ice has greatly increased", "It has decreased."], ["Nothing has changed", "Satellite records show a decline."]], x: "Satellites show less Arctic sea ice in summer." },
+      ],
+    },
+    {
+      id: "causes",
+      title: "What causes climate change",
+      teaser: "The role of fossil fuels, forests and farming.",
+      question: "What is causing the rapid warming, and could it be natural?",
+      goals: ["Name the main human sources of greenhouse gases", "Explain why natural factors do not explain recent warming", "Say what a carbon footprint is"],
+      hint: "Think about where our energy, food and goods come from, and what is released in producing them.",
+      walk: "Burning coal, oil and gas for electricity, transport and industry is the biggest source of greenhouse gases. Cutting down forests, farming animals and rice, and some industrial processes also add to them. Natural factors such as changes in the Sun and volcanoes cannot explain the speed and pattern of recent warming.",
+      summary: [
+        "The main cause of recent warming is human activity, mostly burning fossil fuels, plus deforestation and agriculture.",
+        "Natural factors alone cannot explain the warming seen since the mid-1900s.",
+      ],
+      explain: [
+        p("Earth's climate has always changed naturally. Changes in the Sun's output, large volcanic eruptions and slow changes in Earth's orbit have all affected it. But scientists have found that these natural factors cannot explain the rapid warming since the mid-1900s. The Sun's output has not risen. The pattern matches the extra greenhouse gases we have added. The world's leading climate scientists say that human influence on the climate is clear."),
+        h("Human sources"),
+        list(
+          "Fossil fuels: burning coal, oil and gas for electricity, heating, transport and industry releases CO₂. This is the largest source of emissions, roughly three quarters of the total.",
+          "Deforestation: trees take in CO₂ as they grow. Cutting and burning forests removes that store and releases carbon.",
+          "Agriculture: cattle and sheep produce methane, flooded rice fields release methane, and nitrogen fertilisers release nitrous oxide.",
+          "Industry and waste: making cement and steel releases CO₂, and rubbish in landfill releases methane.",
+        ),
+        tip("Key idea", "The extra warming matches the extra greenhouse gases from human activity, and cannot be explained by natural changes alone."),
+        h("Carbon footprints"),
+        p("A carbon footprint is the total amount of greenhouse gases caused by a person, a group or a product. Footprints differ greatly between countries. Richer countries have generally had higher emissions per person, and have also produced most of the extra CO₂ over time. That raises questions about fairness and responsibility."),
+      ],
+      tryIt: [
+        h("Sort and count"),
+        list(
+          "Sort these into energy, transport, agriculture and industry: a coal power station, a petrol car, a cattle farm, a cement works.",
+          "List five things you did yesterday that used energy. Which used fossil fuels, directly or indirectly?",
+        ),
+        p("Challenge: discuss in a group. Should countries that have emitted most in the past do more to cut emissions now? Give one reason for and one reason against."),
+      ],
+      practice: [
+        { p: "Which fuels release CO₂ when they are burned?", a: "Coal, oil and gas", w: [["Wind", "Wind power does not burn fuel."], ["Sunlight", "Solar power does not burn fuel."]], x: "Fossil fuels contain stored carbon." },
+        { p: "Why does deforestation add to climate change?", a: "Fewer trees take in CO₂, and cutting and burning release stored carbon", w: [["Trees only produce CO₂", "Trees take in CO₂ as they grow."], ["It has no effect on the climate", "Forests are a major store of carbon."]], x: "Forests are a carbon store." },
+      ],
+      quiz: [
+        { p: "Which activity produces the most greenhouse gases worldwide?", a: "Burning fossil fuels for energy", w: [["Using renewable energy", "Renewable energy produces little or no CO₂ in use."], ["Planting trees", "Trees take in CO₂."]], x: "Fossil fuels are the largest source." },
+        { p: "Which greenhouse gas is released by cattle and rice fields?", a: "Methane", w: [["Oxygen", "Oxygen is not a greenhouse gas."], ["Helium", "Helium is not a greenhouse gas."]], x: "Methane comes from livestock, rice and landfill." },
+        { p: "Three statements. Which is true?", a: "Natural factors such as the Sun and volcanoes cannot explain the rapid warming since the mid-1900s.", w: [["Volcanoes caused all the recent warming.", "Volcanic eruptions tend to cool the planet for a time."], ["The Sun's output has risen sharply in recent decades.", "Measurements show the Sun's output has not risen in step with the warming."]], x: "Measurements point to greenhouse gases as the cause.", lineup: true },
+      ],
+      check: [
+        { p: "What is a carbon footprint?", a: "The total greenhouse gases caused by a person, group or product", w: [["A footprint made of carbon", "It is a measure, not a footprint."], ["The size of someone's shoe", "It measures greenhouse gas emissions."]], x: "A carbon footprint is a measure of emissions." },
+        { p: "Which sector is the largest source of greenhouse gases?", a: "Energy: electricity, heat and transport", w: [["Tourism", "Tourism is part of other sectors."], ["Education", "Education is not a major source."]], x: "Burning fossil fuels for energy is the largest source." },
+      ],
+    },
+    {
+      id: "impacts",
+      title: "Impacts of climate change",
+      teaser: "Heat, rising seas, extreme weather and changing ecosystems.",
+      question: "What will a warmer world mean for people, places and wildlife?",
+      goals: ["Describe the main physical impacts of warming", "Describe the effects on people and ecosystems", "Explain why impacts are unequal"],
+      hint: "Think about heat, water, ice and the sea. Then think about the people and living things that depend on them.",
+      walk: "Warming causes more heatwaves, rising seas from melting ice and expanding warmer water, heavier rainfall in some places and droughts in others, and damage to ecosystems such as coral reefs. These affect food, water, health and homes. People in poorer countries, who emitted least, are often most at risk.",
+      summary: [
+        "Climate change brings more heat, rising sea levels, more intense rainfall and droughts, and damage to ecosystems.",
+        "The impacts are unequal. Poorer and low-lying places are often hit hardest, although they have emitted least.",
+      ],
+      explain: [
+        p("As the world warms, many systems change together."),
+        list(
+          "Heat: heatwaves are becoming more frequent and intense, with risks to health, crops and wildfires.",
+          "Sea level: the sea is rising because melting land ice adds water, and because water expands as it warms. Low-lying coasts, river deltas and small island countries such as the Maldives and Tuvalu are at risk of flooding and salty water spoiling fresh water.",
+          "Water and weather: warmer air can hold more water vapour, so heavy downpours become more intense. Some regions face more severe droughts. Melting mountain glaciers change river flows that millions of people rely on.",
+          "Oceans and wildlife: warm water causes coral bleaching, when corals lose the algae that feed them and turn white. Oceans are becoming more acidic. Habitats are shifting, and some species cannot move or adapt quickly enough.",
+          "People: food production, water supplies, health and homes are affected. Some people may have to move.",
+        ),
+        tip("Key idea", "Climate change makes some extreme weather more likely or more intense. It does not cause every storm by itself."),
+        p("The impacts are unequal. The countries that have emitted the least often have the fewest resources to protect their people."),
+      ],
+      tryIt: [
+        h("Draw an impact web"),
+        list(
+          "Write “warmer world” in the centre of a page.",
+          "Add four first-level effects, such as hotter summers, melting ice, rising seas and ocean warming.",
+          "Add at least two second-level effects for each, such as crop failure or flooded homes. Draw arrows to connect them.",
+        ),
+        p("Challenge: choose one place, such as a low-lying island, a mountain region or your own area. Which impacts matter most there, and what could people do to prepare?"),
+      ],
+      practice: [
+        { p: "What two things make sea level rise?", a: "Melting land ice, and warming water expanding", w: [["Rain and tides", "Tides rise and fall, but do not raise the long-term average."], ["More rivers and wind", "Wind and rivers do not explain global sea level rise."]], x: "Both add to the volume of the oceans." },
+        { p: "What is coral bleaching?", a: "Corals lose their algae in water that is too warm and turn white", w: [["Corals being painted", "Bleaching is a biological response to stress."], ["Corals growing faster", "Bleaching harms corals."]], x: "Heat stress breaks down the partnership with algae." },
+      ],
+      quiz: [
+        { p: "Why are low-lying islands especially at risk?", a: "Rising seas can flood them and spoil fresh water", w: [["They get less sunshine", "That is not the main risk."], ["Storms avoid islands", "Islands are exposed to storms and rising seas."]], x: "Little land is high above sea level." },
+        { p: "Three statements. Which is true?", a: "Climate change makes some extreme weather more likely or more intense.", w: [["Climate change directly causes every storm.", "Storms have natural causes too. Climate change can make them stronger."], ["Climate change makes weather the same everywhere.", "Impacts vary a lot from place to place."]], x: "Scientists study how warming changes the odds of extreme events.", lineup: true },
+        { p: "Which is a likely impact of melting mountain glaciers?", a: "Changes in river flow and water supply for millions of people", w: [["A fall in sea level", "Melting land ice raises sea level."], ["Colder oceans", "Melting glaciers do not cool the oceans in this way."]], x: "Many rivers rely on glacier meltwater." },
+      ],
+      check: [
+        { p: "Why can warmer air cause heavier downpours?", a: "Warmer air can hold more water vapour", w: [["Warm air is heavier", "Warm air is lighter."], ["Warm air contains no water", "Warm air can hold more water vapour."]], x: "More water vapour is available to fall as rain." },
+        { p: "Who often suffers most from climate change?", a: "Low-income countries and vulnerable communities", w: [["The biggest emitters", "The biggest emitters have more resources to cope."], ["Nobody", "Many people are affected."]], x: "Poorer places often have emitted least and have fewest resources." },
+      ],
+    },
+    {
+      id: "solutions",
+      title: "Responding to climate change",
+      teaser: "Cutting emissions and preparing for change.",
+      question: "What can be done about climate change by governments, businesses and ordinary people?",
+      goals: ["Tell mitigation from adaptation and give examples", "Describe the aims of the Paris Agreement", "Explain what individuals, businesses and governments can do"],
+      hint: "There are two broad answers: stop it getting worse, and prepare for the changes already coming.",
+      walk: "Mitigation means cutting greenhouse gas emissions or removing them, for example with renewable energy, efficiency and protecting forests. Adaptation means adjusting to the changes that cannot be avoided, for example with flood defences and drought-resistant crops. Both are needed, and they involve governments, businesses and individuals.",
+      summary: [
+        "Mitigation reduces emissions, and adaptation prepares for impacts. Both are needed.",
+        "Governments, businesses and individuals all have a part, and international agreements such as the Paris Agreement coordinate action.",
+      ],
+      explain: [
+        p("There are two main kinds of response to climate change."),
+        list(
+          "Mitigation means reducing the greenhouse gases we put into the air, or removing them. Examples are switching to renewable energy, making buildings and machines more efficient, using electric transport, protecting and restoring forests, and changing farming.",
+          "Adaptation means adjusting to the changes that are already happening or cannot be avoided. Examples are building sea walls and flood defences, growing drought-resistant crops, setting up early warning systems and planting mangroves to protect coasts.",
+        ),
+        tip("Key idea", "Mitigation deals with the cause. Adaptation deals with the effects. We need both."),
+        h("Renewable energy"),
+        p("Wind, solar and hydroelectric power produce electricity with little or no CO₂ while running. The cost of wind and solar power has fallen sharply, and they are now among the cheapest sources of new electricity in many places. Nuclear power also produces little CO₂ when running, although people debate its costs and waste."),
+        h("Working together"),
+        p("Climate change crosses borders, so countries work together. In the 2015 Paris Agreement, nearly every country agreed to limit global warming to well below 2 °C above pre-industrial levels, and to try to keep it to 1.5 °C. Many countries and companies have set targets for net zero, which means balancing the greenhouse gases put into the air with the amount taken out."),
+        p("Governments can set rules and prices on carbon and fund clean energy. Businesses can cut waste and switch to clean power. Individuals can reduce their footprint, for example by wasting less energy and food and choosing lower-carbon travel. They can also vote, speak up and join with others."),
+      ],
+      tryIt: [
+        h("Plan a school response"),
+        list(
+          "Make two lists: “Mitigation” and “Adaptation”. Put ideas for your school or town in the right one.",
+          "Choose the three actions that would help the most and be easiest to do. Say why.",
+          "Write a short pitch to your head teacher or local council for one of them.",
+        ),
+        p("Challenge: carry out a simple audit of your school's energy or waste for a week. Where is the biggest saving?"),
+      ],
+      practice: [
+        { p: "What is mitigation?", a: "Reducing greenhouse gas emissions or removing them from the air", w: [["Building sea walls", "That is adaptation."], ["Ignoring the problem", "Mitigation is action to reduce the cause."]], x: "Mitigation tackles the cause of climate change." },
+        { p: "Which of these is an example of adaptation?", a: "Building flood defences", w: [["Switching to wind power", "That is mitigation."], ["Planting forests to absorb CO₂", "That is mitigation."]], x: "Adaptation helps people to cope with changes." },
+      ],
+      quiz: [
+        { p: "What did the 2015 Paris Agreement aim to do?", a: "Limit global warming to well below 2 °C, and try to keep it to 1.5 °C", w: [["Ban all cars", "It did not ban cars."], ["Stop all trade between countries", "It set climate goals for countries."]], x: "Countries agreed to goals and to report on their progress." },
+        { p: "Which of these is a low-carbon source of electricity?", a: "Wind power", w: [["Coal", "Coal releases a lot of CO₂."], ["Oil", "Oil releases CO₂ when burned."]], x: "Wind turbines produce no CO₂ when running." },
+        { p: "Three statements. Which is true?", a: "Both mitigation and adaptation are needed.", w: [["Only individuals can solve climate change.", "Governments and businesses also have to act."], ["Adaptation alone is enough.", "Without cutting emissions, the changes would keep growing."]], x: "We need to reduce the causes and prepare for the effects.", lineup: true },
+      ],
+      check: [
+        { p: "What does “net zero” mean?", a: "Balancing greenhouse gases put into the air with the amount removed", w: [["Using no energy at all", "Net zero is about emissions, not energy use."], ["Emitting nothing, ever, anywhere", "It allows some emissions if they are balanced by removals."]], x: "Emissions minus removals equals zero." },
+        { p: "Who can act to reduce climate change?", a: "Governments, businesses and individuals", w: [["Only governments", "Many groups can act."], ["No one", "Action by many people and organisations makes a difference."]], x: "All three have important roles." },
+      ],
+    },
+  ],
+};

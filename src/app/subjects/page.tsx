@@ -38,6 +38,7 @@ export default function SubjectsPage() {
                 <li key={c.id}>
                   <Link href={`/cases/${c.id}?tab=clues`} className="inline-flex min-h-11 items-center underline underline-offset-4 hover:no-underline">
                     {c.title}
+                    {c.grade ? ` (${copy.grades.label(c.grade)})` : ""}
                   </Link>
                 </li>
               ))}

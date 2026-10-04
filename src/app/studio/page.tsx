@@ -6,7 +6,7 @@ import { getCase } from "@/data/cases";
 import { SUBJECTS } from "@/data/subjects";
 import { getEditorState } from "@/lib/cms/auth";
 import { storeKind } from "@/lib/cms/store";
-import { listAll } from "@/lib/cms/videos";
+import { BUILTIN_VIDEO_COUNT, listAll } from "@/lib/cms/videos";
 import type { VideoEntry } from "@/lib/cms/types";
 import { deleteVideoAction, moveAction, setStatusAction } from "./actions";
 import { LoginForm } from "./LoginForm";
@@ -79,6 +79,9 @@ export default async function StudioPage(props: PageProps<"/studio">) {
 
       <p className={`mt-4 max-w-prose ${kind === "none" ? "font-semibold text-evidence-dark" : "text-ink-soft"}`} role={kind === "none" ? "alert" : undefined}>
         {STORE_NOTE[kind]}
+      </p>
+      <p className="mt-2 max-w-prose text-sm text-ink-soft">
+        {BUILTIN_VIDEO_COUNT} lesson videos come with the project (in the code, with their YouTube credits). They are always shown to learners and are not listed here. Videos you add here are shown alongside them.
       </p>
       {(saved || deleted) && (
         <p role="status" className="mt-4 font-semibold text-desk-dark">

@@ -1,4 +1,5 @@
 import type { VerdictQuestion } from "@/lib/types";
+import { NEW_VERDICTS, TOP_UP_VERDICTS } from "./curriculum/specs";
 import { EARTH_VERDICT, EGYPT_VERDICT, FRACTIONS_VERDICT, SOLAR_VERDICT } from "./verdicts-subjects";
 
 /*
@@ -181,8 +182,11 @@ const VERDICTS: Record<string, VerdictQuestion[]> = {
   "solar-system": SOLAR_VERDICT,
   "ancient-egypt": EGYPT_VERDICT,
   "shaking-ground": EARTH_VERDICT,
+  ...NEW_VERDICTS,
 };
 
 export function getVerdict(caseId: string): VerdictQuestion[] | undefined {
-  return VERDICTS[caseId];
+  const base = VERDICTS[caseId];
+  if (!base) return undefined;
+  return [...base, ...(TOP_UP_VERDICTS[caseId] ?? [])];
 }

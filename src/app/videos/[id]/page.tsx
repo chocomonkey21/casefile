@@ -103,6 +103,16 @@ export default async function WatchPage(props: PageProps<"/videos/[id]">) {
       </div>
 
       {video.description && <p className="mt-6 max-w-prose text-lg text-ink-soft">{video.description}</p>}
+      {video.channel && (
+        <p className="mt-3 max-w-prose text-sm text-ink-soft">
+          {t.credit(video.sourceTitle ?? video.title, video.channel)}
+        </p>
+      )}
+      {video.note && (
+        <p className="mt-3 max-w-prose rounded-[3px] bg-paper-dark p-3 text-sm">
+          <span className="font-semibold">{t.noteLabel}</span> {video.note}
+        </p>
+      )}
 
       {(chapter || lesson) && (
         <section aria-labelledby="where-heading" className="tex-postit mt-6 rounded-[3px] p-5 shadow-card">

@@ -1,4 +1,5 @@
 import type { CaseDef, EvidenceDef, EvidenceKind } from "@/lib/types";
+import { NEW_CASES, extendChapter } from "./curriculum";
 
 /*
   Mock course data. Swap this file (or fetch from an API later) without touching the UI.
@@ -23,6 +24,7 @@ const puddle: CaseDef = {
   title: "The Case of the Vanishing Puddle",
   topic: "The water cycle",
   subject: "science",
+  grade: 6,
   tagline: "A puddle disappears during the day. Find out where the water goes and how it comes back as rain.",
   hook: "A large puddle by the school gate is gone by lunchtime. In this case you will find out where the water went. Along the way you will learn how the water cycle works: evaporation, condensation, precipitation and collection.",
   goal: "Explain where a puddle's water goes, and how that water ends up in clouds and rain.",
@@ -98,6 +100,7 @@ const fractions: CaseDef = {
   title: "The Case of the Missing Slice",
   topic: "Fractions",
   subject: "maths",
+  grade: 6,
   tagline: "Learn what fractions mean, and how to compare and add them.",
   hook: "A pizza has one slice missing. To say how much is left, you need fractions. In this case you will learn how to read, compare and add simple fractions.",
   goal: "Read, compare and add simple fractions with confidence.",
@@ -121,6 +124,7 @@ const solar: CaseDef = {
   title: "The Case of the Wandering Lights",
   topic: "The solar system",
   subject: "science",
+  grade: 7,
   tagline: "Learn about the Sun, the planets and the objects that travel around the Sun.",
   hook: "Some bright lights in the night sky do not twinkle, and they slowly move. They are planets. In this case you will learn what the solar system contains and how it fits together.",
   goal: "Describe the Sun, the planets and how they fit together in our solar system.",
@@ -144,6 +148,7 @@ const egypt: CaseDef = {
   title: "The Case of the Secret Scroll",
   topic: "Ancient Egypt",
   subject: "history",
+  grade: 6,
   tagline: "Find out how people in ancient Egypt lived, ruled and wrote.",
   hook: "A museum has an old scroll covered in small pictures. These pictures are hieroglyphs from ancient Egypt. In this case you will learn about the people who wrote them.",
   goal: "Understand how people lived, ruled and wrote in ancient Egypt.",
@@ -167,6 +172,7 @@ const earth: CaseDef = {
   title: "The Case of the Shaking Ground",
   topic: "Earthquakes and volcanoes",
   subject: "geography",
+  grade: 7,
   tagline: "Find out what is inside the Earth, and why the ground shakes and mountains erupt.",
   hook: "Cups rattle on a shelf and the floor trembles for a few seconds. Far away, a mountain sends up a cloud of ash. In this case you will find out what is happening deep under your feet.",
   goal: "Explain how the Earth's layers and moving plates cause earthquakes and volcanoes.",
@@ -216,7 +222,7 @@ const sock: CaseDef = {
 };
 
 /** Display order: practice first, then by case number */
-export const CASES: CaseDef[] = [sock, puddle, fractions, solar, egypt, earth];
+export const CASES: CaseDef[] = [sock, ...[puddle, fractions, solar, egypt, earth].map(extendChapter), ...NEW_CASES].sort((a, b) => a.number.localeCompare(b.number));
 
 export const FEATURED_CASE_ID = "puddle";
 

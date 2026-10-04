@@ -35,6 +35,8 @@ export type EvidenceDef = {
 export type ClueDef = {
   id: string;
   title: string;
+  /** What the learner will be able to do after this lesson. Shown at the top of the lesson. */
+  goals?: string[];
   /** One friendly line shown on the clue card */
   teaser: string;
   minutes: number;
@@ -49,6 +51,8 @@ export type CaseDef = {
   /** Plain name of what is being studied, e.g. "Fractions". Used in sentences like "Time to revise: Fractions". */
   topic: string;
   subject: SubjectId;
+  /** Suggested grade level (6 to 10). A suggestion by the project team, not a match to any official curriculum. */
+  grade?: Grade;
   tagline: string;
   /** The story that opens the brief */
   hook: string;
