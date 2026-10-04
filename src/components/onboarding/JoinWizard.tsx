@@ -15,7 +15,8 @@ import { RANKS } from "@/data/ranks";
 import { copy } from "@/lib/copy";
 import { caseStatus, solvedCount } from "@/lib/progress";
 import { actions, useCaseFile } from "@/lib/store";
-import type { AvatarId, Grade } from "@/lib/types";
+import type { AvatarId, Board, Grade } from "@/lib/types";
+import { BOARDS, boardLabel } from "@/lib/access";
 import { HowItWorks } from "./HowItWorks";
 import { RedThread } from "@/components/ui/RedThread";
 import { StepStamp } from "@/components/ui/StepStamp";
@@ -34,6 +35,7 @@ export function JoinWizard() {
   const [avatarId, setAvatarId] = useState<AvatarId>("amara");
   const [interests, setInterests] = useState<string[]>([]);
   const [grade, setGrade] = useState<Grade | null>(null);
+  const [board, setBoard] = useState<Board | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const state = useCaseFile();
@@ -57,6 +59,10 @@ export function JoinWizard() {
       return;
     }
     if (step === 2) {
+      if (board === null) {
+        setError(t.board.error);
+        return;
+      }
       if (grade === null) {
         setError(t.grade.error);
         return;
@@ -69,7 +75,7 @@ export function JoinWizard() {
   };
 
   const saveProfile = () => {
-    actions.setProfile({ name: name.trim(), avatarId, interests, grade: grade! });
+    actions.setProfile({ name: name.trim(), avatarId, interests, grade: grade!, board: board! });
     // Hand over the practice case by marking it as started (not as a study day)
     actions.setCaseActivity(PRACTICE_CASE_ID, new Date().toISOString());
     setError(null);
@@ -251,8 +257,40 @@ export function JoinWizard() {
                   {t.grade.heading}
                 </h2>
                 <p className="mt-2 text-lg text-ink-soft">{t.grade.text}</p>
+                {/* Board first: it decides which chapters exist, then the grade decides how far up they go */}
                 <fieldset className="mt-6">
-                  <legend className="sr-only">{t.grade.legend}</legend>
+                  <legend className="text-lg font-semibold">{t.board.legend}</legend>
+                  <p className="text-sm text-ink-soft">{t.board.help}</p>
+                  <div className="mt-2 grid grid-cols-2 gap-2 sm:gap-4">
+                    {BOARDS.map((b) => {
+                      const on = board === b;
+                      return (
+                        <label
+                          key={b}
+                          className={`flex min-h-16 cursor-pointer flex-col items-center justify-center rounded-[3px] px-2 text-center transition-colors ${
+                            on ? "bg-postit shadow-[inset_0_0_0_2px_var(--color-espresso)]" : "bg-paper hover:bg-manila-50"
+                          }`}
+                        >
+                          <input
+                            type="radio"
+                            name="board"
+                            value={b}
+                            checked={on}
+                            onChange={() => {
+                              setBoard(b);
+                              setError(null);
+                            }}
+                            className="sr-only"
+                          />
+                          <span className="font-display text-2xl">{boardLabel(b)}</span>
+                          <span className="text-sm text-ink-soft">{t.board.names[b]}</span>
+                        </label>
+                      );
+                    })}
+                  </div>
+                </fieldset>
+                <fieldset className="mt-6">
+                  <legend className="text-lg font-semibold">{t.grade.legend}</legend>
                   <div className="grid grid-cols-5 gap-2 sm:gap-4">
                     {GRADES.map((g) => {
                       const on = grade === g;

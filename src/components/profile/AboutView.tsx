@@ -3,6 +3,7 @@
 import { Avatar } from "@/components/ui/Avatar";
 import { Button } from "@/components/ui/Button";
 import { findAvatar } from "@/data/avatars";
+import { boardLabel, DEFAULT_BOARD } from "@/lib/access";
 import { INTERESTS } from "@/data/interests";
 import { copy } from "@/lib/copy";
 import { levelFor } from "@/lib/progress";
@@ -41,6 +42,7 @@ export function AboutView() {
 
   const rows: { label: string; value: string }[] = [
     { label: copy.about.name, value: profile.name },
+    { label: copy.about.board, value: boardLabel(profile.board ?? DEFAULT_BOARD) },
     { label: copy.about.grade, value: copy.about.gradeValue(profile.grade) },
     { label: copy.about.interests, value: interests.length ? interests.join(", ") : copy.about.noInterests },
     { label: copy.about.level, value: rank.name },

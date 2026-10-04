@@ -2,23 +2,40 @@
 
 Generated from the project data by `npm run report:curriculum`. Do not edit by hand.
 
-Grades are **suggested levels chosen by the project team**. They are not matched to any official curriculum or exam board.
+Chapters are listed separately for each board, and students see only their own board's chapters.
+The original library was placed under **CBSE** at the client's request, and an **ICSE** library was added.
+Neither list has been checked against the official CBSE (NCERT) or CISCE syllabus. The topics are commonly taught at
+these levels, but the grade levels and chapter choices are suggestions by the project team.
 Every lesson has one YouTube video. Each video was checked with YouTube's embed lookup, and the title and channel below are exactly what YouTube reports.
 Videos are embedded, never downloaded or copied, and can be removed by their owners at any time (`npm run check:videos` re-checks them).
 
-## Lessons per grade and subject
+## CBSE: chapters / lessons per grade and subject
 
 | Grade | Science | Maths | History | Geography |
 | --- | --- | --- | --- | --- |
-| 6 | 7 | 7 | 7 | 7 |
-| 7 | 7 | 7 | 7 | 7 |
-| 8 | 7 | 7 | 7 | 7 |
-| 9 | 7 | 7 | 7 | 7 |
-| 10 | 7 | 7 | 7 | 7 |
+| 6 | 3 / 7 | 3 / 7 | 3 / 7 | 3 / 7 |
+| 7 | 3 / 7 | 3 / 7 | 3 / 7 | 3 / 7 |
+| 8 | 3 / 7 | 3 / 7 | 3 / 7 | 3 / 7 |
+| 9 | 3 / 7 | 3 / 7 | 3 / 7 | 3 / 7 |
+| 10 | 3 / 7 | 3 / 7 | 3 / 7 | 3 / 7 |
 
-Total: 140 lessons in 60 chapters, 140 videos.
+CBSE total: 140 lessons in 60 chapters.
 
-## Grade 6
+## ICSE: chapters / lessons per grade and subject
+
+| Grade | Science | Maths | History | Geography |
+| --- | --- | --- | --- | --- |
+| 6 | 2 / 2 | 2 / 2 | 2 / 2 | 2 / 2 |
+| 7 | 2 / 2 | 2 / 2 | 2 / 2 | 2 / 2 |
+| 8 | 2 / 2 | 2 / 2 | 2 / 2 | 2 / 2 |
+| 9 | 2 / 2 | 2 / 2 | 2 / 2 | 2 / 2 |
+| 10 | 2 / 2 | 2 / 2 | 2 / 2 | 2 / 2 |
+
+ICSE total: 40 lessons in 40 chapters.
+
+All boards: 180 lessons in 100 chapters, 180 videos.
+
+## CBSE, Grade 6
 
 ### Science: The Case of the Vanishing Puddle
 
@@ -208,7 +225,7 @@ Why settlements grow where they do. Case no. 208. Route: `/cases/settlements`
    - Caveat: From a geography teacher's channel. Examples are British.
    - Captions: English automatic captions only (made by YouTube, may contain errors)
 
-## Grade 7
+## CBSE, Grade 7
 
 ### Science: The Case of the Wandering Lights
 
@@ -392,7 +409,7 @@ Coastal erosion and landforms. Case no. 218. Route: `/cases/coasts`
    - Caveat: Made for GCSE (ages 14 to 16), so a few terms go beyond this lesson.
    - Captions: English automatic captions only (made by YouTube, may contain errors)
 
-## Grade 8
+## CBSE, Grade 8
 
 ### Science: The Case of the Invisible Building Blocks
 
@@ -579,7 +596,7 @@ Rainforests and deforestation. Case no. 228. Route: `/cases/rainforests`
    - Caveat: Short. Part of National Geographic's Climate 101 series.
    - Captions: English captions added by the creator
 
-## Grade 9
+## CBSE, Grade 9
 
 ### Science: The Case of the Runaway Trolley
 
@@ -768,7 +785,7 @@ Globalisation. Case no. 238. Route: `/cases/globalisation`
    - Why it fits: Explains what globalisation is and how trade and technology connect the world.
    - Captions: English captions added by the creator
 
-## Grade 10
+## CBSE, Grade 10
 
 ### Science: The Case of the Family Resemblance
 
@@ -952,4 +969,395 @@ Food security. Case no. 248. Route: `/cases/food-security`
    - Video: [What is food security?](https://www.youtube.com/watch?v=8c5ZN7BseNA) by Canadian Foodgrains Bank (ID `8c5ZN7BseNA`)
    - Why it fits: Explains what food security means and what causes food insecurity.
    - Caveat: From a charity, so it also mentions the charity's work.
+   - Captions: English automatic captions only (made by YouTube, may contain errors)
+
+## ICSE, Grade 6
+
+### Science: The Case of the Long Shadow
+
+Light and shadows. Case no. 301. Route: `/cases/icse-light-shadows`
+
+1. **Light and shadows**
+   - Video: [Light and Shadows | Types of Light | How are Shadows formed | Video for Kids](https://www.youtube.com/watch?v=fy7eoMef3e8) by learning junction (ID `fy7eoMef3e8`)
+   - Why it fits: Explains luminous and non-luminous objects and how shadows form.
+   - Caveat: Made for younger students, so the lesson text goes further.
+   - Captions: English automatic captions only (made by YouTube, may contain errors)
+
+### Science: The Case of the Green Kitchen
+
+The leaf and photosynthesis. Case no. 302. Route: `/cases/icse-leaf`
+
+1. **The leaf and photosynthesis**
+   - Video: [Photosynthesis for Kids | Learn how plants MAKE their own food](https://www.youtube.com/watch?v=Iln136eMl4g) by Learn Bright (ID `Iln136eMl4g`)
+   - Why it fits: Explains how plants make food from sunlight, water and carbon dioxide.
+   - Captions: English captions added by the creator
+
+### Maths: The Case of the Matching Packs
+
+HCF and LCM. Case no. 303. Route: `/cases/icse-hcf-lcm`
+
+1. **HCF and LCM**
+   - Video: [How To Find The LCM and HCF Quickly!](https://www.youtube.com/watch?v=fjdeo6anRY4) by The Organic Chemistry Tutor (ID `fjdeo6anRY4`)
+   - Why it fits: Shows quick methods for finding the HCF and LCM of numbers.
+   - Captions: English automatic captions only (made by YouTube, may contain errors)
+
+### Maths: The Case of the Sorted Suspects
+
+Sets. Case no. 304. Route: `/cases/icse-sets`
+
+1. **Sets**
+   - Video: [What are Elements of Sets? | Set Theory, Cardinality, Set Elements](https://www.youtube.com/watch?v=sX9ZSdzx9gU) by Wrath of Math (ID `sX9ZSdzx9gU`)
+   - Why it fits: Explains elements of a set and how to count them.
+   - Caveat: Short and focused on elements and cardinality. Roster and set-builder form are in the lesson text.
+   - Captions: English automatic captions only (made by YouTube, may contain errors)
+
+### History: The Case of the Spoken Hymns
+
+The Vedic period. Case no. 305. Route: `/cases/icse-vedic`
+
+1. **The Vedic period**
+   - Video: [Vedic Age, History](https://www.youtube.com/watch?v=-LYioyRKZT0) by theOpenBook (ID `-LYioyRKZT0`)
+   - Why it fits: Gives an overview of the Vedic age, its society and its texts.
+   - Captions: English automatic captions only (made by YouTube, may contain errors)
+
+### History: The Case of the Two Princes
+
+Jainism and Buddhism. Case no. 306. Route: `/cases/icse-jainism-buddhism`
+
+1. **Jainism and Buddhism**
+   - Video: [Jainism and Buddhism | History Class 6 | ICSE Board](https://www.youtube.com/watch?v=P9ikaIJ1EW8) by Blueprint Digital (ID `P9ikaIJ1EW8`)
+   - Why it fits: Covers the lives and teachings of Mahavira and the Buddha, made for ICSE Class 6.
+   - Captions: English automatic captions only (made by YouTube, may contain errors)
+
+### Geography: The Case of the Flat-Topped Hill
+
+Major landforms. Case no. 307. Route: `/cases/icse-landforms`
+
+1. **Mountains, plateaus and plains**
+   - Video: [Mountains, Plateaus & Plains Explained 🏔️🟫🌾 | Landforms for Kids | Class 6 Geography](https://www.youtube.com/watch?v=Et9ESJShCHc) by EduRev Class 6 - 10 (ID `Et9ESJShCHc`)
+   - Why it fits: Explains the three major landforms with examples.
+   - Captions: English automatic captions only (made by YouTube, may contain errors)
+
+### Geography: The Case of the Four Spheres
+
+The domains of the Earth. Case no. 308. Route: `/cases/icse-earth-domains`
+
+1. **The domains of the Earth**
+   - Video: [FOUR DOMAINS OF THE EARTH | Atmosphere | Lithosphere | Hydrosphere | Biosphere | Dr Binocs Show](https://www.youtube.com/watch?v=9JFr8_BDsiU) by Peekaboo Kidz (ID `9JFr8_BDsiU`)
+   - Why it fits: Introduces the lithosphere, hydrosphere, atmosphere and biosphere.
+   - Caveat: Made for younger students, in a cartoon style.
+   - Captions: English automatic captions only (made by YouTube, may contain errors)
+
+## ICSE, Grade 7
+
+### Science: The Case of the Salty Sand
+
+Separating mixtures. Case no. 311. Route: `/cases/icse-mixtures`
+
+1. **Separating mixtures**
+   - Video: [Separation of Mixtures Explained: Filtration, Evaporation, Distillation & Chromatography](https://www.youtube.com/watch?v=tWd1biGv_nY) by Periodic Table Talk | Chemistry Step-by-Step (ID `tWd1biGv_nY`)
+   - Why it fits: Explains filtration, evaporation, distillation and chromatography.
+   - Captions: English automatic captions only (made by YouTube, may contain errors)
+
+### Science: The Case of the Bouncing Ball
+
+Forms of energy and energy changes. Case no. 312. Route: `/cases/icse-energy`
+
+1. **Forms of energy and energy changes**
+   - Video: [TYPES OF ENERGY | Physics Animation](https://www.youtube.com/watch?v=jhKejoBqiYc) by EarthPen (ID `jhKejoBqiYc`)
+   - Why it fits: An animation of the main forms of energy and how they change.
+   - Captions: English automatic captions only (made by YouTube, may contain errors)
+
+### Maths: The Case of the Borrowed Bicycle Money
+
+Simple interest. Case no. 313. Route: `/cases/icse-simple-interest`
+
+1. **Simple interest**
+   - Video: [GCSE Maths - How to Calculate Simple Interest (2026/27 exams)](https://www.youtube.com/watch?v=fqDOKz2m5rY) by Cognito (ID `fqDOKz2m5rY`)
+   - Why it fits: Shows how to calculate simple interest step by step.
+   - Caveat: Made for UK GCSE, so it uses pounds rather than rupees.
+   - Captions: English automatic captions only (made by YouTube, may contain errors)
+
+### Maths: The Case of the Railway Crossing
+
+Parallel lines and transversals. Case no. 314. Route: `/cases/icse-parallel-lines`
+
+1. **Parallel lines and transversals**
+   - Video: [GCSE Maths - Alternate, Corresponding and Allied Angles - Parallel Lines Angle Rules (2026/27 exams)](https://www.youtube.com/watch?v=I5auyoXYoX0) by Cognito (ID `I5auyoXYoX0`)
+   - Why it fits: Explains alternate, corresponding and allied (co-interior) angles.
+   - Caveat: Made for UK GCSE revision.
+   - Captions: English automatic captions only (made by YouTube, may contain errors)
+
+### History: The Case of the Tall Tower
+
+The Delhi Sultanate. Case no. 315. Route: `/cases/icse-delhi-sultanate`
+
+1. **The Delhi Sultanate**
+   - Video: [The Complete Story of the Delhi Sultanate](https://www.youtube.com/watch?v=8ZrsQNpHnVY) by Gaurav Thakur (ID `8ZrsQNpHnVY`)
+   - Why it fits: Tells the story of the Delhi Sultanate from its founding to its end.
+   - Caveat: A 16-minute overview. Watch in sections.
+   - Captions: English automatic captions only (made by YouTube, may contain errors)
+
+### History: The Case of the Emperor’s Hall
+
+The Mughal Empire under Akbar. Case no. 316. Route: `/cases/icse-mughals`
+
+1. **The Mughal Empire under Akbar**
+   - Video: [The rise and fall of the Mughal Empire - Stephanie Honchell Smith](https://www.youtube.com/watch?v=fMsmCxIEQr4) by TED-Ed (ID `fMsmCxIEQr4`)
+   - Why it fits: Explains the rise of the Mughal Empire, including Akbar’s rule.
+   - Caveat: Covers the whole empire, not only Akbar.
+   - Captions: English captions added by the creator
+
+### Geography: The Case of the Cracked Boulder
+
+Weathering and soil formation. Case no. 317. Route: `/cases/icse-weathering`
+
+1. **Weathering and soil formation**
+   - Video: [Physical and Chemical Weathering of Rocks](https://www.youtube.com/watch?v=skB_A2sfBcY) by MooMooMath and Science (ID `skB_A2sfBcY`)
+   - Why it fits: Compares physical and chemical weathering of rocks.
+   - Caveat: Biological weathering and soil formation are in the lesson text.
+   - Captions: English automatic captions only (made by YouTube, may contain errors)
+
+### Geography: The Case of the Thin Air
+
+Layers of the atmosphere. Case no. 318. Route: `/cases/icse-atmosphere`
+
+1. **Layers of the atmosphere**
+   - Video: [Layers of the Atmosphere | What is Atmosphere | Animation](https://www.youtube.com/watch?v=y9mbrAVRPSU) by VectorGlobe - Know the World (ID `y9mbrAVRPSU`)
+   - Why it fits: An animation of the layers of the atmosphere and their features.
+   - Captions: English captions added by the creator
+
+## ICSE, Grade 8
+
+### Science: The Case of the Backwards Sign
+
+Reflection of light. Case no. 321. Route: `/cases/icse-reflection`
+
+1. **Reflection of light**
+   - Video: [Law of Reflection](https://www.youtube.com/watch?v=V0Z_nk5JS_E) by Science Sauce (ID `V0Z_nk5JS_E`)
+   - Why it fits: Explains the law of reflection with ray diagrams.
+   - Captions: English automatic captions only (made by YouTube, may contain errors)
+
+### Science: The Case of the Purple Cabbage
+
+Acids, bases and indicators. Case no. 322. Route: `/cases/icse-acids-bases`
+
+1. **Acids, bases and indicators**
+   - Video: [Acids and Bases for Kids | Learn the difference between an acid and a base](https://www.youtube.com/watch?v=ivRczDkilAI) by Learn Bright (ID `ivRczDkilAI`)
+   - Why it fits: Explains acids, bases and the pH scale with everyday examples.
+   - Captions: English automatic captions only (made by YouTube, may contain errors)
+
+### Maths: The Case of the Doubling Rice
+
+Exponents and their laws. Case no. 323. Route: `/cases/icse-exponents`
+
+1. **Exponents and their laws**
+   - Video: [Algebra Basics: Laws Of Exponents - Math Antics](https://www.youtube.com/watch?v=LkhPRz7Hocg) by mathantics (ID `LkhPRz7Hocg`)
+   - Why it fits: Explains the laws of exponents step by step.
+   - Captions: English captions added by the creator
+
+### Maths: The Case of the Sale Signs
+
+Profit, loss and discount. Case no. 324. Route: `/cases/icse-profit-loss`
+
+1. **Profit, loss and discount**
+   - Video: [Profit and Loss | Mathematics Grade 5 | Periwinkle](https://www.youtube.com/watch?v=tHF2bXCQ3y4) by Periwinkle (ID `tHF2bXCQ3y4`)
+   - Why it fits: Introduces profit and loss with simple shop examples.
+   - Caveat: Made for younger students. Discount is covered in the lesson text.
+   - Captions: No English captions on YouTube
+
+### History: The Case of the Greased Cartridge
+
+The Revolt of 1857. Case no. 325. Route: `/cases/icse-revolt-1857`
+
+1. **The Revolt of 1857**
+   - Video: [The Revolt of 1857 Explained | India's First War of Independence | Animated History for UPSC](https://www.youtube.com/watch?v=A4dRbFAf7VI) by IAS EXPRESS (ID `A4dRbFAf7VI`)
+   - Why it fits: An animated summary of the causes and events of the 1857 revolt.
+   - Caveat: From an exam-preparation channel.
+   - Captions: English automatic captions only (made by YouTube, may contain errors)
+
+### History: The Case of the Reformer’s Pen
+
+Social reform in 19th-century India. Case no. 326. Route: `/cases/icse-social-reform`
+
+1. **Social reform in 19th-century India**
+   - Video: [Raja Ram Mohan Roy | Socio Religious Reform Movements in India UPSC](https://www.youtube.com/watch?v=ePwIkd8DXB8) by Bookstawa (ID `ePwIkd8DXB8`)
+   - Why it fits: Explains Raja Ram Mohan Roy and the socio-religious reform movements.
+   - Caveat: From an exam-preparation channel, so the pace is quick.
+   - Captions: No English captions on YouTube
+
+### Geography: The Case of the Wiggly Lines
+
+Contours and relief on maps. Case no. 327. Route: `/cases/icse-contours`
+
+1. **Contours and relief on maps**
+   - Video: [Understanding contour lines with Steve Backshall and Ordnance Survey](https://www.youtube.com/watch?v=4i_6eToM3X8) by Ordnance Survey (ID `4i_6eToM3X8`)
+   - Why it fits: A short explanation of contour lines from a national mapping agency.
+   - Caveat: Uses a British map as the example.
+   - Captions: English captions added by the creator
+
+### Geography: The Case of the Early Warning
+
+Natural disasters and their management. Case no. 328. Route: `/cases/icse-disasters`
+
+1. **Natural disasters and their management**
+   - Video: [Disaster Management | Earthquakes | Cyclones | Landslides | Environmental Studies | EVS](https://www.youtube.com/watch?v=tuV-K6lKQm0) by Microbiology with Deepthi Varier (ID `tuV-K6lKQm0`)
+   - Why it fits: Covers earthquakes, cyclones and landslides and how to manage them.
+   - Caveat: From a small channel.
+   - Captions: English automatic captions only (made by YouTube, may contain errors)
+
+## ICSE, Grade 9
+
+### Science: The Case of the Floating Ship
+
+Upthrust and Archimedes’ principle. Case no. 331. Route: `/cases/icse-upthrust`
+
+1. **Upthrust and Archimedes’ principle**
+   - Video: [Fluids, Buoyancy, and Archimedes' Principle](https://www.youtube.com/watch?v=16HDJNoXQII) by Professor Dave Explains (ID `16HDJNoXQII`)
+   - Why it fits: Explains buoyancy and Archimedes’ principle clearly.
+   - Captions: English captions added by the creator
+
+### Science: The Case of the Bursting Balloon
+
+Boyle’s law and Charles’s law. Case no. 332. Route: `/cases/icse-gas-laws`
+
+1. **Boyle’s law and Charles’s law**
+   - Video: [The ABC's of gas: Avogadro, Boyle, Charles - Brian Bennett](https://www.youtube.com/watch?v=BY9VGS2eXas) by TED-Ed (ID `BY9VGS2eXas`)
+   - Why it fits: Explains the gas laws of Boyle and Charles with animations.
+   - Caveat: Also mentions Avogadro’s law, which is beyond this lesson.
+   - Captions: English captions added by the creator
+
+### Maths: The Case of the Growing Savings
+
+Compound interest. Case no. 333. Route: `/cases/icse-compound-interest`
+
+1. **Compound interest**
+   - Video: [What Is Compound Interest? | Investopedia](https://www.youtube.com/watch?v=wf91rEGw88Q) by Investopedia (ID `wf91rEGw88Q`)
+   - Why it fits: A short explanation of how compound interest works.
+   - Caveat: From a finance website, so it uses investing examples.
+   - Captions: English automatic captions only (made by YouTube, may contain errors)
+
+### Maths: The Case of the Hidden Power
+
+Logarithms. Case no. 334. Route: `/cases/icse-logarithms`
+
+1. **Logarithms**
+   - Video: [Logarithms, Explained - Steve Kelly](https://www.youtube.com/watch?v=zzu2POfYv0Y) by TED-Ed (ID `zzu2POfYv0Y`)
+   - Why it fits: Explains what a logarithm is and why it is useful.
+   - Captions: English captions added by the creator
+
+### History: The Case of the Emperor’s Edicts
+
+The Mauryan Empire and Ashoka. Case no. 335. Route: `/cases/icse-mauryan-empire`
+
+1. **The Mauryan Empire and Ashoka**
+   - Video: [Ashoka the Great - Rise of the Mauryan Empire Documentary](https://www.youtube.com/watch?v=Ed6UZtVTI64) by Kings and Generals (ID `Ed6UZtVTI64`)
+   - Why it fits: Tells the story of the Mauryan Empire and Ashoka.
+   - Caveat: An 18-minute documentary with animated battle scenes. Preview it first.
+   - Captions: English captions added by the creator
+
+### History: The Case of the Opening Words
+
+The Indian Constitution: Preamble and Fundamental Rights. Case no. 336. Route: `/cases/icse-constitution`
+
+1. **The Preamble and Fundamental Rights**
+   - Video: [The Preamble And Our Constitution | Class 7 - Civics | Learn With BYJU'S](https://www.youtube.com/watch?v=eGCc7KFiueU) by BYJU'S (ID `eGCc7KFiueU`)
+   - Why it fits: Explains the Preamble and the ideas in the Constitution.
+   - Caveat: Made for a younger class, so the lesson text goes further.
+   - Captions: English automatic captions only (made by YouTube, may contain errors)
+
+### Geography: The Case of the Longest Day
+
+Rotation and revolution of the Earth. Case no. 337. Route: `/cases/icse-rotation-revolution`
+
+1. **Rotation and revolution of the Earth**
+   - Video: [Earth's Rotation & Revolution: Crash Course Kids 8.1](https://www.youtube.com/watch?v=l64YwNl1wr0) by Crash Course Kids (ID `l64YwNl1wr0`)
+   - Why it fits: Explains the Earth’s rotation and revolution and what they cause.
+   - Captions: English captions added by the creator
+
+### Geography: The Case of the Trade Winds
+
+Pressure belts and planetary winds. Case no. 338. Route: `/cases/icse-pressure-winds`
+
+1. **Pressure belts and planetary winds**
+   - Video: [Global Pressures and Wind Belts](https://www.youtube.com/watch?v=oZ6exQoU_CM) by Earth Explained (ID `oZ6exQoU_CM`)
+   - Why it fits: Explains the global pressure belts and wind belts.
+   - Captions: English automatic captions only (made by YouTube, may contain errors)
+
+## ICSE, Grade 10
+
+### Science: The Case of the Copper-Coated Key
+
+Electrolysis. Case no. 341. Route: `/cases/icse-electrolysis`
+
+1. **Electrolysis**
+   - Video: [What Is Electrolysis | Reactions | Chemistry | FuseSchool](https://www.youtube.com/watch?v=7uIIq_Ofzgw) by FuseSchool - Global Education (ID `7uIIq_Ofzgw`)
+   - Why it fits: Explains what electrolysis is and what happens at each electrode.
+   - Captions: English captions added by the creator
+
+### Science: The Case of the Fogged Photographic Plate
+
+Radioactivity. Case no. 342. Route: `/cases/icse-radioactivity`
+
+1. **Radioactivity**
+   - Video: [Nuclear Radiation Explained | Alpha, Beta & Gamma | GCSE Physics](https://www.youtube.com/watch?v=dvhqzQ-K7K8) by Science Workshop (ID `dvhqzQ-K7K8`)
+   - Why it fits: Compares alpha, beta and gamma radiation.
+   - Caveat: Made for UK GCSE.
+   - Captions: English automatic captions only (made by YouTube, may contain errors)
+
+### Maths: The Case of the Shop Ledger
+
+Matrices. Case no. 343. Route: `/cases/icse-matrices`
+
+1. **Matrices**
+   - Video: [Intro to Matrices](https://www.youtube.com/watch?v=yRwQ7A6jVLk) by The Organic Chemistry Tutor (ID `yRwQ7A6jVLk`)
+   - Why it fits: Introduces matrices, their order and basic operations.
+   - Captions: English automatic captions only (made by YouTube, may contain errors)
+
+### Maths: The Case of the Meeting Point
+
+Section and mid-point formula. Case no. 344. Route: `/cases/icse-section-formula`
+
+1. **Section and mid-point formula**
+   - Video: [Section Formula | Coordinate Geometry | TG Grade 10 | Math | Khan Academy](https://www.youtube.com/watch?v=XOLry3IRNyE) by Khan Academy India - English (ID `XOLry3IRNyE`)
+   - Why it fits: Derives and uses the section formula with examples.
+   - Captions: English automatic captions only (made by YouTube, may contain errors)
+
+### History: The Case of the Two Houses
+
+The Union Parliament. Case no. 345. Route: `/cases/icse-parliament`
+
+1. **The Union Parliament**
+   - Video: [The Houses Of The Indian Parliament | Class 8 - Civics | Learn With BYJU'S](https://www.youtube.com/watch?v=L3CuZWuZUPs) by BYJU'S (ID `L3CuZWuZUPs`)
+   - Why it fits: Explains the two houses of the Indian Parliament.
+   - Caveat: Made for a younger class, so the lesson text goes further.
+   - Captions: English automatic captions only (made by YouTube, may contain errors)
+
+### History: The Case of the Blue Helmets
+
+The United Nations. Case no. 346. Route: `/cases/icse-united-nations`
+
+1. **The United Nations**
+   - Video: [How 193 Countries Work Together | United Nations](https://www.youtube.com/watch?v=Ttoad811t88) by United Nations (ID `Ttoad811t88`)
+   - Why it fits: The UN’s own short explanation of how its members work together.
+   - Caveat: Made by the United Nations itself.
+   - Captions: English captions added by the creator
+
+### Geography: The Case of the Bursting Rains
+
+The climate of India: the monsoon. Case no. 347. Route: `/cases/icse-monsoon`
+
+1. **The climate of India: the monsoon**
+   - Video: [Indian Monsoon Explained - Through Animation | Key Insights for UPSC Aspirants | UPSC 2025](https://www.youtube.com/watch?v=DuX133AeeyY) by PW OnlyIAS English (ID `DuX133AeeyY`)
+   - Why it fits: An animated explanation of how the Indian monsoon works.
+   - Caveat: From an exam-preparation channel.
+   - Captions: English automatic captions only (made by YouTube, may contain errors)
+
+### Geography: The Case of the Black Cotton Fields
+
+Soils of India. Case no. 348. Route: `/cases/icse-soils-india`
+
+1. **Soils of India**
+   - Video: [Indian Soil Types Explained | Alluvial, Black, Red, Laterite & Desert Soils](https://www.youtube.com/watch?v=S6eoUXq27dU) by GM Tara Education  (ID `S6eoUXq27dU`)
+   - Why it fits: Explains alluvial, black, red, laterite and desert soils.
    - Captions: English automatic captions only (made by YouTube, may contain errors)

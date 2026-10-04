@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/Button";
 import { PlayIcon } from "@/components/ui/Icons";
 import { RedThread } from "@/components/ui/RedThread";
 import { VideoCard } from "@/components/videos/VideoCard";
-import { getStudentGrade } from "@/lib/access-server";
+import { getStudentAccess } from "@/lib/access-server";
 import { listPublished } from "@/lib/cms/videos";
-import { videosForGrade } from "@/lib/video-access";
+import { videosForStudent } from "@/lib/video-access";
 import type { VideoEntry } from "@/lib/cms/types";
 import { copy } from "@/lib/copy";
 import { getSubject, getSubjects, isSubjectId } from "@/lib/structure";
@@ -36,16 +36,16 @@ export default async function VideosPage(props: PageProps<"/videos">) {
   const sp = await props.searchParams;
   const subjectParam = first(sp.subject);
   const subject = subjectParam && isSubjectId(subjectParam) ? subjectParam : undefined;
-  const grade = await getStudentGrade();
-  // Only chapters open to the student's grade appear as filters, so a higher chapter id in the address shows nothing
-  const entry = subject ? getSubject(subject, grade) : undefined;
+  const { grade, board } = await getStudentAccess();
+  // Only chapters open to the student's grade and board appear as filters, so any other chapter id in the address shows nothing
+  const entry = subject ? getSubject(subject, grade, board) : undefined;
   const chapterParam = first(sp.chapter);
   const chapter = entry?.chapters.find((c) => c.id === chapterParam)?.id;
 
   let videos: VideoEntry[] = [];
   let failed = false;
   try {
-    videos = videosForGrade(await listPublished({ subject, caseId: chapter }), grade);
+    videos = videosForStudent(await listPublished({ subject, caseId: chapter }), grade, board);
   } catch {
     failed = true;
   }
@@ -66,7 +66,7 @@ export default async function VideosPage(props: PageProps<"/videos">) {
           <Link href={href()} aria-current={!subject ? "true" : undefined} className={chip(!subject)}>
             {t.all}
           </Link>
-          {getSubjects(grade).map((s) => (
+          {getSubjects(grade, board).map((s) => (
             <Link key={s.id} href={href(s.id)} aria-current={subject === s.id ? "true" : undefined} className={chip(subject === s.id)}>
               {s.label}
             </Link>

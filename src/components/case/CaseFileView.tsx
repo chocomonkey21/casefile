@@ -24,7 +24,7 @@ import {
   warrantState,
 } from "@/lib/progress";
 import { useCaseFile } from "@/lib/store";
-import { useStudentGrade } from "@/lib/use-access";
+import { useStudentBoard, useStudentGrade } from "@/lib/use-access";
 import { chapterCrumbs, chapterNeighbours, isChapter } from "@/lib/structure";
 import type { CaseTab } from "@/lib/case-tabs";
 import type { CaseDef } from "@/lib/types";
@@ -39,6 +39,7 @@ const t = copy.caseFile;
 export function CaseFileView({ caseDef, initialTab }: { caseDef: CaseDef; initialTab: CaseTab }) {
   const state = useCaseFile();
   const studentGrade = useStudentGrade();
+  const studentBoard = useStudentBoard();
   const [tab, setTab] = useState<CaseTab>(initialTab);
   const idBase = useId();
 
@@ -49,7 +50,7 @@ export function CaseFileView({ caseDef, initialTab }: { caseDef: CaseDef; initia
   const subject = SUBJECTS[caseDef.subject];
   const notes = state.notes.filter((n) => n.caseId === caseDef.id);
   // Previous and next chapter links skip chapters above the student's grade
-  const { prev: prevChapter, next: nextChapter } = chapterNeighbours(caseDef, studentGrade);
+  const { prev: prevChapter, next: nextChapter } = chapterNeighbours(caseDef, studentGrade, studentBoard);
 
   const tabs: TabItem[] = [
     { id: "brief", label: t.tabs.brief },

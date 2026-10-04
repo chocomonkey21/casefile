@@ -18,6 +18,8 @@ import {
 } from "@/lib/progress";
 import { useCaseFile, useHydrated } from "@/lib/store";
 import { useAllowedCases } from "@/lib/use-access";
+import { StudentDrawer } from "@/components/drawer/StudentDrawer";
+import { TeacherDesk } from "@/components/teach/TeacherDesk";
 
 /**
  * The Desk: where the student lands. Laid out like a real desk rather than a grid of equal cards:
@@ -32,6 +34,8 @@ export function DeskView() {
 
   // Saved progress is only known in the browser. Show a placeholder so the page does not flash "empty".
   if (!hydrated) return <DeskSkeleton />;
+  // A signed-in teacher gets the teacher Desk: their classes and the Drawer they manage
+  if (state.teacher) return <TeacherDesk />;
 
   const t = copy.desk;
   const { profile } = state;
@@ -172,6 +176,9 @@ export function DeskView() {
           </section>
         </div>
       </div>
+
+      {/* The Drawer: materials and deadlines from the student's teachers (classes joined with a code) */}
+      <StudentDrawer codes={profile?.classCodes ?? []} />
 
       {/* ── Folders ── */}
       <section aria-labelledby="active-heading" className="mt-20">

@@ -12,7 +12,9 @@ const t = copy.landing;
  * Before the saved profile loads, everyone sees the "get started" version, which matches the server render.
  */
 export function HeroActions() {
-  const { profile } = useCaseFile();
+  const { profile: student, teacher } = useCaseFile();
+  // A signed-in teacher also goes straight to the Desk
+  const profile = student ?? teacher;
   return (
     <div className="flex flex-wrap gap-4">
       {profile ? (
@@ -38,7 +40,9 @@ export function HeroActions() {
  * Before the saved profile loads, everyone sees "Get started", which matches the server render.
  */
 export function HeaderNav() {
-  const { profile } = useCaseFile();
+  const { profile: student, teacher } = useCaseFile();
+  // A signed-in teacher also goes straight to the Desk
+  const profile = student ?? teacher;
   return (
     <nav aria-label={copy.nav.main} className="flex items-center gap-1">
       {profile ? (
@@ -55,7 +59,9 @@ export function HeaderNav() {
 }
 
 export function FinalAction() {
-  const { profile } = useCaseFile();
+  const { profile: student, teacher } = useCaseFile();
+  // A signed-in teacher also goes straight to the Desk
+  const profile = student ?? teacher;
   return profile ? (
     <Button href="/desk" size="lg">
       {t.finalCtaDesk}

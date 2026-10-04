@@ -580,6 +580,7 @@ export const copy = {
     intro: "This is what you told us when you set up your profile. It is saved on this device only.",
     name: "Name",
     avatar: "Avatar",
+    board: "Board",
     grade: "Grade",
     gradeValue: (n: number) => `Grade ${n}`,
     interests: "Interests",
@@ -619,11 +620,17 @@ export const copy = {
       picked: (n: number) => `${n} picked.`,
     },
     grade: {
-      heading: "Which grade are you in?",
-      text: "This helps us choose the right level.",
+      heading: "Your board and grade",
+      text: "These decide which chapters you see: your board’s chapters, for your grade and the grades below it.",
       legend: "Your grade",
       word: "Grade",
       error: "Pick your grade so we can choose the right level.",
+    },
+    board: {
+      legend: "Your board",
+      help: "The exam board your school follows.",
+      names: { cbse: "Central Board of Secondary Education", icse: "Indian Certificate of Secondary Education" },
+      error: "Pick your board so we can show the right chapters.",
     },
     first: {
       heading: (name: string) => `Welcome, ${name}`,
@@ -763,7 +770,7 @@ export const copy = {
       items: [
         {
           title: "No account or email",
-          text: "Setting up asks for a first name or nickname, an avatar, interests and a grade. That is all.",
+          text: "Setting up asks for a first name or nickname, a portrait, interests, a board and a grade. That is all.",
         },
         {
           title: "Saved on this device",
@@ -805,7 +812,10 @@ export const copy = {
     note: "Suggested grade level",
     goalsHeading: "What you will learn",
     /** Shown on chapter lists so students know why higher grades are missing */
-    showing: (grade: number) => (grade === 6 ? "Showing Grade 6 chapters, your grade." : `Showing Grades 6 to ${grade}: your grade and the ones below it.`),
+    showing: (grade: number, board: "cbse" | "icse") => {
+      const b = board === "cbse" ? "CBSE" : "ICSE";
+      return grade === 6 ? `Showing ${b} Grade 6 chapters, your board and grade.` : `Showing ${b} Grades 6 to ${grade}: your board, your grade and the grades below it.`;
+    },
   },
 
   /** A direct link to a chapter or video above the student's grade */
@@ -817,7 +827,10 @@ export const copy = {
       contentGrade && studentGrade
         ? `This is Grade ${contentGrade} material. Your profile is set to Grade ${studentGrade}, so you can open Grade ${studentGrade === 6 ? "6" : `6 to ${studentGrade}`} chapters and videos.`
         : "This material is not open for the grade on your profile.",
-    changeGrade: "Picked the wrong grade? Log out from the profile menu and set up your profile again.",
+    boardTitle: "This file belongs to another board",
+    boardText: (contentBoard: string, studentBoard: string) =>
+      `This chapter is written for ${contentBoard}. Your profile is set to ${studentBoard}, so you see the ${studentBoard} chapters instead.`,
+    changeGrade: "Picked the wrong grade or board? Log out from the profile menu and set up your profile again.",
     toCases: "Back to your cases",
     toSubjects: "Browse subjects",
   },
@@ -917,13 +930,13 @@ export const copy = {
         id: "privacy",
         heading: "Privacy and safety",
         facts: [
-          "Setting up a profile asks for a first name or nickname, an avatar, interests and a grade (6 to 10). It does not ask for an email address, a surname or a password.",
-          "A learner’s profile, notes and progress are saved in the browser on the device they use. The app does not send them to a server.",
+          "Setting up a profile asks for a first name or nickname, a portrait, interests, a board (CBSE or ICSE) and a grade (6 to 10). It does not ask for an email address, a surname or a password.",
+          "A learner’s profile, notes and progress are saved in the browser on the device they use. Only the grade and board are sent to the server, in cookies, to choose which chapters to show.",
           "Because they are stored in that browser, clearing the browser’s site data removes them, and they do not follow the learner to another device.",
           "There is no chat, messaging or public profile between learners.",
           "Videos play inside CaseFile, but they come from the video’s own host, such as YouTube or Vimeo. Nothing is loaded from that host until a learner presses Play. After that, the host may collect data under its own privacy policy.",
         ],
-        pendingNote: "A full privacy policy and any safeguarding contact have not been published yet. They will be linked here.",
+        pendingNote: "The full privacy policy is at /privacy. A safeguarding contact has not been published yet.",
       },
       content: {
         id: "content",
@@ -960,5 +973,212 @@ export const copy = {
     reviewText: "This case is a preview, so there are no questions to revisit yet.",
     roomTitle: "Interrogation Room",
     roomText: "This case is a preview, so the questions are not written yet.",
+  },
+
+  /** Choosing student or teacher on the sign-up page */
+  role: {
+    legend: "I am a",
+    student: "Student",
+    teacher: "Teacher",
+  },
+
+  /** Teacher sign-up, sign-in and the teacher Desk */
+  teach: {
+    eyebrow: "For teachers",
+    title: "Teacher sign-in",
+    intro: "Teachers can browse every chapter for their board and use the Drawer to share files, links, notes and deadlines with a class.",
+    tabs: { signUp: "Create an account", signIn: "Sign in" },
+    name: "Your name, as students will see it",
+    username: "Username",
+    usernameHelp: "3 to 30 characters: lower-case letters, numbers, dots, dashes or underscores.",
+    password: "Password",
+    passwordHelp: "At least 10 characters.",
+    board: "Your board",
+    create: "Create teacher account",
+    signIn: "Sign in",
+    working: "Please wait…",
+    errors: {
+      name: "Enter your name.",
+      username: "Choose a username of 3 to 30 characters: lower-case letters, numbers, dots, dashes or underscores.",
+      password: "Use a password of at least 10 characters.",
+      board: "Choose your board.",
+      taken: "That username is already taken. Try another.",
+      wrong: "That username and password do not match.",
+      "too-many": "Too many attempts. Wait a few minutes and try again.",
+      "no-secret": "Teacher accounts are not switched on for this site yet.",
+      "no-storage": "Teacher accounts need storage that is not set up on this site yet.",
+      network: "Could not reach the server. Check your connection and try again.",
+      generic: "Something went wrong. Try again.",
+    } as Record<string, string>,
+    privacy: "We store your name, username, board, a scrambled (hashed) version of your password, your classes and anything you upload.",
+    welcome: (name: string) => `Welcome, ${name}`,
+    roleLine: (board: string) => `Teacher · ${board}`,
+    signOut: "Sign out",
+    menuLabel: (name: string) => `Teacher menu for ${name}`,
+    browse: "Browse the library",
+    deleteAccount: "Delete my teacher account",
+    deleteAccountTitle: "Delete your teacher account?",
+    deleteAccountText: "Your account, all your classes and everything in their Drawers, including files, will be deleted for good. Students will no longer see them.",
+    deleteAccountConfirm: "Delete account",
+  },
+
+  /** The Drawer: teachers share materials with a class; students see them on their Desk */
+  drawer: {
+    title: "The Drawer",
+    teacherIntro: "Make a class, share its code with your students, then put files, links, notes and deadlines in its Drawer.",
+    studentIntro: "Files, links and deadlines from your teachers. Ask your teacher for your class code.",
+    loading: "Opening the Drawer…",
+    error: "The Drawer could not be loaded.",
+    retry: "Try again",
+    unavailable: "The Drawer is not switched on for this site yet.",
+    classes: "Your classes",
+    noClasses: "No classes yet. Make one below.",
+    pickClass: "Choose a class to open its Drawer.",
+    newClass: "Make a class",
+    className: "Class name",
+    classNamePlaceholder: "For example, 8B Science",
+    classGrade: "Grade",
+    createClass: "Make class",
+    code: "Class code",
+    codeHelp: "Students type this on their Desk to join.",
+    copyCode: "Copy code",
+    copied: "Copied",
+    items: (n: number) => (n === 1 ? "1 item" : `${n} items`),
+    open: "Open",
+    deleteClass: "Delete class",
+    deleteClassTitle: "Delete this class?",
+    deleteClassText: "Everything in its Drawer, including files, will be deleted. Students will no longer see it.",
+    cancel: "Cancel",
+    confirmDelete: "Delete",
+    addItem: "Add to the Drawer",
+    itemTitle: "Title",
+    itemTitlePlaceholder: "For example, Chapter 3 worksheet",
+    message: "Message (optional)",
+    link: "Link (optional)",
+    dueDate: "Due date (optional)",
+    file: "File (optional)",
+    fileHelp: "PDF, PNG, JPG, Word (.docx), PowerPoint (.pptx) or text, up to 4 MB.",
+    add: "Add to Drawer",
+    added: "Added to the Drawer.",
+    empty: "Nothing in this Drawer yet.",
+    remove: "Remove",
+    due: (date: string) => `Due ${date}`,
+    overdue: "Past due",
+    dueSoon: "Due soon",
+    download: (name: string) => `Open ${name}`,
+    visit: "Open link",
+    itemErrors: {
+      title: "Give the item a title.",
+      link: "That link does not look right. It must start with https:// or http://.",
+      dueDate: "Choose a valid date.",
+      "too-big": "That file is bigger than 4 MB.",
+      "bad-type": "That file type is not allowed. Use PDF, PNG, JPG, DOCX, PPTX or TXT.",
+      "drawer-full": "This Drawer is full (100 items). Remove some first.",
+      generic: "Could not add that. Try again.",
+    } as Record<string, string>,
+    join: "Join a class",
+    joinLabel: "Class code",
+    joinPlaceholder: "8 letters and numbers",
+    joinButton: "Join",
+    joinChecking: "Checking…",
+    joinBad: "That code is not 8 letters and numbers.",
+    joinNotFound: "No class has that code. Check it with your teacher.",
+    joinTooMany: "Too many tries. Wait a few minutes.",
+    joined: (name: string) => `You joined ${name}.`,
+    leave: "Leave class",
+    fromTeacher: (teacher: string, grade: number) => `${teacher} · Grade ${grade}`,
+    missingClass: "This class no longer exists.",
+    studentEmpty: "Join a class with the code your teacher gives you.",
+    noItems: "Your teacher has not added anything yet.",
+  },
+
+  /** The privacy policy (/privacy). Each point describes what the code actually does; see the source files named in comments. */
+  privacy: {
+    meta: "Privacy policy",
+    linkLabel: "Read the privacy policy",
+    label: "Privacy",
+    title: "Privacy policy",
+    updated: "Last updated: 4 October 2026",
+    intro:
+      "CaseFile is a learning website for students aged 11 to 15, with tools for their teachers. This policy explains what information CaseFile keeps, where it is kept, who can see it and how to remove it. We have tried to keep it short and plain.",
+    contactPending:
+      "The name and contact address of the organisation running this website have not been added yet. Until they are, questions about privacy should go to the school or teacher who asked you to use CaseFile.",
+    sections: [
+      {
+        id: "students",
+        heading: "Students",
+        points: [
+          "To set up a profile, a student gives a first name or nickname, picks a portrait, may pick some interests, and chooses a board (CBSE or ICSE) and a grade (6 to 10). We do not ask students for an email address, a surname, a password, a phone number or a photo.",
+          "The profile, progress, notes, evidence board and settings are saved in the browser on the device the student uses (in its local storage). They are not sent to our servers, and they do not follow the student to another device.",
+          "Two small cookies hold the student’s grade and board, so the website can show only the chapters for that board and grade. They are sent to our server with each page request for that purpose only.",
+          "If a student joins a teacher’s class, the class code is saved on the device and sent to our server to fetch that class’s Drawer. The server does not record which student asked.",
+        ],
+      },
+      {
+        id: "teachers",
+        heading: "Teachers",
+        points: [
+          "A teacher account stores the teacher’s name (as students will see it), a username, their board, and a scrambled version of their password (a salted scrypt hash). The password itself is never stored.",
+          "We also store the classes a teacher creates (name, grade and a random code) and everything they add to a class Drawer: titles, messages, links, due dates and uploaded files.",
+          "Signing in sets a session cookie that keeps the teacher signed in for up to 7 days. It cannot be read by scripts on the page and cannot be changed without our server’s secret key.",
+          "Anyone who has a class code can see that class’s Drawer. Teachers should share codes only with their own students, and should not upload personal information about students, such as marks, reports or photos.",
+        ],
+      },
+      {
+        id: "cookies",
+        heading: "Cookies and similar storage",
+        points: [
+          "casefile_grade and casefile_board: the grade and board that decide which chapters are shown. They last a year for students (7 days for teachers) and are removed when you log out.",
+          "cf_teacher: keeps a teacher signed in, for up to 7 days.",
+          "cf_editor: keeps a content editor signed in to the editor desk, for up to 8 hours. Only editors have it.",
+          "Local storage in the browser holds the student profile and progress described above.",
+          "CaseFile has no advertising, no analytics or tracking scripts, and no social-media buttons. Fonts are served from this website, not from another company.",
+        ],
+      },
+      {
+        id: "others",
+        heading: "Other companies involved",
+        points: [
+          "Hosting: the website runs on Vercel. Like any web host, Vercel processes technical information about each request, such as IP addresses, to deliver pages and keep the service secure, under its own privacy policy.",
+          "Storage: teacher accounts, classes, Drawer items and uploaded files, and the list of extra lesson videos, are stored in a Redis database provided by Upstash.",
+          "Videos: lesson videos come from YouTube. Nothing is loaded from YouTube until someone presses Play. The player uses YouTube’s privacy-enhanced mode (youtube-nocookie.com), but once a video plays, YouTube may collect data under its own privacy policy.",
+          "Links in a Drawer may lead to other websites, which have their own privacy policies.",
+        ],
+      },
+      {
+        id: "keeping",
+        heading: "How long we keep information, and how to remove it",
+        points: [
+          "Student information stays in the browser until the student logs out from the profile menu (which clears it from that device) or clears the browser’s site data.",
+          "Teacher information stays until the teacher removes it. Teachers can remove single Drawer items, delete whole classes, or delete their account from the bottom of their Desk, which removes the account, all its classes, Drawer items and files.",
+          "Technical logs kept by the hosting provider are kept for a limited time under the provider’s own policy.",
+        ],
+      },
+      {
+        id: "security",
+        heading: "Keeping information safe",
+        points: [
+          "The website is served over HTTPS. Teacher passwords are stored only as salted hashes. Repeated failed sign-in attempts are slowed down.",
+          "Uploaded files are checked by type and size (PDF, PNG, JPG, DOCX, PPTX or text, up to 4 MB) and are served in a way that stops them running as part of this website.",
+          "No system is perfectly secure. If you think something has gone wrong, tell the school or teacher who asked you to use CaseFile.",
+        ],
+      },
+      {
+        id: "children",
+        heading: "Children",
+        points: [
+          "CaseFile is designed for students aged 11 to 15, usually as part of their schoolwork. Because student profiles stay on the student’s own device and contain no contact details, we do not hold personal accounts for students.",
+          "Schools and parents can ask a student to log out on a shared device to clear their information from it.",
+        ],
+      },
+      {
+        id: "changes",
+        heading: "Changes to this policy",
+        points: [
+          "If what CaseFile keeps or shares changes, this page will be updated and the date at the top will change.",
+        ],
+      },
+    ],
+    contactHeading: "Contact",
   },
 } as const;

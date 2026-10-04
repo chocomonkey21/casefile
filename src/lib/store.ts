@@ -1,9 +1,9 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
-import { writeGradeCookie } from "./access";
+import { DEFAULT_BOARD, writeAccessCookies } from "./access";
 import { clueKey, dayKey, yesterdayKey } from "./progress";
-import type { CaseFileState, Note, Profile, VerdictRecord } from "./types";
+import type { CaseFileState, Note, Profile, TeacherProfile, VerdictRecord } from "./types";
 
 /*
   A tiny external store backed by localStorage.
@@ -18,6 +18,7 @@ const STORAGE_KEY = "casefile:v1";
 
 const DEFAULT_STATE: CaseFileState = {
   profile: null,
+  teacher: null,
   joinedAt: null,
   explainerSeen: false,
   streak: { count: 0, lastDay: null },
@@ -116,7 +117,7 @@ export const actions = {
   setProfile(profile: Profile, now: Date = new Date()) {
     update((s) => ({ ...s, profile, joinedAt: s.joinedAt ?? now.toISOString() }));
     // The server and proxy read the grade from a cookie to decide which chapters and videos are open (see lib/access.ts)
-    writeGradeCookie(profile.grade);
+    writeAccessCookies(profile.grade, profile.board ?? DEFAULT_BOARD);
   },
 
   /** The "How CaseFile works" walkthrough was finished or skipped */
@@ -246,6 +247,25 @@ export const actions = {
    */
   logOut() {
     update((s) => ({ ...DEFAULT_STATE, reduceMotion: s.reduceMotion }));
-    writeGradeCookie(null);
+    writeAccessCookies(null, null);
+  },
+
+  /** A teacher signed in. The server has already set the session and access cookies; this is for the interface. */
+  setTeacher(teacher: TeacherProfile) {
+    update((s) => ({ ...s, teacher }));
+  },
+
+  /** The teacher signed out (the server clears its cookies) */
+  clearTeacher() {
+    update((s) => ({ ...s, teacher: null }));
+  },
+
+  /** The student joined a class, to receive its Drawer. Codes are stored on this device only. */
+  joinClass(code: string) {
+    update((s) => (s.profile && !(s.profile.classCodes ?? []).includes(code) ? { ...s, profile: { ...s.profile, classCodes: [...(s.profile.classCodes ?? []), code] } } : s));
+  },
+
+  leaveClass(code: string) {
+    update((s) => (s.profile ? { ...s, profile: { ...s.profile, classCodes: (s.profile.classCodes ?? []).filter((c) => c !== code) } } : s));
   },
 };
