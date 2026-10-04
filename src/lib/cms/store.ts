@@ -11,10 +11,12 @@ import type { StoreKind, VideoEntry } from "./types";
      read-only and resets between deployments, so this is never used there.
   3. Nothing. Learners see an empty video list and the editor desk says that saving is not set up.
 
-  All entries live under a single key, which is plenty for a school's worth of videos.
+  All entries live under a single key (a separate one for Vercel previews), which is plenty for a school's worth of videos.
 */
 
-const KEY = "casefile:videos";
+// Preview deployments share the Redis database with production on Vercel, so they get their own key.
+// Test entries made on a preview can never appear on the live site.
+const KEY = process.env.VERCEL_ENV === "preview" ? "casefile:preview:videos" : "casefile:videos";
 const FILE = path.join(process.cwd(), ".data", "videos.json");
 
 function upstashConfig(): { url: string; token: string } | null {
