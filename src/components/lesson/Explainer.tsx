@@ -13,7 +13,7 @@ type ExplainerProps = {
 };
 
 const STEP_MS = 3400;
-const SPRING = { type: "spring", stiffness: 70, damping: 18 } as const;
+const SPRING = { type: "spring", duration: 0.45, bounce: 0.15 } as const;
 
 /**
  * A short animated explainer in steps, with captions. No sound, so the captions carry everything.
@@ -142,7 +142,7 @@ function PuddleScene({ step, off }: { step: number; off: boolean }) {
       />
 
       {/* water vapour: dashed wisps, because you can't really see it */}
-      <motion.g initial={false} animate={{ opacity: PUDDLE.vapour[step] }} transition={off ? { duration: 0 } : { duration: 0.8 }}>
+      <motion.g initial={false} animate={{ opacity: PUDDLE.vapour[step] }} transition={off ? { duration: 0 } : { duration: 0.3 }}>
         {[240, 300, 360].map((x, i) => (
           <path
             key={x}
@@ -210,7 +210,7 @@ function DropScene({ step, off }: { step: number; off: boolean }) {
         strokeWidth={2}
         initial={false}
         animate={{ r: step === 0 || step === 1 ? 0 : step === 2 ? 20 : 14, cy: step === 3 ? 262 : 104, opacity: step >= 2 ? 1 : 0 }}
-        transition={off ? move : { ...SPRING, stiffness: 50 }}
+        transition={off ? move : { type: "spring", duration: 0.5, bounce: 0.15 }}
       />
       {step === 3 && (
         <>

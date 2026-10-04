@@ -47,7 +47,7 @@ export function StringConnector({ from, to, delay = 0, selected = false, onSelec
         // pathLength 0 to 1 is what makes the string draw itself. Skipped for reduced motion.
         initial={reduceMotion ? false : { pathLength: 0 }}
         animate={{ pathLength: 1 }}
-        transition={{ duration: 0.7, delay, ease: "easeOut" }}
+        transition={{ duration: 0.35, delay, ease: [0.23, 1, 0.32, 1] }}
       />
     </g>
   );

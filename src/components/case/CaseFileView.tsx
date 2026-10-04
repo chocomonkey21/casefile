@@ -68,9 +68,9 @@ export function CaseFileView({ caseDef, initialTab }: { caseDef: CaseDef; initia
       {/* The folder "unfolds" as the page arrives (flip-open from the library ends here) */}
       <div style={{ perspective: 1400 }}>
         <motion.div
-          initial={{ rotateX: -14, opacity: 0, y: 16 }}
-          animate={{ rotateX: 0, opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, ease: [0.2, 0.7, 0.2, 1] }}
+          initial={{ transform: "translateY(12px) rotateX(-10deg)", opacity: 0 }}
+          animate={{ transform: "translateY(0px) rotateX(0deg)", opacity: 1 }}
+          transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
           style={{ transformOrigin: "top center" }}
           className="tex-manila tex-worn rounded-[3px] p-4 shadow-folder sm:p-6"
         >

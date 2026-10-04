@@ -119,10 +119,11 @@ export function JoinWizard() {
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={step}
-            initial={{ opacity: 0, x: 24 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -24 }}
-            transition={{ duration: 0.18 }}
+            initial={{ opacity: 0, transform: "translateX(16px)" }}
+            animate={{ opacity: 1, transform: "translateX(0px)" }}
+            // The exit is a quick fade (no slide) so "wait" mode hands over to the next step fast.
+            exit={{ opacity: 0, transition: { duration: 0.1 } }}
+            transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
             onAnimationComplete={focusHeading}
           >
             {step === 0 && (

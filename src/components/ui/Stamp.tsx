@@ -48,10 +48,14 @@ export function Stamp({ children, tone = "red", size = "md", rotate = -6, slam =
     <motion.span
       className={`inline-block max-w-full select-none rounded-[3px] text-center font-display uppercase leading-[1.05] ${blend} ${TONES[tone]} ${SIZES[size]} ${className}`}
       style={{ rotate }}
-      initial={slam ? { scale: 2.6, opacity: 0 } : false}
-      // Comes in big, hits the paper and squashes slightly, then settles. Under reduced motion only the fade remains.
-      animate={slam ? { scale: [2.6, 0.93, 1], opacity: [0, 1, ink] } : { scale: 1, opacity: ink }}
-      transition={slam ? { duration: 0.34, times: [0, 0.62, 1], ease: ["easeIn", "easeOut"] } : { duration: 0 }}
+      initial={slam ? { scale: 1.25, opacity: 0 } : false}
+      // Comes in a little big, hits the paper and squashes slightly, then settles. Under reduced motion only the fade remains.
+      animate={slam ? { scale: [1.25, 0.97, 1], opacity: [0, 1, ink] } : { scale: 1, opacity: ink }}
+      transition={
+        slam
+          ? { duration: 0.26, times: [0, 0.55, 1], ease: [[0.23, 1, 0.32, 1], [0.23, 1, 0.32, 1]] }
+          : { duration: 0 }
+      }
     >
       {children}
     </motion.span>

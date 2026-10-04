@@ -24,6 +24,8 @@ type HintSheetProps = {
 };
 
 const NOTE_TILT = [-1.2, 0.8, -0.6];
+/** Hint notes and the full explanation both arrive with this short spring, from 12px above. */
+const ENTER = { type: "spring", duration: 0.3, bounce: 0.15 } as const;
 
 /**
  * Tiered help. Each hint is a sticky note that slides out from under the sheet above it,
@@ -48,9 +50,9 @@ export function HintSheet({ levels, revealed, onReveal, explanation, explained, 
             <motion.li
               key={level.title}
               ref={i === revealed - 1 ? newest : undefined}
-              initial={{ y: -36, opacity: 0, rotate: 0 }}
-              animate={{ y: 0, opacity: 1, rotate: NOTE_TILT[i] }}
-              transition={{ type: "spring", stiffness: 380, damping: 28 }}
+              initial={{ transform: "translateY(-12px) rotate(0deg)", opacity: 0 }}
+              animate={{ transform: `translateY(0px) rotate(${NOTE_TILT[i]}deg)`, opacity: 1 }}
+              transition={ENTER}
               className="tex-postit rounded-[2px] p-4 shadow-card"
               style={{ transformOrigin: "top center" }}
             >
@@ -65,8 +67,9 @@ export function HintSheet({ levels, revealed, onReveal, explanation, explained, 
 
       {explained && explanation && (
         <motion.div
-          initial={{ y: -24, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
+          initial={{ transform: "translateY(-12px)", opacity: 0 }}
+          animate={{ transform: "translateY(0px)", opacity: 1 }}
+          transition={ENTER}
           className="tex-paper mt-4 rounded-[3px] p-4 text-ink"
         >
           <p className="label text-coffee">{copy.hints.fullExplanation}</p>

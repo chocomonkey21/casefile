@@ -178,8 +178,9 @@ export function QuestionCard({ question, position, evidence, onDone, doneLabel, 
         <div role="status" aria-live="polite">
           {(status === "wrong" || status === "missed") && picked && (
             <motion.div
-              initial={{ opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, transform: "translateY(6px)" }}
+              animate={{ opacity: 1, transform: "translateY(0px)" }}
+              transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
               className="mt-6 flex gap-4 rounded-[3px] bg-evidence-light p-4"
             >
               <CrossIcon width={22} height={22} className="mt-0.5 shrink-0 text-evidence-dark" />
@@ -196,8 +197,9 @@ export function QuestionCard({ question, position, evidence, onDone, doneLabel, 
           )}
           {status === "correct" && (
             <motion.div
-              initial={{ opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, transform: "translateY(6px)" }}
+              animate={{ opacity: 1, transform: "translateY(0px)" }}
+              transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
               className="mt-6 flex gap-4 rounded-[3px] bg-desk-light p-4"
             >
               <CheckIcon width={22} height={22} className="mt-0.5 shrink-0 text-desk-dark" />

@@ -75,9 +75,9 @@ export function EvidenceSection({ caseId, clueId, evidence, number, total, child
           {/* The pin pops when it is collected */}
           <motion.span
             key={String(isCollected)}
-            initial={isCollected ? { scale: 1.8, rotate: -25 } : false}
-            animate={{ scale: 1, rotate: 0 }}
-            transition={{ type: "spring", stiffness: 500, damping: 18 }}
+            initial={isCollected ? { transform: "scale(1.15) rotate(-8deg)" } : false}
+            animate={{ transform: "scale(1) rotate(0deg)" }}
+            transition={{ type: "spring", duration: 0.35, bounce: 0.2 }}
             className="flex"
           >
             {isCollected ? <CheckIcon width={18} height={18} /> : <PinIcon width={18} height={18} />}

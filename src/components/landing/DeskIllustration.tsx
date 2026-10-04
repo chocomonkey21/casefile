@@ -12,9 +12,9 @@ function Drop({ delay, className, children }: { delay: number; className: string
   return (
     <motion.div
       className={`absolute ${className}`}
-      initial={{ y: -24, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ type: "spring", stiffness: 170, damping: 20, delay }}
+      initial={{ transform: "translateY(-16px)", opacity: 0 }}
+      animate={{ transform: "translateY(0px)", opacity: 1 }}
+      transition={{ type: "spring", duration: 0.4, bounce: 0.15, delay }}
     >
       {children}
     </motion.div>
@@ -51,7 +51,7 @@ export function DeskIllustration() {
       </Drop>
 
       {/* A print of the water cycle, pinned at the top edge */}
-      <Drop delay={0.2} className="right-0 top-[1%] w-[44%]">
+      <Drop delay={0.11} className="right-0 top-[1%] w-[44%]">
         <div className="tex-paper rotate-[4deg] p-2 pb-8 shadow-card">
           <Diagram id="cycle-map" alt="" />
           <p className="absolute bottom-2 left-3 font-display text-xs text-ink-soft">Fig. 5: the water cycle</p>
@@ -60,7 +60,7 @@ export function DeskIllustration() {
       </Drop>
 
       {/* Sticky note with the next lesson. The clip holds the top edge, above the text. */}
-      <Drop delay={0.35} className="bottom-[2%] right-[3%] w-[41%]">
+      <Drop delay={0.17} className="bottom-[2%] right-[3%] w-[41%]">
         <div className="tex-postit -rotate-[4deg] px-4 pb-4 pt-7 shadow-card">
           <p className="font-display text-base leading-snug">Clue 3 of 5</p>
           <p className="mt-1 text-sm leading-snug text-ink-soft">How water falls from the sky</p>
@@ -75,7 +75,7 @@ export function DeskIllustration() {
         className="pointer-events-none absolute inset-0 h-full w-full"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.55, duration: 0.4 }}
+        transition={{ delay: 0.25, duration: 0.25 }}
       >
         <path d="M468 14 C 330 40, 316 300, 410 372" fill="none" stroke="var(--color-evidence)" strokeWidth="2.2" strokeLinecap="round" />
         <path d="M468 14 C 332 42, 318 302, 410 372" fill="none" stroke="var(--color-evidence-dark)" strokeWidth="0.8" opacity="0.7" />
@@ -95,9 +95,9 @@ export function DeskIllustrationCompact() {
       role="img"
       aria-label={copy.landing.illustrationLabel}
       className="flex items-end gap-3"
-      initial={{ y: -12, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ type: "spring", stiffness: 170, damping: 20 }}
+      initial={{ transform: "translateY(-8px)", opacity: 0 }}
+      animate={{ transform: "translateY(0px)", opacity: 1 }}
+      transition={{ type: "spring", duration: 0.4, bounce: 0.15 }}
     >
       <div className="-rotate-[2deg] flex-[1.5]">
         <div className="tex-manila ml-[8%] inline-block rounded-t-[4px] bg-manila-400 px-3 pb-0.5 pt-1.5 font-display text-xs tracking-[0.2em]">

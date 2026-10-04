@@ -181,7 +181,12 @@ export function HowItWorks({ variant, onFinish, onSkip }: HowItWorksProps) {
 
   return (
     <section aria-labelledby={headingId}>
-      <motion.div key={index} initial={{ opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.18 }}>
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, transform: "translateX(16px)" }}
+        animate={{ opacity: 1, transform: "translateX(0px)" }}
+        transition={{ duration: 0.18, ease: [0.23, 1, 0.32, 1] }}
+      >
         <div
           aria-hidden="true"
           className="flex h-48 items-center justify-center overflow-hidden rounded-[3px] bg-manila-100 p-4"
@@ -222,7 +227,7 @@ export function HowItWorks({ variant, onFinish, onSkip }: HowItWorksProps) {
           <li
             key={s.id}
             aria-current={i === index ? "step" : undefined}
-            className={`h-3 rounded-full transition-all ${i === index ? "w-8 bg-espresso" : i < index ? "w-3 bg-espresso/50" : "w-3 bg-manila-600/40"}`}
+            className={`h-3 rounded-full transition-[width,background-color] duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] ${i === index ? "w-8 bg-espresso" : i < index ? "w-3 bg-espresso/50" : "w-3 bg-manila-600/40"}`}
           >
             <span className="sr-only">{copy.explainer.screen(i + 1, screens.length)}</span>
           </li>

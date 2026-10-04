@@ -387,6 +387,12 @@
   transition-duration: 0.01ms !important;
   scroll-behavior: auto !important;
 }
+/* Gentler, not none: elements that already declare a transition keep their fades and colour changes;
+   anything that moves or scales snaps. Elements without a transition stay instant. */
+.reduce-motion [class*="transition"] {
+  transition-property: opacity, color, background-color, border-color, box-shadow !important;
+  transition-duration: 150ms !important;
+}
 
 /* Respect people who ask for less motion. Motion library handles its own via MotionConfig. */
 @media (prefers-reduced-motion: reduce) {
@@ -398,4 +404,9 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+  [class*="transition"] {
+    transition-property: opacity, color, background-color, border-color, box-shadow !important;
+    transition-duration: 150ms !important;
+  }
 }
+

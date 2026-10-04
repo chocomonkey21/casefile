@@ -255,7 +255,7 @@ export function BoardCanvas({ cards, board, highlight, onConnect }: BoardCanvasP
                   key={s.id}
                   from={s.from}
                   to={s.to}
-                  delay={i * 0.12}
+                  delay={i * 0.06}
                   selected={selectedString === s.id}
                   onSelect={() => setSelectedString(selectedString === s.id ? null : s.id)}
                   label={copy.board.stringBetween(titleOf(s.a), titleOf(s.b))}

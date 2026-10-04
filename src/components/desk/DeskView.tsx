@@ -124,7 +124,7 @@ export function DeskView() {
               aria-valuemax={100}
               aria-valuenow={Math.round(level.fraction * 100)}
             >
-              <div className="h-full bg-evidence transition-[width] duration-500" style={{ width: `${Math.round(level.fraction * 100)}%` }} />
+              <div className="h-full w-full origin-left bg-evidence transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)]" style={{ transform: `scaleX(${level.fraction})` }} />
             </div>
             <p className="mt-2 text-sm text-ink-soft">
               {level.next ? copy.level.nextLevel(level.remaining, level.next.name) : copy.level.topLevel}

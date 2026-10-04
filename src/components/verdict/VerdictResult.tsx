@@ -106,8 +106,11 @@ export function VerdictResult({ caseDef, outcome, onRetry }: { caseDef: CaseDef;
       {/* The panel gives a small shake just after the stamp lands */}
       <motion.div
         className="relative overflow-hidden rounded-[3px] bg-manila p-6 text-center shadow-folder sm:p-10"
-        animate={{ x: [0, -5, 5, -3, 0], y: [0, 3, -2, 1, 0] }}
-        transition={{ delay: 0.32, duration: 0.35 }}
+        animate={{
+          transform: ["translate(0px, 0px)", "translate(-5px, 3px)", "translate(5px, -2px)", "translate(-3px, 1px)", "translate(0px, 0px)"],
+        }}
+        // Starts as the (shorter) stamp slam hits the paper
+        transition={{ delay: 0.16, duration: 0.3 }}
         role="status"
       >
         <p className="label text-ink-soft">{t.closed.caseNo(caseDef.number)}</p>

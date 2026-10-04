@@ -72,9 +72,15 @@ export function PinCard({ info, center, width, tilt, zIndex, dragging, highlight
       }`}
       style={{ left: center.x - width / 2, top: center.y - CARD_H / 2, width, height: CARD_H, rotate: tilt, zIndex }}
       // Pin drop: the card lands on the board
-      initial={{ scale: 1.25, opacity: 0, y: -18 }}
-      animate={{ scale: dragging ? 1.05 : highlighted ? [1, 1.05, 1] : 1, opacity: 1, y: 0 }}
-      transition={highlighted ? { duration: 0.9, repeat: 2 } : { type: "spring", stiffness: 420, damping: 24 }}
+      // Scale and y stay as Motion values (not a transform string) because style.rotate shares the same transform.
+      initial={{ scale: 1.06, opacity: 0, y: -8 }}
+      // Highlight is one short beat, not a repeating pulse, so dragging is never fighting it.
+      animate={{ scale: dragging ? 1.05 : highlighted && !dragging ? [1, 1.05, 1] : 1, opacity: 1, y: 0 }}
+      transition={
+        highlighted && !dragging
+          ? { duration: 0.4, ease: [0.23, 1, 0.32, 1] }
+          : { type: "spring", duration: 0.3, bounce: 0.15 }
+      }
       {...card}
     >
       {/* The pin. It is a real button, so it works with a keyboard and a screen reader. */}

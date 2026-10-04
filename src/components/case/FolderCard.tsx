@@ -24,8 +24,6 @@ type FolderCardProps = {
 
 /** Most the folder tilts towards the cursor, in degrees */
 const MAX_TILT = 6;
-/** How long the cover swings open before we move to the case page */
-const OPEN_MS = 320;
 const TILT_SPRING = { stiffness: 220, damping: 22, mass: 0.6 };
 
 /** The fixed look of one folder, seeded by its case id so the grid never looks cloned */
@@ -143,11 +141,9 @@ export function FolderCard({ caseDef, status, solved }: FolderCardProps) {
     e.preventDefault();
     if (opening) return;
     setOpening(true);
-    // A timer drives navigation, so it still happens if the animation is skipped
-    timer.current = setTimeout(() => {
-      router.push(href);
-      setTimeout(() => setOpening(false), 800);
-    }, OPEN_MS);
+    // Navigate straight away; the cover swing plays while the next page loads, so opening never waits on it
+    router.push(href);
+    timer.current = setTimeout(() => setOpening(false), 800);
   };
 
   const paperSpring = (i: number) =>
