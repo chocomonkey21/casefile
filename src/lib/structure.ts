@@ -10,7 +10,7 @@ import type { Board, CaseDef, ClueDef, Grade, SubjectId } from "@/lib/types";
 
   It is read straight from the course data, nothing is regrouped:
     Subject  = the subject field on a case (science, maths, history, geography)
-    Chapter  = a case: one topic with its own brief, lessons and final test
+    Chapter  = a case: one topic with its own overview, lessons and final test
     Lesson   = a clue
 
   The practice case belongs to sign-up, not to any subject, so it is left out of browsing.

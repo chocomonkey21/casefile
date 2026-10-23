@@ -48,7 +48,7 @@ const HEAT: ChapterSpec = {
           "You feel warm in sunshine on a cold day: radiation, travelling through space.",
           "Emergency blankets are shiny: they reflect your body’s radiation back to you.",
         ),
-        p("Detective question: why do pans often have plastic or wooden handles? (They are insulators, so the handle stays cool.)"),
+        p("Think about it: why do pans often have plastic or wooden handles? (They are insulators, so the handle stays cool.)"),
       ],
       practice: [
         { p: "Which way of heat transfer can travel through empty space?", a: "Radiation", w: [["Conduction", "Conduction needs particles touching."], ["Convection", "Convection needs a moving liquid or gas."]], x: "Infrared radiation is a wave and needs no particles." },
@@ -290,7 +290,7 @@ const GOLDEN_AGE: ChapterSpec = {
       tryIt: [
         h("Words with a history"),
         list("Algebra: from al-jabr, in al-Khwarizmi’s book title.", "Algorithm: from the name al-Khwarizmi.", "Zero: the idea travelled from India, through Arabic mathematics, to Europe."),
-        p("Detective question: why was translation so important? (It saved older works that might have been lost, and let scholars build on them.)"),
+        p("Think about it: why was translation so important? (It saved older works that might have been lost, and let scholars build on them.)"),
       ],
       practice: [
         { p: "Which city was home to the House of Wisdom?", a: "Baghdad", w: [["Rome", "Rome was the centre of the earlier Roman Empire."], ["Athens", "Athens was a centre of ancient Greek learning, centuries earlier."]], x: "The House of Wisdom was in Baghdad." },
@@ -350,7 +350,7 @@ const MALI: ChapterSpec = {
           "Al-Umari, a writer in Cairo about 12 years after the visit: describes the gold and its effect on prices.",
           "Surviving Timbuktu manuscripts: show a real tradition of scholarship.",
         ),
-        p("Detective question: why might later writers exaggerate the size of the caravan? (Stories grow as they are retold, and writers may want to impress readers.)"),
+        p("Think about it: why might later writers exaggerate the size of the caravan? (Stories grow as they are retold, and writers may want to impress readers.)"),
       ],
       practice: [
         { p: "What two goods were most important in trans-Saharan trade for Mali?", a: "Gold and salt", w: [["Silk and spices", "Those were famous on the Silk Roads."], ["Oil and coal", "These were not traded then."]], x: "Gold went north and salt came south." },

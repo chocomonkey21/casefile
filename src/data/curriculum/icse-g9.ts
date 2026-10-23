@@ -287,7 +287,7 @@ const MAURYA: ChapterSpec = {
       tryIt: [
         h("Evaluate the source"),
         list("What edicts tell us: Ashoka’s ideas, the size of his empire (from where they are found), and his regret over Kalinga.", "What to be careful about: they were written by the emperor himself, to present his rule well."),
-        p("Detective question: the Lion Capital of Sarnath appears on Indian coins today. Why might a modern nation choose a symbol from Ashoka? (It stands for peace, justice and unity.)"),
+        p("Think about it: the Lion Capital of Sarnath appears on Indian coins today. Why might a modern nation choose a symbol from Ashoka? (It stands for peace, justice and unity.)"),
       ],
       practice: [
         { p: "Who founded the Mauryan Empire?", a: "Chandragupta Maurya", w: [["Ashoka", "Ashoka was Chandragupta’s grandson."], ["Akbar", "Akbar was a Mughal emperor, much later."]], x: "He founded it around 321 BCE." },

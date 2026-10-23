@@ -44,7 +44,7 @@ const LIGHT: ChapterSpec = {
       tryIt: [
         h("Torch and toy"),
         list("Shine a torch at a toy from straight above: the shadow is small and directly under it.", "Move the torch low to one side: the shadow becomes long and points away from the torch.", "Move the torch closer to the toy: the shadow gets bigger."),
-        p("Detective question: why does a sundial work? (The Sun moves across the sky, so the shadow moves round and points to the time.)"),
+        p("Think about it: why does a sundial work? (The Sun moves across the sky, so the shadow moves round and points to the time.)"),
       ],
       practice: [
         { p: "Which object is luminous?", a: "A candle flame", w: [["The Moon", "The Moon reflects sunlight; it does not make its own light."], ["A mirror", "A mirror reflects light but does not produce it."]], x: "A flame gives out its own light." },
@@ -105,7 +105,7 @@ const LEAF: ChapterSpec = {
       tryIt: [
         h("Test a leaf for starch (with a teacher)"),
         list("Boil a leaf in water, then warm it in alcohol (in a water bath, away from flames) to remove the green colour.", "Rinse it and add iodine solution.", "A blue-black colour shows starch is present, so the leaf has been making food."),
-        p("Detective question: if part of a leaf was covered with black paper for two days, what would the iodine test show there? (No blue-black colour, because no light meant no photosynthesis.)"),
+        p("Think about it: if part of a leaf was covered with black paper for two days, what would the iodine test show there? (No blue-black colour, because no light meant no photosynthesis.)"),
       ],
       practice: [
         { p: "What gas do plants take in for photosynthesis?", a: "Carbon dioxide", w: [["Oxygen", "Oxygen is released by photosynthesis."], ["Nitrogen", "Plants do not use nitrogen gas for photosynthesis."]], x: "Carbon dioxide enters through the stomata." },
@@ -223,7 +223,7 @@ const SETS: ChapterSpec = {
       tryIt: [
         h("Write each set two ways"),
         list("Even numbers between 1 and 9: {2, 4, 6, 8}, or {x : x is an even number, 1 < x < 9}.", "Days of the week starting with T: {Tuesday, Thursday}.", "Prime numbers less than 10: {2, 3, 5, 7}."),
-        p("Detective question: the suspects with red hats are {Ali, Bea, Cy} and the people in the library are {Bea, Cy, Dev}. Who is in both? (Bea and Cy.)"),
+        p("Think about it: the suspects with red hats are {Ali, Bea, Cy} and the people in the library are {Bea, Cy, Dev}. Who is in both? (Bea and Cy.)"),
       ],
       practice: [
         { p: "Which is a well-defined set?", a: "The months with 31 days", w: [["The best footballers", "“Best” is an opinion, so it is not well-defined."], ["Large numbers", "“Large” is not exact."]], x: "Everyone agrees which months have 31 days." },
@@ -287,7 +287,7 @@ const VEDIC: ChapterSpec = {
       tryIt: [
         h("What does it tell us?"),
         list("A hymn asking for “many cows”: cattle were valued as wealth.", "A hymn praising the River Saraswati: rivers were important and sacred.", "Later texts mentioning iron ploughs: farming was changing."),
-        p("Detective question: why might the Vedas tell us more about priests and chiefs than about ordinary farmers? (They were composed and kept by priests, mainly for rituals.)"),
+        p("Think about it: why might the Vedas tell us more about priests and chiefs than about ordinary farmers? (They were composed and kept by priests, mainly for rituals.)"),
       ],
       practice: [
         { p: "What are the Vedas?", a: "Sacred texts composed in Sanskrit", w: [["Stone inscriptions by Ashoka", "Ashoka’s edicts came much later."], ["Coins from the Vedic period", "The Vedas are texts."]], x: "The Vedas are the main source for the period." },
@@ -347,7 +347,7 @@ const JAIN_BUDDHA: ChapterSpec = {
       tryIt: [
         h("Compare the teachings"),
         list("Both rejected costly animal sacrifices.", "Both taught non-violence; Jainism took it especially far, for example in avoiding harm to insects.", "Buddhism taught a Middle Path, while Jain monks practised very strict self-denial."),
-        p("Detective question: why did merchants often support these religions? (Their emphasis on peace and honest conduct suited trade, and they did not depend on expensive rituals.)"),
+        p("Think about it: why did merchants often support these religions? (Their emphasis on peace and honest conduct suited trade, and they did not depend on expensive rituals.)"),
       ],
       practice: [
         { p: "What does ahimsa mean?", a: "Non-violence towards all living beings", w: [["Prayer to Indra", "Ahimsa is about not harming living things."], ["A royal title", "It is a teaching, not a title."]], x: "Ahimsa is central to Jainism and important in Buddhism." },

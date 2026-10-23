@@ -49,7 +49,7 @@ export function TeacherAccess() {
         return;
       }
       actions.setTeacher(body.teacher);
-      router.push("/desk");
+      router.push("/home");
     } catch {
       setError(t.errors.network);
     } finally {

@@ -8,13 +8,13 @@ import {
   ClockIcon,
   DiagramIcon,
   LockIcon,
-  MagnifierIcon,
   NotebookIcon,
   PencilIcon,
   PlayIcon,
   ReadingIcon,
 } from "@/components/ui/Icons";
 import { copy } from "@/lib/copy";
+import { L } from "@/lib/labels";
 
 type HowItWorksProps = {
   /** "wizard" is the step in onboarding. "dialog" is the same walkthrough reopened from the profile menu. */
@@ -40,18 +40,6 @@ function Tile({ children, label }: { children: ReactNode; label: string }) {
   );
 }
 
-function WelcomeArt() {
-  return (
-    <div className="relative h-28 w-44">
-      <div className="absolute left-0 top-2 h-7 w-20 rounded-t-[3px] bg-manila-400" />
-      <div className="absolute inset-x-0 bottom-0 top-8 rounded-b-[3px] rounded-tr-[3px] bg-manila" />
-      <div className="absolute left-4 top-14 h-2 w-24 rounded-[2px] bg-manila-600/30" />
-      <div className="absolute left-4 top-[4.6rem] h-2 w-16 rounded-[2px] bg-manila-600/30" />
-      <MagnifierIcon width={64} height={64} className="absolute -right-4 bottom-0 text-coffee" strokeWidth={2.5} />
-    </div>
-  );
-}
-
 function CasesArt() {
   const rows = [
     { name: M.clueNames[0], state: M.clueDone, icon: <CheckIcon width={16} height={16} />, tone: "bg-desk text-paper" },
@@ -67,7 +55,7 @@ function CasesArt() {
           <li key={r.name} className="flex items-center gap-2 rounded-[3px] bg-paper px-2 py-2">
             <span className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full ${r.tone}`}>{r.icon}</span>
             <span className="min-w-0 flex-1 truncate text-sm font-medium">
-              Clue {i + 1}: {r.name}
+              {L.lessonN(i + 1)}: {r.name}
             </span>
             <span className="shrink-0 text-xs text-ink-soft">{r.state}</span>
           </li>
@@ -151,10 +139,11 @@ function QuizArt() {
   );
 }
 
-const ART = [WelcomeArt, CasesArt, EvidenceArt, BoardArt, QuizArt];
+const ART = [CasesArt, EvidenceArt, BoardArt, QuizArt];
 
 /**
- * "How CaseFile works": five short screens that explain the detective theme before the student meets it.
+ * "How CaseFile works": four short screens on cases and lessons, study material and hints, the study board and Notes,
+ * and quizzes. Skippable in onboarding, and reopenable from My profile and the profile menu.
  * Progress dots, Back and Next, and a way to skip. Keyboard friendly: focus moves to the new heading on each screen.
  */
 export function HowItWorks({ variant, onFinish, onSkip }: HowItWorksProps) {
@@ -203,19 +192,6 @@ export function HowItWorks({ variant, onFinish, onSkip }: HowItWorksProps) {
           ))}
         </div>
 
-        {last && (
-          <div className="mt-6 rounded-[3px] bg-postit-light/70 p-4">
-            <p className="label text-ink">{copy.explainer.glossaryHeading}</p>
-            <dl className="mt-2 flex flex-wrap gap-x-4 gap-y-2">
-              {copy.explainer.glossary.map((g) => (
-                <div key={g.term}>
-                  <dt className="inline font-semibold">{g.term}</dt>{" "}
-                  <dd className="inline before:mr-1 before:content-['=']">{g.meaning}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-        )}
       </motion.div>
 
       {/* Progress dots. Not interactive, so they are plain list items with text for screen readers. */}

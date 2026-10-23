@@ -53,7 +53,7 @@ const CELLS: ChapterSpec = {
         h("Sort the cell parts"),
         p("For each part, say whether it is in animal cells, plant cells, or both."),
         list("Nucleus: both.", "Chloroplast: plant cells (the green parts).", "Cell membrane: both.", "Cell wall: plant cells.", "Mitochondria: both."),
-        p("Detective question: Hooke saw empty boxes in cork. Which part was he seeing? (The cell walls. Cork cells are dead, so the insides had gone.)"),
+        p("Think about it: Hooke saw empty boxes in cork. Which part was he seeing? (The cell walls. Cork cells are dead, so the insides had gone.)"),
       ],
       practice: [
         { p: "Which part controls the cell and holds its DNA?", a: "Nucleus", w: [["Cytoplasm", "Cytoplasm is where reactions happen, but it does not control the cell."], ["Vacuole", "The vacuole stores cell sap."]], x: "The nucleus contains the genetic material." },
@@ -114,7 +114,7 @@ const SOUND: ChapterSpec = {
         h("Ruler on a desk"),
         p("Hold a ruler on the edge of a desk and twang the end."),
         list("Twang it harder: bigger vibrations, louder sound (bigger amplitude).", "Make the overhanging part shorter: it vibrates faster, giving a higher pitch (higher frequency).", "Put your ear on the desk and tap it gently: it sounds louder through the solid wood."),
-        p("Detective question: in films, space battles have loud explosions. Is that realistic? (No. There is no air in space to carry the sound.)"),
+        p("Think about it: in films, space battles have loud explosions. Is that realistic? (No. There is no air in space to carry the sound.)"),
       ],
       practice: [
         { p: "What makes every sound?", a: "Something vibrating", w: [["Light shining on an object", "Light does not make sound."], ["Air being heated", "Heating air does not by itself make a sound."]], x: "All sounds start with vibrations." },
@@ -301,7 +301,7 @@ const SILK: ChapterSpec = {
         h("Trace the journey"),
         p("Put this journey of a silk bale in order."),
         list("1. Silk is woven in Chang’an, China.", "2. A caravan carries it west to Dunhuang, then across the desert.", "3. It is sold in Samarkand to a Persian merchant.", "4. It reaches a port on the Mediterranean.", "5. It is sold in a Roman market, at a much higher price."),
-        p("Detective question: why was silk so expensive in Rome? (Every merchant along the way added their cost and profit.)"),
+        p("Think about it: why was silk so expensive in Rome? (Every merchant along the way added their cost and profit.)"),
       ],
       practice: [
         { p: "What was the Silk Roads?", a: "A network of trade routes linking Asia, Africa and Europe", w: [["A single paved road from Rome to Beijing", "There were many routes, mostly unpaved."], ["A river in China", "The Silk Roads were trade routes over land and sea."]], x: "Historians say “roads” because there were many routes." },
@@ -366,7 +366,7 @@ const FEUDAL: ChapterSpec = {
           "A villein to the lord of the manor: work on the lord’s land and part of the harvest.",
           "The lord to the villein: land to farm and protection.",
         ),
-        p("Detective question: why might peasants have been able to ask for wages after 1348? (So many workers died that there were too few to farm the land.)"),
+        p("Think about it: why might peasants have been able to ask for wages after 1348? (So many workers died that there were too few to farm the land.)"),
       ],
       practice: [
         { p: "Who was at the top of the feudal system?", a: "The king", w: [["The knights", "Knights were below the barons."], ["The peasants", "Peasants were at the bottom."]], x: "The king granted land to everyone below." },

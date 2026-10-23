@@ -288,7 +288,7 @@ const SULTANATE: ChapterSpec = {
       tryIt: [
         h("Evidence and what it shows"),
         list("The Qutb Minar: wealth, power and new architectural styles.", "Coins of Iltutmish: an organised economy and royal authority.", "Accounts of Razia Sultan: a woman could rule, though she faced opposition from nobles."),
-        p("Detective question: why might Muhammad bin Tughlaq’s token coins have failed? (People forged them easily, so they lost value.)"),
+        p("Think about it: why might Muhammad bin Tughlaq’s token coins have failed? (People forged them easily, so they lost value.)"),
       ],
       practice: [
         { p: "Who founded the Delhi Sultanate in 1206?", a: "Qutb-ud-din Aibak", w: [["Babur", "Babur founded the Mughal Empire in 1526."], ["Akbar", "Akbar was a Mughal emperor."]], x: "Aibak began the Mamluk dynasty." },
@@ -349,7 +349,7 @@ const MUGHAL: ChapterSpec = {
       tryIt: [
         h("Why did it help?"),
         list("Alliances with Rajputs: brought powerful allies and soldiers.", "Abolishing jizya: won the loyalty of Hindu subjects.", "The mansabdari system: made officers depend on the emperor for rank and pay."),
-        p("Detective question: Akbar’s court historian Abul Fazl wrote the Akbarnama. Why should historians read it carefully? (It was written to praise the emperor.)"),
+        p("Think about it: Akbar’s court historian Abul Fazl wrote the Akbarnama. Why should historians read it carefully? (It was written to praise the emperor.)"),
       ],
       practice: [
         { p: "Who founded the Mughal Empire?", a: "Babur", w: [["Akbar", "Akbar was Babur’s grandson."], ["Shah Jahan", "Shah Jahan ruled later and built the Taj Mahal."]], x: "Babur won at Panipat in 1526." },

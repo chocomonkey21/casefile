@@ -28,14 +28,15 @@ import { useStudentBoard, useStudentGrade } from "@/lib/use-access";
 import { chapterCrumbs, chapterNeighbours, isChapter } from "@/lib/structure";
 import type { CaseTab } from "@/lib/case-tabs";
 import type { CaseDef } from "@/lib/types";
-import { ClueCard } from "./ClueCard";
-import { EvidenceCard } from "./EvidenceCard";
+import { LessonCard } from "./LessonCard";
+import { StudyMaterialCard } from "./StudyMaterialCard";
+import { CaseSource } from "./CaseSource";
 import { StatusStamp } from "./StatusStamp";
-import { WarrantBanner } from "./WarrantBanner";
+import { FinalTestBanner } from "./FinalTestBanner";
 
 const t = copy.caseFile;
 
-/** The case file: a manila folder with four tabs (Brief, Clues, Evidence, Notes) and a status tag. */
+/** The case file: a manila folder with four tabs (Overview, Lessons, Study material, Notes) and a status tag. */
 export function CaseFileView({ caseDef, initialTab }: { caseDef: CaseDef; initialTab: CaseTab }) {
   const state = useCaseFile();
   const studentGrade = useStudentGrade();
@@ -89,6 +90,7 @@ export function CaseFileView({ caseDef, initialTab }: { caseDef: CaseDef; initia
                 </span>
               </p>
               <h1 className="mt-1 text-3xl leading-tight sm:text-4xl">{caseDef.title}</h1>
+              <CaseSource caseDef={caseDef} credits className="mt-2 text-sm text-ink-soft" />
               <div className="mt-4 max-w-md">
                 <div className="mb-2 flex justify-between text-sm font-medium">
                   <span>{t.lessonsDone(solved, total)}</span>
@@ -100,8 +102,8 @@ export function CaseFileView({ caseDef, initialTab }: { caseDef: CaseDef; initia
                 <ProgressBar value={solved} max={total} label={t.progressLabel} />
               </div>
             </div>
-            <div className="pr-1 pt-1" aria-label={copy.status.aria(copy.status[status])}>
-              <StatusStamp status={status} size="lg" slam={status === "closed"} />
+            <div className="pr-1 pt-1">
+              <StatusStamp status={status} preview={caseDef.stub} size="lg" slam={status === "closed"} />
             </div>
           </header>
 
@@ -115,7 +117,7 @@ export function CaseFileView({ caseDef, initialTab }: { caseDef: CaseDef; initia
             <Panel id={`${idBase}-panel-clues`} labelledBy={`${idBase}-tab-clues`} active={tab === "clues"}>
               <CluesTab caseDef={caseDef} />
               <div className="mt-6">
-                <WarrantBanner caseId={caseDef.id} state={finalTest} solved={solved} total={total} />
+                <FinalTestBanner caseId={caseDef.id} state={finalTest} solved={solved} total={total} />
               </div>
             </Panel>
 
@@ -164,7 +166,7 @@ function Panel({
   );
 }
 
-/* ---------------- Brief ---------------- */
+/* ---------------- Overview ---------------- */
 
 function BriefTab({ caseDef, onSeeClues }: { caseDef: CaseDef; onSeeClues: () => void }) {
   const state = useCaseFile();
@@ -219,13 +221,13 @@ function BriefTab({ caseDef, onSeeClues }: { caseDef: CaseDef; onSeeClues: () =>
 
       <div className="flex flex-wrap gap-4">
         {closed ? (
-          <Button href={`/cases/${caseDef.id}/verdict`}>{b.viewResults}</Button>
+          <Button href={`/cases/${caseDef.id}/final-test`}>{b.viewResults}</Button>
         ) : next ? (
-          <Button href={`/cases/${caseDef.id}/clues/${next.clue.id}`} size="lg">
+          <Button href={`/cases/${caseDef.id}/lessons/${next.clue.id}`} size="lg">
             {caseDef.stub ? b.previewFirst : started ? copy.common.continue : b.startFirst}
           </Button>
         ) : (
-          <Button href={`/cases/${caseDef.id}/verdict`} size="lg">
+          <Button href={`/cases/${caseDef.id}/final-test`} size="lg">
             {b.startVerdict}
           </Button>
         )}
@@ -249,7 +251,7 @@ function CluesTab({ caseDef }: { caseDef: CaseDef }) {
       <p className="mt-1 text-ink-soft">{t.clues.intro}</p>
       <ol className="mt-4 space-y-4">
         {caseDef.clues.map((clue, i) => (
-          <ClueCard
+          <LessonCard
             key={clue.id}
             caseDef={caseDef}
             clue={clue}
@@ -300,11 +302,11 @@ function EvidenceTab({ caseDef }: { caseDef: CaseDef }) {
               <ul className="space-y-2 px-4 pb-4">
                 {clue.evidence.map((e) => (
                   <li key={e.id}>
-                    <EvidenceCard
+                    <StudyMaterialCard
                       evidence={e}
                       locked={locked}
                       collected={Boolean(state.collected[evidenceKey(caseDef.id, clue.id, e.id)])}
-                      href={`/cases/${caseDef.id}/clues/${clue.id}#${e.id}`}
+                      href={`/cases/${caseDef.id}/lessons/${clue.id}#${e.id}`}
                     />
                   </li>
                 ))}

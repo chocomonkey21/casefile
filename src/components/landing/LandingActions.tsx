@@ -13,12 +13,12 @@ const t = copy.landing;
  */
 export function HeroActions() {
   const { profile: student, teacher } = useCaseFile();
-  // A signed-in teacher also goes straight to the Desk
+  // A signed-in teacher also goes straight to Home
   const profile = student ?? teacher;
   return (
     <div className="flex flex-wrap gap-4">
       {profile ? (
-        <Button href="/desk" size="lg">
+        <Button href="/home" size="lg">
           {t.ctaDesk}
         </Button>
       ) : (
@@ -36,17 +36,17 @@ export function HeroActions() {
 /**
  * The header carries one action. Visitors get "Get started", which leads into sign-up; the library (Cases, Videos)
  * only opens after sign-up, for the student's grade (see lib/access.ts and proxy.ts), so it is not linked here.
- * A student who already has a profile gets a way back to their Desk instead.
+ * A student who already has a profile gets a way back to their Home page instead.
  * Before the saved profile loads, everyone sees "Get started", which matches the server render.
  */
 export function HeaderNav() {
   const { profile: student, teacher } = useCaseFile();
-  // A signed-in teacher also goes straight to the Desk
+  // A signed-in teacher also goes straight to Home
   const profile = student ?? teacher;
   return (
     <nav aria-label={copy.nav.main} className="flex items-center gap-1">
       {profile ? (
-        <Button href="/desk" variant="highlight">
+        <Button href="/home" variant="highlight">
           {t.headerCtaDesk}
         </Button>
       ) : (
@@ -60,10 +60,10 @@ export function HeaderNav() {
 
 export function FinalAction() {
   const { profile: student, teacher } = useCaseFile();
-  // A signed-in teacher also goes straight to the Desk
+  // A signed-in teacher also goes straight to Home
   const profile = student ?? teacher;
   return profile ? (
-    <Button href="/desk" size="lg">
+    <Button href="/home" size="lg">
       {t.finalCtaDesk}
     </Button>
   ) : (

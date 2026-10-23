@@ -30,16 +30,20 @@ export function CasesLibrary() {
   const studentBoard = useStudentBoard();
   const GRADE_IDS = [...new Set(cases.map((c) => c.grade).filter((g): g is NonNullable<typeof g> => !!g))].sort((a, b) => a - b).map(String);
 
-  const rows = cases.map((c) => ({ c, status: caseStatus(c, state), solved: solvedCount(c, state) })).filter(
-    (r) => (subject === "all" || r.c.subject === subject) && (status === "all" || r.status === status) && (grade === "all" || String(r.c.grade) === grade),
-  );
+  const rows = cases
+    .map((c) => ({ c, status: caseStatus(c, state), solved: solvedCount(c, state) }))
+    .filter(
+      (r) => (subject === "all" || r.c.subject === subject) && (status === "all" || r.status === status) && (grade === "all" || String(r.c.grade) === grade),
+    )
+    // Cases that are ready to study come first; previews, which have no lessons yet, go last
+    .sort((a, b) => Number(!!a.c.stub) - Number(!!b.c.stub));
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-10">
       <header>
         <p className="label text-evidence-dark">{copy.library.label}</p>
         <h1 className="mt-1 text-4xl sm:text-5xl">{copy.library.title}</h1>
-<RedThread className="mt-4" />
+        <RedThread className="mt-4" />
         <p className="mt-2 max-w-prose text-lg text-ink-soft">
           {copy.library.intro}
         </p>

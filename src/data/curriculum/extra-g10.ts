@@ -44,7 +44,7 @@ const BONDING: ChapterSpec = {
       tryIt: [
         h("Predict the bonding"),
         list("Magnesium oxide (metal + non-metal): ionic. High melting point.", "Carbon dioxide (non-metal + non-metal): simple covalent molecules. A gas at room temperature.", "Potassium chloride: ionic. Conducts when dissolved in water.", "Ammonia, NH₃: covalent. Low boiling point."),
-        p("Detective question: a white solid melts at 1,000 °C and conducts electricity only when molten. What type of structure is it most likely to be? (A giant ionic lattice.)"),
+        p("Think about it: a white solid melts at 1,000 °C and conducts electricity only when molten. What type of structure is it most likely to be? (A giant ionic lattice.)"),
       ],
       practice: [
         { p: "What type of bond forms between sodium and chlorine?", a: "Ionic", w: [["Covalent", "Covalent bonds form between non-metals. Sodium is a metal."], ["Metallic", "Metallic bonding is between metal atoms only."]], x: "A metal transfers electrons to a non-metal." },
@@ -113,7 +113,7 @@ const EM_SPECTRUM: ChapterSpec = {
       tryIt: [
         h("Match the use"),
         list("Thermal camera: infrared.", "Wi-Fi and mobile phones: microwaves and radio waves.", "Checking bank notes for hidden marks: ultraviolet.", "Treating some cancers: gamma rays."),
-        p("Detective question: why does a radiographer stand behind a screen when taking X-rays, even though the patient does not? (The patient has one short exposure; the radiographer would be exposed many times a day.)"),
+        p("Think about it: why does a radiographer stand behind a screen when taking X-rays, even though the patient does not? (The patient has one short exposure; the radiographer would be exposed many times a day.)"),
       ],
       practice: [
         { p: "Which EM wave has the longest wavelength?", a: "Radio waves", w: [["Gamma rays", "Gamma rays have the shortest wavelength."], ["Visible light", "Visible light is in the middle of the spectrum."]], x: "Radio waves are at the long-wavelength end." },
@@ -300,7 +300,7 @@ const COLD_WAR: ChapterSpec = {
       tryIt: [
         h("Order the events"),
         list("1948: Berlin Blockade begins.", "1949: NATO is formed.", "1961: the Berlin Wall is built.", "1962: Cuban Missile Crisis.", "1989: the Berlin Wall falls.", "1991: the USSR breaks up."),
-        p("Detective question: why did both sides build so many nuclear weapons if they never intended to use them? (To deter the other side: each believed an attack would bring destruction in return.)"),
+        p("Think about it: why did both sides build so many nuclear weapons if they never intended to use them? (To deter the other side: each believed an attack would bring destruction in return.)"),
       ],
       practice: [
         { p: "Which two countries were the main rivals in the Cold War?", a: "The USA and the USSR", w: [["Britain and France", "They were allies on the same side."], ["Germany and Japan", "They were defeated in World War II."]], x: "The superpowers were the USA and the Soviet Union." },

@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import { useId, useRef, useState } from "react";
 import { FolderCard } from "@/components/case/FolderCard";
@@ -10,32 +9,33 @@ import { Button } from "@/components/ui/Button";
 import { CheckIcon } from "@/components/ui/Icons";
 import { AVATARS } from "@/data/avatars";
 import { getCase } from "@/data/cases";
-import { GRADES, INTERESTS } from "@/data/interests";
-import { RANKS } from "@/data/ranks";
+import { GRADES } from "@/data/interests";
+import { SUBJECTS } from "@/data/subjects";
+import { BOARDS, boardLabel } from "@/lib/access";
 import { copy } from "@/lib/copy";
 import { caseStatus, solvedCount } from "@/lib/progress";
 import { actions, useCaseFile } from "@/lib/store";
-import type { AvatarId, Board, Grade } from "@/lib/types";
-import { BOARDS, boardLabel } from "@/lib/access";
+import type { AvatarId, Board, Grade, SubjectId } from "@/lib/types";
 import { HowItWorks } from "./HowItWorks";
 import { RedThread } from "@/components/ui/RedThread";
 import { StepStamp } from "@/components/ui/StepStamp";
 
 const PRACTICE_CASE_ID = "sock";
 const t = copy.onboarding;
+const STUDY_SUBJECTS = (Object.keys(SUBJECTS) as SubjectId[]).filter((s) => s !== "practice");
 
 /**
- * "Set up your profile": about you, interests, grade, then the "How CaseFile works" walkthrough,
- * then the practice case. The profile is saved when the grade step is finished.
+ * Setting up a student profile, one question per step, each with one primary button:
+ * name (portrait optional) → grade → board → subjects → "How CaseFile works" (skippable) → practice case → Home.
+ * The profile is saved when the subjects step is finished.
  */
-export function JoinWizard() {
-  const router = useRouter();
+export function JoinWizard({ onBack }: { onBack: () => void }) {
   const [step, setStep] = useState(0);
   const [name, setName] = useState("");
   const [avatarId, setAvatarId] = useState<AvatarId>("amara");
-  const [interests, setInterests] = useState<string[]>([]);
   const [grade, setGrade] = useState<Grade | null>(null);
   const [board, setBoard] = useState<Board | null>(null);
+  const [subjects, setSubjects] = useState<SubjectId[]>([]);
   const [error, setError] = useState<string | null>(null);
 
   const state = useCaseFile();
@@ -58,52 +58,46 @@ export function JoinWizard() {
       nameRef.current?.focus();
       return;
     }
-    if (step === 2) {
-      if (board === null) {
-        setError(t.board.error);
-        return;
-      }
-      if (grade === null) {
-        setError(t.grade.error);
-        return;
-      }
-      saveProfile();
-      return;
+    if (step === 1 && grade === null) return setError(t.grade.error);
+    if (step === 2 && board === null) return setError(t.board.error);
+    if (step === 3) {
+      if (subjects.length === 0) return setError(t.subjects.error);
+      actions.setProfile({ name: name.trim(), avatarId, interests: [], subjects, grade: grade!, board: board! });
+      // Hand over the practice case by marking it as started (not as a study day)
+      actions.setCaseActivity(PRACTICE_CASE_ID, new Date().toISOString());
     }
     setError(null);
     setStep(step + 1);
   };
 
-  const saveProfile = () => {
-    actions.setProfile({ name: name.trim(), avatarId, interests, grade: grade!, board: board! });
-    // Hand over the practice case by marking it as started (not as a study day)
-    actions.setCaseActivity(PRACTICE_CASE_ID, new Date().toISOString());
+  const toggleSubject = (id: SubjectId) => {
     setError(null);
-    setStep(3);
+    setSubjects((list) => (list.includes(id) ? list.filter((x) => x !== id) : [...list, id]));
   };
 
-  const toggleInterest = (id: string) =>
-    setInterests((list) => (list.includes(id) ? list.filter((x) => x !== id) : [...list, id]));
-
-  /** The walkthrough was finished: remember it and go straight into the practice case */
-  const startFirstCase = () => {
+  /** The walkthrough was finished or skipped: remember it, then show the practice case step */
+  const afterWalkthrough = () => {
     actions.markExplainerSeen();
-    router.push(`/cases/${PRACTICE_CASE_ID}`);
-  };
-
-  /** The walkthrough was skipped: remember it and show the practice case step */
-  const skipWalkthrough = () => {
-    actions.markExplainerSeen();
-    setStep(4);
+    setStep(5);
   };
 
   const practice = getCase(PRACTICE_CASE_ID)!;
+  const heading = (text: string) => (
+    <h2 id="step-heading" ref={headingRef} tabIndex={-1} className="text-3xl outline-none">
+      {text}
+    </h2>
+  );
+  const errorLine = error && (
+    <p role="alert" className="mt-4 font-semibold text-evidence-dark">
+      {error}
+    </p>
+  );
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-12">
       <p className="label text-evidence-dark">{t.eyebrow}</p>
       <h1 className="mt-1 text-4xl sm:text-5xl">{t.title}</h1>
-<RedThread className="mt-4" />
+      <RedThread className="mt-4" />
 
       {/* Progress */}
       <ol className="mt-8 flex items-center gap-2" aria-label={t.stepsLabel}>
@@ -113,8 +107,13 @@ export function JoinWizard() {
           return (
             <li key={label} aria-current={current ? "step" : undefined} className="flex flex-1 items-center gap-2 last:flex-none">
               <StepStamp index={i} state={done ? "done" : current ? "current" : "todo"} />
-              {done && <span className="sr-only">{t.done}</span>}
-              <span className={`hidden text-sm font-semibold lg:block ${current ? "text-ink" : "text-ink-soft"}`}>{label}</span>
+              <span className="sr-only">
+                {label}
+                {done ? `, ${t.done}` : ""}
+              </span>
+              <span aria-hidden="true" className={`hidden text-sm font-semibold lg:block ${current ? "text-ink" : "text-ink-soft"}`}>
+                {label}
+              </span>
               {i < t.steps.length - 1 && <span aria-hidden="true" className="h-0.5 min-w-3 flex-1 bg-manila-600/30" />}
             </li>
           );
@@ -134,10 +133,7 @@ export function JoinWizard() {
           >
             {step === 0 && (
               <section aria-labelledby="step-heading">
-                <h2 id="step-heading" ref={headingRef} tabIndex={-1} className="text-3xl outline-none">
-                  {t.about.heading}
-                </h2>
-
+                {heading(t.about.heading)}
                 <div className="mt-6">
                   <label htmlFor={nameId} className="text-lg font-semibold">
                     {t.about.nameLabel}
@@ -161,107 +157,95 @@ export function JoinWizard() {
                   <p id={`${nameId}-help`} className="mt-1 text-sm text-ink-soft">
                     {t.about.nameHelp}
                   </p>
-                  {error && (
-                    <p role="alert" className="mt-2 font-semibold text-evidence-dark">
-                      {error}
-                    </p>
-                  )}
+                  {errorLine}
                 </div>
 
-                <fieldset className="mt-6">
-                  <legend className="text-lg font-semibold">{t.about.avatarLegend}</legend>
-                  <p className="mt-1 text-sm text-ink-soft">{t.about.avatarHelp}</p>
-                  {/* Radio buttons: arrow keys move between portraits, and the focus mark comes from globals.css (label:has(...)) */}
-                  <div className="mt-3 grid grid-cols-4 gap-2 sm:gap-3 lg:grid-cols-8">
-                    {AVATARS.map((a) => {
-                      const on = a.id === avatarId;
-                      return (
-                        <label
-                          key={a.id}
-                          title={a.description}
-                          className={`relative flex min-h-11 cursor-pointer flex-col items-center gap-1.5 rounded-[3px] p-2 text-center text-sm transition-colors ${
-                            on ? "bg-postit-light font-semibold shadow-[inset_0_0_0_2px_var(--color-espresso)]" : "bg-paper hover:bg-manila-50"
-                          }`}
-                        >
-                          <input
-                            type="radio"
-                            name="avatar"
-                            value={a.id}
-                            checked={on}
-                            onChange={() => setAvatarId(a.id)}
-                            className="sr-only"
-                          />
-                          <Avatar avatarId={a.id} size={56} className={on ? "ring-2 ring-espresso ring-offset-2 ring-offset-postit-light" : ""} />
-                          <span className="leading-tight">
-                            {a.name}
-                            <span className="sr-only">: {a.description}</span>
-                          </span>
-                          {on && (
-                            <span aria-hidden="true" className="absolute right-1 top-1 rounded-full bg-espresso px-1.5 text-xs leading-5 text-paper">
-                              ✓
+                {/* Optional: a portrait is already chosen, so this can be left closed */}
+                <details className="mt-6 rounded-[3px] bg-paper p-4">
+                  <summary className="flex min-h-11 cursor-pointer items-center gap-3 font-semibold">
+                    <Avatar avatarId={avatarId} size={40} />
+                    {t.about.avatarLegend}
+                  </summary>
+                  <fieldset className="mt-3">
+                    <legend className="sr-only">{t.about.avatarLegend}</legend>
+                    <p className="text-sm text-ink-soft">{t.about.avatarHelp}</p>
+                    {/* Radio buttons: arrow keys move between portraits, and the focus mark comes from globals.css (label:has(...)) */}
+                    <div className="mt-3 grid grid-cols-4 gap-2 sm:gap-3 lg:grid-cols-8">
+                      {AVATARS.map((a) => {
+                        const on = a.id === avatarId;
+                        return (
+                          <label
+                            key={a.id}
+                            title={a.description}
+                            className={`relative flex min-h-11 cursor-pointer flex-col items-center gap-1.5 rounded-[3px] p-2 text-center text-sm transition-colors ${
+                              on ? "bg-postit-light font-semibold shadow-[inset_0_0_0_2px_var(--color-espresso)]" : "bg-paper hover:bg-manila-50"
+                            }`}
+                          >
+                            <input type="radio" name="avatar" value={a.id} checked={on} onChange={() => setAvatarId(a.id)} className="sr-only" />
+                            <Avatar avatarId={a.id} size={56} className={on ? "ring-2 ring-espresso ring-offset-2 ring-offset-postit-light" : ""} />
+                            <span className="leading-tight">
+                              {a.name}
+                              <span className="sr-only">: {a.description}</span>
                             </span>
-                          )}
-                        </label>
-                      );
-                    })}
-                  </div>
-                </fieldset>
-
-                {/* Live preview of the profile */}
-                <div className="mt-6 flex items-center gap-4 rounded-[3px] bg-paper p-4">
-                  <Avatar avatarId={avatarId} size={56} />
-                  <div>
-                    <p className="label text-ink-soft">{t.about.previewLabel}</p>
-                    <p className="font-display text-2xl">{name.trim() || t.about.previewEmpty}</p>
-                    <p className="text-sm text-ink-soft">{copy.level.label(RANKS[0].name)}</p>
-                  </div>
-                </div>
+                            {on && (
+                              <span aria-hidden="true" className="absolute right-1 top-1 rounded-full bg-espresso px-1.5 text-xs leading-5 text-paper">
+                                ✓
+                              </span>
+                            )}
+                          </label>
+                        );
+                      })}
+                    </div>
+                  </fieldset>
+                </details>
               </section>
             )}
 
             {step === 1 && (
               <section aria-labelledby="step-heading">
-                <h2 id="step-heading" ref={headingRef} tabIndex={-1} className="text-3xl outline-none">
-                  {t.interests.heading}
-                </h2>
-                <p className="mt-2 text-lg text-ink-soft">{t.interests.text}</p>
+                {heading(t.grade.heading)}
+                <p className="mt-2 text-lg text-ink-soft">{t.grade.text}</p>
                 <fieldset className="mt-6">
-                  <legend className="sr-only">{t.interests.legend}</legend>
-                  <div className="flex flex-wrap gap-2">
-                    {INTERESTS.map((i) => {
-                      const on = interests.includes(i.id);
+                  <legend className="sr-only">{t.grade.legend}</legend>
+                  <div className="grid grid-cols-5 gap-2 sm:gap-4">
+                    {GRADES.map((g) => {
+                      const on = grade === g;
                       return (
                         <label
-                          key={i.id}
-                          className={`flex min-h-11 cursor-pointer items-center gap-2 rounded-[4px] px-4 font-semibold -[3px] -coffee ${
-                            on ? " bg-espresso text-paper" : " bg-paper "
+                          key={g}
+                          className={`flex min-h-20 cursor-pointer flex-col items-center justify-center rounded-[3px] text-center transition-colors ${
+                            on ? "bg-postit shadow-[inset_0_0_0_2px_var(--color-espresso)]" : "bg-paper hover:bg-manila-50"
                           }`}
                         >
-                          <input type="checkbox" checked={on} onChange={() => toggleInterest(i.id)} className="sr-only" />
-                          {on && <CheckIcon width={16} height={16} />}
-                          {i.label}
+                          <input
+                            type="radio"
+                            name="grade"
+                            value={g}
+                            checked={on}
+                            onChange={() => {
+                              setGrade(g);
+                              setError(null);
+                            }}
+                            className="sr-only"
+                          />
+                          <span className="label text-ink-soft">{t.grade.word}</span>
+                          <span className="font-display text-3xl">{g}</span>
                         </label>
                       );
                     })}
                   </div>
                 </fieldset>
-                <p className="mt-4 text-sm text-ink-soft" aria-live="polite">
-                  {interests.length === 0 ? t.interests.none : t.interests.picked(interests.length)}
-                </p>
+                {errorLine}
               </section>
             )}
 
             {step === 2 && (
               <section aria-labelledby="step-heading">
-                <h2 id="step-heading" ref={headingRef} tabIndex={-1} className="text-3xl outline-none">
-                  {t.grade.heading}
-                </h2>
-                <p className="mt-2 text-lg text-ink-soft">{t.grade.text}</p>
-                {/* Board first: it decides which chapters exist, then the grade decides how far up they go */}
+                {heading(t.board.heading)}
+                <p className="mt-2 text-lg text-ink-soft">{t.board.help}</p>
                 <fieldset className="mt-6">
-                  <legend className="text-lg font-semibold">{t.board.legend}</legend>
-                  <p className="text-sm text-ink-soft">{t.board.help}</p>
-                  <div className="mt-2 grid grid-cols-2 gap-2 sm:gap-4">
+                  <legend className="sr-only">{t.board.legend}</legend>
+                  <div className="grid grid-cols-2 gap-2 sm:gap-4">
                     {BOARDS.map((b) => {
                       const on = board === b;
                       return (
@@ -289,58 +273,55 @@ export function JoinWizard() {
                     })}
                   </div>
                 </fieldset>
+                {errorLine}
+              </section>
+            )}
+
+            {step === 3 && (
+              <section aria-labelledby="step-heading">
+                {heading(t.subjects.heading)}
+                <p className="mt-2 text-lg text-ink-soft">{t.subjects.text}</p>
                 <fieldset className="mt-6">
-                  <legend className="text-lg font-semibold">{t.grade.legend}</legend>
-                  <div className="grid grid-cols-5 gap-2 sm:gap-4">
-                    {GRADES.map((g) => {
-                      const on = grade === g;
+                  <legend className="sr-only">{t.subjects.legend}</legend>
+                  <div className="grid gap-2 sm:grid-cols-2 sm:gap-4">
+                    {STUDY_SUBJECTS.map((id) => {
+                      const on = subjects.includes(id);
                       return (
                         <label
-                          key={g}
-                          className={`flex min-h-20 cursor-pointer flex-col items-center justify-center rounded-[3px]  text-center -[3px] -coffee ${
-                            on ? " bg-postit" : " bg-paper "
+                          key={id}
+                          className={`flex min-h-14 cursor-pointer items-center gap-3 rounded-[3px] px-4 text-lg font-semibold transition-colors ${
+                            on ? "bg-espresso text-paper" : "bg-paper hover:bg-manila-50"
                           }`}
                         >
-                          <input
-                            type="radio"
-                            name="grade"
-                            value={g}
-                            checked={on}
-                            onChange={() => {
-                              setGrade(g);
-                              setError(null);
-                            }}
-                            className="sr-only"
-                          />
-                          <span className="label text-ink-soft">{t.grade.word}</span>
-                          <span className="font-display text-3xl">{g}</span>
+                          <input type="checkbox" checked={on} onChange={() => toggleSubject(id)} className="sr-only" />
+                          <span aria-hidden="true" className={`flex h-6 w-6 items-center justify-center rounded-[3px] ${on ? "bg-paper text-ink" : "bg-manila-100"}`}>
+                            {on && <CheckIcon width={16} height={16} />}
+                          </span>
+                          <span aria-hidden="true" className={`h-3 w-3 rounded-full ${SUBJECTS[id].dot}`} />
+                          {SUBJECTS[id].label}
                         </label>
                       );
                     })}
                   </div>
                 </fieldset>
-                {error && (
-                  <p role="alert" className="mt-4 font-semibold text-evidence-dark">
-                    {error}
-                  </p>
-                )}
+                <p className="mt-4 text-sm text-ink-soft" aria-live="polite">
+                  {subjects.length ? t.subjects.picked(subjects.length) : ""}
+                </p>
+                {errorLine}
               </section>
             )}
 
-            {step === 3 && <HowItWorks variant="wizard" onFinish={startFirstCase} onSkip={skipWalkthrough} />}
+            {step === 4 && <HowItWorks variant="wizard" onFinish={afterWalkthrough} onSkip={afterWalkthrough} />}
 
-            {step === 4 && (
+            {step === 5 && (
               <section aria-labelledby="step-heading">
                 <div className="flex flex-wrap items-center gap-4">
                   <Avatar avatarId={avatarId} size={72} />
                   <div className="min-w-0 flex-1">
-                    <h2 id="step-heading" ref={headingRef} tabIndex={-1} className="text-3xl outline-none">
-                      {t.first.heading(name.trim())}
-                    </h2>
+                    {heading(t.first.heading(name.trim()))}
                     <p className="mt-1 text-lg text-ink-soft">{t.first.sub}</p>
                   </div>
                 </div>
-
                 <div className="mt-8">
                   <h3 className="text-2xl">{t.first.caseHeading}</h3>
                   <p className="mt-1 max-w-prose text-lg text-ink-soft">{t.first.caseText}</p>
@@ -351,7 +332,7 @@ export function JoinWizard() {
                         {t.first.start}
                       </Button>
                       <p>
-                        <Link href="/desk" className="inline-flex min-h-11 items-center font-semibold text-coffee underline underline-offset-4">
+                        <Link href="/home" className="inline-flex min-h-11 items-center font-semibold text-coffee underline underline-offset-4">
                           {t.first.toDesk}
                         </Link>
                       </p>
@@ -363,11 +344,11 @@ export function JoinWizard() {
           </motion.div>
         </AnimatePresence>
 
-        {step < 3 && (
+        {step < 4 && (
           <div className="mt-8 flex flex-wrap items-center justify-between gap-4 pt-6">
             {step === 0 ? (
-              <Button href="/" variant="ghost">
-                {t.backHome}
+              <Button variant="ghost" onClick={onBack}>
+                {copy.common.back}
               </Button>
             ) : (
               <Button
@@ -381,7 +362,7 @@ export function JoinWizard() {
               </Button>
             )}
             <Button size="lg" onClick={goNext}>
-              {step === 1 && interests.length === 0 ? copy.common.skip : copy.common.next}
+              {copy.common.next}
             </Button>
           </div>
         )}

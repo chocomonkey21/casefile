@@ -7,7 +7,7 @@ export const SOCK_LESSONS: Record<string, ClueContent> = {
     hints: {
       nudge: "This is a Hint 1. It gives you a small nudge. Think about the places in a house where small things get stuck.",
       evidenceId: "sock-read",
-      evidenceNote: "This is a Hint 2. It points you to the right evidence. Open “Where socks go” and look at the list.",
+      evidenceNote: "This is Hint 2. It points you to the right study material. Open “Where socks go” and look at the list.",
       walkthrough:
         "This is a Hint 3. It walks through the thinking. The reading lists three hiding spots: behind machines, inside duvet covers and in coat pockets. So lost socks are hiding, not vanishing.",
     },
@@ -21,7 +21,7 @@ export const SOCK_LESSONS: Record<string, ClueContent> = {
         blocks: [
           {
             type: "p",
-            text: "This is a clue, and this page is evidence. Read it carefully and look for the facts that answer the question at the top.",
+            text: "This is a lesson, and this page is study material. Read it carefully and look for the facts that answer the question at the top.",
           },
           {
             type: "p",
@@ -39,7 +39,7 @@ export const SOCK_LESSONS: Record<string, ClueContent> = {
           {
             type: "tip",
             title: "Try it",
-            text: "Press the Collect evidence button below. That pins this page to your Evidence Board, so you can find it later.",
+            text: "Press the Save to study board button below. That pins this page to your study board, so you can find it later.",
           },
         ],
       },
@@ -97,7 +97,7 @@ export const SOCK_LESSONS: Record<string, ClueContent> = {
       {
         id: "sock-2",
         type: "lineup",
-        prompt: "This is a suspect lineup. Each card shows an idea, and only one is correct. The others are common mistakes. Which idea is correct?",
+        prompt: "Pick the right idea. Each card shows an idea, and only one is correct. The others are common mistakes. Which idea is correct?",
         options: [
           { id: "a", text: "The washing machine eats socks.", why: "Not quite. Machines don't eat socks, but socks can slip behind them." },
           { id: "b", text: "Socks get stuck in duvet covers or fall behind machines." },

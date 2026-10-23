@@ -135,7 +135,7 @@ export default async function WatchPage(props: PageProps<"/videos/[id]">) {
             {lesson && chapter && (
               <li>
                 <Link
-                  href={`/cases/${chapter.id}/clues/${lesson.id}`}
+                  href={`/cases/${chapter.id}/lessons/${lesson.id}`}
                   className="inline-flex min-h-11 items-center font-semibold underline underline-offset-4 hover:no-underline"
                 >
                   {t.goToLesson}: {lesson.title}

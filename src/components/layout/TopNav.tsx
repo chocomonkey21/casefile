@@ -5,20 +5,19 @@ import { usePathname } from "next/navigation";
 import { BrandMark } from "@/components/ui/BrandMark";
 import { Button } from "@/components/ui/Button";
 import { copy } from "@/lib/copy";
-import { currentStreak, levelFor } from "@/lib/progress";
+import { levelFor } from "@/lib/progress";
 import { useCaseFile, useHydrated } from "@/lib/store";
 import { NAV_ITEMS, isActive } from "./nav-items";
 import { ProfileMenu } from "./ProfileMenu";
 
 /**
  * Top bar in espresso. On screens under 1024px the five links move to MobileNav
- * (a bottom bar). Level and study streak are two quiet lines of text. On phones they live in the profile menu.
+ * (a bottom bar). The level is one quiet line of text. On phones it lives in the profile menu. There is no streak.
  */
 export function TopNav() {
   const pathname = usePathname();
   const state = useCaseFile();
   const { rank } = levelFor(state);
-  const days = currentStreak(state.streak);
   // The library opens after sign-up (proxy.ts). Visitors on open pages such as About see one "Get started" action instead.
   const hydrated = useHydrated();
   const visitor = hydrated && !state.profile && !state.teacher;
@@ -27,7 +26,7 @@ export function TopNav() {
     <header className="sticky top-0 z-40 on-dark bg-espresso">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-2 px-4 sm:gap-4 sm:px-6">
         <div className="flex items-center gap-8">
-          <Link href={visitor ? "/" : "/desk"} className="flex min-h-11 items-center gap-2" aria-label={copy.brand.logoLabel}>
+          <Link href={visitor ? "/" : "/home"} className="flex min-h-11 items-center gap-2" aria-label={copy.brand.logoLabel}>
             <BrandMark />
             <span className="font-display text-xl tracking-wide sm:text-2xl">{copy.brand.name}</span>
           </Link>
@@ -67,10 +66,9 @@ export function TopNav() {
           </Button>
         ) : (
         <div className="flex items-center gap-4 sm:gap-4">
-          {/* Level and streak come from saved progress, so they wait for it to load rather than flash “Rookie, 0 days” */}
+          {/* The level comes from saved progress, so it waits for it to load rather than flash the starting level */}
           <p className={`hidden text-right text-xs leading-snug text-beige sm:block ${hydrated && !state.teacher ? "" : "invisible"}`}>
             <span className="block">{copy.level.label(rank.name)}</span>
-            <span className="block">{copy.level.streak(days)}</span>
           </p>
           <ProfileMenu />
         </div>

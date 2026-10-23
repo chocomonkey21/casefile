@@ -6,7 +6,8 @@ import { AVATARS } from "@/data/avatars";
 import { getCase } from "@/data/cases";
 import { RANKS } from "@/data/ranks";
 import { copy } from "@/lib/copy";
-import { caseStatus, currentStreak, evidenceKey, levelFor, nextClue, solvedCount } from "@/lib/progress";
+import { caseStatus, daysStudiedThisWeek, evidenceKey, levelFor, nextClue, solvedCount } from "@/lib/progress";
+import { L } from "@/lib/labels";
 import { actions, useCaseFile } from "@/lib/store";
 
 /** Buttons, levels, avatars and demo controls that change the saved state, so you can see the app react. */
@@ -25,7 +26,7 @@ export function StyleguideDemo() {
         <div className="mt-6 flex flex-wrap gap-4">
           <Button>Start</Button>
           <Button variant="secondary">Continue</Button>
-          <Button variant="highlight">Collect evidence</Button>
+          <Button variant="highlight">Save to study board</Button>
           <Button variant="ghost">Save</Button>
           <Button variant="danger">Log out</Button>
           <Button disabled>Next</Button>
@@ -57,7 +58,7 @@ export function StyleguideDemo() {
           Saved progress (demo controls)
         </h2>
         <p className="mt-2 text-beige">
-          Watch the level and study streak in the top bar change. Refresh the page and they should stay put.
+          Watch the level in the top bar change. Refresh the page and they should stay put.
         </p>
         <dl className="mt-4 grid gap-2 text-lg sm:grid-cols-3">
           <div>
@@ -72,8 +73,8 @@ export function StyleguideDemo() {
             </dd>
           </div>
           <div>
-            <dt className="label text-beige">Study streak</dt>
-            <dd>{copy.level.streak(currentStreak(state.streak))}</dd>
+            <dt className="label text-beige">{L.daysThisWeek}</dt>
+            <dd>{daysStudiedThisWeek(state)}</dd>
           </div>
         </dl>
         <div className="mt-6 flex flex-wrap gap-4">
@@ -104,7 +105,7 @@ export function StyleguideDemo() {
           Case demo tools
         </h2>
         <p className="mt-2 max-w-prose text-ink-soft">
-          Move the Vanishing Puddle through its states so you can check the Desk, the library and the case file.
+          Move the Vanishing Puddle through its states so you can check Home, the library and the case file.
         </p>
         <p className="mt-4 font-medium">
           Puddle status now: <span className="font-display">{copy.status[caseStatus(puddle, state)]}</span>,{" "}
@@ -125,7 +126,7 @@ export function StyleguideDemo() {
             variant="secondary"
             onClick={() => actions.setCaseActivity(puddle.id, new Date(Date.now() - 9 * 86400000).toISOString())}
           >
-            Make Puddle a cold case (9 days ago)
+            Make Puddle a case that needs revising (9 days ago)
           </Button>
           <Button variant="secondary" onClick={() => actions.closeCase(puddle.id, 8, 8)}>
             Close Puddle

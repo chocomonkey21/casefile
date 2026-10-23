@@ -12,7 +12,7 @@ type ClassView = { code: string; name: string; grade: number; teacherName: strin
 type Load = { status: "loading" } | { status: "error"; unavailable: boolean } | { status: "ready"; classes: ClassView[] };
 
 /**
- * The student's Drawer on the Desk: join a class with its code, then see the files, links, notes and deadlines
+ * The student's Drawer on Home: join a class with its code, then see the files, links, notes and deadlines
  * the teacher put there. Joined class codes are saved on this device (in the profile).
  */
 export function StudentDrawer({ codes }: { codes: string[] }) {

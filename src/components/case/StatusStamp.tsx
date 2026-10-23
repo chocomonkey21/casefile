@@ -11,21 +11,24 @@ const CONFIG: Record<CaseStatus, { tone: "red" | "coffee" | "desk" | "cold"; rot
 
 /**
  * The status of a case as a small ink-stamp tag. The text is real text, so screen readers get it too.
- * "Cold case" is always shown next to a plain sentence that says what to do (see the Desk and the Lab).
+ * "Time to revise" is always shown next to a plain sentence that says what to do (see Home and My progress).
  */
 export function StatusStamp({
   status,
   size = "sm",
   slam = false,
+  preview = false,
 }: {
   status: CaseStatus;
+  /** A preview case that has not been started says "Preview", never "Ready to study" */
+  preview?: boolean;
   size?: "sm" | "md" | "lg" | "xl";
   slam?: boolean;
 }) {
   const c = CONFIG[status];
   return (
     <Stamp tone={c.tone} size={size} rotate={c.rotate} slam={slam}>
-      {copy.status[status]}
+      {preview && status === "open" ? copy.status.previewStamp : copy.status[status]}
     </Stamp>
   );
 }

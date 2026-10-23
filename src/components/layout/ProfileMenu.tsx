@@ -8,11 +8,11 @@ import { Avatar } from "@/components/ui/Avatar";
 import { ConfirmDialog } from "@/components/ui/ConfirmDialog";
 import { boardLabel } from "@/lib/access";
 import { copy } from "@/lib/copy";
-import { currentStreak, levelFor } from "@/lib/progress";
+import { levelFor } from "@/lib/progress";
 import { actions, useCaseFile, useHydrated } from "@/lib/store";
 
 /**
- * Avatar button that opens a small menu: About me, How CaseFile works, My progress, Reduce motion,
+ * Avatar button that opens a small menu: My profile, How CaseFile works, For families,
  * and Log out (separated, last). Closes on Escape, outside click or after choosing something.
  */
 export function ProfileMenu() {
@@ -21,9 +21,8 @@ export function ProfileMenu() {
   // Before the saved profile loads, the store holds an empty default. Showing it would flash a guest “?” avatar
   // on every full page load, so a neutral placeholder is shown until then.
   const hydrated = useHydrated();
-  const { profile, teacher, reduceMotion } = state;
+  const { profile, teacher } = state;
   const { rank } = levelFor(state);
-  const days = currentStreak(state.streak);
   const [open, setOpen] = useState(false);
   const [confirmLogOut, setConfirmLogOut] = useState(false);
   const [showHow, setShowHow] = useState(false);
@@ -64,10 +63,10 @@ export function ProfileMenu() {
   };
 
   const logOut = () => {
-    // Clear everything saved on this device, then go back to the landing page as a brand new visitor
+    // Clear everything saved on this device, then start onboarding again
     actions.logOut();
     setConfirmLogOut(false);
-    router.push("/");
+    router.push("/join");
   };
 
   return (
@@ -108,16 +107,15 @@ export function ProfileMenu() {
               <div className="px-4 pb-2 pt-1">
                 <p className="font-display text-lg">{profile ? profile.name : copy.profile.guest}</p>
                 <p className="text-sm text-ink-soft">{copy.level.label(rank.name)}</p>
-                <p className="text-sm text-ink-soft">{copy.level.streak(days)}</p>
               </div>
             )}
             <div className="pt-1">
               {teacher ? (
-                <Link href="/desk" className={itemClass} onClick={() => setOpen(false)}>
+                <Link href="/home" className={itemClass} onClick={() => setOpen(false)}>
                   {copy.drawer.title}
                 </Link>
               ) : profile ? (
-                <Link href="/about" className={itemClass} onClick={() => setOpen(false)}>
+                <Link href="/profile" className={itemClass} onClick={() => setOpen(false)}>
                   {copy.profile.aboutMe}
                 </Link>
               ) : (
@@ -135,27 +133,9 @@ export function ProfileMenu() {
               >
                 {copy.profile.howItWorks}
               </button>
-              {!teacher && (
-                <Link href="/lab" className={itemClass} onClick={() => setOpen(false)}>
-                  {copy.profile.myProgress}
-                </Link>
-              )}
-              {/* Switch for people who want less movement, on top of the device setting */}
-              <button
-                type="button"
-                role="switch"
-                aria-checked={reduceMotion}
-                className={`${itemClass} flex items-center justify-between gap-4`}
-                onClick={() => actions.setReduceMotion(!reduceMotion)}
-              >
-                {copy.profile.reduceMotion}
-                <span
-                  aria-hidden="true"
-                  className={`rounded-[4px] px-2 text-sm font-semibold ${reduceMotion ? " bg-desk-light" : " bg-paper"}`}
-                >
-                  {reduceMotion ? copy.profile.on : copy.profile.off}
-                </span>
-              </button>
+              <Link href="/families" className={itemClass} onClick={() => setOpen(false)}>
+                {copy.profile.forFamilies}
+              </Link>
               {teacher && (
                 <>
                   <hr className="my-2" />
