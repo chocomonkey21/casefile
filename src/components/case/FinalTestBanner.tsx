@@ -58,7 +58,7 @@ export function FinalTestBanner({ caseId, state, solved, total }: FinalTestBanne
             </h3>
             <p className="mt-1 text-beige">{t.readyText}</p>
           </div>
-          <Button href={`/cases/${caseId}/final-test`} variant="highlight" size="lg">
+          <Button href={`/chapters/${caseId}/final-test`} variant="highlight" size="lg">
             {t.start}
           </Button>
         </div>
@@ -75,7 +75,7 @@ export function FinalTestBanner({ caseId, state, solved, total }: FinalTestBanne
           </h3>
           <p className="mt-1 text-ink-soft">{t.closedText}</p>
         </div>
-        <Button href={`/cases/${caseId}/final-test`} variant="secondary">
+        <Button href={`/chapters/${caseId}/final-test`} variant="secondary">
           {t.viewResults}
         </Button>
       </div>

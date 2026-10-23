@@ -138,8 +138,8 @@ export function CaseFileView({ caseDef, initialTab }: { caseDef: CaseDef; initia
           <div className="mt-10">
             <PrevNext
               label={copy.wayfinding.chapterNav}
-              prev={prevChapter ? { href: `/cases/${prevChapter.id}?tab=clues`, label: copy.wayfinding.prevChapter, title: prevChapter.title } : null}
-              next={nextChapter ? { href: `/cases/${nextChapter.id}?tab=clues`, label: copy.wayfinding.nextChapter, title: nextChapter.title } : null}
+              prev={prevChapter ? { href: `/chapters/${prevChapter.id}?tab=clues`, label: copy.wayfinding.prevChapter, title: prevChapter.title } : null}
+              next={nextChapter ? { href: `/chapters/${nextChapter.id}?tab=clues`, label: copy.wayfinding.nextChapter, title: nextChapter.title } : null}
             />
           </div>
         </>
@@ -221,13 +221,13 @@ function BriefTab({ caseDef, onSeeClues }: { caseDef: CaseDef; onSeeClues: () =>
 
       <div className="flex flex-wrap gap-4">
         {closed ? (
-          <Button href={`/cases/${caseDef.id}/final-test`}>{b.viewResults}</Button>
+          <Button href={`/chapters/${caseDef.id}/final-test`}>{b.viewResults}</Button>
         ) : next ? (
-          <Button href={`/cases/${caseDef.id}/lessons/${next.clue.id}`} size="lg">
+          <Button href={`/chapters/${caseDef.id}/lessons/${next.clue.id}`} size="lg">
             {caseDef.stub ? b.previewFirst : started ? copy.common.continue : b.startFirst}
           </Button>
         ) : (
-          <Button href={`/cases/${caseDef.id}/final-test`} size="lg">
+          <Button href={`/chapters/${caseDef.id}/final-test`} size="lg">
             {b.startVerdict}
           </Button>
         )}
@@ -306,7 +306,7 @@ function EvidenceTab({ caseDef }: { caseDef: CaseDef }) {
                       evidence={e}
                       locked={locked}
                       collected={Boolean(state.collected[evidenceKey(caseDef.id, clue.id, e.id)])}
-                      href={`/cases/${caseDef.id}/lessons/${clue.id}#${e.id}`}
+                      href={`/chapters/${caseDef.id}/lessons/${clue.id}#${e.id}`}
                     />
                   </li>
                 ))}

@@ -50,7 +50,7 @@ export const copy = {
   meta: {
     siteTitle: "CaseFile | A learning platform for ages 11 to 15",
     siteDescription:
-      "CaseFile is a learning platform for ages 11 to 15. Each subject is a case, made of short lessons, study material and quizzes.",
+      "CaseFile is a learning platform for ages 11 to 15. Each subject is split into chapters of short lessons, study material and quizzes.",
     desk: L.home,
     cases: L.cases,
     board: L.studyBoard,
@@ -59,7 +59,7 @@ export const copy = {
     join: L.setUpProfile,
     about: L.profile,
     clueNotFound: "Lesson not found",
-    caseNotFound: "Case not found",
+    caseNotFound: "Chapter not found",
     interrogation: L.quiz,
     verdict: L.finalTest,
     parent: "Learning summary",
@@ -90,7 +90,7 @@ export const copy = {
     nextLevel: (remaining: number, next: string) =>
       `Complete ${plural(remaining, "more lesson")} to reach ${next}.`,
     topLevel: "You have reached the top level.",
-    howItWorks: "Your level goes up as you complete lessons and cases.",
+    howItWorks: "Your level goes up as you complete lessons and chapters.",
   },
 
   /** Case status tags, always next to a plain sentence */
@@ -100,8 +100,8 @@ export const copy = {
     active: "In progress",
     cold: L.timeToRevise,
     closed: "Complete",
-    aria: (label: string) => `Case status: ${label}`,
-    preview: "(preview case)",
+    aria: (label: string) => `Chapter status: ${label}`,
+    preview: "(preview chapter)",
   },
 
   evidenceKinds: {
@@ -138,7 +138,7 @@ export const copy = {
     progress: {
       heading: "Your progress",
       lessons: "Lessons completed",
-      closed: "Cases complete",
+      closed: "Chapters complete",
     },
     lead: {
       label: "Up next",
@@ -147,8 +147,8 @@ export const copy = {
       verdictHeading: "You have completed every lesson",
       verdictText: (title: string) => `You can now take the final test for ${title}.`,
       startVerdict: L.startFinalTest,
-      allClosedHeading: "Every case is complete",
-      allClosedText: "Check back soon. New cases are on the way.",
+      allClosedHeading: "Every chapter is complete",
+      allClosedText: "Check back soon. New chapters are on the way.",
     },
     revise: {
       heading: "Time to revise",
@@ -156,14 +156,14 @@ export const copy = {
       line: (topic: string, days: number) => `Time to revise: ${topic}. Last studied ${plural(days, "day")} ago.`,
       detail: (done: number, total: number) => `You had completed ${done} of ${plural(total, "lesson")}.`,
       start: "Start review",
-      openCase: "Open case",
-      empty: "Nothing to revise yet. A case you have not opened for 7 days will show up here.",
+      openCase: "Open chapter",
+      empty: "Nothing to revise yet. A chapter you have not opened for 7 days will show up here.",
     },
     inProgress: {
-      heading: "Cases in progress",
-      empty: "No cases in progress yet. Start with the lesson above and your case will appear here.",
+      heading: "Chapters in progress",
+      empty: "No chapters in progress yet. Start with the lesson above and your chapter will appear here.",
     },
-    notStarted: { heading: "Not started yet", seeAll: "See all cases" },
+    notStarted: { heading: "Not started yet", seeAll: "See all chapters" },
     subjects: {
       label: "Your subjects",
       add: "Add a subject",
@@ -174,18 +174,18 @@ export const copy = {
   },
 
   library: {
-    label: "All cases",
-    title: "Cases",
-    intro: "Choose a subject to study. Each case is a set of short lessons with a final test at the end.",
+    label: "All chapters",
+    title: "Chapters",
+    intro: "Choose a subject to study. Each chapter is a set of short lessons with a final test at the end.",
     filterGroup: (what: string) => `Filter by ${what}`,
     subject: "Subject",
     status: "Status",
     all: "All",
-    allCases: "All cases",
+    allCases: "All chapters",
     browseSubjects: "Browse by subject, chapter and lesson",
-    showing: (n: number) => `Showing ${plural(n, "case")}`,
-    loading: "Loading cases",
-    emptyTitle: "No cases match",
+    showing: (n: number) => `Showing ${plural(n, "chapter")}`,
+    loading: "Loading chapters",
+    emptyTitle: "No chapters match",
     emptyText: "Try a different subject or status.",
     clear: "Clear filters",
   },
@@ -196,7 +196,7 @@ export const copy = {
     lessonsDone: (done: number, total: number) => `${done} of ${plural(total, "lesson")} completed`,
     progressLabel: (title: string) => `${title}, progress`,
     // The papers that slide out of a folder on hover
-    peekBrief: "Case overview",
+    peekBrief: "Chapter overview",
     peekNext: "Next lesson",
     peekFinal: "Final test",
     peekFinalText: "All lessons done. The final test is next.",
@@ -206,24 +206,24 @@ export const copy = {
   },
 
   caseFile: {
-    allCases: "All cases",
-    caseNo: (n: string) => `Case no. ${n}`,
+    allCases: "All chapters",
+    caseNo: (n: string) => `Chapter no. ${n}`,
     lessonsDone: (done: number, total: number) => `${done} of ${plural(total, "lesson")} completed`,
-    tabsLabel: "Case sections",
-    progressLabel: "Case progress",
+    tabsLabel: "Chapter sections",
+    progressLabel: "Chapter progress",
     tabs: { brief: L.overview, clues: L.lessons, evidence: L.studyMaterial, notes: L.notes },
     brief: {
-      previewTitle: "Preview case.",
+      previewTitle: "Preview chapter.",
       previewText:
-        "The lessons for this case are still being written. You can look around, but you can only complete lessons in the Vanishing Puddle case.",
-      about: "About this case",
+        "The lessons for this chapter are still being written. You can look around, but you can only complete lessons in the Vanishing Puddle chapter.",
+      about: "About this chapter",
       goal: "Goal",
       learn: "By the end you will be able to",
-      how: "How this case works",
+      how: "How this chapter works",
       howText: (n: number) =>
         n === 1
-          ? "This case has 1 lesson. It has study material and a short quiz at the end. When you have completed it, you can take the final test that completes the case."
-          : `This case has ${plural(n, "lesson")}. Complete them in order. Each lesson has study material and a short quiz at the end. When you have completed every lesson, you can take the final test that completes the case.`,
+          ? "This chapter has 1 lesson. It has study material and a short quiz at the end. When you have completed it, you can take the final test that completes the chapter."
+          : `This chapter has ${plural(n, "lesson")}. Complete them in order. Each lesson has study material and a short quiz at the end. When you have completed every lesson, you can take the final test that completes the chapter.`,
       startFirst: "Start Lesson 1",
       previewFirst: "Preview Lesson 1",
       viewAll: "View all lessons",
@@ -256,12 +256,12 @@ export const copy = {
     notes: {
       heading: "Notes",
       intro: "Write down what you want to remember. Your notes also appear in Notes.",
-      empty: "No notes for this case yet.",
+      empty: "No notes for this chapter yet.",
     },
     finalTest: {
       lockedTitle: "Final test: not available yet",
       lockedText: (left: number) =>
-        `Complete ${plural(left, "more lesson")} to take the final test for this case.`,
+        `Complete ${plural(left, "more lesson")} to take the final test for this chapter.`,
       lockedProgress: "Lessons completed toward the final test",
       readyTitle: "The final test is ready",
       readyText: "You have completed every lesson. You can now take the final test.",
@@ -273,7 +273,7 @@ export const copy = {
   },
 
   lesson: {
-    backToCase: "Back to the case",
+    backToCase: "Back to the chapter",
     position: (title: string, n: number, total: number) => `${title} · ${L.lessonOf(n, total)}`,
     completed: "Completed",
     notCompleted: "Not completed yet",
@@ -304,7 +304,7 @@ export const copy = {
     goToClue: (n: number) => `Go to lesson ${n}`,
     previewTitle: "This is a preview",
     previewText:
-      "This lesson is still being written. Here is the study material it will include. To try a full lesson now, open the Vanishing Puddle case.",
+      "This lesson is still being written. Here is the study material it will include. To try a full lesson now, open the Vanishing Puddle chapter.",
     previewOpenPuddle: "Open the Vanishing Puddle",
     evidenceSoon: "This study material is on its way.",
     comingSoon: "Coming soon",
@@ -360,7 +360,7 @@ export const copy = {
     reviewTitle: (topic: string) => `${topic}: review`,
     clueTitle: (n: number, title: string) => `${L.lessonN(n)}: ${title}`,
     backToClue: "Back to the lesson",
-    backToCase: "Back to the case",
+    backToCase: "Back to the chapter",
     loading: "Loading",
     lockedTitle: "This lesson is not open yet",
     lockedText: (n: number) => `Complete lesson ${n} first. Then the quiz opens.`,
@@ -369,10 +369,10 @@ export const copy = {
       reviewDone: "Review complete",
       firstTime: (right: number, total: number) => `${right} of ${total} answered correctly first time.`,
       factQuestions: "Answered first time",
-      factProgress: "Case progress",
-      factStatus: "Case status",
+      factProgress: "Chapter progress",
+      factStatus: "Chapter status",
       factNext: "Next up",
-      statusNote: "This case no longer needs revising.",
+      statusNote: "This chapter no longer needs revising.",
       statusValue: "In progress",
       nextClue: (n: number) => L.lessonN(n),
       nextVerdict: L.finalTest,
@@ -380,28 +380,28 @@ export const copy = {
       lessonsDone: (done: number, total: number) => `${done} of ${plural(total, "lesson")} completed`,
       allDoneVerdict: "All lessons completed. Start the final test",
       nextClueButton: "Next lesson",
-      continueCase: "Continue the case",
-      backToCase: "Back to the case",
+      continueCase: "Continue the chapter",
+      backToCase: "Back to the chapter",
       toDesk: "Go to Home",
     },
   },
 
   verdict: {
     label: L.finalTest,
-    back: "Back to the case",
+    back: "Back to the chapter",
     lockedTitle: "The final test is not open yet",
     lockedText: (left: number) => `Complete ${plural(left, "more lesson")} to take the final test.`,
     finalTest: "Final test",
-    introTitle: "The final test for this case",
+    introTitle: "The final test for this chapter",
     introText: "You have completed every lesson. This test checks what you have learned.",
     rules: {
       questions: (n: number) => `${plural(n, "question")}, one at a time.`,
       noHints: "There are no hints in the final test. You answer each question once.",
-      needed: (n: number) => `Get ${n} or more right to complete the case.`,
+      needed: (n: number) => `Get ${n} or more right to complete the chapter.`,
       retry: "If you do not pass, you can review the lessons and try again as many times as you need.",
     },
     alreadyClosed: (score: number) =>
-      `You completed this case with ${score}%. You can take the final test again for practice. Your best score is kept.`,
+      `You completed this chapter with ${score}%. You can take the final test again for practice. Your best score is kept.`,
     start: L.startFinalTest,
     again: "Take it again",
     nextQuestion: "Next question",
@@ -409,18 +409,18 @@ export const copy = {
     notPassed: {
       title: "Not passed yet",
       score: (right: number, total: number, needed: number) =>
-        `You got ${right} of ${total} right. You need ${needed} to complete the case.`,
+        `You got ${right} of ${total} right. You need ${needed} to complete the chapter.`,
       text: (closed: boolean) =>
-        `Review the lessons below, then try again. ${closed ? "Your case stays complete." : "You can try as many times as you need."}`,
+        `Review the lessons below, then try again. ${closed ? "Your chapter stays complete." : "You can try as many times as you need."}`,
       retry: "Try the final test again",
-      back: "Back to the case",
+      back: "Back to the chapter",
     },
     closed: {
-      caseNo: (n: string) => `Case no. ${n}`,
+      caseNo: (n: string) => `Chapter no. ${n}`,
       stamp: L.caseComplete,
       summary: (lessons: number, right: number, total: number) =>
-        `Case complete. You completed all ${plural(lessons, "lesson")} and passed the final test with ${right} of ${total}.`,
-      alreadyClosed: "You had already completed this case. Your best score is kept.",
+        `Chapter complete. You completed all ${plural(lessons, "lesson")} and passed the final test with ${right} of ${total}.`,
+      alreadyClosed: "You had already completed this chapter. Your best score is kept.",
     },
     breakdown: "Results by lesson",
     clueLabel: (n: number) => L.lessonN(n),
@@ -429,13 +429,13 @@ export const copy = {
     scoreLabel: (n: number) => `${L.lessonN(n)} score`,
     reviewClue: "Review this lesson",
     next: {
-      heading: "Your next case",
+      heading: "Your next chapter",
       headingNone: "What next?",
       textPreview: "This one is a preview for now, but you can look at what is coming.",
-      textFull: "Ready to learn something new? This case is next.",
-      open: "Open the case",
+      textFull: "Ready to learn something new? This chapter is next.",
+      open: "Open the chapter",
       toDesk: "Go to Home",
-      none: "You have completed every case we have. New ones are on the way.",
+      none: "You have completed every chapter we have. New ones are on the way.",
       lab: "See My progress",
     },
   },
@@ -457,7 +457,7 @@ export const copy = {
     sampleB: "Clouds form as vapour cools",
     sampleWhy: "Connected because both are steps in the water cycle.",
     toDesk: "Go to Home",
-    browse: "Browse cases",
+    browse: "Browse chapters",
     suggestionLabel: "Suggestion",
     suggestion: (a: string, b: string) => `You haven’t connected “${a}” and “${b}” yet.`,
     showMe: "Show me the cards",
@@ -507,7 +507,7 @@ export const copy = {
     stats: {
       daysThisWeek: L.daysThisWeek,
       lessons: "Lessons completed",
-      closed: "Cases complete",
+      closed: "Chapters complete",
       firstTime: "Answered correctly first time",
       evidence: "Study material saved",
       notes: "Notes written",
@@ -534,14 +534,14 @@ export const copy = {
     },
     revise: {
       heading: "Time to revise",
-      none: (days: number) => `All your cases are up to date. A case needs revision after ${plural(days, "day")} without studying.`,
+      none: (days: number) => `All your chapters are up to date. A chapter needs revision after ${plural(days, "day")} without studying.`,
       cooling: (topic: string, days: number, left: number) =>
         `${topic}: you have not studied this for ${plural(days, "day")}. Review it within ${plural(left, "day")} to keep it fresh.`,
     },
     demo: {
       summary: "Demo controls (for testing)",
-      text: "A case needs revision after 7 days without studying. To check the review flow without waiting, pretend time has passed.",
-      none: "Start a case first, then the controls appear here.",
+      text: "A chapter needs revision after 7 days without studying. To check the review flow without waiting, pretend time has passed.",
+      none: "Start a chapter first, then the controls appear here.",
       nine: "Pretend 9 days passed",
       five: "Pretend 5 days passed",
       reset: "Reset to today",
@@ -553,15 +553,15 @@ export const copy = {
     title: L.notes,
     intro: "Everything you wrote down while studying. You can also add a note here.",
     loading: "Loading your notes",
-    filter: "Filter notes by case",
-    all: (n: number) => `All cases (${n})`,
+    filter: "Filter notes by chapter",
+    all: (n: number) => `All chapters (${n})`,
     emptyTitleNone: "Nothing written yet",
-    emptyTitleFiltered: "No notes for this case",
+    emptyTitleFiltered: "No notes for this chapter",
     emptyText: "Write a note below, or take notes while you study a lesson.",
     openClue: "Open this lesson",
-    openCase: "Open this case",
+    openCase: "Open this chapter",
     addHeading: "Add a note",
-    whichCase: "Which case is it about?",
+    whichCase: "Which chapter is it about?",
     toDesk: "Go to Home",
     entryLabel: (topic: string, clue: number | null, date: string) =>
       `${topic}${clue ? ` · ${L.lessonN(clue)}` : ""} · ${date}`,
@@ -576,7 +576,7 @@ export const copy = {
     placeholder: "Write what you want to remember...",
     aboutClue: "About which lesson?",
     optional: "(optional)",
-    wholeCase: "Whole case",
+    wholeCase: "Whole chapter",
     clueOption: (n: number, title: string) => `${L.lessonN(n)}: ${title}`,
     save: "Save note",
     deleteLabel: (snippet: string) => `Delete note: ${snippet}`,
@@ -631,7 +631,7 @@ export const copy = {
     eyebrow: "Getting started",
     title: "Set up your profile",
     stepsLabel: "Steps",
-    steps: ["Name", "Grade", "Board", "Subjects", "How it works", "Practice case"],
+    steps: ["Name", "Grade", "Board", "Subjects", "How it works", "Practice chapter"],
     done: "done",
     about: {
       heading: "What should we call you?",
@@ -668,10 +668,10 @@ export const copy = {
     first: {
       heading: (name: string) => `Welcome, ${name}`,
       sub: "Your profile is ready.",
-      caseHeading: "Start with the practice case",
+      caseHeading: "Start with the practice chapter",
       caseText:
         "It takes about five minutes and shows you how lessons, study material, hints and quizzes work. When you finish, you go to Home.",
-      start: "Start the practice case",
+      start: "Start the practice chapter",
       toDesk: "Skip to Home",
     },
     who: {
@@ -695,16 +695,16 @@ export const copy = {
     skip: "Skip",
     back: "Back",
     next: "Next",
-    startFirstCase: "Next: the practice case",
+    startFirstCase: "Next: the practice chapter",
     close: "Close",
     closeDialog: "Close this walkthrough",
     screens: [
       {
         id: "cases",
-        heading: "Each subject is a case, made of short lessons.",
+        heading: "Each subject is split into chapters made of short lessons.",
         body: [
-          "A case is one chapter. Work through its lessons in order.",
-          "The case shows how far along you are.",
+          "Work through a chapter’s lessons in order.",
+          "The chapter shows how far along you are.",
         ],
       },
       {
@@ -727,7 +727,7 @@ export const copy = {
         id: "quiz",
         heading: "Check what you know, then come back to revise.",
         body: [
-          "Each lesson ends with a short quiz. When every lesson is done, the final test completes the case.",
+          "Each lesson ends with a short quiz. When every lesson is done, the final test completes the chapter.",
           "My progress shows what you are good at and what needs practice. Topics you have not studied for a while appear under Time to revise.",
         ],
       },
@@ -753,8 +753,8 @@ export const copy = {
     headerCta: "Get started",
     headerCtaDesk: L.home,
     eyebrow: "A learning platform for ages 11 to 15",
-    heading: "Learn by working through cases.",
-    text: "CaseFile organises school subjects as cases. Each case is a set of short lessons, study material and quizzes, with a final test at the end.",
+    heading: "Learn by working through chapters.",
+    text: "CaseFile organises school subjects as chapters. Each chapter is a set of short lessons, study material and quizzes, with a final test at the end.",
     cta: "Get started",
     ctaDesk: "Go to Home",
     howLink: "See how it works",
@@ -762,8 +762,8 @@ export const copy = {
     howHeading: "How it works",
     steps: [
       {
-        title: "Choose a case",
-        text: "Pick a subject, such as the water cycle or fractions. Each subject is a case made of short lessons.",
+        title: "Choose a chapter",
+        text: "Pick a chapter, such as the water cycle or fractions. Each chapter is made of short lessons.",
       },
       {
         title: "Work through the lessons",
@@ -771,22 +771,22 @@ export const copy = {
       },
       {
         title: "Check what you know",
-        text: "Answer quiz questions after each lesson. When you have finished them all, take the final test to complete the case.",
+        text: "Answer quiz questions after each lesson. When you have finished them all, take the final test to complete the chapter.",
       },
     ],
-    peekHeading: "Some of the cases",
+    peekHeading: "Some of the chapters",
     peekText: "Science, maths, history and geography, for Grades 6 to 10. Here is one chapter from each subject.",
-    peekAll: (n: number) => `See all ${n} cases`,
+    peekAll: (n: number) => `See all ${n} chapters`,
     lessons: (n: number) => plural(n, "lesson"),
     finalHeading: "Ready to start learning?",
-    finalText: "Set up your profile and begin with a short practice case.",
+    finalText: "Set up your profile and begin with a short practice chapter.",
     finalCta: "Get started",
     finalCtaDesk: "Back to Home",
     footer: "CaseFile. A learning platform for ages 11 to 15.",
-    headerCases: "Cases",
+    headerCases: "Chapters",
     headerVideos: "Videos",
-    peekOpen: (title: string) => `Open the case: ${title}`,
-    peekCta: "Preview this case",
+    peekOpen: (title: string) => `Open the chapter: ${title}`,
+    peekCta: "Preview this chapter",
     trust: {
       heading: "For families and teachers",
       text: "Plain answers about privacy, who writes the lessons, and what they cover.",
@@ -815,7 +815,7 @@ export const copy = {
     footerNav: {
       explore: "Explore",
       subjects: "Subjects",
-      cases: "Cases",
+      cases: "Chapters",
       videos: "Videos",
       how: "How it works",
       families: "For families and teachers",
@@ -826,7 +826,7 @@ export const copy = {
     },
     home: "Home",
     illustrationLabel:
-      "A study table seen from above. On it are a manila case folder labelled The Vanishing Puddle, a magnifying glass, a sticky note, a writing pad, a mug, a pencil, and two cards joined by red string.",
+      "A study table seen from above. On it are a manila folder labelled The Vanishing Puddle, a magnifying glass, a sticky note, a writing pad, a mug, a pencil, and two cards joined by red string.",
   },
 
   grades: {
@@ -855,7 +855,7 @@ export const copy = {
     boardText: (contentBoard: string, studentBoard: string) =>
       `This chapter is written for ${contentBoard}. Your profile is set to ${studentBoard}, so you see the ${studentBoard} chapters instead.`,
     changeGrade: "Picked the wrong grade or board? Log out from the profile menu and set up your profile again.",
-    toCases: "Back to your cases",
+    toCases: "Back to your chapters",
     toSubjects: "Browse subjects",
   },
 
@@ -880,7 +880,7 @@ export const copy = {
   subjectsPage: {
     label: "Browse",
     title: "Subjects",
-    intro: "Each subject is made of chapters. In CaseFile a chapter is a case, made of short lessons.",
+    intro: "Each subject is made of chapters, and each chapter is made of short lessons.",
     chapters: (n: number) => plural(n, "chapter"),
     lessons: (n: number) => plural(n, "lesson"),
     open: (label: string) => `Open ${label}`,
@@ -890,7 +890,7 @@ export const copy = {
     seeVideos: "See all videos",
     loading: "Loading chapters",
     notFound: "Subject not found",
-    sameAsCases: "Prefer one long list? See every case.",
+    sameAsCases: "Prefer one long list? See every chapter.",
   },
 
   videos: {
@@ -903,8 +903,8 @@ export const copy = {
     all: "All",
     showing: (n: number) => (n === 1 ? "Showing 1 video" : `Showing ${n} videos`),
     emptyTitle: "No videos here yet",
-    emptyText: "The CaseFile team adds videos over time. Try another subject, or work through a case.",
-    emptyCta: "Browse the cases",
+    emptyText: "The CaseFile team adds videos over time. Try another subject, or work through a chapter.",
+    emptyCta: "Browse the chapters",
     clearFilters: "Show all videos",
     errorTitle: "We could not load the videos",
     errorText: "Please try again in a moment.",
@@ -949,8 +949,8 @@ export const copy = {
     intro: "CaseFile helps students in Grades 6 to 10 study science, maths, history and geography. This page explains how it works, what is saved, and what we have not confirmed yet.",
     howHeading: "How CaseFile works",
     how: [
-      "Each subject is split into cases. A case is one chapter.",
-      "Each case has a few short lessons. A lesson has study material to read, then a short quiz.",
+      "Each subject is split into chapters.",
+      "Each chapter has a few short lessons. A lesson has study material to read, then a short quiz.",
       "When all the lessons are done, a final test checks the whole chapter.",
       "Students can save useful material to their study board and write their own notes.",
     ],
@@ -981,9 +981,9 @@ export const copy = {
         id: "curriculum",
         heading: "Which curriculum it follows",
         facts: (chapters: number, lessons: number, grades: string) => [
-          `CaseFile has ${chapters} chapters and ${lessons} lessons across science, maths, history and geography, for ${grades}, plus one short practice case.`,
+          `CaseFile has ${chapters} chapters and ${lessons} lessons across science, maths, history and geography, for ${grades}, plus one short practice chapter.`,
           "Chapters are grouped by board (CBSE or ICSE) and grade. Students only see the chapters for the board and grade they chose.",
-          "Which textbook edition each chapter was checked against is shown on each case. Where it says not yet checked, it has not been checked.",
+          "Which textbook edition each chapter was checked against is shown on each chapter. Where it says not yet checked, it has not been checked.",
         ],
         pendingNote: "Each chapter has not yet been checked against a specific textbook edition. CaseFile does not claim it matches a textbook until it has been.",
       },
@@ -992,7 +992,7 @@ export const copy = {
 
   /** Where a case comes from. Nothing is claimed until it is stored in the case data. */
   source: {
-    label: "About this case",
+    label: "About this chapter",
     textbook: (t: string) => `Textbook: ${t}`,
     textbookPending: "Textbook: not yet checked",
     credits: (author: string, checkedAgainst: string) => `Credits: written by ${author}, checked against ${checkedAgainst}`,
@@ -1002,21 +1002,21 @@ export const copy = {
   notFound: {
     stamp: "Missing",
     title: "We can’t find that page",
-    text: "The page you wanted is not here. The address may have a typo, or the case may have moved.",
+    text: "The page you wanted is not here. The address may have a typo, or the chapter may have moved.",
     toDesk: "Go to Home",
-    browse: "Browse cases",
+    browse: "Browse chapters",
   },
 
   preview: {
-    label: "Preview case",
-    backToCase: "Back to the case",
+    label: "Preview chapter",
+    backToCase: "Back to the chapter",
     tryPuddle: "Open the Vanishing Puddle",
     verdictTitle: L.finalTest,
-    verdictText: "This case is a preview, so its final test is not written yet.",
+    verdictText: "This chapter is a preview, so its final test is not written yet.",
     reviewTitle: "Review",
-    reviewText: "This case is a preview, so there are no questions to revisit yet.",
+    reviewText: "This chapter is a preview, so there are no questions to revisit yet.",
     roomTitle: L.quiz,
-    roomText: "This case is a preview, so the questions are not written yet.",
+    roomText: "This chapter is a preview, so the questions are not written yet.",
   },
 
   /** Choosing student or teacher on the sign-up page */
@@ -1232,7 +1232,7 @@ export const copy = {
     close: "Close this tip",
     reopen: (title: string) => `Show the tip: ${title}`,
     items: {
-      home: { title: L.home, text: "Your next step is on the left. Cases to revise and your progress are on the right." },
+      home: { title: L.home, text: "Your next step is on the left. Chapters to revise and your progress are on the right." },
       lesson: { title: L.lesson, text: "Work through the study material, then take the quiz. The lesson is completed when you finish the quiz." },
       studyBoard: { title: L.studyBoard, text: "Everything you save from a lesson is pinned here. Drag from a red pin to another card to connect ideas." },
       notes: { title: L.notes, text: "Write anything you want to remember. Your note is kept as you type, until you save it." },
@@ -1256,8 +1256,8 @@ export const copy = {
       quizzes: "Quizzes taken",
     },
     subjects: {
-      heading: "Progress by subject and case",
-      empty: "No cases started yet.",
+      heading: "Progress by subject and chapter",
+      empty: "No chapters started yet.",
       lessons: (done: number, total: number) => `${done} of ${plural(total, "lesson")}`,
     },
     topics: {

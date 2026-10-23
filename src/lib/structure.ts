@@ -69,11 +69,11 @@ export function isChapter(c: CaseDef): boolean {
 
 /* ---------- Breadcrumb trails ---------- */
 
-const chapterHref = (c: CaseDef) => `/cases/${c.id}?tab=clues`;
+const chapterHref = (c: CaseDef) => `/chapters/${c.id}?tab=clues`;
 
 /** Subjects / Science / Chapter. The practice case sits outside the subjects, so its trail starts at Cases. */
 export function chapterCrumbs(caseDef: CaseDef): Crumb[] {
-  if (!isChapter(caseDef)) return [{ label: copy.nav.items.cases.label, href: "/cases" }, { label: caseDef.title }];
+  if (!isChapter(caseDef)) return [{ label: copy.nav.items.cases.label, href: "/chapters" }, { label: caseDef.title }];
   return [
     { label: copy.wayfinding.subjects, href: "/subjects" },
     { label: SUBJECTS[caseDef.subject].label, href: `/subjects/${caseDef.subject}` },

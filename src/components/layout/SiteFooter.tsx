@@ -26,7 +26,7 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
-              <Link href="/cases" className={linkClass}>
+              <Link href="/chapters" className={linkClass}>
                 {f.cases}
               </Link>
             </li>

@@ -26,7 +26,7 @@ const puddle: CaseDef = {
   subject: "science",
   grade: 6,
   tagline: "A puddle disappears during the day. Find out where the water goes and how it comes back as rain.",
-  hook: "A large puddle by the school gate is gone by lunchtime. In this case you will find out where the water went. Along the way you will learn how the water cycle works: evaporation, condensation, precipitation and collection.",
+  hook: "A large puddle by the school gate is gone by lunchtime. In this chapter you will find out where the water went. Along the way you will learn how the water cycle works: evaporation, condensation, precipitation and collection.",
   goal: "Explain where a puddle's water goes, and how that water ends up in clouds and rain.",
   learn: [
     "Say what evaporation is and what makes it faster",
@@ -102,7 +102,7 @@ const fractions: CaseDef = {
   subject: "maths",
   grade: 6,
   tagline: "Learn what fractions mean, and how to compare and add them.",
-  hook: "A pizza has one slice missing. To say how much is left, you need fractions. In this case you will learn how to read, compare and add simple fractions.",
+  hook: "A pizza has one slice missing. To say how much is left, you need fractions. In this chapter you will learn how to read, compare and add simple fractions.",
   goal: "Read, compare and add simple fractions with confidence.",
   learn: [
     "Say what the top and bottom of a fraction mean",
@@ -126,7 +126,7 @@ const solar: CaseDef = {
   subject: "science",
   grade: 7,
   tagline: "Learn about the Sun, the planets and the objects that travel around the Sun.",
-  hook: "Some bright lights in the night sky do not twinkle, and they slowly move. They are planets. In this case you will learn what the solar system contains and how it fits together.",
+  hook: "Some bright lights in the night sky do not twinkle, and they slowly move. They are planets. In this chapter you will learn what the solar system contains and how it fits together.",
   goal: "Describe the Sun, the planets and how they fit together in our solar system.",
   learn: [
     "Explain why the Sun is the centre of our solar system",
@@ -150,7 +150,7 @@ const egypt: CaseDef = {
   subject: "history",
   grade: 6,
   tagline: "Find out how people in ancient Egypt lived, ruled and wrote.",
-  hook: "A museum has an old scroll covered in small pictures. These pictures are hieroglyphs from ancient Egypt. In this case you will learn about the people who wrote them.",
+  hook: "A museum has an old scroll covered in small pictures. These pictures are hieroglyphs from ancient Egypt. In this chapter you will learn about the people who wrote them.",
   goal: "Understand how people lived, ruled and wrote in ancient Egypt.",
   learn: [
     "Explain why the Nile mattered so much",
@@ -174,7 +174,7 @@ const earth: CaseDef = {
   subject: "geography",
   grade: 7,
   tagline: "Find out what is inside the Earth, and why the ground shakes and mountains erupt.",
-  hook: "Cups rattle on a shelf and the floor trembles for a few seconds. Far away, a mountain sends up a cloud of ash. In this case you will find out what is happening deep under your feet.",
+  hook: "Cups rattle on a shelf and the floor trembles for a few seconds. Far away, a mountain sends up a cloud of ash. In this chapter you will find out what is happening deep under your feet.",
   goal: "Explain how the Earth's layers and moving plates cause earthquakes and volcanoes.",
   learn: [
     "Name the layers of the Earth",
@@ -195,11 +195,11 @@ const sock: CaseDef = {
   id: "sock",
   number: "001",
   title: "The Case of the Missing Sock",
-  topic: "Practice case",
+  topic: "Practice chapter",
   subject: "practice",
-  tagline: "A short practice case that shows you how CaseFile works.",
-  hook: "This short case is about a lost sock. Its real purpose is to show you how a case works: lessons, study material, hints and quizzes.",
-  goal: "Complete one lesson and your first case.",
+  tagline: "A short practice chapter that shows you how CaseFile works.",
+  hook: "This short chapter is about a lost sock. Its real purpose is to show you how a chapter works: lessons, study material, hints and quizzes.",
+  goal: "Complete one lesson and your first chapter.",
   learn: [
     "Read a lesson",
     "Save study material to your study board",

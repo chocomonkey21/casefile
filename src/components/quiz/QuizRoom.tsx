@@ -57,7 +57,7 @@ export function QuizRoom(props: QuizRoomProps) {
           <p className="mt-2 text-lg text-ink-soft">{t.lockedText(clueIdx)}</p>
           {open && (
             <div className="mt-6">
-              <Button href={`/cases/${caseDef.id}/lessons/${open.clue.id}`}>{copy.lesson.goToClue(open.index + 1)}</Button>
+              <Button href={`/chapters/${caseDef.id}/lessons/${open.clue.id}`}>{copy.lesson.goToClue(open.index + 1)}</Button>
             </div>
           )}
         </div>
@@ -76,12 +76,12 @@ function Room({ caseDef, mode, questions, clueId }: QuizRoomProps) {
   const clueIndex = caseDef.clues.findIndex((c) => c.id === clueId);
   const total = questions.length;
   const current = questions[index];
-  const backHref = mode === "clue" ? `/cases/${caseDef.id}/lessons/${clueId}` : `/cases/${caseDef.id}`;
+  const backHref = mode === "clue" ? `/chapters/${caseDef.id}/lessons/${clueId}` : `/chapters/${caseDef.id}`;
 
   const evidenceFor = (rq: RoomQuestion) => {
     const evidenceClue = caseDef.clues.find((c) => c.id === rq.clueId);
     const item = evidenceClue?.evidence.find((e) => e.id === rq.question.evidenceId);
-    return item ? { title: item.title, href: `/cases/${caseDef.id}/lessons/${rq.clueId}#${item.id}` } : null;
+    return item ? { title: item.title, href: `/chapters/${caseDef.id}/lessons/${rq.clueId}#${item.id}` } : null;
   };
 
   const onDone = (wasFirstTry: boolean) => {
@@ -203,15 +203,15 @@ function Results({
 
       <div className="mt-8 flex flex-wrap gap-4">
         {mode === "clue" && finalTest === "ready" ? (
-          <Button href={`/cases/${caseDef.id}/final-test`} size="lg" variant="highlight">
+          <Button href={`/chapters/${caseDef.id}/final-test`} size="lg" variant="highlight">
             {r.allDoneVerdict}
           </Button>
         ) : upNext && clueState(caseDef, state, upNext.index) === "open" ? (
-          <Button href={`/cases/${caseDef.id}/lessons/${upNext.clue.id}`} size="lg">
+          <Button href={`/chapters/${caseDef.id}/lessons/${upNext.clue.id}`} size="lg">
             {mode === "clue" ? r.nextClueButton : r.continueCase}
           </Button>
         ) : null}
-        <Button href={`/cases/${caseDef.id}?tab=clues`} variant="secondary">
+        <Button href={`/chapters/${caseDef.id}?tab=clues`} variant="secondary">
           {r.backToCase}
         </Button>
         <Button href="/home" variant="ghost">

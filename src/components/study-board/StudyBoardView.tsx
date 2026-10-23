@@ -89,7 +89,7 @@ export function StudyBoardView() {
           <SampleConnection />
           <div className="mt-6 flex flex-wrap justify-center gap-4">
             <Button href="/home">{t.toDesk}</Button>
-            <Button href="/cases" variant="secondary">
+            <Button href="/chapters" variant="secondary">
               {t.browse}
             </Button>
           </div>

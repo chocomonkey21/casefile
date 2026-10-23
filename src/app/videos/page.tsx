@@ -121,7 +121,7 @@ export default async function VideosPage(props: PageProps<"/videos">) {
                 {t.clearFilters}
               </Button>
             )}
-            <Button href="/cases">{t.emptyCta}</Button>
+            <Button href="/chapters">{t.emptyCta}</Button>
           </div>
         </div>
       )}

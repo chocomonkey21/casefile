@@ -45,7 +45,7 @@ export function FinalTestView({ caseDef, questions }: FinalTestViewProps) {
 
   const backLink = (
     <Link
-      href={`/cases/${caseDef.id}?tab=clues`}
+      href={`/chapters/${caseDef.id}?tab=clues`}
       className="mb-4 inline-flex min-h-11 items-center gap-2 font-semibold text-coffee underline-offset-4 hover:underline"
     >
       <ArrowLeftIcon width={18} height={18} />
@@ -66,7 +66,7 @@ export function FinalTestView({ caseDef, questions }: FinalTestViewProps) {
           <p className="mt-2 max-w-prose text-lg text-ink-soft">{t.lockedText(left)}</p>
           {open && clueState(caseDef, state, open.index) === "open" && (
             <div className="mt-6">
-              <Button href={`/cases/${caseDef.id}/lessons/${open.clue.id}`}>{copy.lesson.goToClue(open.index + 1)}</Button>
+              <Button href={`/chapters/${caseDef.id}/lessons/${open.clue.id}`}>{copy.lesson.goToClue(open.index + 1)}</Button>
             </div>
           )}
         </div>

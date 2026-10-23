@@ -8,12 +8,12 @@ export function generateStaticParams() {
   return CASES.map((c) => ({ caseId: c.id }));
 }
 
-export async function generateMetadata(props: PageProps<"/cases/[caseId]">) {
+export async function generateMetadata(props: PageProps<"/chapters/[caseId]">) {
   const { caseId } = await props.params;
   return { title: getCase(caseId)?.title ?? copy.meta.caseNotFound };
 }
 
-export default async function CasePage(props: PageProps<"/cases/[caseId]">) {
+export default async function CasePage(props: PageProps<"/chapters/[caseId]">) {
   const { caseId } = await props.params;
   const { tab } = await props.searchParams;
   const caseDef = getCase(caseId);

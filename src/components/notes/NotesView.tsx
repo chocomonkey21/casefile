@@ -85,7 +85,7 @@ export function NotesView() {
                     <p className="mt-1 flex flex-wrap items-center gap-x-6">
                       {caseDef && (
                         <Link
-                          href={clueIndex >= 0 ? `/cases/${caseDef.id}/lessons/${caseDef.clues[clueIndex].id}` : `/cases/${caseDef.id}`}
+                          href={clueIndex >= 0 ? `/chapters/${caseDef.id}/lessons/${caseDef.clues[clueIndex].id}` : `/chapters/${caseDef.id}`}
                           className="inline-flex min-h-11 items-center font-semibold text-coffee underline underline-offset-4"
                         >
                           {clueIndex >= 0 ? t.openClue : t.openCase}

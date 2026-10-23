@@ -85,7 +85,7 @@ export function HomeView() {
                   <h3 className="mt-2 text-3xl leading-tight sm:text-4xl">{t.lead.clueHeading(lead.index + 1, lead.clue.title)}</h3>
                   <p className="mt-4 max-w-prose text-lg">{lead.clue.teaser}</p>
                   <div className="mt-8 flex flex-wrap items-center gap-6">
-                    <Button href={`/cases/${lead.caseDef.id}/lessons/${lead.clue.id}`} size="lg">
+                    <Button href={`/chapters/${lead.caseDef.id}/lessons/${lead.clue.id}`} size="lg">
                       {lead.fresh ? copy.common.start : copy.common.continue}
                     </Button>
                     <span className="flex items-center gap-2 font-medium text-ink-soft">
@@ -99,7 +99,7 @@ export function HomeView() {
                   <h3 className="mt-4 text-3xl leading-tight sm:text-4xl">{t.lead.verdictHeading}</h3>
                   <p className="mt-4 max-w-prose text-lg">{t.lead.verdictText(lead.caseDef.title)}</p>
                   <div className="mt-8">
-                    <Button href={`/cases/${lead.caseDef.id}/final-test`} size="lg">
+                    <Button href={`/chapters/${lead.caseDef.id}/final-test`} size="lg">
                       {t.lead.startVerdict}
                     </Button>
                   </div>
@@ -166,8 +166,8 @@ export function HomeView() {
                         </div>
                         <p className="text-sm text-ink-soft">{t.revise.detail(solved, c.clues.length)}</p>
                         <div className="flex flex-wrap gap-4">
-                          <Button href={`/cases/${c.id}/quiz/refresh`}>{t.revise.start}</Button>
-                          <Button href={`/cases/${c.id}`} variant="ghost">
+                          <Button href={`/chapters/${c.id}/quiz/refresh`}>{t.revise.start}</Button>
+                          <Button href={`/chapters/${c.id}`} variant="ghost">
                             {t.revise.openCase}
                           </Button>
                         </div>
@@ -210,7 +210,7 @@ export function HomeView() {
             <h2 id="fresh-heading" className="text-2xl sm:text-3xl">
               {t.notStarted.heading}
             </h2>
-            <Link href="/cases" className="inline-flex min-h-11 items-center font-semibold text-evidence-dark underline underline-offset-4">
+            <Link href="/chapters" className="inline-flex min-h-11 items-center font-semibold text-evidence-dark underline underline-offset-4">
               {t.notStarted.seeAll}
             </Link>
           </div>
