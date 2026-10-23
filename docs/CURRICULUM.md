@@ -41,6 +41,8 @@ All boards: 180 lessons in 100 chapters, 180 videos.
 
 The water cycle. Case no. 017. Route: `/cases/puddle`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **How water evaporates**
    - Video: [Factors affecting Evaporation | Middle School Science | Khan Academy](https://www.youtube.com/watch?v=ONwdnewXy3A) by Khan Academy India - English (ID `ONwdnewXy3A`)
    - Why it fits: Explains what evaporation is and what speeds it up (temperature, surface area, humidity, moving air), using puddles and wet clothes.
@@ -70,6 +72,8 @@ The water cycle. Case no. 017. Route: `/cases/puddle`
 
 Food chains and food webs. Case no. 201. Route: `/cases/food-chains`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Food chains and food webs**
    - Video: [Food Chains - How Energy Moves Through Ecosystems](https://www.youtube.com/watch?v=3o-GBrDNXL8) by Miacademy & MiaPrep Learning Channel (ID `3o-GBrDNXL8`)
    - Why it fits: Shows how energy moves from producers to consumers, and how chains join into food webs.
@@ -78,6 +82,8 @@ Food chains and food webs. Case no. 201. Route: `/cases/food-chains`
 ### Science: The Case of the Dark Torch
 
 Simple electric circuits. Case no. 202. Route: `/cases/circuits`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **Simple electric circuits**
    - Video: [ELECTRICITY for kids ⚡ Episode 3 💡 Create a Circuit 🔌 Conductive Materials and Insulating Materials](https://www.youtube.com/watch?v=1Cq4v1ZXeRs) by Smile and Learn - English (ID `1Cq4v1ZXeRs`)
@@ -88,6 +94,8 @@ Simple electric circuits. Case no. 202. Route: `/cases/circuits`
 ### Maths: The Case of the Missing Slice
 
 Fractions. Case no. 023. Route: `/cases/fractions`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **What a fraction is**
    - Video: [Introduction to fractions](https://www.youtube.com/watch?v=kZzoVCmUyKg) by Khan Academy (ID `kZzoVCmUyKg`)
@@ -114,6 +122,8 @@ Fractions. Case no. 023. Route: `/cases/fractions`
 
 Decimals and place value. Case no. 203. Route: `/cases/decimals`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Decimals and place value**
    - Video: [Math Antics - Decimal Place Value](https://www.youtube.com/watch?v=KG6ILNOiMgM) by mathantics (ID `KG6ILNOiMgM`)
    - Why it fits: Explains what each digit after the decimal point is worth.
@@ -123,6 +133,8 @@ Decimals and place value. Case no. 203. Route: `/cases/decimals`
 
 Measuring and naming angles. Case no. 204. Route: `/cases/angles`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Measuring and naming angles**
    - Video: [How to Measure Angles Using a Protractor | Math with Mr. J](https://www.youtube.com/watch?v=j5D7acsExxw) by Math with Mr. J (ID `j5D7acsExxw`)
    - Why it fits: Shows step by step how to line up and read a protractor.
@@ -131,6 +143,8 @@ Measuring and naming angles. Case no. 204. Route: `/cases/angles`
 ### History: The Case of the Secret Scroll
 
 Ancient Egypt. Case no. 042. Route: `/cases/ancient-egypt`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **The River Nile**
    - Video: [The Importance Of The River Nile in Ancient Egypt](https://www.youtube.com/watch?v=aEK6PT7K8OM) by Simple History (ID `aEK6PT7K8OM`)
@@ -160,6 +174,8 @@ Ancient Egypt. Case no. 042. Route: `/cases/ancient-egypt`
 
 Mesopotamia: the first cities. Case no. 205. Route: `/cases/mesopotamia`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Mesopotamia: the first cities**
    - Video: [Ancient Mesopotamia for Kids | Learn all about the history of ancient Mesopotamia](https://www.youtube.com/watch?v=EHkAGKgoyGo) by Learn Bright (ID `EHkAGKgoyGo`)
    - Why it fits: Introduces Mesopotamia, its rivers, its first cities and cuneiform writing.
@@ -170,6 +186,8 @@ Mesopotamia: the first cities. Case no. 205. Route: `/cases/mesopotamia`
 
 Cities of the Indus Valley. Case no. 206. Route: `/cases/indus-valley`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Cities of the Indus Valley**
    - Video: [Mohenjo Daro 101 | National Geographic](https://www.youtube.com/watch?v=QUng-iHhSzU) by National Geographic (ID `QUng-iHhSzU`)
    - Why it fits: Explores Mohenjo-daro, its planned streets and drains, and what is still unknown.
@@ -179,6 +197,8 @@ Cities of the Indus Valley. Case no. 206. Route: `/cases/indus-valley`
 ### Geography: The Case of the Lost Explorer
 
 Maps and globes. Case no. 058. Route: `/cases/maps-globes`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **Latitude and longitude**
    - Video: [Longitude and Latitude Explained: Map Skills | Geography | ClickView](https://www.youtube.com/watch?v=NldgslCvJrI) by ClickView (ID `NldgslCvJrI`)
@@ -209,6 +229,8 @@ Maps and globes. Case no. 058. Route: `/cases/maps-globes`
 
 A river's journey. Case no. 207. Route: `/cases/rivers`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **A river's journey**
    - Video: [The River Severn From Source to Mouth](https://www.youtube.com/watch?v=_M48ANM3hAQ) by RGS Geography (ID `_M48ANM3hAQ`)
    - Why it fits: Follows one river from its source in the hills to its estuary.
@@ -218,6 +240,8 @@ A river's journey. Case no. 207. Route: `/cases/rivers`
 ### Geography: The Case of the Hilltop Village
 
 Why settlements grow where they do. Case no. 208. Route: `/cases/settlements`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **Why settlements grow where they do**
    - Video: [Settlement Geography (Introduction)](https://www.youtube.com/watch?v=6VxQHmDss3o) by Geography With Mr J (ID `6VxQHmDss3o`)
@@ -230,6 +254,8 @@ Why settlements grow where they do. Case no. 208. Route: `/cases/settlements`
 ### Science: The Case of the Wandering Lights
 
 The solar system. Case no. 031. Route: `/cases/solar-system`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **The Sun**
    - Video: [Sun 101 | National Geographic](https://www.youtube.com/watch?v=2HoTK_Gqi2Q) by National Geographic (ID `2HoTK_Gqi2Q`)
@@ -259,6 +285,8 @@ The solar system. Case no. 031. Route: `/cases/solar-system`
 
 Plant and animal cells. Case no. 211. Route: `/cases/cells`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Plant and animal cells**
    - Video: [Plant and Animal Cells [KS3 SCIENCE]](https://www.youtube.com/watch?v=FZtMCxFJYbw) by BrainStorm (ID `FZtMCxFJYbw`)
    - Why it fits: Compares the parts of plant and animal cells and what each part does.
@@ -269,6 +297,8 @@ Plant and animal cells. Case no. 211. Route: `/cases/cells`
 
 How sound travels. Case no. 212. Route: `/cases/sound`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **How sound travels**
    - Video: [How Sound Travels Across Different Mediums](https://www.youtube.com/watch?v=AxNdr0Bcx20) by Knowledge Platform (ID `AxNdr0Bcx20`)
    - Why it fits: Shows how sound travels as vibrations through solids, liquids and gases.
@@ -277,6 +307,8 @@ How sound travels. Case no. 212. Route: `/cases/sound`
 ### Maths: The Case of the Secret Recipe
 
 Ratios and percentages. Case no. 071. Route: `/cases/ratios`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **What a ratio is**
    - Video: [Introduction to ratios | Ratios, rates, and percentages | 6th grade | Khan Academy](https://www.youtube.com/watch?v=bIKmw0aTmYc) by Khan Academy (ID `bIKmw0aTmYc`)
@@ -304,6 +336,8 @@ Ratios and percentages. Case no. 071. Route: `/cases/ratios`
 
 Negative numbers. Case no. 213. Route: `/cases/negative-numbers`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Negative numbers**
    - Video: [Math Antics - Negative Numbers](https://www.youtube.com/watch?v=OAoLCXpao6s) by mathantics (ID `OAoLCXpao6s`)
    - Why it fits: Explains negative numbers on a number line, with everyday examples.
@@ -313,6 +347,8 @@ Negative numbers. Case no. 213. Route: `/cases/negative-numbers`
 
 Mean, median, mode and range. Case no. 214. Route: `/cases/averages`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Mean, median, mode and range**
    - Video: [Mean, Median, Mode, and Range | Math with Mr. J](https://www.youtube.com/watch?v=e3uY2LraXts) by Math with Mr. J (ID `e3uY2LraXts`)
    - Why it fits: Works out each average and the range for the same set of data.
@@ -321,6 +357,8 @@ Mean, median, mode and range. Case no. 214. Route: `/cases/averages`
 ### History: The Case of the Painted Vase
 
 Ancient Greece. Case no. 083. Route: `/cases/ancient-greece`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **Greek city-states**
    - Video: [The Greek City-States - Ancient History #02 - See U in History](https://www.youtube.com/watch?v=gcAPoY6l-Pc) by See U in History / Mythology (ID `gcAPoY6l-Pc`)
@@ -349,6 +387,8 @@ Ancient Greece. Case no. 083. Route: `/cases/ancient-greece`
 
 Trade on the Silk Roads. Case no. 215. Route: `/cases/silk-roads`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Trade on the Silk Roads**
    - Video: [The Silk Road: Connecting the ancient world through trade - Shannon Harris Castelo](https://www.youtube.com/watch?v=vn3e37VWc0k) by TED-Ed (ID `vn3e37VWc0k`)
    - Why it fits: Explains how the Silk Roads connected Asia and Europe and spread goods and ideas.
@@ -357,6 +397,8 @@ Trade on the Silk Roads. Case no. 215. Route: `/cases/silk-roads`
 ### History: The Case of the Castle Keep
 
 The feudal system. Case no. 216. Route: `/cases/feudalism`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **The feudal system**
    - Video: [What is Feudalism? | Kids Explanation | Social Studies Lesson](https://www.youtube.com/watch?v=ILUEX6S35NU) by Super Simple Sheets (ID `ILUEX6S35NU`)
@@ -367,6 +409,8 @@ The feudal system. Case no. 216. Route: `/cases/feudalism`
 ### Geography: The Case of the Shaking Ground
 
 Earthquakes and volcanoes. Case no. 064. Route: `/cases/shaking-ground`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **Inside the Earth**
    - Video: [Three minutes to the centre of the Earth | BBC Ideas](https://www.youtube.com/watch?v=Cuivnfvx8uw) by BBC Ideas (ID `Cuivnfvx8uw`)
@@ -394,6 +438,8 @@ Earthquakes and volcanoes. Case no. 064. Route: `/cases/shaking-ground`
 
 Rock types and the rock cycle. Case no. 217. Route: `/cases/rocks`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Rock types and the rock cycle**
    - Video: [The Rock Cycle | Sedimentary, Metamorphic, Igneous | Learning Made Fun](https://www.youtube.com/watch?v=Vp_S3BDiR-I) by Learning Made Fun (ID `Vp_S3BDiR-I`)
    - Why it fits: Explains igneous, sedimentary and metamorphic rocks and how they change.
@@ -402,6 +448,8 @@ Rock types and the rock cycle. Case no. 217. Route: `/cases/rocks`
 ### Geography: The Case of the Vanishing Headland
 
 Coastal erosion and landforms. Case no. 218. Route: `/cases/coasts`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **Coastal erosion and landforms**
    - Video: [Landforms of Erosion: Caves, Arches, Stacks and Stumps | AQA GCSE Geography Coastal Landscapes 5](https://www.youtube.com/watch?v=gIUThLF7bIw) by tutor2u (ID `gIUThLF7bIw`)
@@ -414,6 +462,8 @@ Coastal erosion and landforms. Case no. 218. Route: `/cases/coasts`
 ### Science: The Case of the Invisible Building Blocks
 
 Matter and atoms. Case no. 096. Route: `/cases/matter-atoms`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **States of matter**
    - Video: [States Of Matter - Solids, Liquids & Gases | Properties of Matter | Chemistry | FuseSchool](https://www.youtube.com/watch?v=21CR01rlmv4) by FuseSchool - Global Education (ID `21CR01rlmv4`)
@@ -442,6 +492,8 @@ Matter and atoms. Case no. 096. Route: `/cases/matter-atoms`
 
 Heat transfer. Case no. 221. Route: `/cases/heat-transfer`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Heat transfer**
    - Video: [Heat Transfer – Conduction, Convection and Radiation](https://www.youtube.com/watch?v=Me60Ti0E_rY) by Next Generation Science (ID `Me60Ti0E_rY`)
    - Why it fits: Compares conduction, convection and radiation with examples.
@@ -451,6 +503,8 @@ Heat transfer. Case no. 221. Route: `/cases/heat-transfer`
 
 The digestive system. Case no. 222. Route: `/cases/digestion`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **The digestive system**
    - Video: [How your digestive system works - Emma Bryce](https://www.youtube.com/watch?v=Og5xAdC8EUI) by TED-Ed (ID `Og5xAdC8EUI`)
    - Why it fits: Follows food through each organ of the digestive system.
@@ -459,6 +513,8 @@ The digestive system. Case no. 222. Route: `/cases/digestion`
 ### Maths: The Case of the Missing Number
 
 Equations and graphs. Case no. 105. Route: `/cases/equations-graphs`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **Variables and expressions**
    - Video: [Variables, Expressions, and Equations | Math with Mr. J](https://www.youtube.com/watch?v=Qa-MCLDrSlI) by Math with Mr. J (ID `Qa-MCLDrSlI`)
@@ -486,6 +542,8 @@ Equations and graphs. Case no. 105. Route: `/cases/equations-graphs`
 
 Probability basics. Case no. 223. Route: `/cases/probability`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Probability basics**
    - Video: [Math Antics - Basic Probability](https://www.youtube.com/watch?v=KzfWUEJjG18) by mathantics (ID `KzfWUEJjG18`)
    - Why it fits: Explains probability as a number from 0 to 1 and how to calculate it.
@@ -494,6 +552,8 @@ Probability basics. Case no. 223. Route: `/cases/probability`
 ### Maths: The Case of the Oddly Shaped Field
 
 Area of triangles, parallelograms and trapeziums. Case no. 224. Route: `/cases/area`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **Area of triangles, parallelograms and trapeziums**
    - Video: [GCSE Maths - How to Find the Area of Rectangles, Parallelograms, Triangles and Trapeziums](https://www.youtube.com/watch?v=tN95TLKpmVQ) by Cognito (ID `tN95TLKpmVQ`)
@@ -504,6 +564,8 @@ Area of triangles, parallelograms and trapeziums. Case no. 224. Route: `/cases/a
 ### History: The Case of the Buried Road
 
 The Roman Empire. Case no. 112. Route: `/cases/roman-empire`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **The rise of Rome**
    - Video: [The Roman Empire. Or Republic. Or...Which Was It?: Crash Course World History #10](https://www.youtube.com/watch?v=oPf27gAup9U) by CrashCourse (ID `oPf27gAup9U`)
@@ -533,6 +595,8 @@ The Roman Empire. Case no. 112. Route: `/cases/roman-empire`
 
 The Islamic Golden Age. Case no. 225. Route: `/cases/golden-age`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **The Islamic Golden Age**
    - Video: [The Islamic Golden Age and The House of Wisdom DOCUMENTARY](https://www.youtube.com/watch?v=Hm4Sg086uLg) by Invicta (ID `Hm4Sg086uLg`)
    - Why it fits: Tells the story of the House of Wisdom and the scholars of Baghdad.
@@ -543,6 +607,8 @@ The Islamic Golden Age. Case no. 225. Route: `/cases/golden-age`
 
 The Mali Empire and Mansa Musa. Case no. 226. Route: `/cases/mali-empire`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **The Mali Empire and Mansa Musa**
    - Video: [Mansa Musa, one of the wealthiest people who ever lived - Jessica Smith](https://www.youtube.com/watch?v=O3YJMaL55TM) by TED-Ed (ID `O3YJMaL55TM`)
    - Why it fits: Explains Mansa Musa's wealth, his pilgrimage and the Mali Empire.
@@ -551,6 +617,8 @@ The Mali Empire and Mansa Musa. Case no. 226. Route: `/cases/mali-empire`
 ### Geography: The Case of the Strange Season
 
 Weather and climate. Case no. 119. Route: `/cases/weather-climate`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **Weather or climate?**
    - Video: [Weather vs. Climate: Crash Course Kids #28.1](https://www.youtube.com/watch?v=YbAWny7FV3w) by Crash Course Kids (ID `YbAWny7FV3w`)
@@ -581,6 +649,8 @@ Weather and climate. Case no. 119. Route: `/cases/weather-climate`
 
 Renewable and non-renewable resources. Case no. 227. Route: `/cases/resources`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Renewable and non-renewable resources**
    - Video: [Renewable and Non-renewable Resources](https://www.youtube.com/watch?v=axCR3uIn3Vs) by Next Generation Science (ID `axCR3uIn3Vs`)
    - Why it fits: Sorts natural resources into renewable and non-renewable, with examples.
@@ -589,6 +659,8 @@ Renewable and non-renewable resources. Case no. 227. Route: `/cases/resources`
 ### Geography: The Case of the Disappearing Forest
 
 Rainforests and deforestation. Case no. 228. Route: `/cases/rainforests`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **Rainforests and deforestation**
    - Video: [Climate 101: Deforestation | National Geographic](https://www.youtube.com/watch?v=Ic-J6hcSKa8) by National Geographic (ID `Ic-J6hcSKa8`)
@@ -601,6 +673,8 @@ Rainforests and deforestation. Case no. 228. Route: `/cases/rainforests`
 ### Science: The Case of the Runaway Trolley
 
 Forces and motion. Case no. 127. Route: `/cases/forces-motion`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **Speed, velocity and acceleration**
    - Video: [Position/Velocity/Acceleration Part 1: Definitions](https://www.youtube.com/watch?v=4dCrkp8qgLU) by Professor Dave Explains (ID `4dCrkp8qgLU`)
@@ -628,6 +702,8 @@ Forces and motion. Case no. 127. Route: `/cases/forces-motion`
 
 Current, voltage and resistance. Case no. 231. Route: `/cases/electricity`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Current, voltage and resistance**
    - Video: [Ohms Law Explained - The basics circuit theory](https://www.youtube.com/watch?v=HsLLq6Rm5tU) by The Engineering Mindset (ID `HsLLq6Rm5tU`)
    - Why it fits: Explains current, voltage and resistance and how Ohm's law links them.
@@ -638,6 +714,8 @@ Current, voltage and resistance. Case no. 231. Route: `/cases/electricity`
 
 The heart and circulation. Case no. 232. Route: `/cases/circulation`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **The heart and circulation**
    - Video: [Circulatory System and Pathway of Blood Through the Heart](https://www.youtube.com/watch?v=_vZ0lefPg_0) by Amoeba Sisters (ID `_vZ0lefPg_0`)
    - Why it fits: Traces the path of blood through the heart, lungs and body.
@@ -646,6 +724,8 @@ The heart and circulation. Case no. 232. Route: `/cases/circulation`
 ### Maths: The Case of the Crooked Ladder
 
 Geometry and measurement. Case no. 134. Route: `/cases/geometry`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **Angles in triangles and polygons**
    - Video: [Sum of interior angles of a polygon | Angles and intersecting lines | Geometry | Khan Academy](https://www.youtube.com/watch?v=qG3HnRccrQU) by Khan Academy (ID `qG3HnRccrQU`)
@@ -675,6 +755,8 @@ Geometry and measurement. Case no. 134. Route: `/cases/geometry`
 
 Simultaneous equations. Case no. 233. Route: `/cases/simultaneous`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Simultaneous equations**
    - Video: [GCSE Maths - How to Solve Simultaneous Equations - Using the Elimination Technique (2026/27 exams)](https://www.youtube.com/watch?v=68hMhae269k) by Cognito (ID `68hMhae269k`)
    - Why it fits: Solves pairs of equations using elimination.
@@ -685,6 +767,8 @@ Simultaneous equations. Case no. 233. Route: `/cases/simultaneous`
 
 Scatter graphs and correlation. Case no. 234. Route: `/cases/scatter-graphs`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Scatter graphs and correlation**
    - Video: [Scatter Graphs: Introduction, Correlation, and Line of Best Fit](https://www.youtube.com/watch?v=vg02s4CNEAg) by Minity Maths (ID `vg02s4CNEAg`)
    - Why it fits: Explains scatter graphs, types of correlation and lines of best fit.
@@ -693,6 +777,8 @@ Scatter graphs and correlation. Case no. 234. Route: `/cases/scatter-graphs`
 ### History: The Case of the Silent Mill
 
 The Industrial Revolution. Case no. 141. Route: `/cases/industrial-revolution`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **Life before the factories**
    - Video: [Causes Of The Industrial Revolution: The Agricultural Revolution](https://www.youtube.com/watch?v=BLF72K181mM) by ClickView (ID `BLF72K181mM`)
@@ -723,6 +809,8 @@ The Industrial Revolution. Case no. 141. Route: `/cases/industrial-revolution`
 
 The French Revolution. Case no. 235. Route: `/cases/french-revolution`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **The French Revolution**
    - Video: [What caused the French Revolution? - Tom Mullaney](https://www.youtube.com/watch?v=PBn7iWzrKoI) by TED-Ed (ID `PBn7iWzrKoI`)
    - Why it fits: Explains the causes of the French Revolution.
@@ -731,6 +819,8 @@ The French Revolution. Case no. 235. Route: `/cases/french-revolution`
 ### History: The Case of the Broken Chains
 
 The transatlantic slave trade and its abolition. Case no. 236. Route: `/cases/slave-trade`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **The transatlantic slave trade and its abolition**
    - Video: [The Atlantic slave trade: What too few textbooks told you - Anthony Hazard](https://www.youtube.com/watch?v=3NXC4Q_4JVg) by TED-Ed (ID `3NXC4Q_4JVg`)
@@ -741,6 +831,8 @@ The transatlantic slave trade and its abolition. Case no. 236. Route: `/cases/sl
 ### Geography: The Case of the Crowded City
 
 Population and cities. Case no. 148. Route: `/cases/population-cities`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **Why the population is growing**
    - Video: [Overpopulation – The Human Explosion Explained](https://www.youtube.com/watch?v=QsBT5EQt348) by Kurzgesagt – In a Nutshell (ID `QsBT5EQt348`)
@@ -770,6 +862,8 @@ Population and cities. Case no. 148. Route: `/cases/population-cities`
 
 Measuring development. Case no. 237. Route: `/cases/development`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Measuring development**
    - Video: [Various Measures of Development [AP Human Geo Review—Unit 7 Topic 3]](https://www.youtube.com/watch?v=DUkxddq1C5Q) by Heimler's History (ID `DUkxddq1C5Q`)
    - Why it fits: Compares GDP, GNI per head and the Human Development Index.
@@ -779,6 +873,8 @@ Measuring development. Case no. 237. Route: `/cases/development`
 ### Geography: The Case of the Well-Travelled T-shirt
 
 Globalisation. Case no. 238. Route: `/cases/globalisation`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **Globalisation**
    - Video: [What Is Globalization? Understand Our Interconnected World](https://www.youtube.com/watch?v=wLNp3kgBuuQ) by CFR Education (ID `wLNp3kgBuuQ`)
@@ -790,6 +886,8 @@ Globalisation. Case no. 238. Route: `/cases/globalisation`
 ### Science: The Case of the Family Resemblance
 
 Genes and evolution. Case no. 156. Route: `/cases/genes-evolution`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **DNA and genes**
    - Video: [DNA, Chromosomes, Genes, and Traits: An Intro to Heredity](https://www.youtube.com/watch?v=8m6hHRlKwxY) by Amoeba Sisters (ID `8m6hHRlKwxY`)
@@ -816,6 +914,8 @@ Genes and evolution. Case no. 156. Route: `/cases/genes-evolution`
 
 Ionic and covalent bonding. Case no. 241. Route: `/cases/bonding`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Ionic and covalent bonding**
    - Video: [Introduction to Ionic Bonding and Covalent Bonding](https://www.youtube.com/watch?v=S_k0kr2eZSQ) by The Organic Chemistry Tutor (ID `S_k0kr2eZSQ`)
    - Why it fits: Explains how ionic and covalent bonds form, with examples.
@@ -826,6 +926,8 @@ Ionic and covalent bonding. Case no. 241. Route: `/cases/bonding`
 
 The electromagnetic spectrum. Case no. 242. Route: `/cases/em-spectrum`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **The electromagnetic spectrum**
    - Video: [What is Light? Maxwell and the Electromagnetic Spectrum](https://www.youtube.com/watch?v=pj_ya0e20vE) by Professor Dave Explains (ID `pj_ya0e20vE`)
    - Why it fits: Explains light as an electromagnetic wave and the parts of the spectrum.
@@ -834,6 +936,8 @@ The electromagnetic spectrum. Case no. 242. Route: `/cases/em-spectrum`
 ### Maths: The Case of the Curved Path
 
 Quadratics and trigonometry. Case no. 163. Route: `/cases/quadratics-trig`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **Factorising quadratics**
    - Video: [Factoring quadratics as (x+a)(x+b) | Mathematics II | High School Math | Khan Academy](https://www.youtube.com/watch?v=D3a8NnpQ2vU) by Khan Academy (ID `D3a8NnpQ2vU`)
@@ -861,6 +965,8 @@ Quadratics and trigonometry. Case no. 163. Route: `/cases/quadratics-trig`
 
 Arithmetic and geometric sequences. Case no. 243. Route: `/cases/sequences`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Arithmetic and geometric sequences**
    - Video: [Arithmetic and Geometric SEQUENCES (full lesson) | math 11 | jensenmath.ca](https://www.youtube.com/watch?v=-_myO_Lmdbw) by JensenMath (ID `-_myO_Lmdbw`)
    - Why it fits: A full lesson on arithmetic and geometric sequences and their nth terms.
@@ -871,6 +977,8 @@ Arithmetic and geometric sequences. Case no. 243. Route: `/cases/sequences`
 
 Probability tree diagrams. Case no. 244. Route: `/cases/tree-diagrams`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Probability tree diagrams**
    - Video: [Probability : Tree Diagrams](https://www.youtube.com/watch?v=jcggUGY3vIg) by Minity Maths (ID `jcggUGY3vIg`)
    - Why it fits: Shows how to draw and use tree diagrams for two events.
@@ -879,6 +987,8 @@ Probability tree diagrams. Case no. 244. Route: `/cases/tree-diagrams`
 ### History: The Case of the Unsent Letter
 
 The World Wars. Case no. 171. Route: `/cases/world-wars`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **The causes of World War I**
    - Video: [How did WW1 Start? | Causes of the First World War](https://www.youtube.com/watch?v=c7nUDLKKEBY) by Imperial War Museums (ID `c7nUDLKKEBY`)
@@ -909,6 +1019,8 @@ The World Wars. Case no. 171. Route: `/cases/world-wars`
 
 The Cold War. Case no. 245. Route: `/cases/cold-war`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **The Cold War**
    - Video: [The Cold War - OverSimplified (Part 1)](https://www.youtube.com/watch?v=I79TpDe3t2g) by OverSimplified (ID `I79TpDe3t2g`)
    - Why it fits: Explains how the wartime allies became Cold War rivals.
@@ -919,6 +1031,8 @@ The Cold War. Case no. 245. Route: `/cases/cold-war`
 
 Indian independence and partition. Case no. 246. Route: `/cases/indian-independence`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Indian independence and partition**
    - Video: [Why was India split into two countries? - Haimanti Roy](https://www.youtube.com/watch?v=DrcCTgwbsjc) by TED-Ed (ID `DrcCTgwbsjc`)
    - Why it fits: Explains why British India was split into two countries in 1947.
@@ -928,6 +1042,8 @@ Indian independence and partition. Case no. 246. Route: `/cases/indian-independe
 ### Geography: The Case of the Melting Evidence
 
 Climate change and sustainability. Case no. 178. Route: `/cases/climate-change`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **The greenhouse effect**
    - Video: [What Is the Greenhouse Effect?](https://www.youtube.com/watch?v=SN5-DnOHQmE) by NASA Space Place (ID `SN5-DnOHQmE`)
@@ -956,6 +1072,8 @@ Climate change and sustainability. Case no. 178. Route: `/cases/climate-change`
 
 Water scarcity. Case no. 247. Route: `/cases/water-scarcity`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Water scarcity**
    - Video: [Fresh water scarcity: An introduction to the problem - Christiana Z. Peppard](https://www.youtube.com/watch?v=otrpxtAmDAk) by TED-Ed (ID `otrpxtAmDAk`)
    - Why it fits: Introduces why fresh water is scarce and how it is managed.
@@ -964,6 +1082,8 @@ Water scarcity. Case no. 247. Route: `/cases/water-scarcity`
 ### Geography: The Case of the Empty Plate
 
 Food security. Case no. 248. Route: `/cases/food-security`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **Food security**
    - Video: [What is food security?](https://www.youtube.com/watch?v=8c5ZN7BseNA) by Canadian Foodgrains Bank (ID `8c5ZN7BseNA`)
@@ -977,6 +1097,8 @@ Food security. Case no. 248. Route: `/cases/food-security`
 
 Light and shadows. Case no. 301. Route: `/cases/icse-light-shadows`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Light and shadows**
    - Video: [Light and Shadows | Types of Light | How are Shadows formed | Video for Kids](https://www.youtube.com/watch?v=fy7eoMef3e8) by learning junction (ID `fy7eoMef3e8`)
    - Why it fits: Explains luminous and non-luminous objects and how shadows form.
@@ -987,6 +1109,8 @@ Light and shadows. Case no. 301. Route: `/cases/icse-light-shadows`
 
 The leaf and photosynthesis. Case no. 302. Route: `/cases/icse-leaf`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **The leaf and photosynthesis**
    - Video: [Photosynthesis for Kids | Learn how plants MAKE their own food](https://www.youtube.com/watch?v=Iln136eMl4g) by Learn Bright (ID `Iln136eMl4g`)
    - Why it fits: Explains how plants make food from sunlight, water and carbon dioxide.
@@ -996,6 +1120,8 @@ The leaf and photosynthesis. Case no. 302. Route: `/cases/icse-leaf`
 
 HCF and LCM. Case no. 303. Route: `/cases/icse-hcf-lcm`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **HCF and LCM**
    - Video: [How To Find The LCM and HCF Quickly!](https://www.youtube.com/watch?v=fjdeo6anRY4) by The Organic Chemistry Tutor (ID `fjdeo6anRY4`)
    - Why it fits: Shows quick methods for finding the HCF and LCM of numbers.
@@ -1004,6 +1130,8 @@ HCF and LCM. Case no. 303. Route: `/cases/icse-hcf-lcm`
 ### Maths: The Case of the Sorted Suspects
 
 Sets. Case no. 304. Route: `/cases/icse-sets`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **Sets**
    - Video: [What are Elements of Sets? | Set Theory, Cardinality, Set Elements](https://www.youtube.com/watch?v=sX9ZSdzx9gU) by Wrath of Math (ID `sX9ZSdzx9gU`)
@@ -1015,6 +1143,8 @@ Sets. Case no. 304. Route: `/cases/icse-sets`
 
 The Vedic period. Case no. 305. Route: `/cases/icse-vedic`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **The Vedic period**
    - Video: [Vedic Age, History](https://www.youtube.com/watch?v=-LYioyRKZT0) by theOpenBook (ID `-LYioyRKZT0`)
    - Why it fits: Gives an overview of the Vedic age, its society and its texts.
@@ -1023,6 +1153,8 @@ The Vedic period. Case no. 305. Route: `/cases/icse-vedic`
 ### History: The Case of the Two Princes
 
 Jainism and Buddhism. Case no. 306. Route: `/cases/icse-jainism-buddhism`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **Jainism and Buddhism**
    - Video: [Jainism and Buddhism | History Class 6 | ICSE Board](https://www.youtube.com/watch?v=P9ikaIJ1EW8) by Blueprint Digital (ID `P9ikaIJ1EW8`)
@@ -1033,6 +1165,8 @@ Jainism and Buddhism. Case no. 306. Route: `/cases/icse-jainism-buddhism`
 
 Major landforms. Case no. 307. Route: `/cases/icse-landforms`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Mountains, plateaus and plains**
    - Video: [Mountains, Plateaus & Plains Explained 🏔️🟫🌾 | Landforms for Kids | Class 6 Geography](https://www.youtube.com/watch?v=Et9ESJShCHc) by EduRev Class 6 - 10 (ID `Et9ESJShCHc`)
    - Why it fits: Explains the three major landforms with examples.
@@ -1041,6 +1175,8 @@ Major landforms. Case no. 307. Route: `/cases/icse-landforms`
 ### Geography: The Case of the Four Spheres
 
 The domains of the Earth. Case no. 308. Route: `/cases/icse-earth-domains`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **The domains of the Earth**
    - Video: [FOUR DOMAINS OF THE EARTH | Atmosphere | Lithosphere | Hydrosphere | Biosphere | Dr Binocs Show](https://www.youtube.com/watch?v=9JFr8_BDsiU) by Peekaboo Kidz (ID `9JFr8_BDsiU`)
@@ -1054,6 +1190,8 @@ The domains of the Earth. Case no. 308. Route: `/cases/icse-earth-domains`
 
 Separating mixtures. Case no. 311. Route: `/cases/icse-mixtures`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Separating mixtures**
    - Video: [Separation of Mixtures Explained: Filtration, Evaporation, Distillation & Chromatography](https://www.youtube.com/watch?v=tWd1biGv_nY) by Periodic Table Talk | Chemistry Step-by-Step (ID `tWd1biGv_nY`)
    - Why it fits: Explains filtration, evaporation, distillation and chromatography.
@@ -1063,6 +1201,8 @@ Separating mixtures. Case no. 311. Route: `/cases/icse-mixtures`
 
 Forms of energy and energy changes. Case no. 312. Route: `/cases/icse-energy`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Forms of energy and energy changes**
    - Video: [TYPES OF ENERGY | Physics Animation](https://www.youtube.com/watch?v=jhKejoBqiYc) by EarthPen (ID `jhKejoBqiYc`)
    - Why it fits: An animation of the main forms of energy and how they change.
@@ -1071,6 +1211,8 @@ Forms of energy and energy changes. Case no. 312. Route: `/cases/icse-energy`
 ### Maths: The Case of the Borrowed Bicycle Money
 
 Simple interest. Case no. 313. Route: `/cases/icse-simple-interest`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **Simple interest**
    - Video: [GCSE Maths - How to Calculate Simple Interest (2026/27 exams)](https://www.youtube.com/watch?v=fqDOKz2m5rY) by Cognito (ID `fqDOKz2m5rY`)
@@ -1082,6 +1224,8 @@ Simple interest. Case no. 313. Route: `/cases/icse-simple-interest`
 
 Parallel lines and transversals. Case no. 314. Route: `/cases/icse-parallel-lines`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Parallel lines and transversals**
    - Video: [GCSE Maths - Alternate, Corresponding and Allied Angles - Parallel Lines Angle Rules (2026/27 exams)](https://www.youtube.com/watch?v=I5auyoXYoX0) by Cognito (ID `I5auyoXYoX0`)
    - Why it fits: Explains alternate, corresponding and allied (co-interior) angles.
@@ -1091,6 +1235,8 @@ Parallel lines and transversals. Case no. 314. Route: `/cases/icse-parallel-line
 ### History: The Case of the Tall Tower
 
 The Delhi Sultanate. Case no. 315. Route: `/cases/icse-delhi-sultanate`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **The Delhi Sultanate**
    - Video: [The Complete Story of the Delhi Sultanate](https://www.youtube.com/watch?v=8ZrsQNpHnVY) by Gaurav Thakur (ID `8ZrsQNpHnVY`)
@@ -1102,6 +1248,8 @@ The Delhi Sultanate. Case no. 315. Route: `/cases/icse-delhi-sultanate`
 
 The Mughal Empire under Akbar. Case no. 316. Route: `/cases/icse-mughals`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **The Mughal Empire under Akbar**
    - Video: [The rise and fall of the Mughal Empire - Stephanie Honchell Smith](https://www.youtube.com/watch?v=fMsmCxIEQr4) by TED-Ed (ID `fMsmCxIEQr4`)
    - Why it fits: Explains the rise of the Mughal Empire, including Akbar’s rule.
@@ -1112,6 +1260,8 @@ The Mughal Empire under Akbar. Case no. 316. Route: `/cases/icse-mughals`
 
 Weathering and soil formation. Case no. 317. Route: `/cases/icse-weathering`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Weathering and soil formation**
    - Video: [Physical and Chemical Weathering of Rocks](https://www.youtube.com/watch?v=skB_A2sfBcY) by MooMooMath and Science (ID `skB_A2sfBcY`)
    - Why it fits: Compares physical and chemical weathering of rocks.
@@ -1121,6 +1271,8 @@ Weathering and soil formation. Case no. 317. Route: `/cases/icse-weathering`
 ### Geography: The Case of the Thin Air
 
 Layers of the atmosphere. Case no. 318. Route: `/cases/icse-atmosphere`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **Layers of the atmosphere**
    - Video: [Layers of the Atmosphere | What is Atmosphere | Animation](https://www.youtube.com/watch?v=y9mbrAVRPSU) by VectorGlobe - Know the World (ID `y9mbrAVRPSU`)
@@ -1133,6 +1285,8 @@ Layers of the atmosphere. Case no. 318. Route: `/cases/icse-atmosphere`
 
 Reflection of light. Case no. 321. Route: `/cases/icse-reflection`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Reflection of light**
    - Video: [Law of Reflection](https://www.youtube.com/watch?v=V0Z_nk5JS_E) by Science Sauce (ID `V0Z_nk5JS_E`)
    - Why it fits: Explains the law of reflection with ray diagrams.
@@ -1141,6 +1295,8 @@ Reflection of light. Case no. 321. Route: `/cases/icse-reflection`
 ### Science: The Case of the Purple Cabbage
 
 Acids, bases and indicators. Case no. 322. Route: `/cases/icse-acids-bases`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **Acids, bases and indicators**
    - Video: [Acids and Bases for Kids | Learn the difference between an acid and a base](https://www.youtube.com/watch?v=ivRczDkilAI) by Learn Bright (ID `ivRczDkilAI`)
@@ -1151,6 +1307,8 @@ Acids, bases and indicators. Case no. 322. Route: `/cases/icse-acids-bases`
 
 Exponents and their laws. Case no. 323. Route: `/cases/icse-exponents`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Exponents and their laws**
    - Video: [Algebra Basics: Laws Of Exponents - Math Antics](https://www.youtube.com/watch?v=LkhPRz7Hocg) by mathantics (ID `LkhPRz7Hocg`)
    - Why it fits: Explains the laws of exponents step by step.
@@ -1159,6 +1317,8 @@ Exponents and their laws. Case no. 323. Route: `/cases/icse-exponents`
 ### Maths: The Case of the Sale Signs
 
 Profit, loss and discount. Case no. 324. Route: `/cases/icse-profit-loss`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **Profit, loss and discount**
    - Video: [Profit and Loss | Mathematics Grade 5 | Periwinkle](https://www.youtube.com/watch?v=tHF2bXCQ3y4) by Periwinkle (ID `tHF2bXCQ3y4`)
@@ -1170,6 +1330,8 @@ Profit, loss and discount. Case no. 324. Route: `/cases/icse-profit-loss`
 
 The Revolt of 1857. Case no. 325. Route: `/cases/icse-revolt-1857`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **The Revolt of 1857**
    - Video: [The Revolt of 1857 Explained | India's First War of Independence | Animated History for UPSC](https://www.youtube.com/watch?v=A4dRbFAf7VI) by IAS EXPRESS (ID `A4dRbFAf7VI`)
    - Why it fits: An animated summary of the causes and events of the 1857 revolt.
@@ -1179,6 +1341,8 @@ The Revolt of 1857. Case no. 325. Route: `/cases/icse-revolt-1857`
 ### History: The Case of the Reformer’s Pen
 
 Social reform in 19th-century India. Case no. 326. Route: `/cases/icse-social-reform`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **Social reform in 19th-century India**
    - Video: [Raja Ram Mohan Roy | Socio Religious Reform Movements in India UPSC](https://www.youtube.com/watch?v=ePwIkd8DXB8) by Bookstawa (ID `ePwIkd8DXB8`)
@@ -1190,6 +1354,8 @@ Social reform in 19th-century India. Case no. 326. Route: `/cases/icse-social-re
 
 Contours and relief on maps. Case no. 327. Route: `/cases/icse-contours`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Contours and relief on maps**
    - Video: [Understanding contour lines with Steve Backshall and Ordnance Survey](https://www.youtube.com/watch?v=4i_6eToM3X8) by Ordnance Survey (ID `4i_6eToM3X8`)
    - Why it fits: A short explanation of contour lines from a national mapping agency.
@@ -1199,6 +1365,8 @@ Contours and relief on maps. Case no. 327. Route: `/cases/icse-contours`
 ### Geography: The Case of the Early Warning
 
 Natural disasters and their management. Case no. 328. Route: `/cases/icse-disasters`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **Natural disasters and their management**
    - Video: [Disaster Management | Earthquakes | Cyclones | Landslides | Environmental Studies | EVS](https://www.youtube.com/watch?v=tuV-K6lKQm0) by Microbiology with Deepthi Varier (ID `tuV-K6lKQm0`)
@@ -1212,6 +1380,8 @@ Natural disasters and their management. Case no. 328. Route: `/cases/icse-disast
 
 Upthrust and Archimedes’ principle. Case no. 331. Route: `/cases/icse-upthrust`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Upthrust and Archimedes’ principle**
    - Video: [Fluids, Buoyancy, and Archimedes' Principle](https://www.youtube.com/watch?v=16HDJNoXQII) by Professor Dave Explains (ID `16HDJNoXQII`)
    - Why it fits: Explains buoyancy and Archimedes’ principle clearly.
@@ -1220,6 +1390,8 @@ Upthrust and Archimedes’ principle. Case no. 331. Route: `/cases/icse-upthrust
 ### Science: The Case of the Bursting Balloon
 
 Boyle’s law and Charles’s law. Case no. 332. Route: `/cases/icse-gas-laws`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **Boyle’s law and Charles’s law**
    - Video: [The ABC's of gas: Avogadro, Boyle, Charles - Brian Bennett](https://www.youtube.com/watch?v=BY9VGS2eXas) by TED-Ed (ID `BY9VGS2eXas`)
@@ -1231,6 +1403,8 @@ Boyle’s law and Charles’s law. Case no. 332. Route: `/cases/icse-gas-laws`
 
 Compound interest. Case no. 333. Route: `/cases/icse-compound-interest`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Compound interest**
    - Video: [What Is Compound Interest? | Investopedia](https://www.youtube.com/watch?v=wf91rEGw88Q) by Investopedia (ID `wf91rEGw88Q`)
    - Why it fits: A short explanation of how compound interest works.
@@ -1241,6 +1415,8 @@ Compound interest. Case no. 333. Route: `/cases/icse-compound-interest`
 
 Logarithms. Case no. 334. Route: `/cases/icse-logarithms`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Logarithms**
    - Video: [Logarithms, Explained - Steve Kelly](https://www.youtube.com/watch?v=zzu2POfYv0Y) by TED-Ed (ID `zzu2POfYv0Y`)
    - Why it fits: Explains what a logarithm is and why it is useful.
@@ -1249,6 +1425,8 @@ Logarithms. Case no. 334. Route: `/cases/icse-logarithms`
 ### History: The Case of the Emperor’s Edicts
 
 The Mauryan Empire and Ashoka. Case no. 335. Route: `/cases/icse-mauryan-empire`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **The Mauryan Empire and Ashoka**
    - Video: [Ashoka the Great - Rise of the Mauryan Empire Documentary](https://www.youtube.com/watch?v=Ed6UZtVTI64) by Kings and Generals (ID `Ed6UZtVTI64`)
@@ -1260,6 +1438,8 @@ The Mauryan Empire and Ashoka. Case no. 335. Route: `/cases/icse-mauryan-empire`
 
 The Indian Constitution: Preamble and Fundamental Rights. Case no. 336. Route: `/cases/icse-constitution`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **The Preamble and Fundamental Rights**
    - Video: [The Preamble And Our Constitution | Class 7 - Civics | Learn With BYJU'S](https://www.youtube.com/watch?v=eGCc7KFiueU) by BYJU'S (ID `eGCc7KFiueU`)
    - Why it fits: Explains the Preamble and the ideas in the Constitution.
@@ -1270,6 +1450,8 @@ The Indian Constitution: Preamble and Fundamental Rights. Case no. 336. Route: `
 
 Rotation and revolution of the Earth. Case no. 337. Route: `/cases/icse-rotation-revolution`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Rotation and revolution of the Earth**
    - Video: [Earth's Rotation & Revolution: Crash Course Kids 8.1](https://www.youtube.com/watch?v=l64YwNl1wr0) by Crash Course Kids (ID `l64YwNl1wr0`)
    - Why it fits: Explains the Earth’s rotation and revolution and what they cause.
@@ -1278,6 +1460,8 @@ Rotation and revolution of the Earth. Case no. 337. Route: `/cases/icse-rotation
 ### Geography: The Case of the Trade Winds
 
 Pressure belts and planetary winds. Case no. 338. Route: `/cases/icse-pressure-winds`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **Pressure belts and planetary winds**
    - Video: [Global Pressures and Wind Belts](https://www.youtube.com/watch?v=oZ6exQoU_CM) by Earth Explained (ID `oZ6exQoU_CM`)
@@ -1290,6 +1474,8 @@ Pressure belts and planetary winds. Case no. 338. Route: `/cases/icse-pressure-w
 
 Electrolysis. Case no. 341. Route: `/cases/icse-electrolysis`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Electrolysis**
    - Video: [What Is Electrolysis | Reactions | Chemistry | FuseSchool](https://www.youtube.com/watch?v=7uIIq_Ofzgw) by FuseSchool - Global Education (ID `7uIIq_Ofzgw`)
    - Why it fits: Explains what electrolysis is and what happens at each electrode.
@@ -1298,6 +1484,8 @@ Electrolysis. Case no. 341. Route: `/cases/icse-electrolysis`
 ### Science: The Case of the Fogged Photographic Plate
 
 Radioactivity. Case no. 342. Route: `/cases/icse-radioactivity`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **Radioactivity**
    - Video: [Nuclear Radiation Explained | Alpha, Beta & Gamma | GCSE Physics](https://www.youtube.com/watch?v=dvhqzQ-K7K8) by Science Workshop (ID `dvhqzQ-K7K8`)
@@ -1309,6 +1497,8 @@ Radioactivity. Case no. 342. Route: `/cases/icse-radioactivity`
 
 Matrices. Case no. 343. Route: `/cases/icse-matrices`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Matrices**
    - Video: [Intro to Matrices](https://www.youtube.com/watch?v=yRwQ7A6jVLk) by The Organic Chemistry Tutor (ID `yRwQ7A6jVLk`)
    - Why it fits: Introduces matrices, their order and basic operations.
@@ -1318,6 +1508,8 @@ Matrices. Case no. 343. Route: `/cases/icse-matrices`
 
 Section and mid-point formula. Case no. 344. Route: `/cases/icse-section-formula`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **Section and mid-point formula**
    - Video: [Section Formula | Coordinate Geometry | TG Grade 10 | Math | Khan Academy](https://www.youtube.com/watch?v=XOLry3IRNyE) by Khan Academy India - English (ID `XOLry3IRNyE`)
    - Why it fits: Derives and uses the section formula with examples.
@@ -1326,6 +1518,8 @@ Section and mid-point formula. Case no. 344. Route: `/cases/icse-section-formula
 ### History: The Case of the Two Houses
 
 The Union Parliament. Case no. 345. Route: `/cases/icse-parliament`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **The Union Parliament**
    - Video: [The Houses Of The Indian Parliament | Class 8 - Civics | Learn With BYJU'S](https://www.youtube.com/watch?v=L3CuZWuZUPs) by BYJU'S (ID `L3CuZWuZUPs`)
@@ -1337,6 +1531,8 @@ The Union Parliament. Case no. 345. Route: `/cases/icse-parliament`
 
 The United Nations. Case no. 346. Route: `/cases/icse-united-nations`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **The United Nations**
    - Video: [How 193 Countries Work Together | United Nations](https://www.youtube.com/watch?v=Ttoad811t88) by United Nations (ID `Ttoad811t88`)
    - Why it fits: The UN’s own short explanation of how its members work together.
@@ -1347,6 +1543,8 @@ The United Nations. Case no. 346. Route: `/cases/icse-united-nations`
 
 The climate of India: the monsoon. Case no. 347. Route: `/cases/icse-monsoon`
 
+Textbook: not yet checked. Credits: not yet confirmed.
+
 1. **The climate of India: the monsoon**
    - Video: [Indian Monsoon Explained - Through Animation | Key Insights for UPSC Aspirants | UPSC 2025](https://www.youtube.com/watch?v=DuX133AeeyY) by PW OnlyIAS English (ID `DuX133AeeyY`)
    - Why it fits: An animated explanation of how the Indian monsoon works.
@@ -1356,6 +1554,8 @@ The climate of India: the monsoon. Case no. 347. Route: `/cases/icse-monsoon`
 ### Geography: The Case of the Black Cotton Fields
 
 Soils of India. Case no. 348. Route: `/cases/icse-soils-india`
+
+Textbook: not yet checked. Credits: not yet confirmed.
 
 1. **Soils of India**
    - Video: [Indian Soil Types Explained | Alluvial, Black, Red, Laterite & Desert Soils](https://www.youtube.com/watch?v=S6eoUXq27dU) by GM Tara Education  (ID `S6eoUXq27dU`)

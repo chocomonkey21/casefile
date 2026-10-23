@@ -242,7 +242,7 @@ const SCATTER: ChapterSpec = {
           "Temperature outside and heating bills: negative correlation.",
           "Birthday month and height: no correlation.",
         ),
-        p("Detective question: towns with more fire stations have more fires. Do fire stations cause fires? (No. Bigger towns have both more fires and more fire stations. Population is the hidden factor.)"),
+        p("Think about it: towns with more fire stations have more fires. Do fire stations cause fires? (No. Bigger towns have both more fires and more fire stations. Population is the hidden factor.)"),
       ],
       practice: [
         { p: "As the age of a car goes up, its value goes down. What type of correlation is this?", a: "Negative", w: [["Positive", "Positive means both rise together."], ["No correlation", "There is a clear pattern here."]], x: "One goes up as the other goes down." },
@@ -313,7 +313,7 @@ const FRENCH: ChapterSpec = {
       tryIt: [
         h("Cause or event?"),
         list("Rising bread prices: cause (short-term).", "Storming of the Bastille: event.", "Unfair taxes on the Third Estate: cause (long-term).", "Execution of Louis XVI: event and consequence."),
-        p("Detective question: the Bastille held only seven prisoners. Why did attacking it matter? (It was a symbol of the king’s power, and the crowd also wanted its gunpowder.)"),
+        p("Think about it: the Bastille held only seven prisoners. Why did attacking it matter? (It was a symbol of the king’s power, and the crowd also wanted its gunpowder.)"),
       ],
       practice: [
         { p: "Which estate paid most of the taxes?", a: "The Third Estate", w: [["The First Estate (clergy)", "The clergy paid little tax."], ["The Second Estate (nobles)", "Nobles had many tax privileges."]], x: "The Third Estate, most of the population, paid most taxes." },
@@ -450,7 +450,7 @@ const DEVELOPMENT: ChapterSpec = {
         h("Compare two countries"),
         p("Country A: GNI per head high, life expectancy 66, adult literacy 70%. Country B: GNI per head similar, life expectancy 82, adult literacy 99%."),
         list("Income alone suggests they are equally developed.", "Health and education show that Country B is more developed in quality of life.", "Possible reasons for A: wealth held by few people, weak health care, money from one export such as oil."),
-        p("Detective question: why might the HDI still miss something important? (It does not measure inequality, freedom or the environment.)"),
+        p("Think about it: why might the HDI still miss something important? (It does not measure inequality, freedom or the environment.)"),
       ],
       practice: [
         { p: "What does GNI per head measure?", a: "A country’s total income divided by its population", w: [["How long people live", "That is life expectancy."], ["The number of doctors", "That is a health indicator."]], x: "Dividing by population allows fair comparison." },

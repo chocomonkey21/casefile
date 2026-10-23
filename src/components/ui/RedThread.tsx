@@ -1,5 +1,5 @@
 /**
- * A length of red thread pinned at one end, like the string on an evidence board.
+ * A length of red thread pinned at one end, like the string on a pinboard.
  * Used under page titles as the one strong red accent on each page. Decorative only.
  */
 export function RedThread({ className = "" }: { className?: string }) {

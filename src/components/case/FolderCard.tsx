@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion, useMotionValue, useSpring, useTransform, type MotionValue } from "motion/react";
 import { useEffect, useMemo, useRef, useState, type MouseEvent, type PointerEvent } from "react";
-import { PaperClip, Pushpin } from "@/components/ui/DeskObjects";
+import { PaperClip, Pushpin } from "@/components/ui/PaperObjects";
 import { ArrowRightIcon } from "@/components/ui/Icons";
 import { ProgressBar } from "@/components/ui/ProgressBar";
 import { SUBJECTS } from "@/data/subjects";
@@ -14,6 +14,7 @@ import { caseMinutes, nextClue } from "@/lib/progress";
 import { between, seeded } from "@/lib/seeded";
 import { useCaseFile } from "@/lib/store";
 import type { CaseDef, CaseStatus } from "@/lib/types";
+import { CaseSource } from "./CaseSource";
 import { StatusStamp } from "./StatusStamp";
 
 type FolderCardProps = {
@@ -73,7 +74,7 @@ function useFolderShadow(lift: MotionValue<number>, rx: MotionValue<number>, ry:
  * Back to front: two loose papers and a sticky note poking out of the top, the folder's back with
  * its index tab, then the front cover with the case on it. Brass hardware on some folders.
  * On hover or keyboard focus it lifts and tilts toward the cursor, the cover swings open a little,
- * and the papers slide up and fan out to show the brief, the next lesson and a progress note.
+ * and the papers slide up and fan out to show the overview, the next lesson and a progress note.
  * On touch, the first tap opens the peek and the second tap goes into the case.
  * With reduced motion it only fades the papers in and lifts slightly.
  */
@@ -189,7 +190,7 @@ export function FolderCard({ caseDef, status, solved }: FolderCardProps) {
 
         {/* ── Loose papers behind the cover ── */}
         <div aria-hidden="true" className="pointer-events-none absolute inset-x-[7%] top-0 h-[78%]">
-          {/* Brief: a typed sheet */}
+          {/* Overview: a typed sheet */}
           <motion.div
             className="tex-paper absolute inset-0 rounded-[2px] bg-paper-dark px-4 pt-4 shadow-[0_1px_2px_rgb(36_25_19/0.25)]"
             initial={false}
@@ -266,7 +267,7 @@ export function FolderCard({ caseDef, status, solved }: FolderCardProps) {
               {subject.label}
               {caseDef.grade ? ` · ${copy.grades.label(caseDef.grade)}` : ""}
             </span>
-            <StatusStamp status={status} />
+            <StatusStamp status={status} preview={caseDef.stub} />
           </div>
 
           <h3 className="text-xl leading-snug sm:text-2xl">
@@ -280,6 +281,7 @@ export function FolderCard({ caseDef, status, solved }: FolderCardProps) {
           </h3>
 
           <p className="line-clamp-2 text-sm text-ink-soft">{caseDef.tagline}</p>
+          <CaseSource caseDef={caseDef} className="text-xs text-ink-soft" />
 
           <div className="mt-auto space-y-2 pt-2">
             <div className="flex items-baseline justify-between gap-2 text-sm">

@@ -3,7 +3,7 @@
 import { useSyncExternalStore } from "react";
 import { DEFAULT_BOARD, writeAccessCookies } from "./access";
 import { clueKey, dayKey, yesterdayKey } from "./progress";
-import type { CaseFileState, Note, Profile, TeacherProfile, VerdictRecord } from "./types";
+import type { AvatarId, CaseFileState, Note, Profile, SubjectId, TeacherProfile, VerdictRecord } from "./types";
 
 /*
   A tiny external store backed by localStorage.
@@ -104,12 +104,14 @@ export function useHydrated(): boolean {
   );
 }
 
-/** Grows the streak once per day. Pure, so other actions can reuse it. */
+/** Records today as a study day (once per day). Pure, so other actions can reuse it. */
 function withStudyDay(s: CaseFileState, now: Date): CaseFileState {
   const today = dayKey(now);
-  if (s.streak.lastDay === today) return s;
+  if (s.streak.lastDay === today && s.studyDays?.includes(today)) return s;
   const continued = s.streak.lastDay === yesterdayKey(now);
-  return { ...s, streak: { count: continued ? s.streak.count + 1 : 1, lastDay: today } };
+  const days = [...(s.studyDays ?? []).filter((d) => d !== today), today].slice(-60);
+  const streak = s.streak.lastDay === today ? s.streak : { count: continued ? s.streak.count + 1 : 1, lastDay: today };
+  return { ...s, streak, studyDays: days };
 }
 
 export const actions = {
@@ -125,7 +127,7 @@ export const actions = {
     update((s) => (s.explainerSeen ? s : { ...s, explainerSeen: true }));
   },
 
-  /** Call when the student does any real study action. Grows the streak once per day. */
+  /** Call when the student does any real study action. Records the day once. */
   recordStudy(now: Date = new Date()) {
     update((s) => withStudyDay(s, now));
   },
@@ -149,7 +151,7 @@ export const actions = {
     });
   },
 
-  /** Pin or unpin a piece of evidence on the Evidence Board. Unpinning also cuts its strings. */
+  /** Pin or unpin a piece of evidence on the study board. Unpinning also cuts its strings. */
   toggleEvidence(key: string) {
     update((s) => {
       const collected = { ...s.collected };
@@ -191,7 +193,7 @@ export const actions = {
     }));
   },
 
-  /** Remember the latest Verdict attempt, passed or not. The Lab uses it to show what needs another look. */
+  /** Remember the latest final test attempt, passed or not. My progress uses it to show what needs another look. */
   recordVerdict(caseId: string, record: Omit<VerdictRecord, "at">, now: Date = new Date()) {
     update((s) => ({
       ...withStudyDay(s, now),
@@ -200,7 +202,7 @@ export const actions = {
     }));
   },
 
-  /** Passing the Verdict closes the case. Passing again later keeps the better score. */
+  /** Passing the final test completes the case. Passing again later keeps the better score. */
   closeCase(caseId: string, correct: number, total: number, now: Date = new Date()) {
     const percent = Math.round((correct / total) * 100);
     const existing = getSnapshot().closedCases[caseId];
@@ -241,13 +243,34 @@ export const actions = {
   },
 
   /**
-   * Log out: clears the profile, progress, notes, evidence board and walkthrough flag from this device,
+   * Log out: clears the profile, progress, notes, study board and walkthrough flag from this device,
    * so the next visit starts onboarding as a brand new student.
    * The motion preference is about the student's comfort, so it stays.
    */
   logOut() {
     update((s) => ({ ...DEFAULT_STATE, reduceMotion: s.reduceMotion }));
     writeAccessCookies(null, null);
+    clearNoteDrafts();
+  },
+
+  /** A one-time tip was closed, so it does not show again by itself */
+  markTipSeen(id: string) {
+    update((s) => ((s.tipsSeen ?? []).includes(id) ? s : { ...s, tipsSeen: [...(s.tipsSeen ?? []), id] }));
+  },
+
+  /** "Take the tour again": every tip shows once more */
+  resetTips() {
+    update((s) => ({ ...s, tipsSeen: [] }));
+  },
+
+  /** Add a subject to Home (from the plus button) */
+  addSubject(subject: SubjectId) {
+    update((s) => (s.profile && !(s.profile.subjects ?? []).includes(subject) ? { ...s, profile: { ...s.profile, subjects: [...(s.profile.subjects ?? []), subject] } } : s));
+  },
+
+  /** Change the portrait from My profile */
+  setAvatar(avatarId: AvatarId) {
+    update((s) => (s.profile ? { ...s, profile: { ...s.profile, avatarId } } : s));
   },
 
   /** A teacher signed in. The server has already set the session and access cookies; this is for the interface. */
@@ -269,3 +292,15 @@ export const actions = {
     update((s) => (s.profile ? { ...s, profile: { ...s.profile, classCodes: (s.profile.classCodes ?? []).filter((c) => c !== code) } } : s));
   },
 };
+
+/** Unsaved note text is kept under its own keys, one per note form, so typing is never lost */
+export const NOTE_DRAFT_PREFIX = "casefile:draft:";
+
+function clearNoteDrafts() {
+  try {
+    const keys = Object.keys(localStorage).filter((k) => k.startsWith(NOTE_DRAFT_PREFIX));
+    keys.forEach((k) => localStorage.removeItem(k));
+  } catch {
+    // Storage blocked: there are no drafts to clear
+  }
+}

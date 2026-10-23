@@ -1,5 +1,5 @@
 /*
-  Pieces of evidence that belong together, by evidence id. The Evidence Board uses these to
+  Pieces of evidence that belong together, by evidence id. The study board uses these to
   nudge: "You haven't connected X and Y yet". The `why` is shown as the reason, so the
   nudge teaches something. Pairs from the same clue are also treated as related (see lib/board.ts).
 */

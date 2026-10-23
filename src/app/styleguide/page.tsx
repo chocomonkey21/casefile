@@ -20,9 +20,9 @@ const SWATCHES: { name: string; token: ColorName; use: string }[] = [
   { name: "Light beige", token: "beige", use: "Accents, text on dark" },
   { name: "Manila", token: "manila", use: "Folder body" },
   { name: "Post-it yellow", token: "postit", use: "Hints, sticky notes, highlights" },
-  { name: "Evidence red", token: "evidence", use: "String, stamps, alerts" },
+  { name: "Red", token: "evidence", use: "String, stamps, alerts" },
   { name: "Ink", token: "ink", use: "Text on paper" },
-  { name: "Desk green", token: "desk", use: "Right answers, solved" },
+  { name: "Green", token: "desk", use: "Right answers, solved" },
   { name: "Brass", token: "brass", use: "Pins and clip hardware" },
 ];
 

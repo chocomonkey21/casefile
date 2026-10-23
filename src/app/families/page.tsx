@@ -67,6 +67,25 @@ export default function FamiliesPage() {
             <RedThread className="mt-4" />
             <p className="mt-6 max-w-prose text-xl text-ink-soft">{t.intro}</p>
 
+            <section id="how" aria-labelledby="how-heading" className="mt-12 scroll-mt-6">
+              <h2 id="how-heading" className="text-3xl">
+                {t.howHeading}
+              </h2>
+              <Facts items={t.how} />
+            </section>
+
+            <section id="summary" aria-labelledby="summary-heading" className="mt-12 scroll-mt-6">
+              <h2 id="summary-heading" className="text-3xl">
+                {t.parentHeading}
+              </h2>
+              <p className="mt-4 max-w-prose text-lg text-ink-soft">{t.parentText}</p>
+              <p className="mt-4">
+                <Link href="/parent" className="inline-flex min-h-11 items-center font-semibold text-evidence-dark underline underline-offset-4 hover:no-underline">
+                  {t.parentLink}
+                </Link>
+              </p>
+            </section>
+
             <section id={S.privacy.id} aria-labelledby="privacy-heading" className="mt-12 scroll-mt-6">
               <h2 id="privacy-heading" className="text-3xl">
                 {S.privacy.heading}

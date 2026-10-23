@@ -1,4 +1,4 @@
-import { DeskIllustration, DeskIllustrationCompact } from "@/components/landing/DeskIllustration";
+import { HeroIllustration, HeroIllustrationCompact } from "@/components/landing/HeroIllustration";
 import Link from "next/link";
 import { FinalAction, HeaderNav, HeroActions } from "@/components/landing/LandingActions";
 import { SimpleHeader } from "@/components/layout/SimpleHeader";
@@ -30,12 +30,12 @@ export default function Home() {
         <section className="mx-auto grid max-w-6xl items-center gap-6 px-4 py-8 sm:gap-10 sm:px-6 sm:py-12 lg:grid-cols-[1fr_1.05fr] lg:py-20">
           {/* Phones only: a short strip of the desk above the headline. Wider screens get the full scene beside it. */}
           <div className="sm:hidden">
-            <DeskIllustrationCompact />
+            <HeroIllustrationCompact />
           </div>
           <div>
             <p className="label text-evidence-dark">{t.eyebrow}</p>
             <h1 className="mt-4 text-5xl leading-[1.05] sm:text-6xl">{t.heading}</h1>
-<RedThread className="mt-4" />
+            <RedThread className="mt-4" />
             <p className="mt-6 max-w-lg text-xl text-ink-soft">{t.text}</p>
             <div className="mt-8">
               <HeroActions />
@@ -43,7 +43,7 @@ export default function Home() {
             <p className="mt-4 text-sm text-ink-soft">{t.note}</p>
           </div>
           <div className="mx-auto hidden w-full max-w-xl sm:block">
-            <DeskIllustration />
+            <HeroIllustration />
           </div>
         </section>
 

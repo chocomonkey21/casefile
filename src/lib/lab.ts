@@ -2,7 +2,7 @@ import { CASES } from "@/data/cases";
 import { COLD_AFTER_DAYS, caseStatus, clueKey, daysSinceActivity } from "./progress";
 import type { CaseDef, CaseFileState } from "./types";
 
-/** How a student is doing on one clue's topic, mixing interrogation results and the latest Verdict */
+/** How a student is doing on one clue's topic, mixing quiz results and the latest final test */
 export type TopicStat = {
   caseId: string;
   caseTitle: string;

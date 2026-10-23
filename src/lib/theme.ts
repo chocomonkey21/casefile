@@ -6,7 +6,7 @@
  */
 
 export const PALETTE = {
-  // Desk surfaces (backdrop only, never reading content)
+  // Table surfaces (backdrop only, never reading content)
   walnut: "#3A2A20",
   espresso: "#241913",
   coffee: "#4B382B",
@@ -32,7 +32,7 @@ export const PALETTE = {
   evidence: "#A63A2E",
   "evidence-dark": "#762620",
   "evidence-light": "#EBD3C9",
-  // Desk green
+  // Green (the "desk" token)
   desk: "#3F5A47",
   "desk-dark": "#2F4837",
   "desk-light": "#D9E0CF",
@@ -117,8 +117,8 @@ export const PAIRS: ContrastPair[] = [
     // On manila folders these inks are only used for dots and stamp rings, never small text
     { label: `${ink} dot on manila`, fg: ink, bg: "manila", min: 3 },
   ]),
-  // Desk green (right answers, solved)
-  { label: "Desk green check marks on paper", fg: "desk", bg: "paper", min: 3 },
+  // Green (right answers, solved)
+  { label: "Green check marks on paper", fg: "desk", bg: "paper", min: 3 },
   { label: "Dark desk green on manila", fg: "desk-dark", bg: "manila", min: 4.5 },
   { label: "Dark desk green on green tint", fg: "desk-dark", bg: "desk-light", min: 4.5 },
   { label: "Ink on green tint", fg: "ink", bg: "desk-light", min: 4.5 },

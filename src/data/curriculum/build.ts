@@ -7,7 +7,7 @@ import type { Block, Board, CaseDef, ClueContent, ClueDef, EvidenceDef, Grade, Q
     - VerdictQuestions (two for the chapter's final test)
 
   One lesson = a question it answers, learning goals, an explanation, a "Try it" activity, two practice
-  questions (not scored), three quiz questions (the Interrogation Room) and two final-test questions.
+  questions (not scored), three quiz questions (the quiz) and two final-test questions.
   The video for each lesson lives in data/videos-curated.ts, not here.
 
   Question shape (Q): p = the question, a = the right answer, w = wrong answers each with feedback shown when picked,
@@ -65,6 +65,10 @@ export type ChapterSpec = {
   grade: Grade;
   /** Left out for CBSE chapters (the default board); set to "icse" for ICSE chapters */
   board?: Board;
+  /** Textbook and edition this chapter was checked against. Left out until someone has checked it: never guessed. */
+  textbook?: string;
+  /** Who wrote the chapter, and which textbook chapter it was checked against. Left out until confirmed: never guessed. */
+  credits?: { author: string; checkedAgainst: string };
   tagline: string;
   hook: string;
   goal: string;
@@ -166,6 +170,8 @@ export function buildChapter(spec: ChapterSpec): BuiltChapter {
       subject: spec.subject,
       grade: spec.grade,
       ...(spec.board ? { board: spec.board } : {}),
+      ...(spec.textbook ? { textbook: spec.textbook } : {}),
+      ...(spec.credits ? { credits: spec.credits } : {}),
       tagline: spec.tagline,
       hook: spec.hook,
       goal: spec.goal,

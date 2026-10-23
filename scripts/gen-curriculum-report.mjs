@@ -49,6 +49,9 @@ for (const [b, name] of BOARDS) {
     for (const s of SUBJECTS) {
       for (const c of chapters.filter((x) => boardOf(x) === b && x.grade === g && x.subject === s)) {
         md += `\n### ${label(s)}: ${c.title}\n\n${c.topic}. Case no. ${c.number}. Route: ${tick}/cases/${c.id}${tick}\n\n`;
+        // Never guessed: these say "not yet" until they are filled in in the chapter data
+        const credits = c.credits ? `written by ${c.credits.author}, checked against ${c.credits.checkedAgainst}` : "not yet confirmed";
+        md += `Textbook: ${c.textbook ?? "not yet checked"}. Credits: ${credits}.\n\n`;
         c.clues.forEach((k, i) => {
           const v = videoOf(c.id, k.id);
           md += `${i + 1}. **${k.title}**\n`;

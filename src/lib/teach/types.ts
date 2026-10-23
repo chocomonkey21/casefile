@@ -11,7 +11,7 @@ export type TeacherRecord = {
   createdAt: string;
 };
 
-/** A class a teacher created. Students join it by typing its code on their Desk. */
+/** A class a teacher created. Students join it by typing its code on their Home page. */
 export type ClassRecord = {
   code: string;
   teacherId: string;

@@ -3,7 +3,7 @@
 import { useEffect, useId, useRef, useState } from "react";
 
 type HelpTipProps = {
-  /** Names the button for screen readers, e.g. "What is the Evidence Board?" */
+  /** Names the button for screen readers, e.g. "What is the study board?" */
   label: string;
   /** One plain sentence (or two) explaining the section */
   text: string;

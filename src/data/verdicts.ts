@@ -3,7 +3,7 @@ import { NEW_VERDICTS, TOP_UP_VERDICTS } from "./curriculum/specs";
 import { EARTH_VERDICT, EGYPT_VERDICT, FRACTIONS_VERDICT, SOLAR_VERDICT } from "./verdicts-subjects";
 
 /*
-  Verdict (final test) questions. No hints here. Each question belongs to a clue, so the
+  Final test questions. No hints here. Each question belongs to a clue, so the
   results can tell the student which clue to look at again.
 */
 

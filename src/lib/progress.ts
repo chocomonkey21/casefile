@@ -9,7 +9,7 @@ import type {
   Rank,
 } from "./types";
 
-/* ---------- Dates and streak ---------- */
+/* ---------- Dates and days studied ---------- */
 
 /** Local calendar day as YYYY-MM-DD (not UTC, so "today" matches the student's day) */
 export function dayKey(date: Date = new Date()): string {
@@ -26,7 +26,24 @@ export function yesterdayKey(date: Date = new Date()): string {
 }
 
 /**
- * The streak the student should see right now.
+ * How many different days this week (Monday to Sunday) the student studied. Uses the recorded study days plus the
+ * dates saved on completed lessons and final tests, so older saves without a study-day list still count.
+ */
+export function daysStudiedThisWeek(state: CaseFileState, now: Date = new Date()): number {
+  const monday = new Date(now);
+  monday.setHours(0, 0, 0, 0);
+  monday.setDate(monday.getDate() - ((monday.getDay() + 6) % 7));
+  const start = dayKey(monday);
+  const end = dayKey(now);
+  const days = new Set<string>(state.studyDays ?? []);
+  for (const c of Object.values(state.clues)) if (c.solvedAt) days.add(dayKey(new Date(c.solvedAt)));
+  for (const v of Object.values(state.verdicts)) if (v.at) days.add(dayKey(new Date(v.at)));
+  if (state.streak.lastDay) days.add(state.streak.lastDay);
+  return [...days].filter((d) => d >= start && d <= end).length;
+}
+
+/**
+ * Kept for older code paths and tests. Not shown anywhere: CaseFile has no streaks.
  * If they studied today or yesterday it is still alive. Anything older has lapsed.
  */
 export function currentStreak(streak: CaseFileState["streak"], now: Date = new Date()): number {
@@ -135,7 +152,7 @@ export function caseStatus(c: CaseDef, state: CaseFileState, now: Date = new Dat
 
 export type WarrantState = "locked" | "ready" | "closed";
 
-/** The warrant unlocks the Verdict once every clue is solved */
+/** The final test opens once every lesson is completed */
 export function warrantState(c: CaseDef, state: CaseFileState): WarrantState {
   if (state.closedCases[c.id]) return "closed";
   return solvedCount(c, state) === c.clues.length ? "ready" : "locked";
@@ -156,7 +173,7 @@ export type Lead =
  * 1. The active case worked on most recently
  * 2. The practice case, if it has not been closed
  * 3. The first case nobody has started
- * 4. A cold case (as a last resort, since cold cases get their own alert)
+ * 4. A case that needs revising (as a last resort, since cases that need revising get their own alert)
  */
 export function getTodaysLead(cases: CaseDef[], state: CaseFileState, now: Date = new Date()): Lead | null {
   const open = cases.filter((c) => caseStatus(c, state, now) !== "closed");

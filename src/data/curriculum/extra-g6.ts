@@ -110,7 +110,7 @@ const CIRCUITS: ChapterSpec = {
         h("Test it: conductor or insulator?"),
         p("Imagine a circuit with a gap in it, between two crocodile clips. You put different objects across the gap and see if the bulb lights."),
         list("A steel paper clip: the bulb lights, so steel is a conductor.", "A plastic ruler: the bulb stays dark, so plastic is an insulator.", "A coin: the bulb lights, because coins are metal.", "A rubber band: the bulb stays dark."),
-        p("Detective question: the torch from the case lights when you press the battery hard against the spring. What was the problem? (A loose contact was leaving a gap in the circuit.)"),
+        p("Think about it: the torch from the case lights when you press the battery hard against the spring. What was the problem? (A loose contact was leaving a gap in the circuit.)"),
       ],
       practice: [
         { p: "Which material is a good conductor of electricity?", a: "Copper", w: [["Rubber", "Rubber is an insulator. It is used to cover wires."], ["Wood", "Dry wood is an insulator."]], x: "Metals such as copper conduct electricity well." },
@@ -290,7 +290,7 @@ const MESOPOTAMIA: ChapterSpec = {
         h("Read the evidence"),
         p("A tablet shows a picture-like sign for “barley”, five marks and the name of a temple."),
         list("What it probably records: five measures of barley given to, or owed to, the temple.", "What it tells historians: the temple stored food, and people kept careful accounts.", "What it does not tell us: who ate the barley, or how they felt about it."),
-        p("Detective question: why is clay a useful material for historians? (Baked or dried clay tablets survive for thousands of years.)"),
+        p("Think about it: why is clay a useful material for historians? (Baked or dried clay tablets survive for thousands of years.)"),
       ],
       practice: [
         { p: "Which two rivers flow through Mesopotamia?", a: "The Tigris and the Euphrates", w: [["The Nile and the Amazon", "The Nile is in Egypt, and the Amazon is in South America."], ["The Indus and the Ganges", "Those rivers are in South Asia."]], x: "Mesopotamia lies between the Tigris and Euphrates." },

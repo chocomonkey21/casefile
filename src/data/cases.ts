@@ -4,7 +4,7 @@ import { NEW_CASES, extendChapter } from "./curriculum";
 /*
   Mock course data. Swap this file (or fetch from an API later) without touching the UI.
   Full lesson text for every case lives in data/lessons. Here we only need the
-  structure: clues (lessons), evidence lists and the brief.
+  structure: lessons (called clues in the code), study material lists and the overview.
 
   Wording rule: titles say what the lesson is about ("How clouds form"), so no theme word
   needs decoding. The ids must not change, because saved progress is keyed by them.
@@ -198,13 +198,13 @@ const sock: CaseDef = {
   topic: "Practice case",
   subject: "practice",
   tagline: "A short practice case that shows you how CaseFile works.",
-  hook: "This short case is about a lost sock. Its real purpose is to show you how a case works: lessons, evidence, hints and questions.",
-  goal: "Complete one lesson and close your first case.",
+  hook: "This short case is about a lost sock. Its real purpose is to show you how a case works: lessons, study material, hints and quizzes.",
+  goal: "Complete one lesson and your first case.",
   learn: [
     "Read a lesson",
-    "Collect evidence",
+    "Save study material to your study board",
     "Use a hint",
-    "Answer questions to complete a lesson",
+    "Answer the quiz to complete a lesson",
   ],
   practice: true,
   clues: [

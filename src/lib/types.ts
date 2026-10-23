@@ -13,6 +13,8 @@ export type Profile = {
   grade: Grade;
   /** Missing on profiles saved before boards existed; those are treated as CBSE (see lib/access.ts) */
   board?: Board;
+  /** Subjects chosen during sign-up; only these appear on Home. Missing on older saves, which show every subject. */
+  subjects?: SubjectId[];
   /** Class codes the student joined, to receive their teachers’ Drawer materials */
   classCodes?: string[];
 };
@@ -24,7 +26,7 @@ export type TeacherProfile = {
   board: Board;
 };
 
-export type RankId = "rookie" | "junior" | "detective" | "inspector" | "chief";
+export type RankId = "level1" | "level2" | "level3" | "level4" | "level5";
 
 export type Rank = {
   id: RankId;
@@ -73,8 +75,12 @@ export type CaseDef = {
    * placed under CBSE at the client's request. The practice case has no board and is open to everyone.
    */
   board?: Board;
+  /** Textbook and edition this chapter was checked against. Left out until someone has checked it: never guessed. */
+  textbook?: string;
+  /** Who wrote the chapter, and which textbook chapter it was checked against. Left out until confirmed: never guessed. */
+  credits?: { author: string; checkedAgainst: string };
   tagline: string;
-  /** The story that opens the brief */
+  /** The story that opens the overview */
   hook: string;
   goal: string;
   learn: string[];
@@ -94,7 +100,7 @@ export type ClueState = "solved" | "open" | "locked";
 export type ClueProgress = {
   solved: boolean;
   solvedAt: string | null;
-  /** Interrogation results, used by The Lab */
+  /** Quiz results, used by My progress */
   quiz?: { firstTry: number; total: number };
 };
 
@@ -115,21 +121,26 @@ export type CaseFileState = {
   joinedAt: string | null;
   /** The "How CaseFile works" walkthrough has been seen or skipped */
   explainerSeen: boolean;
+  /** Kept in saved data for older saves, but no longer shown: CaseFile has no streaks */
   streak: {
     count: number;
     /** Local date of the last study day, as YYYY-MM-DD */
     lastDay: string | null;
   };
+  /** One-time tips the student has already seen (see components/tips/PageTip.tsx). Cleared on log out. */
+  tipsSeen?: string[];
+  /** Local dates (YYYY-MM-DD) the student studied, newest last, for "Days studied this week". Missing on older saves. */
+  studyDays?: string[];
   /** Keyed by `${caseId}:${clueId}` */
   clues: Record<string, ClueProgress>;
   /** ISO time the student last worked on each case. Drives Open / Active / Cold. */
   caseActivity: Record<string, string>;
   closedCases: Record<string, { closedAt: string; score: number }>;
   notes: Note[];
-  /** Evidence the student collected, keyed by `${caseId}:${clueId}:${evidenceId}` with the ISO time. Shown on the Evidence Board. */
+  /** Evidence the student collected, keyed by `${caseId}:${clueId}:${evidenceId}` with the ISO time. Shown on the study board. */
   collected: Record<string, string>;
   board: BoardState;
-  /** Latest Verdict attempt per case (passed or not) */
+  /** Latest final test attempt per case (passed or not) */
   verdicts: Record<string, VerdictRecord>;
   /** Student chose "Reduce motion" in the profile menu (on top of the device setting) */
   reduceMotion: boolean;
@@ -193,11 +204,11 @@ export type ClueContent = {
   /** Full explanation shown after hint 3 */
   explanation: string[];
   evidence: Record<string, EvidenceContent>;
-  /** The Interrogation Room questions for this clue */
+  /** The quiz questions for this clue */
   quiz: Question[];
 };
 
-/* ---------- Evidence Board ---------- */
+/* ---------- study board ---------- */
 
 export type BoardState = {
   /** Card centre. `x` is a fraction of the board width (0 to 1), `y` is pixels from the top. Cards without an entry get an automatic spot. */
@@ -206,12 +217,12 @@ export type BoardState = {
   strings: [string, string][];
 };
 
-/* ---------- The Verdict ---------- */
+/* ---------- The final test ---------- */
 
-/** A Verdict question has no hints (it is the final test) and belongs to a clue, so results can show what to review */
+/** A final test question has no hints (it is the final test) and belongs to a clue, so results can show what to review */
 export type VerdictQuestion = Omit<Question, "hint" | "walkthrough"> & { clueId: string };
 
-/** The latest Verdict attempt for a case */
+/** The latest final test attempt for a case */
 export type VerdictRecord = {
   at: string;
   correct: number;

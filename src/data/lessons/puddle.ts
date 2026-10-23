@@ -2,9 +2,9 @@ import type { ClueContent } from "@/lib/types";
 
 /*
   The Case of the Vanishing Puddle: full lesson content.
-  Each clue has: one central question (hints are about this), evidence content
+  Each lesson has: one central question (hints are about this), study material
   (keyed by the evidence ids in data/cases.ts), a full explanation and the
-  Interrogation Room questions.
+  quiz questions.
 */
 
 export const PUDDLE_LESSONS: Record<string, ClueContent> = {
@@ -116,7 +116,7 @@ export const PUDDLE_LESSONS: Record<string, ClueContent> = {
         options: [
           { id: "a", text: "Ice cream melting on a hot day", why: "That's melting: solid turning into liquid. Evaporation is liquid turning into gas." },
           { id: "b", text: "A wet towel drying on a washing line" },
-          { id: "c", text: "Drops forming on a cold drink can", why: "That's the opposite: gas turning back into liquid. You'll meet it in the next clue." },
+          { id: "c", text: "Drops forming on a cold drink can", why: "That's the opposite: gas turning back into liquid. You'll meet it in the next lesson." },
           { id: "d", text: "A puddle freezing in winter", why: "That's freezing: liquid turning into solid." },
         ],
         correctId: "b",
@@ -219,7 +219,7 @@ export const PUDDLE_LESSONS: Record<string, ClueContent> = {
               { id: "c", text: "Freezing", why: "Freezing needs very low temperatures." },
             ],
             correctId: "a",
-            hint: "Liquid drops turning back into gas. Which word did you learn in clue 1?",
+            hint: "Liquid drops turning back into gas. Which word did you learn in lesson 1?",
             walkthrough: "The drops are liquid. When the mirror warms up again they turn into gas, and that's evaporation.",
             explanation: "The drops evaporate as the room warms up, and the mirror clears.",
           },
@@ -348,7 +348,7 @@ export const PUDDLE_LESSONS: Record<string, ClueContent> = {
           { id: "a", text: "Only rain", why: "Rain is one kind, but snow, sleet and hail count too." },
           { id: "b", text: "Any water that falls from clouds" },
           { id: "c", text: "Water vapour rising into the sky", why: "That's evaporation going up. Precipitation is water coming down." },
-          { id: "d", text: "Water collecting in a river", why: "That's collection, the next clue." },
+          { id: "d", text: "Water collecting in a river", why: "That's collection, the next lesson." },
         ],
         correctId: "b",
         hint: "The word covers more than just rain. Think about everything that can fall from a cloud.",

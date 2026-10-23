@@ -19,11 +19,11 @@ type QuestionCardProps = {
   /** Called when the student moves on after a right answer. `firstTry` is true if they never missed. */
   onDone: (firstTry: boolean) => void;
   doneLabel: string;
-  /** True when the card sits on the dark Interrogation Room, so text outside the paper needs to be light */
+  /** True when the card sits on the dark quiz, so text outside the paper needs to be light */
   onDark?: boolean;
-  /** Test mode: one answer per question, then on to the next. Used by the Verdict. */
+  /** Test mode: one answer per question, then on to the next. Used by the final test. */
   singleTry?: boolean;
-  /** Hides the hint button (the Verdict has no hints) */
+  /** Hides the hint button (the final test has no hints) */
   noHints?: boolean;
 };
 
@@ -76,7 +76,7 @@ export function QuestionCard({ question, position, evidence, onDone, doneLabel, 
 
   return (
     <div>
-      {/* text-ink is set here because the Interrogation Room passes light text down from its dark panel */}
+      {/* text-ink is set here because the quiz passes light text down from its dark panel */}
       <div className="tex-paper relative z-10 rounded-[3px] p-6 text-ink shadow-folder sm:p-8">
         {position && (
           <p className="label text-ink-soft">
