@@ -174,7 +174,7 @@ export const copy = {
   },
 
   library: {
-    label: "The case library",
+    label: "All cases",
     title: "Cases",
     intro: "Choose a subject to study. Each case is a set of short lessons with a final test at the end.",
     filterGroup: (what: string) => `Filter by ${what}`,
@@ -209,7 +209,7 @@ export const copy = {
     allCases: "All cases",
     caseNo: (n: string) => `Case no. ${n}`,
     lessonsDone: (done: number, total: number) => `${done} of ${plural(total, "lesson")} completed`,
-    tabsLabel: "Case file sections",
+    tabsLabel: "Case sections",
     progressLabel: "Case progress",
     tabs: { brief: L.overview, clues: L.lessons, evidence: L.studyMaterial, notes: L.notes },
     brief: {
@@ -273,7 +273,7 @@ export const copy = {
   },
 
   lesson: {
-    backToCase: "Back to the case file",
+    backToCase: "Back to the case",
     position: (title: string, n: number, total: number) => `${title} · ${L.lessonOf(n, total)}`,
     completed: "Completed",
     notCompleted: "Not completed yet",
@@ -360,7 +360,7 @@ export const copy = {
     reviewTitle: (topic: string) => `${topic}: review`,
     clueTitle: (n: number, title: string) => `${L.lessonN(n)}: ${title}`,
     backToClue: "Back to the lesson",
-    backToCase: "Back to the case file",
+    backToCase: "Back to the case",
     loading: "Loading",
     lockedTitle: "This lesson is not open yet",
     lockedText: (n: number) => `Complete lesson ${n} first. Then the quiz opens.`,
@@ -381,14 +381,14 @@ export const copy = {
       allDoneVerdict: "All lessons completed. Start the final test",
       nextClueButton: "Next lesson",
       continueCase: "Continue the case",
-      backToCase: "Back to the case file",
+      backToCase: "Back to the case",
       toDesk: "Go to Home",
     },
   },
 
   verdict: {
     label: L.finalTest,
-    back: "Back to the case file",
+    back: "Back to the case",
     lockedTitle: "The final test is not open yet",
     lockedText: (left: number) => `Complete ${plural(left, "more lesson")} to take the final test.`,
     finalTest: "Final test",
@@ -413,7 +413,7 @@ export const copy = {
       text: (closed: boolean) =>
         `Review the lessons below, then try again. ${closed ? "Your case stays complete." : "You can try as many times as you need."}`,
       retry: "Try the final test again",
-      back: "Back to the case file",
+      back: "Back to the case",
     },
     closed: {
       caseNo: (n: string) => `Case no. ${n}`,
@@ -441,7 +441,7 @@ export const copy = {
   },
 
   board: {
-    label: "Your pinboard",
+    label: "Saved study material",
     title: L.studyBoard,
     help: "The study board is a map of what you have studied. Connect cards that belong together to see how ideas link up.",
     helpLabel: "What is the study board?",
@@ -496,7 +496,7 @@ export const copy = {
   },
 
   lab: {
-    label: "Your progress",
+    label: "How you are doing",
     title: L.progress,
     intro: "See what you have learned, what could use more practice, and what to revise.",
     loading: "Loading My progress",
@@ -845,13 +845,13 @@ export const copy = {
   /** A direct link to a chapter or video above the student's grade */
   locked: {
     meta: "Not open for your grade",
-    label: "Restricted file",
-    title: "This file is above your grade",
+    label: "Not open yet",
+    title: "This is for a higher grade",
     text: (contentGrade: number | null, studentGrade: number | null) =>
       contentGrade && studentGrade
         ? `This is Grade ${contentGrade} material. Your profile is set to Grade ${studentGrade}, so you can open Grade ${studentGrade === 6 ? "6" : `6 to ${studentGrade}`} chapters and videos.`
         : "This material is not open for the grade on your profile.",
-    boardTitle: "This file belongs to another board",
+    boardTitle: "This is for another board",
     boardText: (contentBoard: string, studentBoard: string) =>
       `This chapter is written for ${contentBoard}. Your profile is set to ${studentBoard}, so you see the ${studentBoard} chapters instead.`,
     changeGrade: "Picked the wrong grade or board? Log out from the profile menu and set up your profile again.",
@@ -1009,7 +1009,7 @@ export const copy = {
 
   preview: {
     label: "Preview case",
-    backToCase: "Back to the case file",
+    backToCase: "Back to the case",
     tryPuddle: "Open the Vanishing Puddle",
     verdictTitle: L.finalTest,
     verdictText: "This case is a preview, so its final test is not written yet.",
