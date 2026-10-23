@@ -11,14 +11,14 @@ export function generateStaticParams() {
   return CASES.map((c) => ({ caseId: c.id }));
 }
 
-export default async function FinalTestPage(props: PageProps<"/cases/[caseId]/final-test">) {
+export default async function FinalTestPage(props: PageProps<"/chapters/[caseId]/final-test">) {
   const { caseId } = await props.params;
   const caseDef = getCase(caseId);
   if (!caseDef) notFound();
 
   const questions = getVerdict(caseId);
   if (!questions) {
-    return <PreviewNotice title={copy.preview.verdictTitle} blurb={copy.preview.verdictText} backHref={`/cases/${caseId}`} />;
+    return <PreviewNotice title={copy.preview.verdictTitle} blurb={copy.preview.verdictText} backHref={`/chapters/${caseId}`} />;
   }
   return <FinalTestView caseDef={caseDef} questions={questions} />;
 }

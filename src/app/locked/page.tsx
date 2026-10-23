@@ -32,7 +32,7 @@ export default async function LockedPage(props: PageProps<"/locked">) {
       </p>
       <p className="mx-auto mt-2 max-w-prose text-ink-soft">{t.changeGrade}</p>
       <div className="mt-6 flex flex-wrap justify-center gap-4">
-        <Button href="/cases" size="lg">
+        <Button href="/chapters" size="lg">
           {t.toCases}
         </Button>
         <Button href="/subjects" variant="secondary" size="lg">

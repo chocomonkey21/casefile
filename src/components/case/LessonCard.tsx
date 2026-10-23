@@ -20,7 +20,7 @@ const t = copy.caseFile.clueCard;
 
 /** One line in the case checklist. Three looks: completed, ready (your next step) and not open yet. */
 export function LessonCard({ caseDef, clue, index, state, progress, preview = false }: LessonCardProps) {
-  const href = `/cases/${caseDef.id}/lessons/${clue.id}`;
+  const href = `/chapters/${caseDef.id}/lessons/${clue.id}`;
 
   const shell = {
     solved: " bg-paper",

@@ -8,13 +8,13 @@ export function generateStaticParams() {
   return CASES.flatMap((c) => c.clues.map((clue) => ({ caseId: c.id, lessonId: clue.id })));
 }
 
-export async function generateMetadata(props: PageProps<"/cases/[caseId]/lessons/[lessonId]">) {
+export async function generateMetadata(props: PageProps<"/chapters/[caseId]/lessons/[lessonId]">) {
   const { caseId, lessonId: clueId } = await props.params;
   const clue = getCase(caseId)?.clues.find((c) => c.id === clueId);
   return { title: clue?.title ?? copy.meta.clueNotFound };
 }
 
-export default async function LessonPage(props: PageProps<"/cases/[caseId]/lessons/[lessonId]">) {
+export default async function LessonPage(props: PageProps<"/chapters/[caseId]/lessons/[lessonId]">) {
   const { caseId, lessonId: clueId } = await props.params;
   const caseDef = getCase(caseId);
   const clueIndex = caseDef?.clues.findIndex((c) => c.id === clueId) ?? -1;

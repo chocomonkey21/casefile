@@ -328,7 +328,7 @@ export function JoinWizard({ onBack }: { onBack: () => void }) {
                   <div className="mt-6 grid items-start gap-6 sm:grid-cols-2">
                     <FolderCard caseDef={practice} status={caseStatus(practice, state)} solved={solvedCount(practice, state)} />
                     <div className="space-y-4">
-                      <Button href={`/cases/${practice.id}`} size="lg" variant="highlight">
+                      <Button href={`/chapters/${practice.id}`} size="lg" variant="highlight">
                         {t.first.start}
                       </Button>
                       <p>

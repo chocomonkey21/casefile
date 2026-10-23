@@ -39,7 +39,7 @@ All boards: 180 lessons in 100 chapters, 180 videos.
 
 ### Science: The Case of the Vanishing Puddle
 
-The water cycle. Case no. 017. Route: `/cases/puddle`
+The water cycle. Chapter no. 017. Route: `/chapters/puddle`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -70,7 +70,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Science: The Case of the Missing Rabbits
 
-Food chains and food webs. Case no. 201. Route: `/cases/food-chains`
+Food chains and food webs. Chapter no. 201. Route: `/chapters/food-chains`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -81,7 +81,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Science: The Case of the Dark Torch
 
-Simple electric circuits. Case no. 202. Route: `/cases/circuits`
+Simple electric circuits. Chapter no. 202. Route: `/chapters/circuits`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -93,7 +93,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Maths: The Case of the Missing Slice
 
-Fractions. Case no. 023. Route: `/cases/fractions`
+Fractions. Chapter no. 023. Route: `/chapters/fractions`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -120,7 +120,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Maths: The Case of the Wrong Change
 
-Decimals and place value. Case no. 203. Route: `/cases/decimals`
+Decimals and place value. Chapter no. 203. Route: `/chapters/decimals`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -131,7 +131,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Maths: The Case of the Bent Signpost
 
-Measuring and naming angles. Case no. 204. Route: `/cases/angles`
+Measuring and naming angles. Chapter no. 204. Route: `/chapters/angles`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -142,7 +142,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### History: The Case of the Secret Scroll
 
-Ancient Egypt. Case no. 042. Route: `/cases/ancient-egypt`
+Ancient Egypt. Chapter no. 042. Route: `/chapters/ancient-egypt`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -172,7 +172,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### History: The Case of the Clay Tablet
 
-Mesopotamia: the first cities. Case no. 205. Route: `/cases/mesopotamia`
+Mesopotamia: the first cities. Chapter no. 205. Route: `/chapters/mesopotamia`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -184,7 +184,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### History: The Case of the Silent Seal
 
-Cities of the Indus Valley. Case no. 206. Route: `/cases/indus-valley`
+Cities of the Indus Valley. Chapter no. 206. Route: `/chapters/indus-valley`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -196,7 +196,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Geography: The Case of the Lost Explorer
 
-Maps and globes. Case no. 058. Route: `/cases/maps-globes`
+Maps and globes. Chapter no. 058. Route: `/chapters/maps-globes`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -227,7 +227,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Geography: The Case of the Wandering River
 
-A river's journey. Case no. 207. Route: `/cases/rivers`
+A river's journey. Chapter no. 207. Route: `/chapters/rivers`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -239,7 +239,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Geography: The Case of the Hilltop Village
 
-Why settlements grow where they do. Case no. 208. Route: `/cases/settlements`
+Why settlements grow where they do. Chapter no. 208. Route: `/chapters/settlements`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -253,7 +253,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Science: The Case of the Wandering Lights
 
-The solar system. Case no. 031. Route: `/cases/solar-system`
+The solar system. Chapter no. 031. Route: `/chapters/solar-system`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -283,7 +283,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Science: The Case of the Tiny Rooms
 
-Plant and animal cells. Case no. 211. Route: `/cases/cells`
+Plant and animal cells. Chapter no. 211. Route: `/chapters/cells`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -295,7 +295,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Science: The Case of the Silent Bell
 
-How sound travels. Case no. 212. Route: `/cases/sound`
+How sound travels. Chapter no. 212. Route: `/chapters/sound`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -306,7 +306,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Maths: The Case of the Secret Recipe
 
-Ratios and percentages. Case no. 071. Route: `/cases/ratios`
+Ratios and percentages. Chapter no. 071. Route: `/chapters/ratios`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -334,7 +334,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Maths: The Case of the Frozen Thermometer
 
-Negative numbers. Case no. 213. Route: `/cases/negative-numbers`
+Negative numbers. Chapter no. 213. Route: `/chapters/negative-numbers`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -345,7 +345,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Maths: The Case of the Misleading Average
 
-Mean, median, mode and range. Case no. 214. Route: `/cases/averages`
+Mean, median, mode and range. Chapter no. 214. Route: `/chapters/averages`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -356,7 +356,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### History: The Case of the Painted Vase
 
-Ancient Greece. Case no. 083. Route: `/cases/ancient-greece`
+Ancient Greece. Chapter no. 083. Route: `/chapters/ancient-greece`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -385,7 +385,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### History: The Case of the Silk Bale
 
-Trade on the Silk Roads. Case no. 215. Route: `/cases/silk-roads`
+Trade on the Silk Roads. Chapter no. 215. Route: `/chapters/silk-roads`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -396,7 +396,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### History: The Case of the Castle Keep
 
-The feudal system. Case no. 216. Route: `/cases/feudalism`
+The feudal system. Chapter no. 216. Route: `/chapters/feudalism`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -408,7 +408,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Geography: The Case of the Shaking Ground
 
-Earthquakes and volcanoes. Case no. 064. Route: `/cases/shaking-ground`
+Earthquakes and volcanoes. Chapter no. 064. Route: `/chapters/shaking-ground`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -436,7 +436,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Geography: The Case of the Layered Cliff
 
-Rock types and the rock cycle. Case no. 217. Route: `/cases/rocks`
+Rock types and the rock cycle. Chapter no. 217. Route: `/chapters/rocks`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -447,7 +447,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Geography: The Case of the Vanishing Headland
 
-Coastal erosion and landforms. Case no. 218. Route: `/cases/coasts`
+Coastal erosion and landforms. Chapter no. 218. Route: `/chapters/coasts`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -461,7 +461,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Science: The Case of the Invisible Building Blocks
 
-Matter and atoms. Case no. 096. Route: `/cases/matter-atoms`
+Matter and atoms. Chapter no. 096. Route: `/chapters/matter-atoms`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -490,7 +490,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Science: The Case of the Cooling Cup
 
-Heat transfer. Case no. 221. Route: `/cases/heat-transfer`
+Heat transfer. Chapter no. 221. Route: `/chapters/heat-transfer`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -501,7 +501,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Science: The Case of the Vanishing Lunch
 
-The digestive system. Case no. 222. Route: `/cases/digestion`
+The digestive system. Chapter no. 222. Route: `/chapters/digestion`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -512,7 +512,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Maths: The Case of the Missing Number
 
-Equations and graphs. Case no. 105. Route: `/cases/equations-graphs`
+Equations and graphs. Chapter no. 105. Route: `/chapters/equations-graphs`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -540,7 +540,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Maths: The Case of the Suspicious Dice
 
-Probability basics. Case no. 223. Route: `/cases/probability`
+Probability basics. Chapter no. 223. Route: `/chapters/probability`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -551,7 +551,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Maths: The Case of the Oddly Shaped Field
 
-Area of triangles, parallelograms and trapeziums. Case no. 224. Route: `/cases/area`
+Area of triangles, parallelograms and trapeziums. Chapter no. 224. Route: `/chapters/area`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -563,7 +563,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### History: The Case of the Buried Road
 
-The Roman Empire. Case no. 112. Route: `/cases/roman-empire`
+The Roman Empire. Chapter no. 112. Route: `/chapters/roman-empire`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -593,7 +593,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### History: The Case of the House of Wisdom
 
-The Islamic Golden Age. Case no. 225. Route: `/cases/golden-age`
+The Islamic Golden Age. Chapter no. 225. Route: `/chapters/golden-age`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -605,7 +605,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### History: The Case of the Golden Caravan
 
-The Mali Empire and Mansa Musa. Case no. 226. Route: `/cases/mali-empire`
+The Mali Empire and Mansa Musa. Chapter no. 226. Route: `/chapters/mali-empire`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -616,7 +616,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Geography: The Case of the Strange Season
 
-Weather and climate. Case no. 119. Route: `/cases/weather-climate`
+Weather and climate. Chapter no. 119. Route: `/chapters/weather-climate`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -647,7 +647,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Geography: The Case of the Running-Out Reserve
 
-Renewable and non-renewable resources. Case no. 227. Route: `/cases/resources`
+Renewable and non-renewable resources. Chapter no. 227. Route: `/chapters/resources`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -658,7 +658,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Geography: The Case of the Disappearing Forest
 
-Rainforests and deforestation. Case no. 228. Route: `/cases/rainforests`
+Rainforests and deforestation. Chapter no. 228. Route: `/chapters/rainforests`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -672,7 +672,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Science: The Case of the Runaway Trolley
 
-Forces and motion. Case no. 127. Route: `/cases/forces-motion`
+Forces and motion. Chapter no. 127. Route: `/chapters/forces-motion`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -700,7 +700,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Science: The Case of the Flickering Bulb
 
-Current, voltage and resistance. Case no. 231. Route: `/cases/electricity`
+Current, voltage and resistance. Chapter no. 231. Route: `/chapters/electricity`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -712,7 +712,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Science: The Case of the Racing Heart
 
-The heart and circulation. Case no. 232. Route: `/cases/circulation`
+The heart and circulation. Chapter no. 232. Route: `/chapters/circulation`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -723,7 +723,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Maths: The Case of the Crooked Ladder
 
-Geometry and measurement. Case no. 134. Route: `/cases/geometry`
+Geometry and measurement. Chapter no. 134. Route: `/chapters/geometry`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -753,7 +753,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Maths: The Case of the Two Tickets
 
-Simultaneous equations. Case no. 233. Route: `/cases/simultaneous`
+Simultaneous equations. Chapter no. 233. Route: `/chapters/simultaneous`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -765,7 +765,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Maths: The Case of the Ice Cream Sales
 
-Scatter graphs and correlation. Case no. 234. Route: `/cases/scatter-graphs`
+Scatter graphs and correlation. Chapter no. 234. Route: `/chapters/scatter-graphs`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -776,7 +776,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### History: The Case of the Silent Mill
 
-The Industrial Revolution. Case no. 141. Route: `/cases/industrial-revolution`
+The Industrial Revolution. Chapter no. 141. Route: `/chapters/industrial-revolution`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -807,7 +807,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### History: The Case of the Stormed Fortress
 
-The French Revolution. Case no. 235. Route: `/cases/french-revolution`
+The French Revolution. Chapter no. 235. Route: `/chapters/french-revolution`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -818,7 +818,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### History: The Case of the Broken Chains
 
-The transatlantic slave trade and its abolition. Case no. 236. Route: `/cases/slave-trade`
+The transatlantic slave trade and its abolition. Chapter no. 236. Route: `/chapters/slave-trade`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -830,7 +830,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Geography: The Case of the Crowded City
 
-Population and cities. Case no. 148. Route: `/cases/population-cities`
+Population and cities. Chapter no. 148. Route: `/chapters/population-cities`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -860,7 +860,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Geography: The Case of the Uneven World
 
-Measuring development. Case no. 237. Route: `/cases/development`
+Measuring development. Chapter no. 237. Route: `/chapters/development`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -872,7 +872,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Geography: The Case of the Well-Travelled T-shirt
 
-Globalisation. Case no. 238. Route: `/cases/globalisation`
+Globalisation. Chapter no. 238. Route: `/chapters/globalisation`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -885,7 +885,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Science: The Case of the Family Resemblance
 
-Genes and evolution. Case no. 156. Route: `/cases/genes-evolution`
+Genes and evolution. Chapter no. 156. Route: `/chapters/genes-evolution`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -912,7 +912,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Science: The Case of the Stubborn Salt
 
-Ionic and covalent bonding. Case no. 241. Route: `/cases/bonding`
+Ionic and covalent bonding. Chapter no. 241. Route: `/chapters/bonding`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -924,7 +924,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Science: The Case of the Invisible Light
 
-The electromagnetic spectrum. Case no. 242. Route: `/cases/em-spectrum`
+The electromagnetic spectrum. Chapter no. 242. Route: `/chapters/em-spectrum`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -935,7 +935,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Maths: The Case of the Curved Path
 
-Quadratics and trigonometry. Case no. 163. Route: `/cases/quadratics-trig`
+Quadratics and trigonometry. Chapter no. 163. Route: `/chapters/quadratics-trig`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -963,7 +963,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Maths: The Case of the Growing Pattern
 
-Arithmetic and geometric sequences. Case no. 243. Route: `/cases/sequences`
+Arithmetic and geometric sequences. Chapter no. 243. Route: `/chapters/sequences`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -975,7 +975,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Maths: The Case of the Double Draw
 
-Probability tree diagrams. Case no. 244. Route: `/cases/tree-diagrams`
+Probability tree diagrams. Chapter no. 244. Route: `/chapters/tree-diagrams`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -986,7 +986,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### History: The Case of the Unsent Letter
 
-The World Wars. Case no. 171. Route: `/cases/world-wars`
+The World Wars. Chapter no. 171. Route: `/chapters/world-wars`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1017,7 +1017,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### History: The Case of the Divided City
 
-The Cold War. Case no. 245. Route: `/cases/cold-war`
+The Cold War. Chapter no. 245. Route: `/chapters/cold-war`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1029,7 +1029,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### History: The Case of the Midnight Freedom
 
-Indian independence and partition. Case no. 246. Route: `/cases/indian-independence`
+Indian independence and partition. Chapter no. 246. Route: `/chapters/indian-independence`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1041,7 +1041,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Geography: The Case of the Melting Evidence
 
-Climate change and sustainability. Case no. 178. Route: `/cases/climate-change`
+Climate change and sustainability. Chapter no. 178. Route: `/chapters/climate-change`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1070,7 +1070,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Geography: The Case of the Dry Tap
 
-Water scarcity. Case no. 247. Route: `/cases/water-scarcity`
+Water scarcity. Chapter no. 247. Route: `/chapters/water-scarcity`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1081,7 +1081,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Geography: The Case of the Empty Plate
 
-Food security. Case no. 248. Route: `/cases/food-security`
+Food security. Chapter no. 248. Route: `/chapters/food-security`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1095,7 +1095,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Science: The Case of the Long Shadow
 
-Light and shadows. Case no. 301. Route: `/cases/icse-light-shadows`
+Light and shadows. Chapter no. 301. Route: `/chapters/icse-light-shadows`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1107,7 +1107,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Science: The Case of the Green Kitchen
 
-The leaf and photosynthesis. Case no. 302. Route: `/cases/icse-leaf`
+The leaf and photosynthesis. Chapter no. 302. Route: `/chapters/icse-leaf`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1118,7 +1118,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Maths: The Case of the Matching Packs
 
-HCF and LCM. Case no. 303. Route: `/cases/icse-hcf-lcm`
+HCF and LCM. Chapter no. 303. Route: `/chapters/icse-hcf-lcm`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1129,7 +1129,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Maths: The Case of the Sorted Suspects
 
-Sets. Case no. 304. Route: `/cases/icse-sets`
+Sets. Chapter no. 304. Route: `/chapters/icse-sets`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1141,7 +1141,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### History: The Case of the Spoken Hymns
 
-The Vedic period. Case no. 305. Route: `/cases/icse-vedic`
+The Vedic period. Chapter no. 305. Route: `/chapters/icse-vedic`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1152,7 +1152,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### History: The Case of the Two Princes
 
-Jainism and Buddhism. Case no. 306. Route: `/cases/icse-jainism-buddhism`
+Jainism and Buddhism. Chapter no. 306. Route: `/chapters/icse-jainism-buddhism`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1163,7 +1163,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Geography: The Case of the Flat-Topped Hill
 
-Major landforms. Case no. 307. Route: `/cases/icse-landforms`
+Major landforms. Chapter no. 307. Route: `/chapters/icse-landforms`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1174,7 +1174,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Geography: The Case of the Four Spheres
 
-The domains of the Earth. Case no. 308. Route: `/cases/icse-earth-domains`
+The domains of the Earth. Chapter no. 308. Route: `/chapters/icse-earth-domains`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1188,7 +1188,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Science: The Case of the Salty Sand
 
-Separating mixtures. Case no. 311. Route: `/cases/icse-mixtures`
+Separating mixtures. Chapter no. 311. Route: `/chapters/icse-mixtures`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1199,7 +1199,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Science: The Case of the Bouncing Ball
 
-Forms of energy and energy changes. Case no. 312. Route: `/cases/icse-energy`
+Forms of energy and energy changes. Chapter no. 312. Route: `/chapters/icse-energy`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1210,7 +1210,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Maths: The Case of the Borrowed Bicycle Money
 
-Simple interest. Case no. 313. Route: `/cases/icse-simple-interest`
+Simple interest. Chapter no. 313. Route: `/chapters/icse-simple-interest`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1222,7 +1222,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Maths: The Case of the Railway Crossing
 
-Parallel lines and transversals. Case no. 314. Route: `/cases/icse-parallel-lines`
+Parallel lines and transversals. Chapter no. 314. Route: `/chapters/icse-parallel-lines`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1234,7 +1234,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### History: The Case of the Tall Tower
 
-The Delhi Sultanate. Case no. 315. Route: `/cases/icse-delhi-sultanate`
+The Delhi Sultanate. Chapter no. 315. Route: `/chapters/icse-delhi-sultanate`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1246,7 +1246,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### History: The Case of the Emperor’s Hall
 
-The Mughal Empire under Akbar. Case no. 316. Route: `/cases/icse-mughals`
+The Mughal Empire under Akbar. Chapter no. 316. Route: `/chapters/icse-mughals`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1258,7 +1258,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Geography: The Case of the Cracked Boulder
 
-Weathering and soil formation. Case no. 317. Route: `/cases/icse-weathering`
+Weathering and soil formation. Chapter no. 317. Route: `/chapters/icse-weathering`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1270,7 +1270,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Geography: The Case of the Thin Air
 
-Layers of the atmosphere. Case no. 318. Route: `/cases/icse-atmosphere`
+Layers of the atmosphere. Chapter no. 318. Route: `/chapters/icse-atmosphere`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1283,7 +1283,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Science: The Case of the Backwards Sign
 
-Reflection of light. Case no. 321. Route: `/cases/icse-reflection`
+Reflection of light. Chapter no. 321. Route: `/chapters/icse-reflection`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1294,7 +1294,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Science: The Case of the Purple Cabbage
 
-Acids, bases and indicators. Case no. 322. Route: `/cases/icse-acids-bases`
+Acids, bases and indicators. Chapter no. 322. Route: `/chapters/icse-acids-bases`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1305,7 +1305,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Maths: The Case of the Doubling Rice
 
-Exponents and their laws. Case no. 323. Route: `/cases/icse-exponents`
+Exponents and their laws. Chapter no. 323. Route: `/chapters/icse-exponents`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1316,7 +1316,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Maths: The Case of the Sale Signs
 
-Profit, loss and discount. Case no. 324. Route: `/cases/icse-profit-loss`
+Profit, loss and discount. Chapter no. 324. Route: `/chapters/icse-profit-loss`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1328,7 +1328,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### History: The Case of the Greased Cartridge
 
-The Revolt of 1857. Case no. 325. Route: `/cases/icse-revolt-1857`
+The Revolt of 1857. Chapter no. 325. Route: `/chapters/icse-revolt-1857`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1340,7 +1340,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### History: The Case of the Reformer’s Pen
 
-Social reform in 19th-century India. Case no. 326. Route: `/cases/icse-social-reform`
+Social reform in 19th-century India. Chapter no. 326. Route: `/chapters/icse-social-reform`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1352,7 +1352,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Geography: The Case of the Wiggly Lines
 
-Contours and relief on maps. Case no. 327. Route: `/cases/icse-contours`
+Contours and relief on maps. Chapter no. 327. Route: `/chapters/icse-contours`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1364,7 +1364,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Geography: The Case of the Early Warning
 
-Natural disasters and their management. Case no. 328. Route: `/cases/icse-disasters`
+Natural disasters and their management. Chapter no. 328. Route: `/chapters/icse-disasters`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1378,7 +1378,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Science: The Case of the Floating Ship
 
-Upthrust and Archimedes’ principle. Case no. 331. Route: `/cases/icse-upthrust`
+Upthrust and Archimedes’ principle. Chapter no. 331. Route: `/chapters/icse-upthrust`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1389,7 +1389,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Science: The Case of the Bursting Balloon
 
-Boyle’s law and Charles’s law. Case no. 332. Route: `/cases/icse-gas-laws`
+Boyle’s law and Charles’s law. Chapter no. 332. Route: `/chapters/icse-gas-laws`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1401,7 +1401,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Maths: The Case of the Growing Savings
 
-Compound interest. Case no. 333. Route: `/cases/icse-compound-interest`
+Compound interest. Chapter no. 333. Route: `/chapters/icse-compound-interest`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1413,7 +1413,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Maths: The Case of the Hidden Power
 
-Logarithms. Case no. 334. Route: `/cases/icse-logarithms`
+Logarithms. Chapter no. 334. Route: `/chapters/icse-logarithms`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1424,7 +1424,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### History: The Case of the Emperor’s Edicts
 
-The Mauryan Empire and Ashoka. Case no. 335. Route: `/cases/icse-mauryan-empire`
+The Mauryan Empire and Ashoka. Chapter no. 335. Route: `/chapters/icse-mauryan-empire`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1436,7 +1436,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### History: The Case of the Opening Words
 
-The Indian Constitution: Preamble and Fundamental Rights. Case no. 336. Route: `/cases/icse-constitution`
+The Indian Constitution: Preamble and Fundamental Rights. Chapter no. 336. Route: `/chapters/icse-constitution`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1448,7 +1448,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Geography: The Case of the Longest Day
 
-Rotation and revolution of the Earth. Case no. 337. Route: `/cases/icse-rotation-revolution`
+Rotation and revolution of the Earth. Chapter no. 337. Route: `/chapters/icse-rotation-revolution`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1459,7 +1459,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Geography: The Case of the Trade Winds
 
-Pressure belts and planetary winds. Case no. 338. Route: `/cases/icse-pressure-winds`
+Pressure belts and planetary winds. Chapter no. 338. Route: `/chapters/icse-pressure-winds`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1472,7 +1472,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Science: The Case of the Copper-Coated Key
 
-Electrolysis. Case no. 341. Route: `/cases/icse-electrolysis`
+Electrolysis. Chapter no. 341. Route: `/chapters/icse-electrolysis`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1483,7 +1483,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Science: The Case of the Fogged Photographic Plate
 
-Radioactivity. Case no. 342. Route: `/cases/icse-radioactivity`
+Radioactivity. Chapter no. 342. Route: `/chapters/icse-radioactivity`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1495,7 +1495,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Maths: The Case of the Shop Ledger
 
-Matrices. Case no. 343. Route: `/cases/icse-matrices`
+Matrices. Chapter no. 343. Route: `/chapters/icse-matrices`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1506,7 +1506,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Maths: The Case of the Meeting Point
 
-Section and mid-point formula. Case no. 344. Route: `/cases/icse-section-formula`
+Section and mid-point formula. Chapter no. 344. Route: `/chapters/icse-section-formula`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1517,7 +1517,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### History: The Case of the Two Houses
 
-The Union Parliament. Case no. 345. Route: `/cases/icse-parliament`
+The Union Parliament. Chapter no. 345. Route: `/chapters/icse-parliament`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1529,7 +1529,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### History: The Case of the Blue Helmets
 
-The United Nations. Case no. 346. Route: `/cases/icse-united-nations`
+The United Nations. Chapter no. 346. Route: `/chapters/icse-united-nations`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1541,7 +1541,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Geography: The Case of the Bursting Rains
 
-The climate of India: the monsoon. Case no. 347. Route: `/cases/icse-monsoon`
+The climate of India: the monsoon. Chapter no. 347. Route: `/chapters/icse-monsoon`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 
@@ -1553,7 +1553,7 @@ Textbook: not yet checked. Credits: not yet confirmed.
 
 ### Geography: The Case of the Black Cotton Fields
 
-Soils of India. Case no. 348. Route: `/cases/icse-soils-india`
+Soils of India. Chapter no. 348. Route: `/chapters/icse-soils-india`
 
 Textbook: not yet checked. Credits: not yet confirmed.
 

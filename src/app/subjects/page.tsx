@@ -18,7 +18,7 @@ export default async function SubjectsPage() {
   const subjects = getSubjects(grade, board);
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-10">
-      <Breadcrumb items={[{ label: copy.nav.items.cases.label, href: "/cases" }, { label: t.title }]} />
+      <Breadcrumb items={[{ label: copy.nav.items.cases.label, href: "/chapters" }, { label: t.title }]} />
       <header className="mt-2">
         <p className="label text-evidence-dark">{t.label}</p>
         <h1 className="mt-1 text-4xl sm:text-5xl">{t.title}</h1>
@@ -40,7 +40,7 @@ export default async function SubjectsPage() {
             <ul className="mt-4 space-y-1 text-lg">
               {s.chapters.map((c) => (
                 <li key={c.id}>
-                  <Link href={`/cases/${c.id}?tab=clues`} className="inline-flex min-h-11 items-center underline underline-offset-4 hover:no-underline">
+                  <Link href={`/chapters/${c.id}?tab=clues`} className="inline-flex min-h-11 items-center underline underline-offset-4 hover:no-underline">
                     {c.title}
                     {c.grade ? ` (${copy.grades.label(c.grade)})` : ""}
                   </Link>

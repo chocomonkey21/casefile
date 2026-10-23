@@ -68,7 +68,7 @@ export function LessonView({ caseDef, clueIndex, lesson }: LessonViewProps) {
 
   const backLink = (
     <Link
-      href={`/cases/${caseDef.id}?tab=clues`}
+      href={`/chapters/${caseDef.id}?tab=clues`}
       className="mb-4 inline-flex min-h-11 items-center gap-2 font-semibold text-coffee underline-offset-4 hover:underline"
     >
       <ArrowLeftIcon width={18} height={18} />
@@ -88,7 +88,7 @@ export function LessonView({ caseDef, clueIndex, lesson }: LessonViewProps) {
           <p className="mt-2 text-lg text-ink-soft">{t.lockedText(clueIndex)}</p>
           {open && (
             <div className="mt-6">
-              <Button href={`/cases/${caseDef.id}/lessons/${open.clue.id}`}>{t.goToClue(open.index + 1)}</Button>
+              <Button href={`/chapters/${caseDef.id}/lessons/${open.clue.id}`}>{t.goToClue(open.index + 1)}</Button>
             </div>
           )}
         </div>
@@ -260,7 +260,7 @@ export function LessonView({ caseDef, clueIndex, lesson }: LessonViewProps) {
             </h2>
             <p className="mt-2 max-w-prose text-beige">{t.checkText(lesson.quiz.length)}</p>
             <div className="mt-6 flex flex-wrap items-center gap-4">
-              <Button href={`/cases/${caseDef.id}/quiz/${clue.id}`} variant="highlight" size="lg">
+              <Button href={`/chapters/${caseDef.id}/quiz/${clue.id}`} variant="highlight" size="lg">
                 {solved ? t.reviewQuestions : t.startQuestions}
               </Button>
               <a href="#hint-area" className="inline-flex min-h-11 items-center font-semibold text-paper underline underline-offset-4">
@@ -272,10 +272,10 @@ export function LessonView({ caseDef, clueIndex, lesson }: LessonViewProps) {
           <div className="mt-10 space-y-4">
             <PrevNext
               label={copy.wayfinding.lessonNav}
-              prev={prevLesson ? { href: `/cases/${caseDef.id}/lessons/${prevLesson.id}`, label: copy.wayfinding.prevLesson, title: prevLesson.title } : null}
-              next={nextLesson ? { href: `/cases/${caseDef.id}/lessons/${nextLesson.id}`, label: copy.wayfinding.nextLesson, title: nextLesson.title } : null}
+              prev={prevLesson ? { href: `/chapters/${caseDef.id}/lessons/${prevLesson.id}`, label: copy.wayfinding.prevLesson, title: prevLesson.title } : null}
+              next={nextLesson ? { href: `/chapters/${caseDef.id}/lessons/${nextLesson.id}`, label: copy.wayfinding.nextLesson, title: nextLesson.title } : null}
             />
-            <Button href={`/cases/${caseDef.id}?tab=clues`} variant="secondary">
+            <Button href={`/chapters/${caseDef.id}?tab=clues`} variant="secondary">
               {copy.wayfinding.backToChapter}
             </Button>
           </div>
@@ -357,8 +357,8 @@ function PreviewNotice({ caseDef, evidence }: { caseDef: CaseDef; evidence: Evid
         </h2>
         <p className="mt-1 max-w-prose text-ink-soft">{t.previewText}</p>
         <div className="mt-4 flex flex-wrap gap-4">
-          <Button href="/cases/puddle">{t.previewOpenPuddle}</Button>
-          <Button href={`/cases/${caseDef.id}?tab=clues`} variant="secondary">
+          <Button href="/chapters/puddle">{t.previewOpenPuddle}</Button>
+          <Button href={`/chapters/${caseDef.id}?tab=clues`} variant="secondary">
             {t.backToCase}
           </Button>
         </div>

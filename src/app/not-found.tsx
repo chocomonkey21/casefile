@@ -18,7 +18,7 @@ export default function NotFound() {
         <Button href="/home" size="lg">
           {t.toDesk}
         </Button>
-        <Button href="/cases" variant="secondary" size="lg">
+        <Button href="/chapters" variant="secondary" size="lg">
           {t.browse}
         </Button>
       </div>

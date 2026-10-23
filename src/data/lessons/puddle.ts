@@ -50,7 +50,7 @@ export const PUDDLE_LESSONS: Record<string, ClueContent> = {
           },
           {
             type: "p",
-            text: "Notice something? The puddle didn't really vanish. The water just changed shape and moved. Hold on to that idea, because it is the key to the whole case.",
+            text: "Notice something? The puddle didn't really vanish. The water just changed shape and moved. Hold on to that idea, because it is the key to the whole chapter.",
           },
         ],
       },
@@ -564,7 +564,7 @@ export const PUDDLE_LESSONS: Record<string, ClueContent> = {
         blocks: [
           {
             type: "p",
-            text: "Here is the whole case. Water goes on a journey, and it never really stops.",
+            text: "Here is the whole chapter. Water goes on a journey, and it never really stops.",
           },
           {
             type: "list",

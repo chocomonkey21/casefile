@@ -26,7 +26,7 @@ export function proxy(request: NextRequest) {
     return NextResponse.redirect(new URL(joinHref(pathname + search), request.url));
   }
 
-  const caseMatch = pathname.match(/^\/cases\/([^/]+)/);
+  const caseMatch = pathname.match(/^\/chapters\/([^/]+)/);
   if (caseMatch) {
     const caseDef = getCase(decodeURIComponent(caseMatch[1]));
     if (caseDef && !canOpenCase(grade, board, caseDef)) {
@@ -39,8 +39,8 @@ export function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/cases",
-    "/cases/:path*",
+    "/chapters",
+    "/chapters/:path*",
     "/subjects",
     "/subjects/:path*",
     "/videos",

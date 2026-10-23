@@ -65,7 +65,7 @@ export function FinalTestResult({ caseDef, outcome, onRetry }: { caseDef: CaseDe
               {!perfect && (
                 <p className="mt-2 text-sm">
                   <Link
-                    href={`/cases/${caseDef.id}/lessons/${clue.id}`}
+                    href={`/chapters/${caseDef.id}/lessons/${clue.id}`}
                     className="inline-flex min-h-11 items-center font-semibold text-coffee underline underline-offset-4"
                   >
                     {t.reviewClue}
@@ -92,7 +92,7 @@ export function FinalTestResult({ caseDef, outcome, onRetry }: { caseDef: CaseDe
             <Button size="lg" onClick={onRetry}>
               {t.notPassed.retry}
             </Button>
-            <Button href={`/cases/${caseDef.id}?tab=clues`} variant="secondary">
+            <Button href={`/chapters/${caseDef.id}?tab=clues`} variant="secondary">
               {t.notPassed.back}
             </Button>
           </div>
@@ -141,7 +141,7 @@ export function FinalTestResult({ caseDef, outcome, onRetry }: { caseDef: CaseDe
             <div className="space-y-4">
               <p className="text-lg text-ink-soft">{next.stub ? t.next.textPreview : t.next.textFull}</p>
               <div className="flex flex-wrap gap-4">
-                <Button href={`/cases/${next.id}`} size="lg">
+                <Button href={`/chapters/${next.id}`} size="lg">
                   {t.next.open}
                 </Button>
                 <Button href="/home" variant="secondary">

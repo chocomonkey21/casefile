@@ -125,7 +125,7 @@ export function VideoForm({ initial, id, picker }: Props) {
               </option>
             ))}
           </select>
-          {note("caseId", "A chapter is a case. Leave this as “Whole subject” for a video that covers more than one chapter.")}
+          {note("caseId", "Leave this as “Whole subject” for a video that covers more than one chapter.")}
         </div>
         <div>
           <label htmlFor="clueId" className="block font-semibold">

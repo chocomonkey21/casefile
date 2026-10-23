@@ -135,7 +135,7 @@ export default async function WatchPage(props: PageProps<"/videos/[id]">) {
             {lesson && chapter && (
               <li>
                 <Link
-                  href={`/cases/${chapter.id}/lessons/${lesson.id}`}
+                  href={`/chapters/${chapter.id}/lessons/${lesson.id}`}
                   className="inline-flex min-h-11 items-center font-semibold underline underline-offset-4 hover:no-underline"
                 >
                   {t.goToLesson}: {lesson.title}
@@ -145,7 +145,7 @@ export default async function WatchPage(props: PageProps<"/videos/[id]">) {
             {chapter && (
               <li>
                 <Link
-                  href={`/cases/${chapter.id}?tab=clues`}
+                  href={`/chapters/${chapter.id}?tab=clues`}
                   className="inline-flex min-h-11 items-center underline underline-offset-4 hover:no-underline"
                 >
                   {t.chapterLabel}: {chapter.title}

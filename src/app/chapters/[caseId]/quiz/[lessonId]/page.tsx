@@ -15,7 +15,7 @@ export function generateStaticParams() {
  * /quiz/<lessonId> quizzes one lesson and completes it at the end.
  * /quiz/refresh is the short refresher for a case that needs revising: one question from each lesson.
  */
-export default async function QuizPage(props: PageProps<"/cases/[caseId]/quiz/[lessonId]">) {
+export default async function QuizPage(props: PageProps<"/chapters/[caseId]/quiz/[lessonId]">) {
   const { caseId, lessonId: clueId } = await props.params;
   const caseDef = getCase(caseId);
   if (!caseDef) notFound();
@@ -26,7 +26,7 @@ export default async function QuizPage(props: PageProps<"/cases/[caseId]/quiz/[l
       return first ? [{ clueId: c.id, question: first }] : [];
     });
     if (questions.length === 0) {
-      return <PreviewNotice title={copy.preview.reviewTitle} blurb={copy.preview.reviewText} backHref={`/cases/${caseId}`} />;
+      return <PreviewNotice title={copy.preview.reviewTitle} blurb={copy.preview.reviewText} backHref={`/chapters/${caseId}`} />;
     }
     // One question per clue. The room narrows this to the clues the student has solved.
     return <QuizRoom caseDef={caseDef} mode="refresh" questions={questions} />;
@@ -35,7 +35,7 @@ export default async function QuizPage(props: PageProps<"/cases/[caseId]/quiz/[l
   if (!caseDef.clues.some((c) => c.id === clueId)) notFound();
   const lesson = getLesson(caseId, clueId);
   if (!lesson) {
-    return <PreviewNotice title={copy.preview.roomTitle} blurb={copy.preview.roomText} backHref={`/cases/${caseId}`} />;
+    return <PreviewNotice title={copy.preview.roomTitle} blurb={copy.preview.roomText} backHref={`/chapters/${caseId}`} />;
   }
   return (
     <QuizRoom

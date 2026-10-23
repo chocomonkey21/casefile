@@ -82,7 +82,7 @@ export default function Home() {
                 </div>
                 {/* The whole folder is one link to the case preview, so it works with keyboard and screen readers */}
                 <Link
-                  href={`/cases/${c.id}`}
+                  href={`/chapters/${c.id}`}
                   aria-label={t.peekOpen(c.title)}
                   className="tex-manila tex-worn tex-crease group block h-full rounded-b-[3px] rounded-tr-[3px] p-6 shadow-folder transition-transform active:scale-[0.99] motion-safe:hover:-translate-y-0.5"
                 >
@@ -105,7 +105,7 @@ export default function Home() {
           </ul>
           <p className="mt-6">
             <Link
-              href="/cases"
+              href="/chapters"
               className="inline-flex min-h-11 items-center font-semibold text-evidence-dark underline underline-offset-4 hover:no-underline"
             >
               {t.peekAll(totalChapters)}

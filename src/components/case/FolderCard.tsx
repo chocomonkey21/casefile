@@ -84,7 +84,7 @@ export function FolderCard({ caseDef, status, solved }: FolderCardProps) {
   const motionOff = useMotionOff();
   const look = useFolderLook(caseDef.id);
   const subject = SUBJECTS[caseDef.subject];
-  const href = `/cases/${caseDef.id}`;
+  const href = `/chapters/${caseDef.id}`;
   const total = caseDef.clues.length;
   const next = nextClue(caseDef, state);
 

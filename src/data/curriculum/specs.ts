@@ -35,7 +35,7 @@ import { ICSE_G10 } from "./icse-g10";
   same structures the older chapters use, so the rest of the app treats them all alike.
   extra-g6.ts to extra-g10.ts add two shorter chapters (one lesson each) per grade and subject, so each has three chapters.
   icse-g6.ts to icse-g10.ts are the ICSE library: two chapters per grade and subject, marked board: "icse".
-  Add a chapter here, give it a grade, and it appears in /subjects, /cases, the lesson pages and the final test.
+  Add a chapter here, give it a grade, and it appears in /subjects, /chapters, the lesson pages and the final test.
 */
 export const SPECS: ChapterSpec[] = [MAPS_GLOBES, RATIOS, ANCIENT_GREECE, MATTER_ATOMS, EQUATIONS_GRAPHS, ROMAN_EMPIRE, WEATHER_CLIMATE, FORCES_MOTION, GEOMETRY, INDUSTRIAL_REVOLUTION, POPULATION_CITIES, GENES_EVOLUTION, QUADRATICS_TRIG, WORLD_WARS, CLIMATE_CHANGE, ...EXTRA_G6, ...EXTRA_G7, ...EXTRA_G8, ...EXTRA_G9, ...EXTRA_G10, ...ICSE_G6, ...ICSE_G7, ...ICSE_G8, ...ICSE_G9, ...ICSE_G10];
 

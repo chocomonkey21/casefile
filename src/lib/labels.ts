@@ -12,8 +12,8 @@
 
 export const L = {
   home: "Home",
-  cases: "Cases",
-  case: "Case",
+  cases: "Chapters",
+  case: "Chapter",
   studyBoard: "Study board",
   notes: "Notes",
   progress: "My progress",
@@ -30,11 +30,11 @@ export const L = {
   overview: "Overview",
   finalTest: "Final test",
   startFinalTest: "Start the final test",
-  caseComplete: "Case complete",
+  caseComplete: "Chapter complete",
   timeToRevise: "Time to revise",
   setUpProfile: "Set up your profile",
   pickRightIdea: "Pick the right idea",
-  practiceCase: "Practice case",
+  practiceCase: "Practice chapter",
   howItWorks: "How CaseFile works",
   forFamilies: "For families",
   logOut: "Log out",
@@ -49,7 +49,7 @@ export const L = {
 /** Every student page lives at one of these addresses. Old addresses redirect here (see next.config.ts). */
 export const ROUTES = {
   home: "/home",
-  cases: "/cases",
+  cases: "/chapters",
   studyBoard: "/study-board",
   notes: "/notes",
   progress: "/progress",
@@ -60,8 +60,8 @@ export const ROUTES = {
   join: "/join",
   privacy: "/privacy",
   subjects: "/subjects",
-  caseFile: (caseId: string) => `/cases/${caseId}`,
-  lesson: (caseId: string, lessonId: string) => `/cases/${caseId}/lessons/${lessonId}`,
-  quiz: (caseId: string, lessonId: string) => `/cases/${caseId}/quiz/${lessonId}`,
-  finalTest: (caseId: string) => `/cases/${caseId}/final-test`,
+  caseFile: (caseId: string) => `/chapters/${caseId}`,
+  lesson: (caseId: string, lessonId: string) => `/chapters/${caseId}/lessons/${lessonId}`,
+  quiz: (caseId: string, lessonId: string) => `/chapters/${caseId}/quiz/${lessonId}`,
+  finalTest: (caseId: string) => `/chapters/${caseId}/final-test`,
 } as const;

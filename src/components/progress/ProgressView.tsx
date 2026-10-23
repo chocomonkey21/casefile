@@ -152,8 +152,8 @@ export function ProgressView() {
                 </div>
                 <p className="mt-2 text-ink-soft">{copy.desk.revise.detail(solvedCount(caseDef, state), caseDef.clues.length)}</p>
                 <div className="mt-4 flex flex-wrap gap-4">
-                  <Button href={`/cases/${caseDef.id}/quiz/refresh`}>{copy.desk.revise.start}</Button>
-                  <Button href={`/cases/${caseDef.id}`} variant="ghost">
+                  <Button href={`/chapters/${caseDef.id}/quiz/refresh`}>{copy.desk.revise.start}</Button>
+                  <Button href={`/chapters/${caseDef.id}`} variant="ghost">
                     {copy.desk.revise.openCase}
                   </Button>
                 </div>
@@ -163,7 +163,7 @@ export function ProgressView() {
               <li key={caseDef.id} className="rounded-[3px] bg-paper p-6">
                 <h3 className="text-xl leading-snug">{t.revise.cooling(caseDef.topic, days, daysLeft)}</h3>
                 <div className="mt-4">
-                  <Button href={`/cases/${caseDef.id}`} variant="secondary">
+                  <Button href={`/chapters/${caseDef.id}`} variant="secondary">
                     {copy.desk.revise.openCase}
                   </Button>
                 </div>
@@ -243,7 +243,7 @@ function TopicColumn({
               {tone === "postit" && (
                 <p className="mt-2 text-sm">
                   <Link
-                    href={`/cases/${tp.caseId}/lessons/${tp.clueId}`}
+                    href={`/chapters/${tp.caseId}/lessons/${tp.clueId}`}
                     className="inline-flex min-h-11 items-center font-semibold text-coffee underline underline-offset-4"
                   >
                     {t.topics.review}

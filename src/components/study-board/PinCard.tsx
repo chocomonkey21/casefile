@@ -110,7 +110,7 @@ export function PinCard({ info, center, width, tilt, zIndex, dragging, highlight
         </span>
         <Link
           data-nodrag
-          href={`/cases/${info.caseDef.id}/lessons/${info.clue.id}#${info.evidence.id}`}
+          href={`/chapters/${info.caseDef.id}/lessons/${info.clue.id}#${info.evidence.id}`}
           className="relative shrink-0 text-sm font-semibold text-coffee underline underline-offset-2 after:absolute after:-inset-x-3 after:-inset-y-2 after:content-['']"
         >
           {copy.common.open}<span className="sr-only"> {info.evidence.title}</span>

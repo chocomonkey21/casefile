@@ -30,7 +30,7 @@ export function StyleguideDemo() {
           <Button variant="ghost">Save</Button>
           <Button variant="danger">Log out</Button>
           <Button disabled>Next</Button>
-          <Button size="lg">Start the case</Button>
+          <Button size="lg">Start the chapter</Button>
         </div>
       </section>
 
@@ -102,10 +102,10 @@ export function StyleguideDemo() {
 
       <section aria-labelledby="case-demo" className="rounded-[3px] p-6">
         <h2 id="case-demo" className="text-3xl">
-          Case demo tools
+          Chapter demo tools
         </h2>
         <p className="mt-2 max-w-prose text-ink-soft">
-          Move the Vanishing Puddle through its states so you can check Home, the library and the case file.
+          Move the Vanishing Puddle through its states so you can check Home, the library and the chapter file.
         </p>
         <p className="mt-4 font-medium">
           Puddle status now: <span className="font-display">{copy.status[caseStatus(puddle, state)]}</span>,{" "}
@@ -126,7 +126,7 @@ export function StyleguideDemo() {
             variant="secondary"
             onClick={() => actions.setCaseActivity(puddle.id, new Date(Date.now() - 9 * 86400000).toISOString())}
           >
-            Make Puddle a case that needs revising (9 days ago)
+            Make Puddle a chapter that needs revising (9 days ago)
           </Button>
           <Button variant="secondary" onClick={() => actions.closeCase(puddle.id, 8, 8)}>
             Close Puddle
